@@ -5,11 +5,11 @@ layout: default
   <div class="container">
     <div class="blog-section-header">
       <div class="blog-section-header-copy">
-        <p class="eyebrow"><a href="/blog/">Blog</a> / Category</p>
+        <p class="eyebrow"><a href="{{ '/blog/' | relative_url }}">Blog</a> / Category</p>
         <h1 class="section-header-h2">{{ page.title }}</h1>
         <p class="section-header-sub">{{ page.posts.size }} post{% if page.posts.size != 1 %}s{% endif %}</p>
       </div>
-      <a href="/blog/" class="arrow-link">All posts <span aria-hidden="true">&rarr;</span></a>
+      <a href="{{ '/blog/' | relative_url }}" class="arrow-link">All posts <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="blog-grid blog-grid-index">
       {%- for post in page.posts %}

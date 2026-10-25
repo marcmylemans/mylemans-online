@@ -10,7 +10,7 @@ layout: default
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
         {%- if cats.size > 0 %}
         <span class="post-meta-sep" aria-hidden="true">·</span>
-        {%- for c in cats %}<a class="post-cat" href="/categories/{{ c | slugify }}/">{{ c }}</a>{% unless forloop.last %}<span class="post-meta-sep" aria-hidden="true">·</span>{% endunless %}{% endfor %}
+        {%- for c in cats %}{% assign cslug = c | slugify %}<a class="post-cat" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c }}</a>{% unless forloop.last %}<span class="post-meta-sep" aria-hidden="true">·</span>{% endunless %}{% endfor %}
         {%- endif %}
         <span class="post-meta-sep" aria-hidden="true">·</span>
         <span>{{ content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
@@ -27,7 +27,7 @@ layout: default
 
   {%- if cover and page.image != false %}
   <div class="container post-container">
-    <img class="post-cover" src="{{ cover }}" alt="{{ page.image.alt | default: page.title }}" loading="eager" onerror="this.remove()" />
+    <img class="post-cover" src="{{ cover | relative_url }}" alt="{{ page.image.alt | default: page.title }}" loading="eager" onerror="this.remove()" />
   </div>
   {%- endif %}
 
@@ -46,16 +46,16 @@ layout: default
   <footer class="container post-container post-footer">
     {%- if page.tags.size > 0 %}
     <p class="post-tags">
-      {%- for t in page.tags %}<a class="post-tag" href="/tags/{{ t | slugify }}/">{{ t }}</a>{% endfor %}
+      {%- for t in page.tags %}{% assign tslug = t | slugify %}<a class="post-tag" href="{{ '/tags/' | append: tslug | append: '/' | relative_url }}">{{ t }}</a>{% endfor %}
     </p>
     {%- endif %}
 
     <div class="post-nav">
       {%- if page.previous %}
-      <a class="post-nav-link" href="{{ page.previous.url }}" rel="prev"><span class="eyebrow">Older</span>{{ page.previous.title }}</a>
+      <a class="post-nav-link" href="{{ page.previous.url | relative_url }}" rel="prev"><span class="eyebrow">Older</span>{{ page.previous.title }}</a>
       {%- else %}<span></span>{% endif %}
       {%- if page.next %}
-      <a class="post-nav-link post-nav-next" href="{{ page.next.url }}" rel="next"><span class="eyebrow">Newer</span>{{ page.next.title }}</a>
+      <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}" rel="next"><span class="eyebrow">Newer</span>{{ page.next.title }}</a>
       {%- endif %}
     </div>
 

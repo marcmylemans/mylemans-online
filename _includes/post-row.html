@@ -1,0 +1,16 @@
+{%- assign p = include.post -%}
+{%- assign cover = p.image.path | default: p.image | default: site.default_image -%}
+<a class="post-row" href="{{ p.url | relative_url }}">
+  <div class="post-row-thumb">
+    <img src="{{ cover | relative_url }}" alt="" loading="lazy" onerror="this.remove()" />
+  </div>
+  <div class="post-row-body">
+    <p class="post-row-meta">
+      {%- if p.categories.size > 0 %}<span class="post-row-cat">{{ p.categories | join: " · " }}</span><span aria-hidden="true">·</span>{% endif %}
+      <span>{{ p.date | date: "%b %-d, %Y" }}</span><span aria-hidden="true">·</span>
+      <span>{{ p.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+    </p>
+    <h2>{{ p.title }}</h2>
+    <p class="post-row-excerpt">{{ p.description | default: p.excerpt | strip_html | truncate: 180 }}</p>
+  </div>
+</a>

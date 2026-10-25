@@ -1,0 +1,8 @@
+# Hand-picked guides shown in the "Evergreen guides" panel on the homepage.
+# Edit freely; url is relative to the site root.
+- title: The Complete Hyper-V Guide for Homelab & Prosumer Environments
+  url: /categories/hyper-v/
+- title: The Complete Remote Desktop Services Guide
+  url: /categories/remote-desktop-services/
+- title: Build Your First Home Server in 30 Minutes (Proxmox)
+  url: /posts/build-your-first-home-server-proxmox/

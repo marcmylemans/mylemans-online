@@ -24,6 +24,21 @@ server.js            Express: static files, /api/subscribe, legacy host redirect
 dockerfile           two stages: Ruby builds Jekyll, Node serves the result
 ```
 
+## Testing on GitHub Pages (temporary)
+
+While the Docker image is not live yet, the repo can be previewed at
+`https://blog.mylemans.online/mylemans-online/` through GitHub Pages:
+
+1. Add `.github/workflows/pages-deploy.yml` (builds with the full Gemfile and
+   `--baseurl /mylemans-online` so links work under the project path).
+2. Settings → Pages → Source: **GitHub Actions**.
+
+All generated links use `relative_url`, so the same source builds for the
+root domain in Docker and for the project path on Pages. The newsletter
+form will not work on Pages (no Express behind it); everything else does.
+Remove the workflow and switch Pages off once Docker is live, so Google
+does not index a duplicate.
+
 ## Local development
 
 ```bash
@@ -57,6 +72,13 @@ Or `docker compose up --build`.
 - `server.js` 301-redirects anything arriving with the `blog.mylemans.online`
   Host header to the same path on `https://mylemans.online` (and `/` to
   `/blog/`). Controlled by `LEGACY_BLOG_HOST` and `CANONICAL_ORIGIN`.
+- The homepage follows the merged-site design: identity plus the latest post
+  in the hero, a six-post grid with category pills, evergreen guides
+  (`_data/evergreen.yml`) and category panels, Labs, YouTube, newsletter,
+  and a four-column footer.
+- `/blog/` has client-side search (`blog/search.json` + `assets/js/blog-search.js`),
+  category pills, list rows with thumbnails, and a sidebar with recently
+  updated posts, trending tags and a newsletter card.
 - Chirpy is gone. The post layout provides what the posts actually use:
   `{% youtube %}` (jekyll-youtube), `{: .prompt-tip }` style callouts,
   `{% include advertisement.html %}` (now a no-op), `image:` cover images,

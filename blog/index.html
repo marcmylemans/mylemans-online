@@ -4,41 +4,102 @@ title: Blog
 description: 125+ tutorials and war stories on homelabs, Proxmox, Hyper-V, Windows Server, Microsoft 365, networking and security. By Marc Mylemans.
 permalink: /blog/
 ---
-<section class="section">
+{%- assign total = site.posts.size %}
+<section class="blog-index">
   <div class="container">
-    <div class="blog-section-header">
-      <div class="blog-section-header-copy">
-        <p class="eyebrow">Blog</p>
-        <h1 class="section-header-h2">War stories from the field.</h1>
-        <p class="section-header-sub">Real problems, real fixes, written down so you don't have to figure them out twice.</p>
-      </div>
-      <a href="/feed.xml" class="arrow-link">RSS feed <span aria-hidden="true">&rarr;</span></a>
-    </div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Blog</span></nav>
+    <h1 class="blog-index-title">Blog</h1>
+    <p class="blog-index-lede">{{ total | default: 125 }}{% if total == 0 %}+{% endif %} tutorials and war stories on homelabs, Windows Server, Microsoft 365, networking and security. Searchable, tagged, no pagination maze.</p>
 
-    {%- assign cats = site.categories | sort %}
-    {%- if cats.size > 0 %}
-    <nav class="blog-filters" aria-label="Categories">
-      <a class="filter-btn is-active" href="/blog/">All</a>
-      {%- for c in cats %}
-      <a class="filter-btn" href="/categories/{{ c[0] | slugify }}/">{{ c[0] }} <span class="filter-count">{{ c[1].size }}</span></a>
-      {%- endfor %}
-    </nav>
-    {%- endif %}
-
-    {%- if paginator.posts.size > 0 %}
-    <div class="blog-grid blog-grid-index">
-      {%- for post in paginator.posts %}
-      {% include post-card.html post=post %}
-      {%- endfor %}
-    </div>
-    {% include pagination.html %}
-    {%- else %}
-    <div class="blog-grid">
-      <article class="blog-card-v2 blog-fallback-card">
-        <h3>Posts are moving in.</h3>
-        <p class="blog-card-excerpt">The blog is being merged into this site. Until that lands, everything is still at <a href="https://blog.mylemans.online">blog.mylemans.online</a>.</p>
-      </article>
-    </div>
-    {%- endif %}
+    <form class="blog-search" id="search" role="search" data-search-index="{{ '/blog/search.json' | relative_url }}">
+      <label for="q" class="sr-only">Search posts</label>
+      <input id="q" type="search" name="q" placeholder="Search posts, e.g. Sophos SSL VPN" autocomplete="off" />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <p class="blog-search-status" id="search-status" aria-live="polite"></p>
   </div>
 </section>
+
+<section class="section blog-index-body">
+  <div class="container blog-index-grid">
+
+    <div class="blog-index-main">
+      {%- assign cats = site.categories | sort %}
+      {%- if cats.size > 0 %}
+      <nav class="pill-row" id="categories" aria-label="Categories">
+        <a class="pill is-active" href="{{ '/blog/' | relative_url }}">All</a>
+        {%- for c in cats %}
+        {%- assign cslug = c[0] | slugify %}
+        <a class="pill" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c[0] }}</a>
+        {%- endfor %}
+      </nav>
+      {%- endif %}
+
+      <div class="post-list" id="search-results" hidden></div>
+
+      <div class="post-list" id="post-list">
+        {%- if paginator.posts.size > 0 %}
+        {%- for post in paginator.posts %}
+        {% include post-row.html post=post %}
+        {%- endfor %}
+        {%- else %}
+        <article class="post-row post-row-empty">
+          <div class="post-row-body">
+            <h2>Posts are moving in.</h2>
+            <p>The blog is being merged into this site. Until that lands, everything is still at <a href="https://blog.mylemans.online">blog.mylemans.online</a>.</p>
+          </div>
+        </article>
+        {%- endif %}
+      </div>
+
+      {% include pagination.html %}
+    </div>
+
+    <aside class="blog-sidebar">
+      {%- assign updated = site.posts | where_exp: "p", "p.last_modified_at" | sort: "last_modified_at" | reverse %}
+      {%- if updated.size > 0 %}
+      <div class="sidebar-card">
+        <p class="eyebrow">Recently updated</p>
+        {%- for p in updated limit: 4 %}
+        <a class="sidebar-link" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+
+      {%- comment %} Liquid cannot sort a hash by value, so build "count|name" keys and sort those. {% endcomment %}
+      {%- assign tagkeys = "" | split: "" %}
+      {%- for t in site.tags %}
+        {%- assign n = t[1].size | plus: 1000 %}
+        {%- assign key = n | append: "|" | append: t[0] %}
+        {%- assign tagkeys = tagkeys | push: key %}
+      {%- endfor %}
+      {%- assign tagkeys = tagkeys | sort | reverse %}
+      {%- if tagkeys.size > 0 %}
+      <div class="sidebar-card" id="tags">
+        <p class="eyebrow">Trending tags</p>
+        <div class="tag-cloud">
+          {%- for key in tagkeys limit: 12 %}
+          {%- assign name = key | split: "|" | last %}
+          {%- assign tslug = name | slugify %}
+          <a class="post-tag" href="{{ '/tags/' | append: tslug | append: '/' | relative_url }}">{{ name }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endif %}
+
+      <div class="sidebar-card sidebar-card-dark">
+        <p class="eyebrow">Newsletter</p>
+        <p>New posts and videos in your inbox. No spam, no filler.</p>
+        <a class="btn btn-primary" href="{{ '/#newsletter' | relative_url }}">Subscribe</a>
+      </div>
+
+      <div class="sidebar-links">
+        <a href="{{ '/feed.xml' | relative_url }}">RSS feed &rarr;</a>
+        <a href="https://www.youtube.com/@mylemansonline" target="_blank" rel="noreferrer">YouTube channel &rarr;</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<script src="{{ '/assets/js/blog-search.js' | relative_url }}" defer></script>

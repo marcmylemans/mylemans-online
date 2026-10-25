@@ -1,10 +1,10 @@
 {%- comment -%} Usage: {% include post-card.html post=p %} {%- endcomment -%}
 {%- assign p = include.post -%}
 <article class="blog-card-v2">
-  <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
+  <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
   <p class="blog-card-excerpt">{{ p.description | default: p.excerpt | strip_html | truncate: 160 }}</p>
   <div class="blog-card-footer">
     <span>{{ p.date | date: "%b %-d, %Y" }}{% if p.categories.size > 0 %} · {{ p.categories | join: ", " }}{% endif %}</span>
-    <a class="blog-card-read" href="{{ p.url }}">Read &rarr;</a>
+    <a class="blog-card-read" href="{{ p.url | relative_url }}">Read &rarr;</a>
   </div>
 </article>

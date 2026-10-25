@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /blog/search.json
+---
+[
+{%- for p in site.posts %}
+  {
+    "title": {{ p.title | jsonify }},
+    "url": {{ p.url | relative_url | jsonify }},
+    "date": {{ p.date | date: "%b %-d, %Y" | jsonify }},
+    "categories": {{ p.categories | jsonify }},
+    "tags": {{ p.tags | jsonify }},
+    "description": {{ p.description | default: p.excerpt | strip_html | truncate: 180 | jsonify }},
+    "image": {{ p.image.path | default: p.image | default: site.default_image | relative_url | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+]

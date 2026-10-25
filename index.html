@@ -13,7 +13,7 @@ layout: null
 
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mylemans.online/" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Mylemans Online: 14 years of IT, documented in public." />
@@ -70,191 +70,165 @@ layout: null
   }
   </script>
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- Shared header injected via JS -->
   {% include header.html %}
 
-  <!-- MAIN -->
   <main id="main">
+    {%- assign latest = site.posts | slice: 0, 7 %}
+    {%- assign featured = latest | first %}
+    {%- assign recent = latest | slice: 1, 6 %}
 
-    <!-- ============================================================
-         SECTION 1: HERO
-         Identity stays. Primary actions now: Labs + Newsletter.
-         ============================================================ -->
-    <section class="hero-redesign" aria-labelledby="hero-heading">
-      <div class="hero-ambient" aria-hidden="true"></div>
-
-      <div class="container hero-redesign-inner">
-        <div class="hero-content">
+    <!-- HERO: identity on the left, latest post on the right -->
+    <section class="hero-v2" aria-labelledby="hero-heading">
+      <div class="container hero-v2-inner">
+        <div class="hero-v2-copy">
           <p class="eyebrow">Independent personal brand. Not affiliated with my employer.</p>
-
-          <h1 id="hero-heading" class="hero-display">
-            14 years of IT,<br>
-            documented<br>
-            <span class="hero-gradient-text">in public.</span>
-          </h1>
-
-          <p class="hero-body">
+          <h1 id="hero-heading" class="hero-v2-title">14 years of IT, documented <span class="hero-gradient-text">in public.</span></h1>
+          <p class="hero-v2-body">
             I'm Marc. I've been a systems engineer for over a decade, and I write down
-            the things I learned the hard way, the homelab builds, the Windows and
+            the things I learned the hard way: the homelab builds, the Windows and
             Microsoft 365 work, the security and the war stories. If you want to get
             genuinely good at real IT, not just collect tabs, you're in the right place.
           </p>
-
           <div class="hero-actions">
-            <a href="https://labs.mylemans.online" class="btn btn-primary" target="_blank" rel="noreferrer">
-              Start learning, free
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="#newsletter" class="btn btn-secondary">Get the newsletter</a>
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">Read the latest posts</a>
+            <a href="https://labs.mylemans.online" class="btn btn-secondary" target="_blank" rel="noreferrer">Start learning on Labs</a>
           </div>
-
           <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="hero-stat-value">40K+</span>
-              <span class="hero-stat-label">YouTube subscribers</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-value">125+</span>
-              <span class="hero-stat-label">Posts on the blog</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-value">14 yrs</span>
-              <span class="hero-stat-label">In the trenches</span>
-            </div>
+            <div class="hero-stat"><span class="hero-stat-value">40K+</span><span class="hero-stat-label">YouTube subscribers</span></div>
+            <div class="hero-stat"><span class="hero-stat-value">{{ site.posts.size | default: 125 }}{% if site.posts.size == 0 %}+{% endif %}</span><span class="hero-stat-label">Posts on the blog</span></div>
+            <div class="hero-stat"><span class="hero-stat-value">14 yrs</span><span class="hero-stat-label">In the trenches</span></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============================================================
-         SECTION 2: MYLEMANS LABS
-         The strategic spine. Free, hands-on learning.
-         ============================================================ -->
-    <section class="section" id="labs">
-      <div class="container">
-        <div class="labs-panel">
-          <div class="labs-glow" aria-hidden="true"></div>
-
-          <div class="labs-inner">
-            <p class="eyebrow labs-eyebrow">Mylemans Labs &middot; Now live, free</p>
-
-            <h2 class="labs-headline">
-              Learn real IT, free.<br>
-              <span class="labs-highlight">Advance by proving you can do it.</span>
-            </h2>
-
-            <p class="labs-body">
-              Mylemans Labs is a free, hands-on learning platform for the skills that
-              actually matter: networking, Proxmox, PowerShell, Docker, Active Directory,
-              Microsoft 365, backup, and security. The difference from everywhere else:
-              you don't move forward by watching a video and clicking next. Every lesson
-              ends with a check that you can actually do the thing. You advance by proving
-              the skill, not by sitting through it.
-            </p>
-
-            <p class="labs-body">
-              It's free, it's browsable without an account, and it's built for the person
-              climbing from "I know a bit of this" to genuinely competent.
-            </p>
-
-            <div class="labs-skills" aria-label="Skill paths">
-              <span class="labs-skill">Networking</span>
-              <span class="labs-skill">Proxmox</span>
-              <span class="labs-skill">PowerShell</span>
-              <span class="labs-skill">Docker</span>
-              <span class="labs-skill">Active Directory</span>
-              <span class="labs-skill">Microsoft 365</span>
-              <span class="labs-skill">Backup</span>
-              <span class="labs-skill">Security</span>
-            </div>
-
-            <div class="labs-actions">
-              <a href="https://labs.mylemans.online" class="btn btn-primary" target="_blank" rel="noreferrer">
-                Start the IT Foundations path
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-              <a href="https://labs.mylemans.online" class="arrow-link labs-secondary" target="_blank" rel="noreferrer">
-                Browse all paths &rarr;
-              </a>
-            </div>
+        {%- if featured %}
+        {%- assign fcover = featured.image.path | default: featured.image | default: site.default_image %}
+        <a class="featured-post" href="{{ featured.url | relative_url }}">
+          <div class="featured-post-media">
+            <img src="{{ fcover | relative_url }}" alt="" loading="eager" onerror="this.remove()" />
+          </div>
+          <div class="featured-post-body">
+            <p class="featured-post-meta"><span class="featured-post-label">Latest post</span><span>{{ featured.date | date: "%b %-d, %Y" }}</span></p>
+            <h2 class="featured-post-title">{{ featured.title }}</h2>
+            <p class="featured-post-excerpt">{{ featured.description | default: featured.excerpt | strip_html | truncate: 170 }}</p>
+            <span class="arrow-link">Read the post <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+        {%- else %}
+        <div class="featured-post featured-post-empty">
+          <div class="featured-post-body">
+            <p class="featured-post-meta"><span class="featured-post-label">Blog</span></p>
+            <h2 class="featured-post-title">Posts are moving in.</h2>
+            <p class="featured-post-excerpt">The blog is being merged into this site. Until that lands, everything is still at <a href="https://blog.mylemans.online">blog.mylemans.online</a>.</p>
           </div>
         </div>
+        {%- endif %}
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 3: NEWSLETTER
-         Elevated to a primary capture position.
-         ============================================================ -->
-    <section class="section" id="newsletter">
-      <div class="container">
-        <div class="newsletter-card">
-          <p class="eyebrow">Newsletter</p>
-
-          <h2 class="section-header-h2">Get the good stuff in your inbox.</h2>
-
-          <p class="newsletter-pitch">
-            One email when there's something worth sending: a new tutorial, a new path,
-            a tool, a launch, or a war story from the field.
-            <strong>No spam, no upsells, no weekly filler.</strong>
-            Unsubscribe in one click.
-          </p>
-
-          <form class="newsletter-form-inline" id="newsletter-form">
-            <input type="email" placeholder="you@yourdomain.com" required />
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-          <p class="newsletter-consent">
-            By subscribing you'll receive the Mylemans Online newsletter. One-click
-            unsubscribe in every email.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 4: LATEST FROM THE BLOG
-         War stories. Static cards serve as graceful fallback.
-         ============================================================ -->
-    <section class="section section-alt" id="blog">
+    <!-- BLOG: latest posts, categories, evergreen guides -->
+    <section class="section section-alt blog-v2" id="blog">
       <div class="container">
         <div class="blog-section-header">
           <div class="blog-section-header-copy">
-            <p class="eyebrow">From the blog</p>
+            <p class="eyebrow">Blog</p>
             <h2 class="section-header-h2">War stories from the field.</h2>
-            <p class="section-header-sub">Real problems, real fixes, written down so you don't have to figure them out twice.</p>
           </div>
-          <a href="/blog/" class="arrow-link">Read more on the blog <span aria-hidden="true">&rarr;</span></a>
+          <a href="{{ '/blog/' | relative_url }}" class="arrow-link">All {{ site.posts.size | default: 125 }}{% if site.posts.size == 0 %}+{% endif %} posts <span aria-hidden="true">&rarr;</span></a>
         </div>
 
-        <div class="blog-grid">
-          {%- assign latest = site.posts | slice: 0, 4 %}
-          {%- if latest.size > 0 %}
-          {%- for post in latest %}
+        {%- assign cats = site.categories | sort %}
+        {%- if cats.size > 0 %}
+        <nav class="pill-row" aria-label="Categories">
+          <a class="pill is-active" href="{{ '/blog/' | relative_url }}">All</a>
+          {%- for c in cats limit: 8 %}
+          {%- assign cslug = c[0] | slugify %}
+          <a class="pill" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c[0] }}</a>
+          {%- endfor %}
+        </nav>
+        {%- endif %}
+
+        {%- if recent.size > 0 %}
+        <div class="blog-grid blog-grid-3">
+          {%- for post in recent %}
           {% include post-card.html post=post %}
           {%- endfor %}
-          {%- else %}
-          <article class="blog-card-v2">
-            <h3><a href="/blog/">Posts are moving in.</a></h3>
-            <p class="blog-card-excerpt">The blog is being merged into this site. Until that lands, everything is still at blog.mylemans.online.</p>
-            <div class="blog-card-footer"><span></span><span class="blog-card-read">Visit the blog &rarr;</span></div>
-          </article>
-          {%- endif %}
+        </div>
+        {%- endif %}
+
+        <div class="blog-panels">
+          <div class="blog-panel">
+            <p class="eyebrow">Evergreen guides</p>
+            {%- for g in site.data.evergreen %}
+            <a class="blog-panel-link" href="{{ g.url | relative_url }}">{{ g.title }}</a>
+            {%- endfor %}
+          </div>
+          <div class="blog-panel">
+            <p class="eyebrow">Browse by category</p>
+            {%- if cats.size > 0 %}
+            {%- for c in cats limit: 5 %}
+            {%- assign cslug = c[0] | slugify %}
+            <a class="blog-panel-link" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c[0] }} <span class="blog-panel-count">{{ c[1].size }} post{% if c[1].size != 1 %}s{% endif %}</span></a>
+            {%- endfor %}
+            {%- else %}
+            <a class="blog-panel-link" href="https://blog.mylemans.online/categories/">Categories live on the old blog until the posts move <span class="blog-panel-count">&rarr;</span></a>
+            {%- endif %}
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 5: YOUTUBE
-         Proof. Secondary, intentionally shorter.
-         ============================================================ -->
-    <section class="section" id="youtube">
+    <!-- LABS -->
+    <section class="section labs-v2" id="labs">
+      <div class="container labs-v2-inner">
+        <div class="labs-v2-copy">
+          <p class="eyebrow">Mylemans Labs · Now live, free</p>
+          <h2 class="section-header-h2">Learn real IT, free. Advance by proving you can do it.</h2>
+          <p class="labs-body">
+            Mylemans Labs is a free, hands-on learning platform for the skills that actually
+            matter. You don't move forward by watching a video and clicking next: every
+            lesson ends with a check that you can actually do the thing. It's browsable
+            without an account, and built for the person climbing from "I know a bit of
+            this" to genuinely competent.
+          </p>
+          <div class="labs-skills">
+            <span class="labs-skill">Networking</span>
+            <span class="labs-skill">Proxmox</span>
+            <span class="labs-skill">PowerShell</span>
+            <span class="labs-skill">Docker</span>
+            <span class="labs-skill">Active Directory</span>
+            <span class="labs-skill">Microsoft 365</span>
+            <span class="labs-skill">Backup</span>
+            <span class="labs-skill">Security</span>
+          </div>
+          <div class="labs-actions">
+            <a href="https://labs.mylemans.online" class="btn btn-primary" target="_blank" rel="noreferrer">Start the IT Foundations path &rarr;</a>
+            <a href="https://labs.mylemans.online" class="arrow-link" target="_blank" rel="noreferrer">Browse all paths <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="labs-v2-panel" aria-hidden="true">
+          <p class="labs-v2-panel-eyebrow">How a Labs lesson works</p>
+          <ol class="labs-v2-steps">
+            <li><span class="labs-v2-dot is-done"></span><span>Read the lesson. Short, no filler.</span></li>
+            <li><span class="labs-v2-dot is-done"></span><span>Do it on your own lab or VM.</span></li>
+            <li><span class="labs-v2-dot"></span><span>Pass the skill check to unlock the next one.</span></li>
+          </ol>
+          <div class="labs-v2-progress"><div></div></div>
+          <p class="labs-v2-panel-note">11 paths · free · no account needed to browse</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- YOUTUBE -->
+    <section class="section section-alt" id="youtube">
       <div class="container">
         <div class="yt-grid">
           <div class="yt-video-wrap">
@@ -269,7 +243,6 @@ layout: null
               ></iframe>
             </div>
           </div>
-
           <div class="yt-copy">
             <p class="eyebrow">YouTube</p>
             <h2 class="section-header-h2">40,000+ of us on&nbsp;YouTube.</h2>
@@ -286,52 +259,45 @@ layout: null
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 6: SAFETUNNEL (REFRAMED)
-         Build-in-public story. No waitlist, no product launch.
-         ============================================================ -->
-    <section class="section section-alt" id="safetunnel">
+    <!-- NEWSLETTER -->
+    <section class="section" id="newsletter">
       <div class="container">
-        <div class="buildlog-block">
-          <p class="eyebrow">Building in public</p>
-          <h2 class="section-header-h2">Building my own remote access, in public.</h2>
-          <p class="buildlog-body">
-            I keep getting asked how I reach my home services from anywhere without
-            opening ports. So I'm building my own EU-hosted remote-access setup out
-            in the open, on Pangolin and a cheap cloud server, and showing every step:
-            the build, the trade-offs, the security, where the data lives. No product
-            to sell you. Just the real thing, documented, so you can build your own.
+        <div class="newsletter-card newsletter-v2">
+          <p class="eyebrow">Newsletter</p>
+          <h2 class="section-header-h2">Get the good stuff in your inbox.</h2>
+          <p class="newsletter-pitch">
+            One email when there's something worth sending: a new tutorial, a new path,
+            a tool, a launch, or a war story from the field.
+            <strong>No spam, no upsells, no weekly filler.</strong>
+            Unsubscribe in one click.
           </p>
-          <div class="buildlog-actions">
-            <a href="https://www.youtube.com/@mylemansonline" class="btn btn-primary" target="_blank" rel="noreferrer">
-              Follow the build &rarr;
-            </a>
-            <a href="/blog/" class="arrow-link">
-              Read the write-ups &rarr;
-            </a>
-          </div>
+          <form class="newsletter-form-inline" id="newsletter-form">
+            <label for="newsletter-email" class="sr-only">Email address</label>
+            <input id="newsletter-email" type="email" placeholder="you@yourdomain.com" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="newsletter-consent">
+            By subscribing you'll receive the Mylemans Online newsletter. One-click
+            unsubscribe in every email.
+          </p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Cookie banner -->
   <div class="cookie-banner" id="cookie-banner">
     <p>
       This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
-      See our <a href="privacy.html">Privacy Policy</a> for details.
+      See our <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a> for details.
     </p>
     <div class="cookie-actions">
-      <button type="button" id="cookie-accept" class="btn btn-primary">
-        Accept
-      </button>
+      <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
     </div>
   </div>
 
-  <!-- Shared footer injected via JS -->
   {% include footer.html %}
 
-  <script src="assets/js/main.js"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

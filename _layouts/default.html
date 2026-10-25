@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% seo %}
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
   <link rel="alternate" type="application/rss+xml" title="Mylemans Online" href="{{ '/feed.xml' | absolute_url }}" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  <link rel="stylesheet" href="/assets/css/blog.css" />
-  <link rel="stylesheet" href="/assets/css/syntax.css" />
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}" />
   <script>
     // Apply the stored theme before first paint so dark mode does not flash.
     try {
@@ -29,7 +30,7 @@
   <div class="cookie-banner" id="cookie-banner">
     <p>
       This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
-      See our <a href="/privacy.html">Privacy Policy</a> for details.
+      See our <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a> for details.
     </p>
     <div class="cookie-actions">
       <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
@@ -38,6 +39,6 @@
 
   {% include footer.html %}
 
-  <script src="/assets/js/main.js"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
