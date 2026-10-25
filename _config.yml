@@ -40,6 +40,15 @@ comments:
     mapping: pathname
     input_position: top
 
+# Google AdSense. Off by default: ads only load after the visitor accepts the
+# cookie banner (main.js loadAds), and the EEA needs a Google-certified consent
+# message (AdSense > Privacy & messaging) before you flip this on.
+adsense:
+  enabled: false
+  client: ca-pub-2763620817485009
+  in_article_slot: ""      # optional: a manual in-article ad unit id
+  end_of_post: true        # also place a slot after the article body
+
 # Blog index at /blog/, 10 posts per page
 paginate: 10
 paginate_path: "/blog/page:num/"

@@ -1,0 +1,29 @@
+{%- comment -%}
+Three related posts, scored by shared tags (2 points) and shared categories (1 point).
+Same-series posts are skipped because the series nav already lists them.
+{%- endcomment -%}
+{%- assign scored = "" | split: "" %}
+{%- for p in site.posts %}
+  {%- if p.url == page.url %}{% continue %}{% endif %}
+  {%- if page.series and p.series == page.series %}{% continue %}{% endif %}
+  {%- assign score = 0 %}
+  {%- for t in page.tags %}{% if p.tags contains t %}{% assign score = score | plus: 2 %}{% endif %}{% endfor %}
+  {%- for c in page.categories %}{% if p.categories contains c %}{% assign score = score | plus: 1 %}{% endif %}{% endfor %}
+  {%- if score > 0 %}
+    {%- assign key = score | plus: 1000 | append: "|" | append: p.date | date: "%s" | append: "|" | append: p.url %}
+    {%- assign scored = scored | push: key %}
+  {%- endif %}
+{%- endfor %}
+{%- assign scored = scored | sort | reverse %}
+{%- if scored.size > 0 %}
+<section class="related-posts" aria-label="Related posts">
+  <p class="eyebrow">Keep reading</p>
+  <div class="blog-grid blog-grid-3">
+    {%- for key in scored limit: 3 %}
+      {%- assign u = key | split: "|" | last %}
+      {%- assign rp = site.posts | where: "url", u | first %}
+      {%- if rp %}{% include post-card.html post=rp %}{% endif %}
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}

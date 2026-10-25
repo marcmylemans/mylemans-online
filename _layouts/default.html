@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}" />
+  {%- if site.adsense.enabled and site.adsense.client %}
+  <script>window.MO_ADSENSE = {{ site.adsense | jsonify }};</script>
+  {%- endif %}
   <script>
     // Apply the stored theme before first paint so dark mode does not flash.
     try {
@@ -29,7 +32,11 @@
 
   <div class="cookie-banner" id="cookie-banner">
     <p>
+      {%- if site.adsense.enabled %}
+      This website uses essential cookies, anonymous analytics, and Google AdSense ads that may use advertising cookies once you accept.
+      {%- else %}
       This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
+      {%- endif %}
       See our <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a> for details.
     </p>
     <div class="cookie-actions">

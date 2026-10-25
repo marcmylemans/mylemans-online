@@ -84,22 +84,50 @@ Or `docker compose up --build`.
   `{% include advertisement.html %}` (now a no-op), `image:` cover images,
   TOC (jekyll-toc), giscus comments, Rouge syntax highlighting.
 
-## Migration checklist (posts are NOT moved yet)
+## Posts: what the migration pass did
 
-1. Copy `_posts/*` from `marcmylemans.github.io` into `_posts/`.
-   About twenty files there have no `.md` extension
-   (`2022-12-17-Server2022-HyperV-EnableDeduplication`, the `UnifiAPI_*`
-   ones, `GL-E750V2`, `T-Shirt-Collection`, ...) and a few are not posts at
-   all (`switchconfig`, `hyper-v-config`, `new_post_template`,
-   `Create_Secure_VPS`). Rename the real ones to `.md`, drop the rest.
-2. Copy `assets/img/posts/` and any other `assets/` folders the posts
-   reference (`assets/data`, `assets/scripts`, `MDT Source files`, ...).
-3. Build locally and fix anything Liquid complains about. Posts that use
-   Chirpy-only includes will show up here.
-4. Optional but worth it: add a `description:` to the older posts. Cards and
-   `<meta name="description">` fall back to the first 160 characters otherwise.
-5. Point `/404.html`, `/youtube.html` and `/sponsor.html` at `/blog/` instead
-   of `blog.mylemans.online` (left as-is until the posts are live here).
+The 136 posts in `_posts/` came from `marcmylemans.github.io` through a
+scripted pass (log: `_posts` front matter plus `migration-log.csv` in the
+repo root at migration time):
+
+- 13 files without `.md` renamed; 4 non-posts dropped (`switchconfig`,
+  `hyper-v-config`, `new_post_template`, `Create_Secure_VPS`).
+- Categories reduced to 18 canonical ones (Homelab, Proxmox, Hyper-V,
+  Windows Server, Windows 11, Active Directory, Remote Desktop Services,
+  Entra ID & Intune, Microsoft 365, Networking, Security, Backup, Scripts,
+  Self-hosting, Cloud, Hardware, Reviews, Community). Chirpy's
+  `Category 1/2/3` placeholders removed.
+- Tags normalised: comma-strings split into lists, lowercased, hyphen and
+  space variants merged.
+- Every post has an `image:` cover: existing file, YouTube thumbnail for
+  video posts, or a generated branded card in `assets/img/posts/covers/`
+  for text-only posts. Absolute `https://mylemans.online/...` image URLs made
+  relative.
+- Every post has a `description:` (written for the new cards and meta tags).
+- `series:` + `series_order:` on the Hyper-V Guide, MDT, both RDS series,
+  the UniFi API scripts and the 2026 home-server posts. The post layout
+  shows a series box at the top.
+- Three posts whose front-matter `date` did not match the filename now use
+  the filename date.
+
+Still to copy by hand from the old repo (binary, not done by the script):
+`assets/img/posts/*` (video thumbnails and screenshots), `assets/img/privateglue`,
+`assets/img/Hyper-V-Guide`, `assets/img/MDT`, `assets/img/steps-hetzner___*`,
+`assets/scripts`, `assets/data`, `assets/primaryuserlocaladmin`.
+
+## Google AdSense
+
+Off by default (`adsense.enabled: false` in `_config.yml`). When enabled:
+
+- `main.js` loads `adsbygoogle.js` only after the visitor accepts the cookie
+  banner, and the banner text changes to mention advertising cookies.
+- `{% include google-adsense.html %}` (already in 56 posts) renders an
+  in-article `<ins class="adsbygoogle">` slot; `adsense.end_of_post: true`
+  adds one after every article body. Auto ads are controlled in the
+  AdSense console, not here.
+- Before enabling for EEA visitors: set up Google's consent message in
+  AdSense > Privacy & messaging (required since 2024), and update
+  `privacy.html`, which currently says no advertising cookies are used.
 
 ## Cutover checklist
 

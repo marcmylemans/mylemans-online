@@ -1,0 +1,17 @@
+{%- comment -%}
+In-article ad slot. 56 posts call {% include google-adsense.html %} where the
+old blog placed an ad. Renders nothing unless adsense.enabled is true in
+_config.yml. The adsbygoogle script itself is only loaded by main.js after
+the visitor accepts the cookie banner (see loadAds in assets/js/main.js), so
+the slot stays empty until consent is given.
+{%- endcomment -%}
+{%- if site.adsense.enabled and site.adsense.client %}
+<div class="ad-slot" aria-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block; text-align:center;"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="{{ site.adsense.client }}"
+       {%- if site.adsense.in_article_slot %} data-ad-slot="{{ site.adsense.in_article_slot }}"{% endif %}></ins>
+</div>
+{%- endif %}

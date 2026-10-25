@@ -31,6 +31,10 @@ layout: default
   </div>
   {%- endif %}
 
+  <div class="container post-container">
+    {% include series-nav.html %}
+  </div>
+
   <div class="container post-container post-body">
     {%- if page.toc != false %}
     <aside class="post-toc" aria-label="Table of contents">
@@ -41,6 +45,9 @@ layout: default
     <div class="post-content">
       {{ content }}
     </div>
+    {%- if site.adsense.enabled and site.adsense.end_of_post %}
+    {% include google-adsense.html %}
+    {%- endif %}
   </div>
 
   <footer class="container post-container post-footer">
@@ -58,6 +65,8 @@ layout: default
       <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}" rel="next"><span class="eyebrow">Newer</span>{{ page.next.title }}</a>
       {%- endif %}
     </div>
+
+    {% include related-posts.html %}
 
     {%- if page.comments and site.comments.active == "giscus" %}
     {% include giscus.html %}

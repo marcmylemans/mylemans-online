@@ -535,7 +535,27 @@
   const COOKIE_CONSENT_KEY = "cookieConsent";
   const COOKIE_CONSENT_ACCEPTED = "accepted";
 
+  // Google AdSense, loaded only after cookie consent and only when the
+  // layout exposed window.MO_ADSENSE (adsense.enabled in _config.yml).
+  function loadAds() {
+    var cfg = window.MO_ADSENSE;
+    if (!cfg || !cfg.client || window.adsLoaded) return;
+    window.adsLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(cfg.client);
+    s.onload = function () {
+      var slots = document.querySelectorAll("ins.adsbygoogle");
+      for (var i = 0; i < slots.length; i++) {
+        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+      }
+    };
+    document.head.appendChild(s);
+  }
+
   function loadAnalytics() {
+    loadAds();
     // Prevent double-loading
     if (window.gtagLoaded) return;
     window.gtagLoaded = true;
