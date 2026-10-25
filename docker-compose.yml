@@ -1,0 +1,15 @@
+services:
+  mylemans-online:
+    container_name: mylemans-online
+    image: ghcr.io/marcmylemans/mylemans-online:latest
+    restart: unless-stopped
+    ports:
+      - 8088:80
+    environment:
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_AUDIENCE_ID_SAFETUNNEL=${RESEND_AUDIENCE_ID_SAFETUNNEL}
+      - RESEND_AUDIENCE_ID_NEWSLETTER=${RESEND_AUDIENCE_ID_NEWSLETTER}
+      # Requests arriving with this Host header get a 301 to the canonical
+      # host with the same path. Set once blog.mylemans.online points here.
+      - LEGACY_BLOG_HOST=blog.mylemans.online
+      - CANONICAL_ORIGIN=https://mylemans.online

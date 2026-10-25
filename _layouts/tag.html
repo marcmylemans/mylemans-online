@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+    <div class="blog-section-header">
+      <div class="blog-section-header-copy">
+        <p class="eyebrow"><a href="/blog/">Blog</a> / Tag</p>
+        <h1 class="section-header-h2">#{{ page.title }}</h1>
+        <p class="section-header-sub">{{ page.posts.size }} post{% if page.posts.size != 1 %}s{% endif %}</p>
+      </div>
+      <a href="/blog/" class="arrow-link">All posts <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="blog-grid blog-grid-index">
+      {%- for post in page.posts %}
+      {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

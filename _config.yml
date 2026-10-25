@@ -1,0 +1,112 @@
+# Mylemans Online: main site + blog, built with Jekyll, served by Express.
+# Posts keep the same permalinks they had on blog.mylemans.online so that
+# backlinks and giscus comment threads (mapped by pathname) survive the move.
+
+title: Mylemans Online
+tagline: 14 years of IT, documented in public.
+description: >-
+  I'm Marc. 14 years of systems engineering, documented in public. Free hands-on
+  learning at Mylemans Labs, plus the blog, YouTube, and war stories from the field.
+url: "https://mylemans.online"
+baseurl: ""
+lang: en
+timezone: Europe/Brussels
+
+author:
+  name: Marc Mylemans
+  email: info@mylemans.online
+  twitter: mylemansonline
+
+social:
+  name: Marc Mylemans
+  links:
+    - https://www.youtube.com/@mylemansonline
+    - https://github.com/marcmylemans
+    - https://www.linkedin.com/in/marc-mylemans-887567b9/
+    - https://bsky.app/profile/mylemans.online
+
+logo: /assets/img/logo-light.png
+default_image: /assets/img/posts/Default.jpg
+
+# Comments (giscus), carried over from the blog. Mapping is by pathname, so
+# existing threads keep working as long as /posts/:title/ does not change.
+comments:
+  active: giscus
+  giscus:
+    repo: marcmylemans/marcmylemans.github.io
+    repo_id: R_kgDOItNOFw
+    category: Announcements
+    category_id: DIC_kwDOItNOF84CeB7v
+    mapping: pathname
+    input_position: top
+
+# Blog index at /blog/, 10 posts per page
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    block:
+      line_numbers: false
+
+plugins:
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-youtube
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-toc
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+feed:
+  path: feed.xml
+  posts_limit: 20
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+
+sass:
+  style: compressed
+
+exclude:
+  - node_modules
+  - server.js
+  - package.json
+  - package-lock.json
+  - dockerfile
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - LICENSE
+  - .dockerignore
+
+toc:
+  min_level: 2
+  max_level: 3
+  no_toc_section_class: no_toc_section
+  list_class: toc

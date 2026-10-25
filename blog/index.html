@@ -1,0 +1,44 @@
+---
+layout: default
+title: Blog
+description: 125+ tutorials and war stories on homelabs, Proxmox, Hyper-V, Windows Server, Microsoft 365, networking and security. By Marc Mylemans.
+permalink: /blog/
+---
+<section class="section">
+  <div class="container">
+    <div class="blog-section-header">
+      <div class="blog-section-header-copy">
+        <p class="eyebrow">Blog</p>
+        <h1 class="section-header-h2">War stories from the field.</h1>
+        <p class="section-header-sub">Real problems, real fixes, written down so you don't have to figure them out twice.</p>
+      </div>
+      <a href="/feed.xml" class="arrow-link">RSS feed <span aria-hidden="true">&rarr;</span></a>
+    </div>
+
+    {%- assign cats = site.categories | sort %}
+    {%- if cats.size > 0 %}
+    <nav class="blog-filters" aria-label="Categories">
+      <a class="filter-btn is-active" href="/blog/">All</a>
+      {%- for c in cats %}
+      <a class="filter-btn" href="/categories/{{ c[0] | slugify }}/">{{ c[0] }} <span class="filter-count">{{ c[1].size }}</span></a>
+      {%- endfor %}
+    </nav>
+    {%- endif %}
+
+    {%- if paginator.posts.size > 0 %}
+    <div class="blog-grid blog-grid-index">
+      {%- for post in paginator.posts %}
+      {% include post-card.html post=post %}
+      {%- endfor %}
+    </div>
+    {% include pagination.html %}
+    {%- else %}
+    <div class="blog-grid">
+      <article class="blog-card-v2 blog-fallback-card">
+        <h3>Posts are moving in.</h3>
+        <p class="blog-card-excerpt">The blog is being merged into this site. Until that lands, everything is still at <a href="https://blog.mylemans.online">blog.mylemans.online</a>.</p>
+      </article>
+    </div>
+    {%- endif %}
+  </div>
+</section>

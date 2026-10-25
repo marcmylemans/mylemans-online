@@ -1,0 +1,182 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trust Center – Mylemans Online</title>
+  <meta name="description" content="Security, privacy, and reliability practices for Mylemans Online. GDPR data handling, incident response, and responsible disclosure policy." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mylemans.online/trust.html" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trust Center – Mylemans Online" />
+  <meta property="og:description" content="Security, privacy, and reliability practices for Mylemans Online. GDPR data handling, incident response, and responsible disclosure policy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mylemans.online/trust.html" />
+  <meta property="og:site_name" content="Mylemans Online" />
+  <meta property="og:image" content="https://mylemans.online/assets/img/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@mylemansonline" />
+  <meta name="twitter:title" content="Trust Center – Mylemans Online" />
+  <meta name="twitter:description" content="Security, privacy, and reliability practices for Mylemans Online." />
+  <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  {% include header.html %}
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1>Trust Center</h1>
+
+        <p>
+          Mylemans Online is a single-person IT consultancy focused on secure, reliable, and
+          privacy-conscious delivery of infrastructure, cloud, and advisory services.
+        </p>
+
+        <p>
+          This website and its activities are part of my independent personal brand and are not affiliated
+          with or representing my employer.
+        </p>
+
+        <p>
+          Projects operated under separate domains and infrastructure (such as pangolin.safetunnel.app) are independent offerings
+          for homelab and creator audiences, and are not positioned as enterprise managed-service replacements.
+        </p>
+
+        <p>
+          I don’t claim formal certification (ISO 27001 / NIS2), but I do implement practical,
+          industry-recognized security best practices aligned with CIS Controls and ISO guidance.
+        </p>
+
+        <h2>Security Overview</h2>
+
+        <h3>Identity &amp; Access</h3>
+        <ul>
+          <li>Password manager for all credentials</li>
+          <li>Multi-factor authentication (MFA) enabled on all critical services</li>
+          <li>Least-privilege access where possible (scoped permissions, separate admin access)</li>
+        </ul>
+
+        <h3>Device Security</h3>
+        <ul>
+          <li>Full-disk encryption enabled on work devices</li>
+          <li>Automatic operating system and browser security updates enabled</li>
+          <li>Endpoint protection enabled (Microsoft Defender or equivalent)</li>
+          <li>Screen lock and secure device configuration baseline</li>
+        </ul>
+
+        <h3>Infrastructure &amp; Network</h3>
+        <ul>
+          <li>Minimal internet exposure: admin interfaces restricted (VPN / IP allowlist where feasible)</li>
+          <li>Firewalling and hardened configurations</li>
+          <li>HTTPS/TLS for public services</li>
+        </ul>
+
+        <h3>Backups &amp; Recovery</h3>
+        <ul>
+          <li>Backups follow the <strong>3-2-1 principle</strong> (local, offsite, versioned/offline)</li>
+          <li>Restore tests performed periodically</li>
+          <li>Priority-based recovery approach for critical services</li>
+        </ul>
+
+        <h3>Monitoring &amp; Logging</h3>
+        <ul>
+          <li>Logs retained for relevant services (firewall/VPS/cloud admin activity where applicable)</li>
+          <li>Basic alerting/awareness for suspicious access patterns when supported by the platform</li>
+        </ul>
+
+        <h2>Privacy &amp; GDPR</h2>
+
+        <h3>Data Minimization</h3>
+        <p>I only access and store data that is necessary to deliver the agreed services.</p>
+
+        <h3>Separation of Client Data</h3>
+        <p>
+          Client data is organized per customer/project to reduce accidental exposure and simplify cleanup.
+        </p>
+
+        <h3>Retention</h3>
+        <p>
+          Data is retained only as long as operationally required and is deleted when no longer needed,
+          subject to legal obligations.
+        </p>
+
+        <h3>Data Processing Agreement (DPA)</h3>
+        <p>
+          A Data Processing Agreement can be provided on request when Mylemans Online processes personal data
+          on behalf of a client.
+        </p>
+
+        <h2>Incident Handling</h2>
+        <p>If a security incident is suspected:</p>
+        <ol>
+          <li>Containment and investigation</li>
+          <li>Credential/session resets if needed</li>
+          <li>Recovery actions (including restores when required)</li>
+          <li>Client notification when relevant</li>
+          <li>Documentation and preventive improvements</li>
+        </ol>
+
+        <h2>Working With Clients</h2>
+
+        <h3>Access to Your Environment</h3>
+        <ul>
+          <li>Access is requested and used only for the purpose of delivering the service</li>
+          <li>Privileged access is kept to the minimum required</li>
+          <li>Credentials are handled securely (password manager / secure sharing)</li>
+        </ul>
+
+        <h3>Subprocessors</h3>
+        <p>
+          I may rely on standard third-party providers required to deliver services (e.g., hosting, DNS, backups).
+          Providers are selected with reasonable security and GDPR considerations.
+        </p>
+
+        <h2>Responsible Disclosure</h2>
+        <p>If you believe you found a security issue related to my services, please contact me with:</p>
+        <ul>
+          <li>Description of the issue</li>
+          <li>Steps to reproduce (if applicable)</li>
+          <li>Potential impact</li>
+        </ul>
+        <p>I will confirm receipt and work toward a fix as quickly as reasonably possible.</p>
+
+        <h2>Contact</h2>
+        <p>For questions or support:</p>
+        <p><strong>Mylemans Online</strong><br>
+        Email: <a href="mailto:info@mylemans.online">info@mylemans.online</a></p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <p>
+      This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
+      See our <a href="privacy.html">Privacy Policy</a> for details.
+    </p>
+    <div class="cookie-actions">
+      <button type="button" id="cookie-accept" class="btn btn-primary">
+        Accept
+      </button>
+    </div>
+  </div>
+
+  {% include footer.html %}
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
