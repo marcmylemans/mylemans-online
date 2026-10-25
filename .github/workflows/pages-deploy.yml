@@ -1,0 +1,57 @@
+# GitHub Pages test deployment for the merged site.
+# Save as .github/workflows/pages-deploy.yml, then set the repo's
+# Settings → Pages → Source to "GitHub Actions".
+#
+# This builds with the full Gemfile (custom plugins included), which the
+# built-in Pages Jekyll cannot do, and sets the base URL to the project
+# path so every link works under blog.mylemans.online/mylemans-online/.
+# Production still deploys through docker-publish.yml; remove this file
+# once the Docker image is live.
+
+name: Deploy test site to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "/${{ github.event.repository.name }}" --destination _site
+        env:
+          JEKYLL_ENV: production
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
