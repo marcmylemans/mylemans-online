@@ -4,7 +4,7 @@ description: 'Plain-language introduction to networks: LAN, WAN and Wi-Fi, the f
 date: '2024-09-18 17:00:00'
 categories: [Networking]
 tags: []
-image: {path: /assets/img/posts/d4bf1c3ac3fb.png, alt: 'The Basics of Computer Networks: How Computers Talk to Each Other'}
+image: {path: /assets/img/posts/d4bf1c3ac3fb.webp, alt: 'The Basics of Computer Networks: How Computers Talk to Each Other'}
 ---
 
 Have you ever wondered how your computer, phone, or tablet connects to the internet? Or how you can send a message to your friend who’s miles away, and they receive it almost instantly? It’s all thanks to **computer networks**! But don’t worry, you don’t need to be a tech expert to understand how this works. Let’s break it down in simple terms.

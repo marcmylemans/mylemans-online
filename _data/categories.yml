@@ -1,0 +1,38 @@
+# One intro per category, shown under the heading on /categories/<name>/.
+# Drafts: rewrite in your own words.
+Homelab:
+  intro: Builds, upgrades and lessons from my own rack. Mini PCs, NAS boxes, 2.5 and 10 GbE, and the mistakes that cost me a weekend.
+Proxmox:
+  intro: Proxmox VE from first install to a three-node Ceph cluster, upgrades between major versions, backups with PBS, and moving VMs over from Hyper-V.
+Hyper-V:
+  intro: Hyper-V on Windows Server and Windows 11, from enabling the role to clustering, storage and backup. Includes the six-chapter Hyper-V guide.
+Windows Server:
+  intro: Windows Server 2022 in practice, mostly from customer environments. Roles, upgrades, print, DFS, Group Policy and the things that break at 3 a.m.
+Windows 11:
+  intro: Windows 11 in a managed environment, domain or Entra joined. Fixes for the bugs that reach the helpdesk first.
+Active Directory:
+  intro: Domain controllers, Group Policy, OU design, trusts and migrations, written for people who inherit an AD rather than design one.
+Remote Desktop Services:
+  intro: RDS on Windows Server 2022, start to finish. Session hosts, the gateway, licensing, FSLogix, MFA with Entra ID, and the complete two-part guide.
+Entra ID & Intune:
+  intro: Entra ID, Intune, Autopilot and Conditional Access, mostly for small and mid-sized businesses moving away from on-prem.
+Microsoft 365:
+  intro: Exchange Online, mailbox archiving, Outlook and Teams quirks, and the admin side of Microsoft 365.
+Networking:
+  intro: Networking basics explained properly, plus UniFi, VLANs, DHCP superscopes, routing and the odd DNS record that ruins everything.
+Security:
+  intro: Practical security for small environments, from zero-trust remote access to the Windows security baseline, without the vendor noise.
+Backup:
+  intro: Backups you can actually restore from. UrBackup, Proxmox Backup Server and the cases where the restore was the hard part.
+Scripts:
+  intro: PowerShell and Python scripts I use for real work. Copy, adapt, run.
+Self-hosting:
+  intro: Running your own apps with Docker Compose, from the first container to documentation and AI models on your own hardware.
+Cloud:
+  intro: Getting started on Hetzner and DigitalOcean, and securing a VPS before you put anything on it.
+Hardware:
+  intro: Hands-on with the hardware in the lab and on the desk. Mini PCs, NAS builds, travel routers, KVM switches and a 3D printer.
+Reviews:
+  intro: Products I tested for weeks, not an afternoon. Gifted units are labelled; opinions are my own.
+Community:
+  intro: The Discord server, YouTube memberships, merch and the ways you can support the channel.

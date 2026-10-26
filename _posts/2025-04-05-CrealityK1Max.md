@@ -61,9 +61,9 @@ You can follow along right here:
 ### ORCA Slicer - Setup Screens (Captured on 05-04-2025)
 
 ![Step 1](/assets/img/posts/steps-orca_slicer___05_04_2025/step-1.png)
-![Step 3](/assets/img/posts/steps-orca_slicer___05_04_2025/step-18.png)
-![Step 4](/assets/img/posts/steps-orca_slicer___05_04_2025/step-19.png)
-![Step 5](/assets/img/posts/steps-orca_slicer___05_04_2025/step-35.png)
+![Step 3](/assets/img/posts/steps-orca_slicer___05_04_2025/step-18.webp)
+![Step 4](/assets/img/posts/steps-orca_slicer___05_04_2025/step-19.webp)
+![Step 5](/assets/img/posts/steps-orca_slicer___05_04_2025/step-35.webp)
 
 
 ## 🔍 Finding 3D Models

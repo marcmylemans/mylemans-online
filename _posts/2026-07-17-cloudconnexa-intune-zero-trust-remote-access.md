@@ -4,7 +4,7 @@ description: Build zero-trust remote access with CloudConnexa, free. Then wire S
 date: 2026-07-17 09:00:00 +0200
 categories: [Security, Networking]
 tags: [cloudconnexa, openvpn, zero-trust, intune, entra id, saml, nis2, tutorial, youtube]
-image: {path: /assets/img/posts/cloudconnexa-intune/og-card.png, alt: CloudConnexa zero-trust remote access with SAML to Entra ID and Intune deployment}
+image: {path: /assets/img/posts/cloudconnexa-intune/og-card.webp, alt: CloudConnexa zero-trust remote access with SAML to Entra ID and Intune deployment}
 last_modified_at: 2026-07-17 12:00:00 +0200
 ---
 

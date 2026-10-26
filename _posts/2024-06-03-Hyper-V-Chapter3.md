@@ -4,7 +4,7 @@ description: 'Chapter 3 of the Hyper-V guide: External, Internal and Private vir
 date: '2024-06-03'
 categories: [Windows Server, Hyper-V]
 tags: [hyper-v, windows server, networking, virtual machines, virtual switches, microsoft]
-image: {path: /assets/img/posts/Hyper-V-Chapter3.PNG, alt: Networking in Hyper-V - Virtual Switches and Network Configuration}
+image: {path: /assets/img/posts/Hyper-V-Chapter3.webp, alt: Networking in Hyper-V - Virtual Switches and Network Configuration}
 series: The Complete Hyper-V Guide
 series_order: 3
 ---

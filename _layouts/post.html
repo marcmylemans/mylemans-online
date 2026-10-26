@@ -25,7 +25,8 @@ layout: default
     </div>
   </header>
 
-  {%- if cover and page.image != false %}
+  {%- assign has_video = false %}{% if content contains "youtube.com/embed" %}{% assign has_video = true %}{% endif %}
+  {%- if cover and page.image != false and has_video == false %}
   <div class="container post-container">
     <img class="post-cover" src="{{ cover | relative_url }}" alt="{{ page.image.alt | default: page.title }}" loading="eager" onerror="this.remove()" />
   </div>
@@ -36,11 +37,12 @@ layout: default
   </div>
 
   <div class="container post-container post-body">
-    {%- if page.toc != false %}
-    <aside class="post-toc" aria-label="Table of contents">
-      <p class="eyebrow">On this page</p>
-      {{ content | toc_only }}
-    </aside>
+    {%- assign toc = content | toc_only %}
+    {%- if page.toc != false and toc contains "<li" %}
+    <details class="post-toc">
+      <summary><span class="eyebrow">On this page</span></summary>
+      {{ toc }}
+    </details>
     {%- endif %}
     <div class="post-content">
       {{ content }}
@@ -48,6 +50,7 @@ layout: default
     {%- if site.adsense.enabled and site.adsense.end_of_post %}
     {% include google-adsense.html %}
     {%- endif %}
+    {% include author-card.html %}
   </div>
 
   <footer class="container post-container post-footer">

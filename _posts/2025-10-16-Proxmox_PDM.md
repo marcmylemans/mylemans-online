@@ -4,7 +4,7 @@ description: A deep dive into Proxmox Datacenter Manager 0.9 Beta, central manag
 date: '2025-10-16'
 categories: [Proxmox, Homelab]
 tags: [proxmox ve, datacenter manager, pdm, cluster management, beta]
-image: {path: /assets/img/posts/proxmox-datacenter-manager-beta.png, alt: 'Proxmox Datacenter Manager 0.9 Beta, A Game Changer for Homelab Users'}
+image: {path: /assets/img/posts/proxmox-datacenter-manager-beta.webp, alt: 'Proxmox Datacenter Manager 0.9 Beta, A Game Changer for Homelab Users'}
 ---
 
 {% youtube "https://youtu.be/ccqvrVduWz8" %}

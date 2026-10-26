@@ -4,7 +4,7 @@ description: 'The July 2024 CrowdStrike Falcon Sensor update that blue-screened 
 date: '2024-07-19 08:00:00'
 categories: [Windows Server, Security]
 tags: [bsod, crowdstrike, csagent.sys, domain controller]
-image: {path: /assets/img/posts/b29dce92-c896-496f-a0c1-cac1799c8848.png, alt: Massive CrowdStrike Falcon Sensor Update Crash Disrupts Windows PCs Worldwide}
+image: {path: /assets/img/posts/b29dce92-c896-496f-a0c1-cac1799c8848.webp, alt: Massive CrowdStrike Falcon Sensor Update Crash Disrupts Windows PCs Worldwide}
 ---
 
 A recent update to the CrowdStrike Falcon Sensor has caused widespread issues, resulting in numerous Windows PCs crashing globally.

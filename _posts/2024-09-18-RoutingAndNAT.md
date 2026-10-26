@@ -4,7 +4,7 @@ description: 'How routing moves packets between networks and how NAT lets many d
 date: '2024-09-18 21:00:00'
 categories: [Networking]
 tags: []
-image: {path: /assets/img/posts/df1ec33de41c.png, alt: Understanding Routing and Network Address Translation (NAT)}
+image: {path: /assets/img/posts/df1ec33de41c.webp, alt: Understanding Routing and Network Address Translation (NAT)}
 ---
 
 Ever wondered how your data travels from your home to a website hosted halfway across the world? Or how your home network, with a bunch of devices, uses just one IP address to connect to the internet? The magic behind all this is **routing** and **Network Address Translation (NAT)**. Don’t worry if those terms sound complicated—we're here to break them down in a simple, fun way!

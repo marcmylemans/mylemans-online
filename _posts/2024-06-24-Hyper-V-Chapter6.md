@@ -4,7 +4,7 @@ description: 'Chapter 6 of the Hyper-V guide: full, incremental and differential
 date: '2024-06-24'
 categories: [Windows Server, Hyper-V]
 tags: [hyper-v, windows server, backup, recovery, disaster recovery, virtualization, microsoft]
-image: {path: /assets/img/posts/Hyper-V-Chapter6.PNG, alt: Backup and Recovery in Hyper-V - Strategies and Best Practices}
+image: {path: /assets/img/posts/Hyper-V-Chapter6.webp, alt: Backup and Recovery in Hyper-V - Strategies and Best Practices}
 series: The Complete Hyper-V Guide
 series_order: 6
 ---

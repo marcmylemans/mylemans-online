@@ -4,7 +4,7 @@ description: 'Chapter 4 of the Hyper-V guide: VHD vs VHDX, fixed, dynamic and di
 date: '2024-06-10'
 categories: [Windows Server, Hyper-V]
 tags: [hyper-v, windows server, virtual hard disk, vhd, storage, virtualization, microsoft]
-image: {path: /assets/img/posts/Hyper-V-Chapter4.PNG, alt: Storage in Hyper-V - Managing Virtual Hard Disks (VHDs)}
+image: {path: /assets/img/posts/Hyper-V-Chapter4.webp, alt: Storage in Hyper-V - Managing Virtual Hard Disks (VHDs)}
 series: The Complete Hyper-V Guide
 series_order: 4
 ---

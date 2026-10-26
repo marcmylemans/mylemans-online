@@ -4,7 +4,7 @@ description: 'You installed Proxmox, now what? The five first steps that take a 
 date: '2026-06-22 08:00:00'
 categories: [Homelab, Proxmox]
 tags: [proxmox, homelab, tutorial, security, youtube]
-image: {path: /assets/img/posts/43b86a272612.png, alt: 'Home Server: 5 Things to Do First'}
+image: {path: /assets/img/posts/43b86a272612.webp, alt: 'Home Server: 5 Things to Do First'}
 series: Home server from scratch
 series_order: 2
 ---

@@ -4,7 +4,7 @@ description: Create your first DigitalOcean droplet, harden it with UFW and Fail
 date: 2025-04-24 09:00:00 +0200
 categories: [Cloud]
 tags: [digitalocean, vps, ubuntu, selfhosting, tutorial]
-image: {path: /assets/img/posts/7c4285c92df0.png, alt: The DigitalOcean droplet creation screen}
+image: {path: /assets/img/posts/7c4285c92df0.webp, alt: The DigitalOcean droplet creation screen}
 ---
 
 Renting a server sounds like something you need a budget approval for. It isn't. The smallest DigitalOcean droplet costs about the price of a coffee per month, and with my referral link you get $200 of credit to spend over 60 days, so your first two months of experimenting cost you nothing.

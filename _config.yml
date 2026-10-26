@@ -116,6 +116,6 @@ exclude:
 
 toc:
   min_level: 2
-  max_level: 3
+  max_level: 2
   no_toc_section_class: no_toc_section
   list_class: toc

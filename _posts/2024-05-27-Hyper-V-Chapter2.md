@@ -4,7 +4,7 @@ description: 'Chapter 2 of the Hyper-V guide: create your first VM with the wiza
 date: '2024-05-27'
 categories: [Windows Server, Hyper-V]
 tags: [hyper-v, windows server, virtual machine, virtualization, microsoft]
-image: {path: /assets/img/posts/Hyper-V-Chapter2.PNG, alt: Setting Up Your First Virtual Machine in Hyper-V}
+image: {path: /assets/img/posts/Hyper-V-Chapter2.webp, alt: Setting Up Your First Virtual Machine in Hyper-V}
 series: The Complete Hyper-V Guide
 series_order: 2
 ---

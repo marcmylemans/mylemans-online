@@ -4,7 +4,7 @@ description: 'Build a home server from nothing in about 30 minutes with Proxmox 
 date: 2026-06-05 08:00:00 +0200
 categories: [Homelab, Proxmox]
 tags: [proxmox, homelab, home server, virtualization, tutorial, youtube]
-image: {path: /assets/img/posts/build-first-home-server-proxmox.png, alt: A finished Proxmox dashboard running several virtual machines on a small mini PC.}
+image: {path: /assets/img/posts/build-first-home-server-proxmox.webp, alt: A finished Proxmox dashboard running several virtual machines on a small mini PC.}
 series: Home server from scratch
 series_order: 1
 ---

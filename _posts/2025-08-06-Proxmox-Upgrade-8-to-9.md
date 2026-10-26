@@ -4,7 +4,7 @@ description: Step-by-step walkthrough of upgrading a 3-node Proxmox cluster from
 date: '2025-08-06'
 categories: [Proxmox]
 tags: [proxmox, homelab, ceph, upgrade, cluster]
-image: {path: /assets/img/posts/fdf42da4b243.png, alt: Upgrading from Proxmox VE 8 to 9}
+image: {path: /assets/img/posts/fdf42da4b243.webp, alt: Upgrading from Proxmox VE 8 to 9}
 ---
 
 In this guide, I'll walk you through how I upgraded my **3-node Proxmox cluster** from version **8.4 to 9.0**, including the required **Ceph upgrade from Reef (18.2.2) to Squid**.

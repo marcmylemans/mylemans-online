@@ -4,7 +4,7 @@ description: Learn how to install Ollama on Windows and run DeepSeek R1, Llama 2
 date: '2025-01-30'
 categories: [Self-hosting]
 tags: [ollama, ai, llm, windows, machine learning, deepseek r1, open source ai]
-image: {path: /assets/img/posts/0c47c709f624.png, alt: How to Install Ollama on Windows and Run DeepSeek R1 Locally}
+image: {path: /assets/img/posts/0c47c709f624.webp, alt: How to Install Ollama on Windows and Run DeepSeek R1 Locally}
 ---
 
 {% include google-adsense.html %}

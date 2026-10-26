@@ -10,7 +10,7 @@ image: {path: /assets/img/posts/covers/gettingstartedwithhetzner.jpg, alt: 'Hetz
 ## 1. Open Hetzner Cloud
 Navigate to [https://hetzner.cloud/?ref=AVos7cZTU8pW](https://hetzner.cloud/?ref=AVos7cZTU8pW) and click **REGISTER NOW**.  
 
-![Click "REGISTER NOW"](/assets/img/steps-hetzner___30_07_25_10_24/step-1.png)
+![Click "REGISTER NOW"](/assets/img/steps-hetzner___30_07_25_10_24/step-1.webp)
 
 ---
 
@@ -18,7 +18,7 @@ Navigate to [https://hetzner.cloud/?ref=AVos7cZTU8pW](https://hetzner.cloud/?ref
 Enter a valid **email address** and a **strong password** (12+ characters).  
 Confirm the verification email when it arrives.  
 
-![Enter email and password](/assets/img/steps-hetzner___30_07_25_10_24/step-2.png)
+![Enter email and password](/assets/img/steps-hetzner___30_07_25_10_24/step-2.webp)
 
 ---
 
@@ -26,15 +26,15 @@ Confirm the verification email when it arrives.
 Choose **Individual** or **Organization**.  
 Enter your **First name** and **Last name** (title is optional).  
 
-![Profile details](/assets/img/steps-hetzner___30_07_25_10_24/step-3.png)
+![Profile details](/assets/img/steps-hetzner___30_07_25_10_24/step-3.webp)
 
 ---
 
 ## 4. Add Billing Details
 Enter your **address** and **phone number**, then select a **currency (EUR or USD)** and add a payment method.  
 
-![Billing details](/assets/img/steps-hetzner___30_07_25_10_24/step-4.png)
-![Select currency and payment](/assets/img/steps-hetzner___30_07_25_10_24/step-5.png)
+![Billing details](/assets/img/steps-hetzner___30_07_25_10_24/step-4.webp)
+![Select currency and payment](/assets/img/steps-hetzner___30_07_25_10_24/step-5.webp)
 
 ---
 
@@ -42,7 +42,7 @@ Enter your **address** and **phone number**, then select a **currency (EUR or US
 Enable **Two-Factor Authentication (2FA)** using an authenticator app.  
 > Recommended: Do this now instead of skipping. Save your recovery codes.  
 
-![2FA setup](/assets/img/steps-hetzner___30_07_25_10_24/step-6.png)
+![2FA setup](/assets/img/steps-hetzner___30_07_25_10_24/step-6.webp)
 
 ---
 

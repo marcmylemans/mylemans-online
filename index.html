@@ -89,7 +89,7 @@ layout: null
     <section class="hero-v2" aria-labelledby="hero-heading">
       <div class="container hero-v2-inner">
         <div class="hero-v2-copy">
-          <p class="eyebrow">Independent personal brand. Not affiliated with my employer.</p>
+          <p class="eyebrow">For sysadmins, MSP engineers and homelabbers.</p>
           <h1 id="hero-heading" class="hero-v2-title">14 years of IT, documented <span class="hero-gradient-text">in public.</span></h1>
           <p class="hero-v2-body">
             I'm Marc. I've been a systems engineer for over a decade, and I write down
@@ -99,7 +99,6 @@ layout: null
           </p>
           <div class="hero-actions">
             <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">Read the latest posts</a>
-            <a href="https://labs.mylemans.online" class="btn btn-secondary" target="_blank" rel="noreferrer">Start learning on Labs</a>
           </div>
           <div class="hero-stats">
             <div class="hero-stat"><span class="hero-stat-value">40K+</span><span class="hero-stat-label">YouTube subscribers</span></div>
@@ -144,13 +143,21 @@ layout: null
           <a href="{{ '/blog/' | relative_url }}" class="arrow-link">All {{ site.posts.size | default: 125 }}{% if site.posts.size == 0 %}+{% endif %} posts <span aria-hidden="true">&rarr;</span></a>
         </div>
 
-        {%- assign cats = site.categories | sort %}
-        {%- if cats.size > 0 %}
+        {%- comment %} categories sorted by post count: build "count|name" keys {% endcomment %}
+        {%- assign catkeys = "" | split: "" %}
+        {%- for c in site.categories %}
+          {%- assign n = c[1].size | plus: 1000 %}
+          {%- assign key = n | append: "|" | append: c[0] %}
+          {%- assign catkeys = catkeys | push: key %}
+        {%- endfor %}
+        {%- assign catkeys = catkeys | sort | reverse %}
+        {%- if catkeys.size > 0 %}
         <nav class="pill-row" aria-label="Categories">
           <a class="pill is-active" href="{{ '/blog/' | relative_url }}">All</a>
-          {%- for c in cats limit: 8 %}
-          {%- assign cslug = c[0] | slugify %}
-          <a class="pill" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c[0] }}</a>
+          {%- for key in catkeys limit: 8 %}
+          {%- assign cname = key | split: "|" | last %}
+          {%- assign cslug = cname | slugify %}
+          <a class="pill" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ cname }}</a>
           {%- endfor %}
         </nav>
         {%- endif %}
@@ -172,10 +179,12 @@ layout: null
           </div>
           <div class="blog-panel">
             <p class="eyebrow">Browse by category</p>
-            {%- if cats.size > 0 %}
-            {%- for c in cats limit: 5 %}
-            {%- assign cslug = c[0] | slugify %}
-            <a class="blog-panel-link" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c[0] }} <span class="blog-panel-count">{{ c[1].size }} post{% if c[1].size != 1 %}s{% endif %}</span></a>
+            {%- if catkeys.size > 0 %}
+            {%- for key in catkeys limit: 6 %}
+            {%- assign cname = key | split: "|" | last %}
+            {%- assign ccount = key | split: "|" | first | minus: 1000 %}
+            {%- assign cslug = cname | slugify %}
+            <a class="blog-panel-link" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ cname }} <span class="blog-panel-count">{{ ccount }} post{% if ccount != 1 %}s{% endif %}</span></a>
             {%- endfor %}
             {%- else %}
             <a class="blog-panel-link" href="https://blog.mylemans.online/categories/">Categories live on the old blog until the posts move <span class="blog-panel-count">&rarr;</span></a>
@@ -233,14 +242,13 @@ layout: null
         <div class="yt-grid">
           <div class="yt-video-wrap">
             <div class="video-frame">
-              <iframe
-                src="https://www.youtube.com/embed/videoseries?list=PLKJbNbagQYbyHbMANG-fkSLZIMVUOpPlJ"
-                title="Latest Mylemans Online YouTube Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
+              <div class="yt-facade" data-yt-id="{{ site.data.youtube.featured_video }}" data-yt-title="{{ site.data.youtube.featured_title | escape }}">
+                <img src="https://i.ytimg.com/vi/{{ site.data.youtube.featured_video }}/hqdefault.jpg" alt="{{ site.data.youtube.featured_title | escape }}" loading="lazy" />
+                <button type="button" class="yt-facade-play" aria-label="Play video: {{ site.data.youtube.featured_title | escape }}">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <span class="yt-facade-title">{{ site.data.youtube.featured_title }}</span>
+              </div>
             </div>
           </div>
           <div class="yt-copy">

@@ -514,6 +514,57 @@
     initNewsletter();
     initSafeTunnelForm();
 
+
+  // === Collapsible category pills (blog index, phone width) ===
+  document.querySelectorAll(".pill-row-collapsible .pill-more").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var row = btn.closest(".pill-row-collapsible");
+      var open = row.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.textContent = open ? "Less" : "More";
+    });
+  });
+
+  // === YouTube facades: thumbnail + play button, player only on click ===
+  function ytFacadeFrom(id, title) {
+    var wrap = document.createElement("div");
+    wrap.className = "yt-facade";
+    wrap.setAttribute("data-yt-id", id);
+    wrap.innerHTML =
+      '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="" loading="lazy">' +
+      '<button type="button" class="yt-facade-play" aria-label="Play video"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>' +
+      (title ? '<span class="yt-facade-title"></span>' : "");
+    if (title) wrap.querySelector(".yt-facade-title").textContent = title;
+    return wrap;
+  }
+  function activateFacade(el) {
+    var id = el.getAttribute("data-yt-id");
+    if (!id) return;
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    f.title = el.getAttribute("data-yt-title") || "YouTube video";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    f.allowFullscreen = true;
+    el.innerHTML = "";
+    el.appendChild(f);
+  }
+  // Replace embedded iframes inside posts with facades
+  document.querySelectorAll('.post-content iframe[src*="youtube.com/embed/"], .post-content iframe[src*="youtube-nocookie.com/embed/"]').forEach(function (fr) {
+    var m = fr.src.match(/embed\/([\w-]{11})/);
+    if (!m) return;
+    var fac = ytFacadeFrom(m[1], fr.title && fr.title !== "YouTube video player" ? fr.title : "");
+    var parent = fr.parentNode;
+    if (parent && (parent.classList.contains("videoWrapper") || parent.classList.contains("youtube-wrap"))) {
+      parent.parentNode.replaceChild(fac, parent);
+    } else {
+      parent.replaceChild(fac, fr);
+    }
+  });
+  document.addEventListener("click", function (e) {
+    var play = e.target.closest(".yt-facade-play");
+    if (play) activateFacade(play.closest(".yt-facade"));
+  });
+
     // === Fourthwall products ===
     initFourthwallProducts();
     initFourthwallMerchGrid();

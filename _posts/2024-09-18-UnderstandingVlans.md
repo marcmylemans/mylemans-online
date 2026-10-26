@@ -4,7 +4,7 @@ description: 'VLANs explained from scratch: 802.1Q tagging, tagged vs untagged p
 date: '2024-09-18 19:30:00'
 categories: [Networking]
 tags: []
-image: {path: /assets/img/posts/ed8f8e2a133c.png, alt: 'Understanding VLANs: How to Keep Your Networks Organized and Secure'}
+image: {path: /assets/img/posts/ed8f8e2a133c.webp, alt: 'Understanding VLANs: How to Keep Your Networks Organized and Secure'}
 ---
 
 If you've mastered the basics of computer networks—like how devices talk to each other—you might be wondering how large networks keep everything organized. After all, it would be chaos if every computer in a big office could communicate with every other device directly, right?

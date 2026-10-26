@@ -1,0 +1,23 @@
+<aside class="author-card" aria-label="About the author">
+  <img class="author-card-avatar" src="{{ site.data.author.avatar }}" alt="" width="72" height="72" loading="lazy" />
+  <div class="author-card-body">
+    <p class="author-card-name">Written by {{ site.data.author.name }}</p>
+    <p class="author-card-bio">{{ site.data.author.bio }}</p>
+    <div class="author-card-links">
+      <a href="https://www.youtube.com/@mylemansonline?sub_confirmation=1" target="_blank" rel="noreferrer">Subscribe on YouTube &rarr;</a>
+      <a href="https://labs.mylemans.online" target="_blank" rel="noreferrer">Learn on Labs &rarr;</a>
+      <a href="{{ '/about.html' | relative_url }}">About Marc &rarr;</a>
+    </div>
+  </div>
+</aside>
+
+<div class="newsletter-card newsletter-inpost">
+  <p class="eyebrow">Newsletter</p>
+  <h2 class="newsletter-inpost-title">Liked this one? Get the next one in your inbox.</h2>
+  <p class="newsletter-pitch">One email when there's something worth sending. <strong>No spam, no upsells, no weekly filler.</strong></p>
+  <form class="newsletter-form-inline" id="newsletter-form">
+    <label for="newsletter-email" class="sr-only">Email address</label>
+    <input id="newsletter-email" type="email" placeholder="you@yourdomain.com" required />
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form>
+</div>

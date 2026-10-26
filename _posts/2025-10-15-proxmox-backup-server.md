@@ -4,7 +4,7 @@ description: Learn what Proxmox Backup Server is, why it’s essential for any P
 date: '2025-10-15'
 categories: [Homelab, Backup]
 tags: [proxmox, backup, pbs, virtualization, homelab]
-image: {path: /assets/img/posts/2025-10-15-proxmox-backup-server-installation.png, alt: Proxmox Backup Server – Installation and Configuration}
+image: {path: /assets/img/posts/2025-10-15-proxmox-backup-server-installation.webp, alt: Proxmox Backup Server – Installation and Configuration}
 ---
 
 {% youtube "https://youtu.be/cKpjZizyLTo/" %}

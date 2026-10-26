@@ -4,7 +4,7 @@ description: 'Chapter 5 of the Hyper-V guide: set up Live Migration between host
 date: '2024-06-17'
 categories: [Windows Server, Hyper-V]
 tags: [hyper-v, windows server, live migration, hyper v replica, nested virtualization, advanced features]
-image: {path: /assets/img/posts/Hyper-V-Chapter5.PNG, alt: 'Advanced Hyper-V Features - Live Migration, Hyper-V Replica, and More'}
+image: {path: /assets/img/posts/Hyper-V-Chapter5.webp, alt: 'Advanced Hyper-V Features - Live Migration, Hyper-V Replica, and More'}
 series: The Complete Hyper-V Guide
 series_order: 5
 ---

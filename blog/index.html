@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Blog
+title: IT tutorials and war stories on Proxmox, Hyper-V, Windows Server and Microsoft 365
 description: 125+ tutorials and war stories on homelabs, Proxmox, Hyper-V, Windows Server, Microsoft 365, networking and security. By Marc Mylemans.
 ---
 {%- assign total = site.posts.size %}
 <section class="blog-index">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Blog</span></nav>
-    <h1 class="blog-index-title">Blog</h1>
+    <h1 class="blog-index-title">The blog</h1>
     <p class="blog-index-lede">{{ total | default: 125 }}{% if total == 0 %}+{% endif %} tutorials and war stories on homelabs, Windows Server, Microsoft 365, networking and security. Searchable, tagged, no pagination maze.</p>
 
     <form class="blog-search" id="search" role="search" data-search-index="{{ '/blog/search.json' | relative_url }}">
@@ -23,14 +23,22 @@ description: 125+ tutorials and war stories on homelabs, Proxmox, Hyper-V, Windo
   <div class="container blog-index-grid">
 
     <div class="blog-index-main">
-      {%- assign cats = site.categories | sort %}
-      {%- if cats.size > 0 %}
-      <nav class="pill-row" id="categories" aria-label="Categories">
+      {%- assign catkeys = "" | split: "" %}
+      {%- for c in site.categories %}
+        {%- assign n = c[1].size | plus: 1000 %}
+        {%- assign key = n | append: "|" | append: c[0] %}
+        {%- assign catkeys = catkeys | push: key %}
+      {%- endfor %}
+      {%- assign catkeys = catkeys | sort | reverse %}
+      {%- if catkeys.size > 0 %}
+      <nav class="pill-row pill-row-collapsible" id="categories" aria-label="Categories">
         <a class="pill is-active" href="{{ '/blog/' | relative_url }}">All</a>
-        {%- for c in cats %}
-        {%- assign cslug = c[0] | slugify %}
-        <a class="pill" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ c[0] }}</a>
+        {%- for key in catkeys %}
+        {%- assign cname = key | split: "|" | last %}
+        {%- assign cslug = cname | slugify %}
+        <a class="pill" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ cname }}</a>
         {%- endfor %}
+        <button type="button" class="pill pill-more" aria-expanded="false">More</button>
       </nav>
       {%- endif %}
 

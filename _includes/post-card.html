@@ -1,6 +1,10 @@
 {%- comment -%} Usage: {% include post-card.html post=p %} {%- endcomment -%}
 {%- assign p = include.post -%}
-<article class="blog-card-v2">
+{%- assign pcover = p.image.path | default: p.image | default: site.default_image -%}
+<article class="blog-card-v2 blog-card-media">
+  <a class="blog-card-thumb" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ pcover | relative_url }}" alt="" loading="lazy" onerror="this.parentNode.remove()" />
+  </a>
   <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
   <p class="blog-card-excerpt">{{ p.description | default: p.excerpt | strip_html | truncate: 160 }}</p>
   <div class="blog-card-footer">

@@ -4,7 +4,7 @@ description: Install WSL 2 and Docker Desktop on Windows, set up Dockge to manag
 date: '2024-05-12 08:00:00'
 categories: [Scripts]
 tags: [automation, powershell, scripting, docker, wsl2, containers, webserver, linux, windows, devops, virtualization]
-image: {path: /assets/img/posts/73f0de5efefe.png, alt: How to Install WSL 2 and Docker on Windows}
+image: {path: /assets/img/posts/73f0de5efefe.webp, alt: How to Install WSL 2 and Docker on Windows}
 ---
 
 ## **Introduction:**

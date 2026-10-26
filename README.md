@@ -115,6 +115,22 @@ Still to copy by hand from the old repo (binary, not done by the script):
 `assets/img/Hyper-V-Guide`, `assets/img/MDT`, `assets/img/steps-hetzner___*`,
 `assets/scripts`, `assets/data`, `assets/primaryuserlocaladmin`.
 
+## Content and marketing pass (Oct 2026)
+
+- Homepage: positioning eyebrow instead of the disclaimer, one hero button,
+  categories sorted by post count, post cards with thumbnails, YouTube
+  section is a thumbnail facade (`_data/youtube.yml`) that loads the player
+  on click.
+- Blog index: real title tag, category pills collapse to seven on phones.
+- Posts: TOC collapsed by default (H2 only), compact series box, no cover on
+  video posts (the embed leads), author card + newsletter form at the end
+  (`_data/author.yml`), YouTube embeds swapped for click-to-play facades
+  (youtube-nocookie, nothing loads before a click).
+- Category pages: intro text from `_data/categories.yml` (drafts, edit them).
+- 48 images over 400 KB converted to WebP, max 1600 px wide (64.5 MB ->
+  4.7 MB); the posts point at the `.webp` files. The original PNG/JPG files
+  are still in `assets/img` and can be deleted.
+
 ## Google AdSense
 
 Off by default (`adsense.enabled: false` in `_config.yml`). When enabled:

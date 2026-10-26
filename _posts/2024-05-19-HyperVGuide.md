@@ -47,5 +47,5 @@ Don't miss out on this opportunity to master Hyper-V and elevate your virtualiza
 
 Thank you for your support!
 
-![Support Us](/assets/img/posts/2579fd954c63.png)
+![Support Us](/assets/img/posts/2579fd954c63.webp)
 

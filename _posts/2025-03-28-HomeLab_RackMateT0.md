@@ -29,7 +29,7 @@ The packaging is layered, and everything is well protected. Here’s what you ge
 - 1U front filler panel and bottom plate  
 - 1U Hidden shelf (under the toolset!)
 
-![Unboxing Contents](/assets/img/posts/rackmate-unboxing.png)
+![Unboxing Contents](/assets/img/posts/rackmate-unboxing.webp)
 
 ---
 
@@ -54,7 +54,7 @@ I added a 10-inch PDU to the bottom of the rack. There’s a gap underneath—pe
 
 Also installed the included shelf and demoed the blank panel. All parts mount directly to the front rails—no cage nuts required.
 
-![Mounted PDU](/assets/img/posts/rackmate-pdu.png)
+![Mounted PDU](/assets/img/posts/rackmate-pdu.webp)
 
 ---
 

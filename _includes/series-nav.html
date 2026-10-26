@@ -1,9 +1,13 @@
-{%- comment -%} Lists every post in the same series, in order, marking the current one. {%- endcomment -%}
+{%- comment -%} Compact series box: one line, expands to the full list. {%- endcomment -%}
 {%- if page.series %}
 {%- assign parts = site.posts | where: "series", page.series | sort: "series_order" %}
 {%- if parts.size > 1 %}
-<nav class="series-nav" aria-label="Series">
-  <p class="series-nav-title"><span class="eyebrow">Series</span>{{ page.series }} <span class="series-nav-count">{{ parts.size }} parts</span></p>
+<details class="series-nav">
+  <summary>
+    <span class="eyebrow">Series</span>
+    <span class="series-nav-name">{{ page.series }}</span>
+    <span class="series-nav-count">Part {{ page.series_order }} of {{ parts.size }}</span>
+  </summary>
   <ol class="series-nav-list">
     {%- for p in parts %}
     <li{% if p.url == page.url %} class="is-current" aria-current="page"{% endif %}>
@@ -11,6 +15,6 @@
     </li>
     {%- endfor %}
   </ol>
-</nav>
+</details>
 {%- endif %}
 {%- endif %}

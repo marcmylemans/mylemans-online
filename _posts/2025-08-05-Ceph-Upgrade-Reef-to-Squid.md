@@ -4,7 +4,7 @@ description: A detailed, step-by-step guide to upgrading Ceph from Reef (18.2+) 
 date: '2025-08-05'
 categories: [Proxmox]
 tags: [ceph, proxmox, storage, cluster, upgrade]
-image: {path: /assets/img/posts/fdf42da4b243.png, alt: Upgrading Ceph from Reef to Squid (Proxmox 8.4 to 9)}
+image: {path: /assets/img/posts/fdf42da4b243.webp, alt: Upgrading Ceph from Reef to Squid (Proxmox 8.4 to 9)}
 ---
 
 This guide explains how to safely upgrade your **Ceph cluster from Reef to Squid** in a **Proxmox VE 8.4+** environment. It is based on the [official documentation](https://pve.proxmox.com/wiki/Ceph_Reef_to_Squid).
