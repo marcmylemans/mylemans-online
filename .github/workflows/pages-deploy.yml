@@ -38,7 +38,7 @@ jobs:
           bundler-cache: true
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "/${{ github.event.repository.name }}" --destination _site
+        run: bundle exec jekyll build --config _config.yml,_config_pages.yml --baseurl "/${{ github.event.repository.name }}" --destination _site
         env:
           JEKYLL_ENV: production
 
