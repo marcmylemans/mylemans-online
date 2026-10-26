@@ -352,14 +352,15 @@
       return "light";
     }
 
-    function setTheme(theme) {
+    // Only an explicit toggle click is remembered; otherwise the site follows the OS.
+    function setTheme(theme, persist) {
       root.setAttribute("data-theme", theme);
-      window.localStorage.setItem("theme", theme);
+      if (persist) window.localStorage.setItem("theme", theme);
     }
 
     function toggleTheme() {
       const current = root.getAttribute("data-theme") || "light";
-      setTheme(current === "light" ? "dark" : "light");
+      setTheme(current === "light" ? "dark" : "light", true);
     }
 
     setTheme(getPreferredTheme());
@@ -579,7 +580,8 @@
     if (!a) return;
     try {
       const u = new URL(a.href);
-      const t = document.documentElement.getAttribute("data-theme");
+      // Only pass an explicit choice; without one both sites follow the OS anyway.
+      const t = window.localStorage.getItem("theme");
       if (t === "dark" || t === "light") { u.searchParams.set("theme", t); a.href = u.toString(); }
     } catch (e) { /* ignore */ }
   });
