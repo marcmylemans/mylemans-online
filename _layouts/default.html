@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% seo %}
+  {%- if page.robots or layout.robots %}<meta name="robots" content="{{ page.robots | default: layout.robots }}, follow" />{% endif %}
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
   <link rel="alternate" type="application/rss+xml" title="Mylemans Online" href="{{ '/feed.xml' | absolute_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />

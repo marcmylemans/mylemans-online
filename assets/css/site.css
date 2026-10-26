@@ -372,6 +372,7 @@ details.series-nav[open] > summary { margin-bottom: 0.6rem; }
 }
 .yt-facade iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .post-content .yt-facade { border-radius: var(--radius-lg); margin: 1.5rem 0; }
+.post-content .yt-facade img { width: 100%; height: 100%; max-width: none; border: 0; border-radius: 0; margin: 0; }
 
 .section-header-count { font-size: 0.85rem; }
 
@@ -386,3 +387,8 @@ details.series-nav[open] > summary { margin-bottom: 0.6rem; }
   .blog-search input, .blog-search .btn { flex: 1 1 100%; }
   .author-card { flex-direction: column; }
 }
+
+/* ---- Stack consistency (Oct 2026) ------------------------------------
+   The logo's navy half disappears on the dark header; give it the same
+   white tile Labs uses so the brand lockup is identical across the stack. */
+html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px; padding: 2px; box-sizing: border-box; }

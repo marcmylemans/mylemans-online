@@ -125,7 +125,7 @@ layout: null
           <div class="featured-post-body">
             <p class="featured-post-meta"><span class="featured-post-label">Blog</span></p>
             <h2 class="featured-post-title">Posts are moving in.</h2>
-            <p class="featured-post-excerpt">The blog is being merged into this site. Until that lands, everything is still at <a href="https://blog.mylemans.online">blog.mylemans.online</a>.</p>
+            <p class="featured-post-excerpt">The blog is being merged into this site. Until that lands, the blog index is at <a href="{{ '/blog/' | relative_url }}">/blog/</a>.</p>
           </div>
         </div>
         {%- endif %}
@@ -187,7 +187,7 @@ layout: null
             <a class="blog-panel-link" href="{{ '/categories/' | append: cslug | append: '/' | relative_url }}">{{ cname }} <span class="blog-panel-count">{{ ccount }} post{% if ccount != 1 %}s{% endif %}</span></a>
             {%- endfor %}
             {%- else %}
-            <a class="blog-panel-link" href="https://blog.mylemans.online/categories/">Categories live on the old blog until the posts move <span class="blog-panel-count">&rarr;</span></a>
+            <a class="blog-panel-link" href="{{ '/blog/' | relative_url }}">Browse the blog <span class="blog-panel-count">&rarr;</span></a>
             {%- endif %}
           </div>
         </div>
@@ -218,8 +218,8 @@ layout: null
             <span class="labs-skill">Security</span>
           </div>
           <div class="labs-actions">
-            <a href="https://labs.mylemans.online" class="btn btn-primary" target="_blank" rel="noreferrer">Start the IT Foundations path &rarr;</a>
-            <a href="https://labs.mylemans.online" class="arrow-link" target="_blank" rel="noreferrer">Browse all paths <span aria-hidden="true">&rarr;</span></a>
+            <a href="https://labs.mylemans.online/?path=foundations" class="btn btn-primary" target="_blank" rel="noreferrer">Start the IT Foundations path &rarr;</a>
+            <a href="https://labs.mylemans.online/?view=paths" class="arrow-link" target="_blank" rel="noreferrer">Browse all paths <span aria-hidden="true">&rarr;</span></a>
           </div>
         </div>
 
@@ -231,7 +231,7 @@ layout: null
             <li><span class="labs-v2-dot"></span><span>Pass the skill check to unlock the next one.</span></li>
           </ol>
           <div class="labs-v2-progress"><div></div></div>
-          <p class="labs-v2-panel-note">11 paths · free · no account needed to browse</p>
+          <p class="labs-v2-panel-note">Free · no account needed to browse · sign in to save progress</p>
         </div>
       </div>
     </section>
@@ -243,7 +243,7 @@ layout: null
           <div class="yt-video-wrap">
             <div class="video-frame">
               <div class="yt-facade" data-yt-id="{{ site.data.youtube.featured_video }}" data-yt-title="{{ site.data.youtube.featured_title | escape }}">
-                <img src="https://i.ytimg.com/vi/{{ site.data.youtube.featured_video }}/hqdefault.jpg" alt="{{ site.data.youtube.featured_title | escape }}" loading="lazy" />
+                <img src="https://i.ytimg.com/vi/{{ site.data.youtube.featured_video }}/maxresdefault.jpg" alt="{{ site.data.youtube.featured_title | escape }}" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ site.data.youtube.featured_video }}/hqdefault.jpg'" />
                 <button type="button" class="yt-facade-play" aria-label="Play video: {{ site.data.youtube.featured_title | escape }}">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                 </button>

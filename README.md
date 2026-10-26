@@ -127,6 +127,8 @@ Still to copy by hand from the old repo (binary, not done by the script):
   (`_data/author.yml`), YouTube embeds swapped for click-to-play facades
   (youtube-nocookie, nothing loads before a click).
 - Category pages: intro text from `_data/categories.yml` (drafts, edit them).
+- `last_modified_at` is a manual front-matter field now (the git hook is
+  disabled, see `_plugins/posts-lastmod-hook.rb`); set it when you revise a post.
 - 48 images over 400 KB converted to WebP, max 1600 px wide (64.5 MB ->
   4.7 MB); the posts point at the `.webp` files. The original PNG/JPG files
   are still in `assets/img` and can be deleted.

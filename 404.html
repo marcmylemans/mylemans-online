@@ -8,8 +8,8 @@ layout: null
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found – Mylemans Online</title>
   <meta name="robots" content="noindex" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
@@ -30,11 +30,11 @@ layout: null
             You can go back to the homepage or browse the sections below:
           </p>
           <ul class="bullet-list">
-            <li><a href="index.html" class="link">Homepage</a></li>
-            <li><a href="services.html" class="link">Services</a></li>
-            <li><a href="products.html" class="link">Digital products</a></li>
-            <li><a href="https://blog.mylemans.online" class="link">Blog</a></li>
-            <li><a href="contact.html" class="link">Contact</a></li>
+            <li><a href="{{ '/' | relative_url }}" class="link">Homepage</a></li>
+            <li><a href="{{ '/services.html' | relative_url }}" class="link">Services</a></li>
+            <li><a href="{{ '/products.html' | relative_url }}" class="link">Digital products</a></li>
+            <li><a href="{{ '/blog/' | relative_url }}" class="link">Blog</a></li>
+            <li><a href="{{ '/contact.html' | relative_url }}" class="link">Contact</a></li>
           </ul>
         </article>
       </div>
@@ -45,6 +45,6 @@ layout: null
   <!-- Shared footer injected via JS -->
   {% include footer.html %}
 
-  <script src="assets/js/main.js"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ layout: null
   <meta name="description" content="Watch Mylemans Online on YouTube: Proxmox, Windows Server, Active Directory, networking and automation tutorials with matching templates and scripts." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mylemans.online/youtube.html" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Proxmox, Homelab & Windows Server Videos – Mylemans Online" />
@@ -167,7 +167,13 @@ layout: null
           <article class="card card-outline">
             <h3>Prefer written guides?</h3>
             <p>Many videos have long-form write-ups and reference docs on my blog.</p>
-            <a href="https://blog.mylemans.online" class="btn btn-secondary" target="_blank" rel="noreferrer">Visit the blog</a>
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">Visit the blog</a>
+          </article>
+
+          <article class="card card-outline">
+            <h3>Mylemans Online Extra</h3>
+            <p>The second channel: live-stream VODs, lab-build sessions and the occasional hardware review that does not fit the main feed.</p>
+            <a href="https://www.youtube.com/@mylemansonlineextra" class="btn btn-secondary" target="_blank" rel="noreferrer">Open the Extra channel</a>
           </article>
 
           <article class="card card-outline">

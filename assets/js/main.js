@@ -531,7 +531,7 @@
     wrap.className = "yt-facade";
     wrap.setAttribute("data-yt-id", id);
     wrap.innerHTML =
-      '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="" loading="lazy">' +
+      '<img src="https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg\'">' +
       '<button type="button" class="yt-facade-play" aria-label="Play video"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>' +
       (title ? '<span class="yt-facade-title"></span>' : "");
     if (title) wrap.querySelector(".yt-facade-title").textContent = title;
@@ -573,6 +573,17 @@
   // -----------------------------
   // 5) Run everything
   // -----------------------------
+  // Links into Labs carry the current theme; Labs reads ?theme= once and stores it.
+  document.addEventListener("click", (evt) => {
+    const a = evt.target.closest('a[href^="https://labs.mylemans.online"]');
+    if (!a) return;
+    try {
+      const u = new URL(a.href);
+      const t = document.documentElement.getAttribute("data-theme");
+      if (t === "dark" || t === "light") { u.searchParams.set("theme", t); a.href = u.toString(); }
+    } catch (e) { /* ignore */ }
+  });
+
   document.addEventListener("DOMContentLoaded", async () => {
     // First inject header / footer partials
     await loadPartials();

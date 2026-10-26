@@ -1,0 +1,7 @@
+# Overrides for the GitHub Pages TEST build only (pages-deploy.yml passes
+# --config _config.yml,_config_pages.yml). Production (Docker) uses
+# _config.yml alone, where url is https://mylemans.online.
+#
+# Without this, jekyll-feed, jekyll-seo-tag and the sitemap build absolute
+# links from the production url, which do not resolve on the test host.
+url: "https://blog.mylemans.online"
