@@ -62,6 +62,7 @@ const LEGACY_PATHS = [
   [/^\/shop\/?$/i, 'https://shop.mylemans.online/'],
   [/^\/about\/?$/i, '/about.html'],
   [/^\/feed\/?$/i, '/feed.xml'],
+  [/^\/media-kit-mylemans-online\.pdf$/i, '/sponsor.html'],   // media kit withdrawn Oct 2026
 ];
 app.use((req, res, next) => {
   const p = req.path;
