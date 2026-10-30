@@ -11,6 +11,10 @@ series_order: 2
 
 The install finished, the dashboard loaded, and now you're staring at a powerful machine with no idea what to do next. That's the moment nobody makes a video about, and it's exactly where good homelabs quietly go wrong.
 
+The video version of these five steps:
+
+{% youtube n08LhVszAZA %}
+
 This post is the five things to do *first*, before you install a single app. They take maybe twenty minutes, and they're the difference between a server you own and a black box you're scared to touch in three weeks. Number five is the one almost everyone skips.
 
 > The five first steps on a fresh home server: (1) give it a fixed IP so it stops moving, (2) stop logging in as root and make a normal admin user, (3) take a snapshot before you tinker, (4) set up updates, and (5) write down what you did. Do these before installing anything else.
@@ -113,7 +117,7 @@ Anything you'll actually keep updated. A plain text file or a note in your passw
 
 Five steps, about twenty minutes: pin the address, ditch root for daily use, snapshot before you tinker, set up updates, and write down what you did. That's the gap between a server that's merely *installed* and one that's genuinely solid, the foundation everything else gets built on.
 
-Prefer to watch? The full walkthrough is on **Mylemans Online**. The video is out now for members, and public from **29 June 2026**, [on the channel here](https://www.youtube.com/@MylemansOnline). The natural next step after this is putting your first real app on the server, which is the next video in the series.
+The natural next step after this is putting your first real app on the server, which is the next video in the series.
 
 > Want to do this properly, in order, with the reasoning behind each step? The free, hands-on \*\*Virtualization path on Mylemans Labs\*\* walks you through it from a fresh install to a server you can actually rely on. \[Start the path here.](https://labs.mylemans.online)
 {: .prompt-info }

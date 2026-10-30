@@ -2,12 +2,14 @@
 # url (optional: affiliate or product link; leave empty to render without a link),
 # post (optional: related write-up permalink).
 - group: Proxmox cluster
-  intro: Three identical nodes in a 10-inch rack, Ceph on the second 10GbE port with jumbo frames, management and VM traffic on the first. Built August 2026.
+  intro: Three identical nodes in a 10-inch rack, Ceph on the second 10GbE port with jumbo frames, management and VM traffic on the first. Built August 2026; the five-part build series is on YouTube.
+  amazon: https://www.amazon.com/shop/mylemansonline/list/BJY1P8GA3V64?tag=marcmylemans-20
   items:
     - name: 3x Lenovo ThinkCentre M720q Tiny
       role: Cluster nodes
       note: i5-9400T, 32 GB RAM, 2 TB NVMe each. Quiet, cheap second-hand, and they take a PCIe riser.
       url: ""
+      video: a3ho8IB7p0U
     - name: YuanLey YS-X540-2T dual 10GbE NIC
       role: Per node, via the nandfarm M720q/M920q riser
       note: One port for Ceph, one for everything else. The reason the cluster does not need LACP.
@@ -18,10 +20,12 @@
       note: The black one. Rack trays and mounts for the Tinies are 3D-printed in PETG after the PLA ones softened in the summer heat.
       url: ""
       post: /posts/HomeLab_RackMateT0/
+      video: luNCoZl64aM
     - name: GL.iNet Comet X
       role: KVM over IP
-      note: Fills the top U of the rack. Lets me reinstall a node without walking over.
+      note: Fills the top U of the rack. The whole cluster was installed through it without ever plugging in a monitor.
       url: ""
+      video: oTdKprLL6Xk
 
 - group: Storage and backup
   intro: The daily-use NAS is deliberately separate from the lab, so breaking the cluster never touches the family's films.
@@ -53,6 +57,7 @@
       role: Travel router
       note: Reviewed in September 2026; the VPN-router-in-a-bag for hotel Wi-Fi.
       url: ""
+      video: 8SUszRoc4bw
 
 - group: Studio
   intro: Where the videos get made.

@@ -9,6 +9,10 @@ image: {path: /assets/img/posts/covers/proxmox-ceph-10gbe-network-design.jpg, al
 
 I had three identical mini PCs, one dual-port 10GbE card in each, and an eight-port 10G switch. That is not enough ports to do everything the documentation assumes you can do, and working out what to give up took longer than the actual install.
 
+This is the cluster the design runs on; the build video shows the nodes, the NICs and the headless install:
+
+{% youtube qUpjmH_u_bY %}
+
 By the end of this post you will know how to lay out the networking for a 3-node Proxmox VE and Ceph cluster on exactly two 10G ports per node, why I ended up splitting them instead of bonding them, and the four things that broke on me so they do not break on you.
 
 ## The short version

@@ -12,6 +12,10 @@ series_order: 1
 > **TL;DR**: You can turn a cheap mini PC or an old desktop into a real home server in about 30 minutes. Install Proxmox VE (free), create your first virtual machine, and finish by running something useful like a network-wide ad blocker. You don't need a server rack, expensive hardware, or prior experience. This is the companion guide to the video, with every step written down so you can follow along at your own pace.
 {: .prompt-tip }
 
+Prefer to watch? The full build, start to finish:
+
+{% youtube JQhM67kr5Cw %}
+
 If you have ever wanted your own home server but assumed it meant a noisy rack, a big electricity bill, and years of experience, this is for you. None of that is true. One small machine you already own, plus free software, gets you a real server you control, and you can have it running today.
 
 This post is the written companion to my video. The video shows you the whole build; this guide is the reference you keep open while you do it, with the exact steps, the menu paths, and the one mistake that trips up almost every beginner.

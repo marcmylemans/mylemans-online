@@ -50,6 +50,10 @@ layout: null
           Nothing on this page was sent to me for free unless the note says so; where a link
           is an affiliate link it is marked, and it costs you nothing extra.
         </p>
+        <div class="hero-actions">
+          <a href="https://www.amazon.com/shop/mylemansonline/list/BJY1P8GA3V64?tag=marcmylemans-20" class="btn btn-primary" target="_blank" rel="noreferrer sponsored">Cluster parts list on Amazon</a>
+          <a href="{{ '/referral-links.html' | relative_url }}" class="btn btn-secondary">Hosting &amp; services I use</a>
+        </div>
       </div>
     </div>
   </section>
@@ -59,7 +63,7 @@ layout: null
     <div class="container">
       <div class="section-header">
         <h2>{{ g.group }}</h2>
-        <p>{{ g.intro }}</p>
+        <p>{{ g.intro }}{% if g.amazon %} <a href="{{ g.amazon }}" target="_blank" rel="noreferrer sponsored">Full parts list on Amazon &rarr;</a>{% endif %}</p>
       </div>
       <div class="grid grid-2">
         {%- for h in g.items %}
@@ -70,6 +74,7 @@ layout: null
           <p class="project-links">
             {%- if h.url and h.url != "" %}<a href="{{ h.url }}" target="_blank" rel="noreferrer sponsored">Where I bought it &rarr;</a>{% endif %}
             {%- if h.post %} <a href="{{ h.post | relative_url }}">Write-up</a>{% endif %}
+            {%- if h.video %} <a href="https://www.youtube.com/watch?v={{ h.video }}" target="_blank" rel="noreferrer">Video</a>{% endif %}
           </p>
         </article>
         {%- endfor %}
