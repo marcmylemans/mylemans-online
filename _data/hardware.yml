@@ -54,7 +54,6 @@
       role: Firewall, gateway, internal DNS
       note: Free for home use. Every subnet gets .254 as its gateway.
       url: ""
-      post: /posts/Creating_Firewall_Rules_in_Sophos_XG/
     - name: Cudy TR3000
       role: Travel router
       note: Reviewed in September 2026; the VPN-router-in-a-bag for hotel Wi-Fi.

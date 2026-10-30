@@ -62,7 +62,8 @@ const LEGACY_PATHS = [
   [/^\/shop\/?$/i, 'https://shop.mylemans.online/'],
   [/^\/about\/?$/i, '/about.html'],
   [/^\/feed\/?$/i, '/feed.xml'],
-  [/^\/media-kit-mylemans-online\.pdf$/i, '/sponsor.html'],   // media kit withdrawn Oct 2026
+  [/^\/posts\/?$/i, '/blog/'],
+  [/^\/(assets\/)?media-kit-mylemans-online\.pdf$/i, '/sponsor.html'],   // media kit withdrawn Oct 2026
 ];
 app.use((req, res, next) => {
   const p = req.path;
@@ -70,6 +71,38 @@ app.use((req, res, next) => {
     if (re.test(p)) return res.redirect(301, p.replace(re, target));
   }
   next();
+});
+
+// Old Chirpy category URLs. The migration reduced ~70 categories to 18, so the
+// dropped ones are mapped to the closest canonical category page. Unknown
+// categories fall through to the normal 404.
+const CATEGORY_ALIASES = {
+  'windows': 'windows-server', 'server': 'windows-server', 'server-2022': 'windows-server',
+  'windows-server-2022': 'windows-server', 'server-2012r2': 'windows-server', 'file-servers': 'windows-server',
+  'dfs': 'windows-server', 'dhcp': 'windows-server', 'group-policy': 'active-directory',
+  'identity-management': 'active-directory', 'migration': 'windows-server', 'laps': 'security',
+  'azure': 'entra-id-intune', 'azure-intune': 'entra-id-intune', 'intune': 'entra-id-intune',
+  'entraid': 'entra-id-intune', 'endpoint-management': 'entra-id-intune', 'connect': 'entra-id-intune',
+  'exchange': 'microsoft-365', 'office': 'microsoft-365', 'outlook': 'microsoft-365',
+  'powershell': 'scripts', 'scripts-powershell': 'scripts', 'python-script': 'scripts',
+  'python-scripts': 'scripts', 'automation': 'scripts',
+  'virtualization': 'proxmox', 'ceph-upgrade': 'proxmox', 'upgrade-8-to-9': 'proxmox',
+  'home-lab': 'homelab', 'homelab-hardware': 'hardware', 'homelab-projects': 'homelab',
+  'hardware-upgrades': 'hardware', 'nas': 'hardware', 'storage': 'hardware', 'storeonce': 'backup',
+  'urbackup-server': 'backup', 'desk-setup': 'hardware', '3d-printing': 'hardware', 'travel-routers': 'reviews',
+  'docker': 'self-hosting', 'docker-unifi': 'self-hosting', 'open-source-software': 'self-hosting',
+  'privateglue': 'self-hosting', 'vps': 'cloud', 'cloud-computing': 'cloud', 'cloud-hosting': 'cloud',
+  'digitalocean': 'cloud', 'hetzner': 'cloud', 'routing-and-network-address-translation': 'networking',
+  'vlans': 'networking', 'basics': 'networking', 'crowdstrike': 'security', 'csagent-sys': 'security',
+  'bsod': 'windows-11', 'discord': 'community', 'shop': 'community', 'apparel': 'community',
+  'learning': 'community', 'ai': 'self-hosting', 'machine-learning': 'self-hosting',
+};
+app.use((req, res, next) => {
+  const m = req.path.match(/^\/categories\/([^/]+)\/?$/i);
+  if (!m) return next();
+  const target = CATEGORY_ALIASES[m[1].toLowerCase()];
+  if (!target) return next();
+  return res.redirect(301, '/categories/' + target + '/');
 });
 
 app.use(express.static(path.join(__dirname, 'public'), {
@@ -314,6 +347,16 @@ app.post('/api/subscribe', rateLimit, async (req, res) => {
     console.error('[subscribe] Resend error:', err.message || err);
     res.status(500).json({ error: 'Failed to subscribe. Please try again.' });
   }
+});
+
+// Custom 404: anything that reached this point is not a file, not a
+// redirect and not an API route. Serve the Jekyll-built 404.html with a
+// real 404 status (noindex is set in the page itself). API paths get JSON.
+app.use((req, res) => {
+  if (req.path.startsWith('/api/')) return res.status(404).json({ error: 'Not found' });
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'), err => {
+    if (err) res.status(404).type('text').send('Not found');
+  });
 });
 
 app.listen(PORT, '0.0.0.0', async () => {

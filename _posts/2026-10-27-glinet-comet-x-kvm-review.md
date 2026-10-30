@@ -1,6 +1,6 @@
 ---
 title: 'GL.iNet Comet X Review: 4-Port KVM over IP for a 10-Inch Rack'
-description: 'Hands-on with the GL.iNet Comet X, the four-port KVM over IP that installed my whole Proxmox cluster without a monitor: unboxing, rack mount, setup, the one gotcha, and what I would improve.'
+description: 'Hands-on with the GL.iNet Comet X, the four-port KVM over IP that installed my Proxmox cluster without a monitor: unboxing, rack mount, setup, gotchas.'
 date: '2026-10-27 13:30:00 +0100'
 categories: [Reviews, Hardware]
 tags: [gl.inet, comet x, kvm over ip, homelab, 10 inch rack, review, youtube]

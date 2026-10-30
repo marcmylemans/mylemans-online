@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% seo %}
+  {%- unless page.image %}
+  <meta property="og:image" content="{{ '/assets/img/og-default.jpg' | absolute_url }}" />
+  <meta name="twitter:image" content="{{ '/assets/img/og-default.jpg' | absolute_url }}" />
+  {%- endunless %}
   {%- if page.robots or layout.robots %}<meta name="robots" content="{{ page.robots | default: layout.robots }}, follow" />{% endif %}
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
   <link rel="alternate" type="application/rss+xml" title="Mylemans Online" href="{{ '/feed.xml' | absolute_url }}" />
@@ -11,7 +15,12 @@
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}" />
-  {%- if site.adsense.enabled and site.adsense.client %}
+  {%- comment -%} Ads only on posts and the blog index (incl. its pages); category
+  and tag archives, and every standalone page, never load the ad script. {%- endcomment -%}
+  {%- assign ad_page = false %}
+  {%- if page.layout == "post" %}{% assign ad_page = true %}{% endif %}
+  {%- if page.url == "/blog/" or page.url contains "/blog/page" %}{% assign ad_page = true %}{% endif %}
+  {%- if site.adsense.enabled and site.adsense.client and ad_page %}
   <script>window.MO_ADSENSE = {{ site.adsense | jsonify }};</script>
   {%- endif %}
   <script>
@@ -34,7 +43,7 @@
 
   <div class="cookie-banner" id="cookie-banner">
     <p>
-      {%- if site.adsense.enabled %}
+      {%- if site.adsense.enabled and ad_page %}
       This page shows Google AdSense ads; Google asks for your advertising consent separately. Accepting here enables anonymous analytics cookies.
       {%- else %}
       This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.

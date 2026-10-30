@@ -1,6 +1,6 @@
 ---
 title: 'Cudy TR3000 Review: A Budget OpenWrt Travel Router with VPN'
-description: 'The Cudy TR3000 is a pocket travel router running OpenWrt underneath, with a 2.5GbE WAN port and a built-in VPN client. Unboxing, setup, connecting it to CloudConnexa with OpenVPN, and what I would improve.'
+description: 'The Cudy TR3000 is a pocket OpenWrt travel router with a 2.5GbE WAN port and a built-in VPN client. Unboxing, setup, CloudConnexa VPN, and what I would improve.'
 date: '2026-09-16 13:00:00 +0200'
 categories: [Reviews, Networking]
 tags: [cudy, tr3000, travel router, openwrt, openvpn, cloudconnexa, vpn, review, youtube]

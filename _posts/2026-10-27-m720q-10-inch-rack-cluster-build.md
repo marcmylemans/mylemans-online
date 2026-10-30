@@ -1,6 +1,6 @@
 ---
 title: '3x Lenovo M720q in a 10-Inch Rack: The Cluster Hardware Build'
-description: 'The parts and the build for my Proxmox cluster: three M720q Tiny PCs with dual 10GbE cards on a riser, a DeskPi RackMate T1 Plus, a 10GbE switch and a PDU, plus what to do in a different order.'
+description: 'The parts and build for my Proxmox cluster: three M720q Tiny PCs with dual 10GbE, a DeskPi RackMate T1 Plus, 10GbE switch and PDU, plus one build-order lesson.'
 date: '2026-10-27 13:00:00 +0100'
 categories: [Hardware, Homelab]
 tags: [m720q, 10 inch rack, deskpi rackmate, 10gbe, homelab, 3d printing, youtube]

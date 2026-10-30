@@ -1,6 +1,6 @@
 ---
 title: 'Build a 3-Node Proxmox Ceph Cluster Without a Monitor'
-description: 'Three Lenovo M720q nodes from bare metal to a Proxmox cluster with Ceph, a backup server and Let''s Encrypt certificates, installed entirely through a KVM over IP.'
+description: 'Three Lenovo M720q nodes from bare metal to a Proxmox cluster with Ceph, backups and Let''s Encrypt certificates, installed entirely through a KVM over IP.'
 date: '2026-10-27 14:00:00 +0100'
 categories: [Proxmox, Homelab]
 tags: [proxmox, ceph, cluster, corosync, kvm over ip, lets encrypt, homelab, youtube]
