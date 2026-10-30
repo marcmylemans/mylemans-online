@@ -1,5 +1,5 @@
 ---
-title: Automating Your RDS Lab, From ISO to Full Deployment with PowerShell
+title: 'Automate an RDS Lab from ISO to Deployment with PowerShell'
 description: 'Build a full RDS lab on Hyper-V from a Windows Server ISO with my HomeLab PowerShell project: VHDX template, then DC, domain join and RDS from JSON.'
 date: '2024-05-07 08:00:00'
 categories: [Homelab, Scripts]

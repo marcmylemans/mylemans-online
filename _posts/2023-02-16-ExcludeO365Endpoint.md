@@ -1,5 +1,5 @@
 ---
-title: Unexpected Autodiscover behavior when you have registry settings under the \Autodiscover key
+title: 'Autodiscover Ignores Exchange Online? Check the Registry'
 description: 'Outlook asks for Office 365 credentials while the mailbox is still on Exchange on-premises: set ExcludeExplicitO365Endpoint under the Autodiscover key.'
 date: '2023-02-16 08:00:00'
 categories: [Entra ID & Intune, Microsoft 365]
@@ -23,3 +23,4 @@ Set-ItemProperty -Path “HKCU:\Software\Policies\Microsoft\Office\16.0\Outlook\
 ```
 
 After this you need to close Outlook and open it again, sometimes it can take a few minutes.
+

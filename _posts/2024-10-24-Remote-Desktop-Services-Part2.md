@@ -1,5 +1,5 @@
 ---
-title: A Step-by-Step Guide - Installing and Configuring Office on RemoteAPP/Desktop Services
+title: 'Install and Configure Office on RDS / RemoteApp (Part 2)'
 description: Install Microsoft 365 Apps on an RDS host with the Office Deployment Tool and shared computer licensing, tune Office via ADMX policies, publish RemoteApps.
 date: '2024-10-24'
 categories: [Windows Server, Remote Desktop Services]

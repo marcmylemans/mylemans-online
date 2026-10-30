@@ -392,3 +392,11 @@ details.series-nav[open] > summary { margin-bottom: 0.6rem; }
    The logo's navy half disappears on the dark header; give it the same
    white tile Labs uses so the brand lockup is identical across the stack. */
 html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px; padding: 2px; box-sizing: border-box; }
+
+/* ---- Simple prose pages (referral links) ---------------------------- */
+.prose-page { max-width: 46rem; }
+.prose-page h3 { margin: 2.2rem 0 0.6rem; font-size: 1.35rem; }
+.prose-page h4 { margin: 1.8rem 0 0.4rem; font-size: 1.05rem; }
+.prose-page p, .prose-page li { line-height: 1.65; color: var(--color-text); }
+.prose-page ul { padding-left: 1.2rem; }
+.prose-page a { color: var(--color-accent); }

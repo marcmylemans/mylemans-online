@@ -1,5 +1,5 @@
 ---
-title: How to Build a Three-Node Cluster with Proxmox and Ceph, A Fun and Easy Guide
+title: 'Build a 3-Node Proxmox Cluster with Ceph Step by Step'
 description: 'Build a three-node Proxmox cluster with Ceph: create the cluster, join two nodes, install Ceph and OSDs, then run a VM on Ceph storage and live migrate it.'
 date: '2024-02-07 08:00:00'
 categories: [Homelab, Hardware]

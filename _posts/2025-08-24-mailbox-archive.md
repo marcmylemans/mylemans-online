@@ -1,6 +1,6 @@
 ---
-title: How I Discovered Hidden Mailbox Growth in Microsoft 365 Archives
-description: Mailbox sizes in Microsoft 365 often hit the 50 GB limit without warning. Here's how I discovered hidden archive growth and created a PowerShell report to fix it.
+title: 'Finding Hidden Mailbox Archive Growth in Microsoft 365'
+description: 'Microsoft 365 mailboxes hit the 50 GB limit without warning. How I found hidden archive growth and built a PowerShell report to catch it early.'
 date: '2025-08-24'
 categories: [Microsoft 365]
 tags: [microsoft 365, exchange online, powershell, email management, business premium]

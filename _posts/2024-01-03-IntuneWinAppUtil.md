@@ -1,6 +1,6 @@
 ---
-title: Deploying a Custom Application with IntuneWinAppUtil in Microsoft Intune
-description: Package a custom .exe or .msi into an .intunewin file with IntuneWinAppUtil and deploy it as a Win32 app in Intune with install and detection rules.
+title: 'IntuneWinAppUtil: Package and Deploy a Win32 App in Intune'
+description: 'Turn a custom .exe or .msi into an .intunewin file with IntuneWinAppUtil, then deploy it as a Win32 app in Intune with install, uninstall and detection rules.'
 date: '2024-01-03 08:00:00'
 categories: [Entra ID & Intune]
 tags: [entraid, entra id, intune, intunewinapputil]

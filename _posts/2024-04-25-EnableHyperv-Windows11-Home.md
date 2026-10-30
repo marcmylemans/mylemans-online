@@ -1,6 +1,6 @@
 ---
-title: Enable Hyper-V on Windows 10/11 Home Edition!
-description: Enable Hyper-V on Windows 10 or 11 Home with a batch script that adds the Hyper-V packages via DISM, then switch it on with Enable-WindowsOptionalFeature.
+title: 'Enable Hyper-V on Windows 11 Home (Works on Windows 10 Home)'
+description: 'Hyper-V is hidden on Windows Home. This batch script adds the Hyper-V packages with DISM, then you switch it on with Enable-WindowsOptionalFeature.'
 date: '2024-04-25 08:00:00'
 categories: [Windows 11]
 tags: [hyper-v, virtualization, windows 10 home, windows 11 home]

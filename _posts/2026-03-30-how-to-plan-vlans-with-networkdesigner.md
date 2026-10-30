@@ -1,5 +1,5 @@
 ---
-title: How to Plan VLANs for a New Network Site Using Network Designer
+title: 'Plan VLANs for a New Site with Network Designer'
 description: A practical walkthrough of using networkdesigner.app to plan VLANs and subnets for a new network site
 date: '2026-03-30'
 categories: [Networking, Homelab]

@@ -1,5 +1,5 @@
 ---
-title: How to Resolve Identity Management for UNIX Upgrade Blocks on Windows Server
+title: 'Fix the Identity Management for UNIX Upgrade Block'
 description: 'Windows Server in-place upgrade blocked by Identity Management for UNIX: remove IDMU with DISM or comment out IDMUUpgradeComplianceCheck in compliance.ini.'
 date: '2024-12-09'
 categories: [Windows Server]

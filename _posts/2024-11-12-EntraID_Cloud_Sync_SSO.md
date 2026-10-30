@@ -1,5 +1,5 @@
 ---
-title: Step-by-Step Guide - Connecting Local Active Directory to Microsoft Entra ID
+title: 'Connect On-Prem Active Directory to Entra ID (Cloud Sync)'
 description: 'Connect on-premises AD to Microsoft Entra ID with Cloud Sync: custom domain, provisioning agent, scoping filters, group licensing, SSPR and Seamless SSO.'
 date: '2024-11-12'
 categories: [Entra ID & Intune]

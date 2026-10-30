@@ -1,5 +1,5 @@
 ---
-title: My Home Lab Adventure - Solving the BSOD Mystery with Proxmox and MDT
+title: 'Fix MDT BSOD on Proxmox VMs: Import the VirtIO Drivers'
 description: Windows VMs on Proxmox blue-screened during MDT deployment until I added a driver fallback step with the VirtIO drivers and a PowerShell check.
 date: '2024-02-13 08:00:00'
 categories: [Homelab, Hardware]

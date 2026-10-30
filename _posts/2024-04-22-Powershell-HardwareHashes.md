@@ -1,5 +1,5 @@
 ---
-title: 'Efficient Intune Autopilot Setup: PowerShell Automation for Hardware Hashes and Device Management!'
+title: 'Intune Autopilot Hardware Hashes with PowerShell'
 description: PowerShell scripts that unzip MDMDiagReport.zip exports from Windows 11 devices, merge the Autopilot hardware hashes into one CSV and log serial numbers.
 date: '2024-04-22 08:00:00'
 categories: [Scripts]

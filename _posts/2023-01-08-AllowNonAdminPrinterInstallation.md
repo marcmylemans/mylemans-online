@@ -1,6 +1,6 @@
 ---
-title: Allow (Print) Driver installation (Non Admins)
-description: Let non-admin users install printer drivers with a Group Policy that allows device installation for the Printer and PNPPrinters device setup class GUIDs.
+title: 'Allow Users to Install Printer Drivers Without Admin Rights'
+description: 'Let standard users install printer drivers on Windows 10/11 with one Group Policy: allow device installation for the Printer and PNPPrinters class GUIDs.'
 date: '2023-01-08 08:00:00'
 categories: [Windows Server]
 tags: [server 2022, printer, gpo, non admin, driver installation, group policy, tutorial, youtube]
@@ -50,3 +50,4 @@ For more information on preventing or managing device installation, visit the fo
 ## Conclusion:
 
 By configuring this Group Policy, you empower non-administrator users to install necessary printer drivers on their own, thereby reducing administrative overhead and enhancing productivity. This setup maintains control over what types of devices can be installed, keeping the network secure while providing flexibility where it is needed.
+

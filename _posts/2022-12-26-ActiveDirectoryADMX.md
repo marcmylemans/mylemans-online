@@ -1,5 +1,5 @@
 ---
-title: Server 2022 - Active Directory - Importing ADMX and Installing Applications with Group Policy
+title: 'Import ADMX Templates and Install Apps with Group Policy'
 description: Import ADMX templates for Chrome, Edge, Foxit, OneDrive and Office into Active Directory and deploy third-party software with Group Policy on Server 2022.
 date: '2022-12-26 09:00:00'
 categories: [Windows Server]

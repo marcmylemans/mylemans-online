@@ -1,6 +1,6 @@
 ---
-title: Proxmox Backup Server – Installation and Configuration
-description: Learn what Proxmox Backup Server is, why it’s essential for any Proxmox environment, and how to install and configure it step-by-step in your home lab.
+title: 'Proxmox Backup Server: Install and Configure Step by Step'
+description: 'What Proxmox Backup Server is, why every Proxmox host should have one, and how to install it, add the datastore and schedule deduplicated VM backups.'
 date: '2025-10-15'
 categories: [Homelab, Backup]
 tags: [proxmox, backup, pbs, virtualization, homelab]

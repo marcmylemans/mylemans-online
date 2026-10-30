@@ -1,5 +1,5 @@
 ---
-title: Reclaiming Storage by Cleaning Up DFS Cache and Conflict/Deleted Files
+title: 'Reclaim Space on DFSR: Clean Up Conflict and Deleted Files'
 description: 'Reclaim disk space on a DFSR file server: lower the Conflict and Deleted quota and empty the ConflictAndDeleted folder with WMIC cleanupconflictdirectory.'
 date: '2024-08-21 08:00:00'
 categories: [Windows Server]

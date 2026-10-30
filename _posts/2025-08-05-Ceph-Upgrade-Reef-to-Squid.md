@@ -1,6 +1,6 @@
 ---
-title: Upgrading Ceph from Reef to Squid (Proxmox 8.4 to 9)
-description: A detailed, step-by-step guide to upgrading Ceph from Reef (18.2+) to Squid (19.2+) in a Proxmox VE 8 environment.
+title: 'Upgrade Ceph Reef to Squid on Proxmox (Before PVE 9)'
+description: 'Step-by-step Ceph 18 Reef to 19 Squid upgrade on Proxmox VE 8.4: repository switch, package upgrade, monitors, managers and OSDs one node at a time.'
 date: '2025-08-05'
 categories: [Proxmox]
 tags: [ceph, proxmox, storage, cluster, upgrade]

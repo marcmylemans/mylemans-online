@@ -48,6 +48,29 @@ app.use((req, res, next) => {
   return res.redirect(301, CANONICAL_ORIGIN + path);
 });
 
+// Paths that existed on the Chirpy blog but have no equivalent here. Google
+// and Ahrefs still hold links to them (Search Console, Oct 2026), so send them
+// somewhere useful instead of 404. Applies on every host.
+const LEGACY_PATHS = [
+  [/^\/archives\/?$/i, '/blog/'],
+  [/^\/tags\/?$/i, '/blog/#tags'],
+  [/^\/categories\/?$/i, '/blog/#categories'],
+  [/^\/page(\d+)\/?$/i, '/blog/page$1/'],
+  [/^\/referral-links\/?$/i, '/referral-links.html'],
+  [/^\/join-our-community\/?$/i, 'https://www.youtube.com/@mylemansonline/join'],
+  [/^\/newsletter\/?$/i, '/#newsletter'],
+  [/^\/shop\/?$/i, 'https://shop.mylemans.online/'],
+  [/^\/about\/?$/i, '/about.html'],
+  [/^\/feed\/?$/i, '/feed.xml'],
+];
+app.use((req, res, next) => {
+  const p = req.path;
+  for (const [re, target] of LEGACY_PATHS) {
+    if (re.test(p)) return res.redirect(301, p.replace(re, target));
+  }
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public'), {
   extensions: ['html'],
 }));

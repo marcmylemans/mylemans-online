@@ -1,6 +1,6 @@
 ---
-title: A Step-by-Step Guide - Setting Up Remote Desktop Services With FS Logix And Single Sign On!
-description: 'Full RDS build on Windows Server 2022: AD CS auto-enrollment, Broker, Web Access and Gateway roles, a Let''s Encrypt certificate, FSLogix and SSO via GPO.'
+title: 'RDS on Server 2022 with FSLogix and SSO: Step-by-Step Guide'
+description: 'Full Remote Desktop Services build on Windows Server 2022: AD CS auto-enrollment, Broker, Web Access and Gateway, a Let''s Encrypt certificate, FSLogix and SSO.'
 date: '2024-10-20'
 categories: [Windows Server, Remote Desktop Services]
 tags: [windows server 2022, remote desktop services, rds, active directory, group policy, fslogix, single sign on, sso, certificate services, let's encrypt, server manager, rds licensing]

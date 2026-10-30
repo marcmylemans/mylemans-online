@@ -1,6 +1,6 @@
 ---
-title: 'I Built a Free IT Learning Platform: Structured Paths for Sysadmins & Homelab Enthusiasts'
-description: 'Introducing Mylemans Labs: free, structured IT learning paths covering networking, PowerShell, Proxmox, Active Directory, Microsoft 365, Docker, and more. No fluff, no paywalls.'
+title: 'I Built a Free IT Learning Platform for Sysadmins'
+description: 'Introducing Mylemans Labs: free, structured IT learning paths for networking, PowerShell, Proxmox, Active Directory, Microsoft 365 and Docker.'
 date: '2026-04-01'
 categories: [Community, Homelab]
 tags: [it training, powershell, networking, proxmox, docker, microsoft 365, active directory, free learning, homelab]

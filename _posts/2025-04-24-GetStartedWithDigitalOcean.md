@@ -1,6 +1,6 @@
 ---
-title: DigitalOcean VPS Setup (and $200 in Free Credit)
-description: Create your first DigitalOcean droplet, harden it with UFW and Fail2Ban, and get it ready for Docker. Includes $200 in credit for 60 days.
+title: 'DigitalOcean $200 Free Credit and First VPS Setup Guide'
+description: 'Claim the DigitalOcean $200 credit, create your first droplet, get off root, set up UFW and Fail2Ban in the right order, and make it ready for Docker.'
 date: 2025-04-24 09:00:00 +0200
 categories: [Cloud]
 tags: [digitalocean, vps, ubuntu, selfhosting, tutorial]

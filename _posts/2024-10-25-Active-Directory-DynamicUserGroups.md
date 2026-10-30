@@ -1,5 +1,5 @@
 ---
-title: Dynamic User Language Switching in Active Directory Using PowerShell
+title: 'Switch AD User Language Dynamically with PowerShell'
 description: Set each AD user's preferredLanguage attribute, build EN, NL and FR language GPOs with security filtering, then a scheduled PowerShell script sorts users.
 date: '2024-10-25'
 categories: [Active Directory, Scripts]

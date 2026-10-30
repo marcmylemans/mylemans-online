@@ -1,6 +1,6 @@
 ---
-title: Automating Hyper-V VHD(X) Creation from a Windows ISO
-description: The TemplateBuilder script in my HomeLab project converts a Windows Server ISO to VHDX with Convert-WindowsImage, injects unattend.xml and enables NetFx3.
+title: 'Convert a Windows ISO to VHDX for Hyper-V (Automated)'
+description: 'Turn a Windows Server ISO into a ready VHDX template with Convert-WindowsImage, inject unattend.xml and enable NetFx3, all from one PowerShell script.'
 date: '2024-05-09 08:00:00'
 categories: [Scripts]
 tags: [automation, powershell, scripting, hyper-v, virtual machines, windows server, iso, vhdx, template, homelab, convert windowsimage]

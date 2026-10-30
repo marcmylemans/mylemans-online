@@ -1,6 +1,6 @@
 ---
-title: DeskPi Rackmate T0 Review – My HP Mini PC Cluster in a 10" Rack
-description: Unboxing and building the DeskPi RackMate T0 10-inch rack to house my three HP ProDesk 600 G4 Mini Proxmox and Ceph nodes, with a PDU and a hidden switch.
+title: 'Mini PC Rack: DeskPi RackMate T0 Review with 3 HP Mini PCs'
+description: 'A 10-inch rack for mini PCs: building the DeskPi RackMate T0 around three HP ProDesk 600 G4 Minis running Proxmox and Ceph, with a PDU and a hidden switch.'
 date: '2025-03-28'
 categories: [Homelab, Hardware]
 tags: [deskpi, proxmox, minipc, ceph, rackmount, homelab]

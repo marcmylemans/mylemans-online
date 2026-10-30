@@ -1,6 +1,6 @@
 ---
-title: Hetzner Cloud, Fast Sign‑Up & First Project
-description: 'Sign up for Hetzner Cloud and create your first project: account, profile, billing, two-factor authentication, then SSH keys and an API token.'
+title: 'Hetzner Cloud Sign-Up: Create Your Account and First Project'
+description: 'Sign up for Hetzner Cloud step by step: account, identity check, billing and two-factor auth, then your first project, SSH key and API token.'
 date: '2024-07-30'
 categories: [Cloud]
 tags: []

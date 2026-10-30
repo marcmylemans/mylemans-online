@@ -1,5 +1,5 @@
 ---
-title: 'Take Control of Your Homelab: PrivateGlue UI Walkthrough & Demo'
+title: 'PrivateGlue Walkthrough: One UI for Your Homelab'
 description: 'Walkthrough of PrivateGlue, my self-hosted Flask app for homelab documentation: device inventory with CSV import, encrypted credentials and Markdown notes.'
 date: '2025-04-28'
 categories: [Self-hosting, Homelab]

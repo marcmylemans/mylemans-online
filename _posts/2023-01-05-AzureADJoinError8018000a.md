@@ -1,6 +1,6 @@
 ---
-title: Azure AD join error code 8018000a – This device is already enrolled
-description: 'Fix Azure AD join error 8018000a (device already enrolled): a PowerShell script removes the old enrollment from the registry, then delete the stale device.'
+title: 'Fix Error 8018000a: This Device Is Already Enrolled'
+description: 'Entra (Azure AD) join fails with 8018000a, device already enrolled: a PowerShell script removes the stale enrollment, then you delete the old device.'
 date: '2023-01-05 08:00:00'
 categories: [Entra ID & Intune]
 tags: [windows, '10', '11', powershell, error, entra id]
@@ -93,3 +93,4 @@ After executing the script, make sure to manually delete the device registration
 ### Conclusion:
 
 Following these steps should clear the error and allow you to proceed with joining your device to Azure AD. If the problem persists, consider consulting Azure support for further assistance.
+

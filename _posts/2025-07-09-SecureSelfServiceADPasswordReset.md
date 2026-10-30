@@ -1,5 +1,5 @@
 ---
-title: Secure Self-Service AD Password Reset with Least-Privilege Delegation
+title: 'Self-Service AD Password Reset with Least Privilege'
 description: 'Let helpdesk staff reset AD passwords without admin rights: a delegated svc_passwordreset account, a Password Resetters group, LDAPS and a small Flask app.'
 date: '2025-07-09'
 categories: [Windows Server]

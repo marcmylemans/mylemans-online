@@ -1,6 +1,6 @@
 ---
-title: 'Understanding VLANs: How to Keep Your Networks Organized and Secure'
-description: 'VLANs explained from scratch: 802.1Q tagging, tagged vs untagged ports, PVID, voice VLANs for VoIP phones, trunk ports and why a VLAN trunk is not a LAG.'
+title: 'What Is a VLAN? Tagged, Untagged, PVID and Trunks'
+description: 'VLANs explained from scratch: 802.1Q tagging, tagged vs untagged ports, PVID, voice VLANs for IP phones, trunk ports, and why a trunk is not a LAG.'
 date: '2024-09-18 19:30:00'
 categories: [Networking]
 tags: []
@@ -189,3 +189,4 @@ So, to summarize:
 VLANs are a powerful tool for network organization, security, and performance. Whether you’re splitting up a school network, isolating sensitive company departments, or separating guest Wi-Fi from the main office network, VLANs keep things running smoothly and securely.
 
 Next time you connect to a Wi-Fi network at work or school, there’s a good chance you’re part of a VLAN without even knowing it!
+x

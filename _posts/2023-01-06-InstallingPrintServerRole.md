@@ -1,6 +1,6 @@
 ---
-title: Server 2022 - Installing PrintServer Role
-description: Install the Print and Document Services role on Windows Server 2022 and deploy a shared printer to users through a Group Policy printer connection.
+title: 'Install Print Management on Windows Server 2022'
+description: 'Add the Print and Document Services role on Windows Server 2022, open Print Management, and deploy a shared printer to users with a Group Policy connection.'
 date: '2023-01-06 08:00:00'
 categories: [Windows Server]
 tags: [server 2022, printserver, group policy, printer deployment, tutorial, youtube]
@@ -53,3 +53,4 @@ Installing the PrintServer role and deploying printers through Group Policy on W
 For the demo printer software used in our guide, download it here:
 
 [Download Link - Demo Printer Software](https://www.colorpilot.com/emfprinter_versions.html)
+

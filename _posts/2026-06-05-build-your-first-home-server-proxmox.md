@@ -1,6 +1,6 @@
 ---
 title: Build Your First Home Server in 30 Minutes (Proxmox)
-description: 'Build a home server from nothing in about 30 minutes with Proxmox VE: flash the installer, install it, create your first VM, and run a genuinely useful service. No experience or expensive hardware needed.'
+description: 'Build a home server from nothing in about 30 minutes with Proxmox VE: flash the installer, create your first VM and run a useful service. No experience needed.'
 date: 2026-06-05 08:00:00 +0200
 categories: [Homelab, Proxmox]
 tags: [proxmox, homelab, home server, virtualization, tutorial, youtube]

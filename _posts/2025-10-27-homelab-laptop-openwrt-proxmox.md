@@ -1,6 +1,6 @@
 ---
-title: Building a Complete Home Lab Using Just a Laptop (Proxmox + OpenWRT Setup)
-description: Turn any laptop into a portable homelab using Proxmox VE, OpenWRT, and Multi-WAN failover. Learn how to add a desktop environment and keep your virtual machines protected behind your own router.
+title: 'Turn a Laptop into a Home Lab with Proxmox and OpenWRT'
+description: 'Turn any laptop into a portable home lab with Proxmox VE and OpenWRT: multi-WAN failover, a desktop environment, and VMs behind your own router.'
 date: '2025-10-27'
 categories: [Proxmox, Homelab]
 tags: [proxmox, openwrt, homelab, networking, laptop]

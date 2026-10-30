@@ -1,5 +1,5 @@
 ---
-title: Upgrade domain controllers to a newer version of Windows Server
+title: 'Upgrade Domain Controllers to a Newer Windows Server'
 description: Run adprep /forestprep and adprep /domainprep /gpprep before an in-place domain controller upgrade, with the supported paths from Server 2008 to 2022.
 date: '2023-02-10 08:00:00'
 categories: [Windows Server]
@@ -34,3 +34,4 @@ And then for each Domain controller we want to upgrade:
 ```powershell
 Adprep /domainprep /gpprep
 ```
+

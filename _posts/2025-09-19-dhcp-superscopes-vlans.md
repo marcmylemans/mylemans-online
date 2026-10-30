@@ -1,6 +1,6 @@
 ---
-title: 'When a /24 Is Too Small: DHCP Congestion, Quick Relief with Superscopes, and the Real Fix (VLANs)'
-description: We hit DHCP congestion on a flat /24. Here’s how we stabilized the network with temporary superscopes and a cleanup script—then redesigned with VLANs for the long term.
+title: 'DHCP Congestion on a /24: Superscopes Now, VLANs Later'
+description: 'DHCP congestion on a flat /24: how we bought time with temporary superscopes and a cleanup script, then fixed it properly with VLANs.'
 date: '2025-09-19'
 categories: [Networking]
 tags: [dhcp, windows server, networking, vlan, troubleshooting, powershell]

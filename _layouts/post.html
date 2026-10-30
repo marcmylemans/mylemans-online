@@ -45,7 +45,7 @@ layout: default
     </details>
     {%- endif %}
     <div class="post-content">
-      {{ content }}
+      {{ content | replace: "<h1 ", "<h2 " | replace: "<h1>", "<h2>" | replace: "</h1>", "</h2>" }}
     </div>
     {%- if site.adsense.enabled and site.adsense.end_of_post %}
     {% include google-adsense.html %}

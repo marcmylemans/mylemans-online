@@ -1,6 +1,6 @@
 ---
-title: Upgrading from Proxmox VE 8 to 9
-description: Step-by-step walkthrough of upgrading a 3-node Proxmox cluster from version 8.4 to 9
+title: 'Upgrade Proxmox 8 to 9 Step by Step (pve8to9, Ceph, noout)'
+description: 'How to upgrade Proxmox VE 8.4 to 9 on a 3-node cluster: run pve8to9, upgrade Ceph to Squid first, set the noout flag, switch apt to Trixie and dist-upgrade.'
 date: '2025-08-06'
 categories: [Proxmox]
 tags: [proxmox, homelab, ceph, upgrade, cluster]

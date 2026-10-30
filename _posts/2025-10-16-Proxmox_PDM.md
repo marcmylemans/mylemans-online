@@ -1,5 +1,5 @@
 ---
-title: Proxmox Datacenter Manager 0.9 Beta, A Game Changer for Homelab Users
+title: 'Proxmox Datacenter Manager Beta: Worth It for Homelabs?'
 description: A deep dive into Proxmox Datacenter Manager 0.9 Beta, central management for multiple Proxmox VE clusters, perfect for homelab users.
 date: '2025-10-16'
 categories: [Proxmox, Homelab]

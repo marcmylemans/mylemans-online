@@ -1,5 +1,5 @@
 ---
-title: 'Setting Up Active Directory on Windows Server 2022: A Step-by-Step Guide'
+title: 'Set Up Active Directory on Windows Server 2022'
 description: Install Active Directory on Windows Server 2022 via Server Manager or PowerShell, pick a domain name, enable the AD Recycle Bin and build an OU structure.
 date: '2024-09-17 17:00:00'
 categories: [Active Directory]

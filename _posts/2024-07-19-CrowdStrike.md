@@ -1,5 +1,5 @@
 ---
-title: Massive CrowdStrike Falcon Sensor Update Crash Disrupts Windows PCs Worldwide
+title: 'CrowdStrike Falcon Update Crashes Windows PCs Worldwide'
 description: 'The July 2024 CrowdStrike Falcon Sensor update that blue-screened Windows PCs and servers worldwide, and the safe mode fix: delete C-00000291*.sys.'
 date: '2024-07-19 08:00:00'
 categories: [Windows Server, Security]

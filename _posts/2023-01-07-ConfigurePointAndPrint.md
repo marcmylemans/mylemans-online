@@ -1,5 +1,5 @@
 ---
-title: Server 2022 - Configure Point and Print - Trusted Printserver
+title: 'Point and Print: Trusted Print Servers via Group Policy'
 description: Configure the Point and Print Restrictions GPO on Server 2022 to trust your internal print server so clients install its drivers without elevation prompts.
 date: '2023-01-07 08:00:00'
 categories: [Windows Server]
@@ -46,3 +46,4 @@ For more detailed information about managing new Point and Print default driver 
 ## Conclusion:
 
 Implementing a Group Policy to specify a trusted internal PrintServer is a crucial step in securing your printing environment and ensuring efficient printer management in Windows Server 2022. Following the steps outlined above will help administrators maintain control over printer installations and mitigate potential security risks.
+

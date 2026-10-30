@@ -1,5 +1,5 @@
 ---
-title: How to Migrating from On-Premise Active Directory to Entra ID with Intune
+title: 'Migrate On-Prem Active Directory to Entra ID with Intune'
 description: 'Move from on-premises AD to Entra ID with Intune: an Autopilot profile and dynamic device group, GPO import via Group Policy analytics, apps and hashes.'
 date: '2024-11-13'
 categories: [Entra ID & Intune]

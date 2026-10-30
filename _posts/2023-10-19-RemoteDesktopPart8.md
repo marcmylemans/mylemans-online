@@ -1,6 +1,6 @@
 ---
-title: Remote Desktop Services, Virtual Desktop Infrastructure!
-description: 'Part 8 of the Server 2022 RDS series: set up Virtual Desktop Infrastructure with a Windows 10/11 template VM and a VDI pool hosted on Hyper-V.'
+title: 'Set Up VDI on Windows Server 2022 (RDS Part 8)'
+description: 'What Virtual Desktop Infrastructure is, how it differs from session-based RDS, and how to build a VDI pool on Hyper-V from a Windows 10/11 template VM.'
 date: '2023-10-19 08:00:00'
 categories: [Windows Server]
 tags: [server 2022, rdp, part8, vdi, remote desktop services, hyper-v]
@@ -52,3 +52,4 @@ With the completion of this VDI setup tutorial, we wrap up our comprehensive ser
 We’re keen to hear about your experiences with setting up and managing VDI. Share your stories, questions, or challenges in the comments below. Your feedback enriches our content and supports the wider community in their tech endeavors.
 
 Thank you for following this series, and stay tuned for more in-depth tutorials and insights in the world of Windows Server and remote desktop technologies!
+

@@ -1,5 +1,5 @@
 ---
-title: Introduction to Hyper-V - What It Is and Why You Should Use It
+title: 'What Is Hyper-V and Why Use It (Hyper-V Guide Ch. 1)'
 description: 'Chapter 1 of the Hyper-V guide: what Hyper-V is, which Windows Server and Windows 10/11 editions include it, system requirements and enabling the role.'
 date: '2024-05-20'
 categories: [Windows Server, Hyper-V]

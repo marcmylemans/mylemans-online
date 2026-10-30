@@ -1,6 +1,6 @@
 ---
-title: 'The Basics of Computer Networks: How Computers Talk to Each Other'
-description: 'Plain-language introduction to networks: LAN, WAN and Wi-Fi, the first four OSI layers, MAC and IP addresses, TCP vs UDP, DHCP, DNS and the router.'
+title: 'How Do Computers Talk to Each Other? Networking Basics'
+description: 'Plain-language networking basics: LAN, WAN and Wi-Fi, the first four OSI layers, MAC and IP addresses, TCP vs UDP, DHCP, DNS and what the router does.'
 date: '2024-09-18 17:00:00'
 categories: [Networking]
 tags: []

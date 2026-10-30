@@ -1,5 +1,5 @@
 ---
-title: Expanding Storage with StoreOnce Virtual Appliance in Hyper-V
+title: 'Expand Storage with a StoreOnce VSA on Hyper-V'
 description: I had to add 29 fixed 1 TB VHDX volumes to an HPE StoreOnce VSA on Hyper-V, so here is the PowerShell script that creates and attaches them via SCSI.
 date: '2024-07-02'
 categories: [Hyper-V, Backup]

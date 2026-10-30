@@ -1,6 +1,6 @@
 ---
-title: Simplifying MFA Setup for Remote Desktop Gateway with Microsoft Entra ID
-description: 'Add Entra ID MFA to Remote Desktop Gateway with the NPS extension: central RD CAP store, RADIUS timeouts, the RDG_CAP policy and why SMS codes fail.'
+title: 'MFA for Remote Desktop Gateway with Entra ID (NPS Extension)'
+description: 'Add Microsoft Entra MFA to RD Gateway with the NPS extension: central RD CAP store, RADIUS timeouts, the RDG_CAP policy, and why SMS codes fail on RDP.'
 date: '2024-12-01'
 categories: [Remote Desktop Services, Security]
 tags: [multi factor authentication, mfa, microsoft entra id, azure active directory, nps extension, remote desktop gateway, rd gateway, network policy server, nps, radius, step by step guide, remote access, secure remote access, authentication, it infrastructure, windows server, azure mfa]

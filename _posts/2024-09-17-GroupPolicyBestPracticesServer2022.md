@@ -1,5 +1,5 @@
 ---
-title: Group Policy, Templates, Preferences, Loopback Policy, and Best Practices
+title: 'Group Policy Best Practices on Windows Server 2022'
 description: 'Group Policy beyond the basics: computer vs user templates, templates vs preferences, loopback processing for RDS, a Central Store for ADMX, split GPOs.'
 date: '2024-09-17 19:00:00'
 categories: [Active Directory]

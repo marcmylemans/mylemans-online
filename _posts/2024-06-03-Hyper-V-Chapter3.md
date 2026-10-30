@@ -1,5 +1,5 @@
 ---
-title: Networking in Hyper-V - Virtual Switches and Network Configuration
+title: 'Hyper-V Networking: Virtual Switches Explained (Ch. 3)'
 description: 'Chapter 3 of the Hyper-V guide: External, Internal and Private virtual switches, attaching VMs, setting guest IPs, VLAN IDs and bandwidth limits.'
 date: '2024-06-03'
 categories: [Windows Server, Hyper-V]

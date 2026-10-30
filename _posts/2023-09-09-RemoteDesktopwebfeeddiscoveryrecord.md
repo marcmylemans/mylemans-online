@@ -1,5 +1,5 @@
 ---
-title: Remote Desktop Services, Set up email discovery to subscribe to your RDS feed
+title: 'RDS Email Discovery: Subscribe to Your RemoteApp Feed'
 description: 'Let users subscribe to your RDS web feed with just their email address: add a public _msradc TXT record that points to the RDWeb webfeed.aspx URL.'
 date: '2023-09-09 08:00:00'
 categories: [Windows Server]
@@ -45,3 +45,4 @@ Be sure to check out the previous video where we configured Remote Desktop Servi
 [Server 2022 - Remote Desktop Services - Part 6]({% link _posts/2023-01-23-Remote_DesktopPart6.md %})
 
 [Server 2022 - Remote Desktop Services - Part 7]({% link _posts/2023-09-07-RemoteDesktopPart7.md %})
+

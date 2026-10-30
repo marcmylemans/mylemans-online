@@ -1,6 +1,6 @@
 ---
-title: Backup and Recovery in Hyper-V - Strategies and Best Practices
-description: 'Chapter 6 of the Hyper-V guide: full, incremental and differential backups, Windows Server Backup vs DPM and Veeam, scheduling and restoring VM backups.'
+title: 'Hyper-V Backup and Recovery: Strategies and Best Practices'
+description: 'Chapter 6 of the Hyper-V guide: full, incremental and differential backups, Windows Server Backup vs DPM and Veeam, scheduling, and restoring a VM.'
 date: '2024-06-24'
 categories: [Windows Server, Hyper-V]
 tags: [hyper-v, windows server, backup, recovery, disaster recovery, virtualization, microsoft]
