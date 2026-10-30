@@ -7,8 +7,6 @@ tags: [microsoft entra, entra id, cloud sync, single sign on, sso, active direct
 image: {path: /assets/img/posts/615a419091ee.png, alt: Step-by-Step Guide - Connecting Local Active Directory to Microsoft Entra ID}
 ---
 
-{% include google-adsense.html %}
-
 In today's tech-driven workplaces, managing user identities across various platforms can be challenging. Connecting your local Active Directory to Microsoft Entra ID (formerly Azure Active Directory) simplifies user management, enhances security, and improves the sign-on experience. This guide walks you through the entire setup process, from adding a custom domain to enabling single sign-on.
 
 {% youtube "https://youtu.be/dqQkp4_Lmhg" %}
@@ -22,7 +20,6 @@ By connecting Active Directory to Microsoft Entra ID, you can:
 - Offer single sign-on (SSO) for smoother access to applications
 
 Let’s dive in!
-
 
 ### Step 1: Accessing the Admin Portal
 

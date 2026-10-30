@@ -35,7 +35,6 @@ If you're **not using Ceph**, or just running a single-node setup without distri
 
 > **Important**: If you do use Ceph, always verify cluster health with `ceph status` before proceeding.
 
-
 ## Step 2: Upgrade All Proxmox Packages
 
 On each node, update all packages to the latest version of Proxmox 8:

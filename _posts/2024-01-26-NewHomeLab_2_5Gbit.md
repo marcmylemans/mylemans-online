@@ -31,7 +31,6 @@ This strategic replacement not only elevates the network's performance but also 
 
 ![M.2 to E 2.5G Ethernet Adapter](https://m.media-amazon.com/images/I/41Dnc8dNuuL._AC_UF1000,1000_QL80_.jpg){:class="img-responsive"}
 
-
 ## Next Steps: Network Configuration and Testing
 
 With the new hardware in place, the next phase involves configuring the network settings and conducting extensive tests to ensure optimal performance. This includes:
@@ -39,7 +38,6 @@ With the new hardware in place, the next phase involves configuring the network 
 - **Network Card Configuration**: Setting up the network cards for maximum throughput.
 - **Bandwidth Testing**: Verifying the actual speeds achieved and tweaking settings for improvement.
 - **Stress Testing**: Simulating high-demand scenarios to test the network's resilience and reliability.
-
 
 ## Integrating a Temporary 2.5 Gbit Switch
 

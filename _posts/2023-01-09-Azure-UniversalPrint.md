@@ -7,12 +7,9 @@ tags: [azure, universal print, printer, print management, tutorial, youtube]
 image: {path: /assets/img/posts/ltcvhYTvhl4.jpg, alt: Azure - Universal Print}
 ---
 
-{% include google-adsense.html %}
-
 ## Introduction:
 
 Universal Print is a modern print solution that organizations can use to manage their print infrastructure through Azure services. This guide provides an overview of setting up Universal Print in Azure and installing a Universal Print Connector on your print server.
-
 
 ### Video Tutorial:
 
@@ -54,3 +51,4 @@ To get started and learn more about Universal Print, refer to the official Micro
 ## Conclusion:
 
 By following this guide, you can effectively configure Universal Print in Azure, making your organization’s print management easier and more centralized. This setup not only reduces the complexity of managing print services but also leverages cloud advantages for scalability and security.
+

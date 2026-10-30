@@ -7,8 +7,6 @@ tags: [home lab, compact pc, nvme storage, ram upgrade, network card, pci riser,
 image: {path: /assets/img/posts/LzH2j4UovFQ.jpg, alt: How to Build a Quiet and Powerful Home Lab in a Tiny PC}
 ---
 
-{% include google-adsense.html %}
-
 # How to Build a Quiet and Powerful Home Lab in a Tiny PC  
 
 Have you always wanted to set up a home lab but can’t stand the thought of a noisy server in your closet? Good news—you can build a silent, powerful home lab in a *tiny* PC! In this guide, I’ll show you how to upgrade a compact PC with:  

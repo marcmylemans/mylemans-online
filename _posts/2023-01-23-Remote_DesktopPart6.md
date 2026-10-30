@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 6
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/hdwa0Wq1XTI" %}
 
 ---
@@ -69,3 +67,4 @@ For a more detailed guide on deploying RemoteApp, make sure to check out our upd
 We’d love to hear about your experiences in setting up and using RemoteApp in your RDS environment. Feel free to share your questions or insights in the comments section. Your feedback helps us tailor content and provide better support to the community.
 
 Stay tuned for more tutorials in this series as we continue exploring advanced features of Remote Desktop Services!
+

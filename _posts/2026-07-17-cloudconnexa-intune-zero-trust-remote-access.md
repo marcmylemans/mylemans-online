@@ -266,6 +266,5 @@ Prefer to watch? The full build is on Mylemans Online on YouTube.
 
 {% youtube "https://youtu.be/trMrp8AwGEg" %}
 
-
 > **Make it a skill, not a one-off.** I built a free, no-signup learning path on Mylemans Labs that walks you through securing remote access for a small environment in the right order. Start here: [Mylemans Labs remote-access path](https://labs.mylemans.online)
 {: .prompt-info }

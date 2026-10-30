@@ -49,7 +49,7 @@ description: 125+ tutorials and war stories on homelabs, Proxmox, Hyper-V, Windo
         {%- for post in paginator.posts %}
         {% include post-row.html post=post %}
         {%- if site.adsense.enabled and site.adsense.list_slot and forloop.index == site.adsense.list_after %}
-        <li class="post-row post-row-ad">{% include google-adsense.html slot=site.adsense.list_slot class="ad-slot-list" %}</li>
+        <li class="post-row-ad" aria-label="Advertisement">{% include google-adsense.html slot=site.adsense.list_slot class="ad-slot-list" format="horizontal" %}</li>
         {%- endif %}
         {%- endfor %}
         {%- else %}

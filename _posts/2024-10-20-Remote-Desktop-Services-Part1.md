@@ -9,8 +9,6 @@ series: The Complete Remote Desktop Services Guide
 series_order: 1
 ---
 
-{% include google-adsense.html %}
-
 **Welcome to this comprehensive guide** on setting up Remote Desktop Services (RDS) using Windows Server 2022! Whether you're managing a small business or setting up a lab environment, this tutorial will walk you through the entire process of creating a scalable, secure RDS environment that supports multiple users. By the end, you'll have everything configured for remote access, complete with security features and user-friendly interfaces.
 
 {% youtube "https://youtu.be/rmZewkdN91U" %}
@@ -91,7 +89,6 @@ With both servers added to Server Manager, you’re now ready to install and con
 
 After assigning the roles, proceed with the installation and configure any additional settings as needed.
 
-
 ### Step 3: Configuring RDS Certificates
 
 To secure Remote Desktop Services (RDS) traffic, you'll need an SSL certificate. Follow these steps to set it up using **[Certify The Web](https://certifytheweb.com/)**:
@@ -105,7 +102,6 @@ To secure Remote Desktop Services (RDS) traffic, you'll need an SSL certificate.
    - **Gateway**
 
 By following these steps, you’ll ensure that SSL encryption is applied to your RDS environment, securing communication between the servers and clients.
-
 
 ### Step 4: Configuring Remote Desktop Licensing
 
@@ -310,7 +306,6 @@ Once clicked, the **Remote Desktop Session** will open, and the user is immediat
 - Users can now navigate their remote desktop, access files, and use applications just as if they were directly connected to the server.
   
 - **FSLogix** ensures that their profile is loaded quickly and efficiently, providing a consistent experience across sessions.
-
 
 ## Conclusion
 

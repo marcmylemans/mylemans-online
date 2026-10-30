@@ -271,7 +271,6 @@ Two behaviours to accept rather than fight:
 
 For Windows guests on RBD, use VirtIO SCSI single with writeback cache enabled. It matters more to how the guest feels than anything you do on the network side.
 
-
 ## FAQ
 
 **Can I run Ceph on 1GbE?**

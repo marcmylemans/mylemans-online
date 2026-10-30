@@ -11,7 +11,6 @@ image: {path: /assets/img/posts/73f0de5efefe.webp, alt: How to Install WSL 2 and
 
 In this blog post, we will guide you through the steps to install WSL 2 on Windows, set up Docker Desktop to work with WSL 2, install Dockge as a container management system, and run a demo webserver using Docker. This tutorial will help you leverage the power of Linux containers directly on your Windows machine.
 
-
 ## **Video Guide:**
 
 {% youtube "https://youtu.be/dcSEcIHheOc" %}
@@ -106,7 +105,6 @@ sudo apt update && sudo apt upgrade
 
 3. Apply and restart
 
-
 ### Step 3: Install Dockge
 
 [Dockge](https://github.com/louislam/dockge) is a container management system that simplifies managing Docker containers, similar to [Portainer](https://github.com/portainer/portainer). 
@@ -146,8 +144,6 @@ Enter a username and a password.
 > If you changed the port in your configuration, make sure to use the adjusted port number.
 {: .prompt-info }
 
-
-
 ### Step 4: Install a Demo Webserver
 
 #### Download the Webserver Container
@@ -169,7 +165,6 @@ One of the great features of Dockge is the ability to convert Docker run command
 6. Once ready, press 'Deploy'.
 
 After deploying, you will see the container start up, and a terminal session will display debug information. The container state (healthy) and the port will also be shown. You can access your new webserver by navigating to `http://localhost` or by clicking on the port number (80 in this example) to go directly to the hello-world webserver.
-
 
 ## **Conclusion**
 

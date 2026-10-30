@@ -7,8 +7,6 @@ tags: [windows, server, powershell, hyper-v]
 image: {path: /assets/img/posts/covers/powershellfindoutvmhost.jpg, alt: Find Your Hyper-V VM’s Host Name with PowerShell}
 ---
 
-{% include google-adsense.html %}
-
 ### Introduction:
 
 Discovering the host name of your Hyper-V virtual machine (VM) can be essential for various administrative tasks, especially in environments where multiple Hyper-V servers are managing several VMs. If you need to quickly identify the Hyper-V server on which a particular VM is running, PowerShell offers a straightforward command to fetch this information.
@@ -39,3 +37,4 @@ The output of this command is the host name of the Hyper-V server. If no host na
 ### Conclusion:
 
 This PowerShell command is a quick and effective way to ascertain the host server of a Hyper-V VM. It can be particularly useful in large environments where tracking VM placements is crucial. If you encounter any issues or receive no output, verify that the VM is properly configured under Hyper-V and that you have administrative privileges to access the required registry paths.
+

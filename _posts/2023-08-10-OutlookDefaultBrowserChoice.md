@@ -24,3 +24,4 @@ Set-ItemProperty -Path “HKCU:\SOFTWARE\Policies\Microsoft\Office\16.0\common\l
 ```
 
 After this you need to close Outlook and open it again.
+

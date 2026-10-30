@@ -7,8 +7,6 @@ tags: [upgrade, domain controller, ad, windows server, tutorial]
 image: {path: /assets/img/posts/covers/ad-inplaceupgrade.jpg, alt: Upgrade domain controllers to a newer version of Windows Server}
 ---
 
-{% include google-adsense.html %}
-
 For an in-place upgrade of an existing DC, you must run adprep /forestprep and adprep /domainprep manually. You need to run Adprep /forestprep only once in the forest for each newer version of Windows Server. Run Adprep /domainprep once in each domain in which you have DCs that you're upgrading for each newer version of Windows Server.
 
 Adprep.exe is a command-line tool that is available on the Windows Server 2008 installation disc in the \sources\adprep folder, and it is available on the Windows Server 2008 R2, and newer, installation disk in the \support\adprep folder. You must run adprep from an elevated command prompt. To open an elevated command prompt, click Start, right-click Command Prompt, and then click Run as administrator.

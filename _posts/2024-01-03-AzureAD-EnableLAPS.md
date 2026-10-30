@@ -9,9 +9,7 @@ image: {path: /assets/img/posts/lEVq0h2qNvQ.jpg, alt: Implementing LAPS in Micro
 
 # Implementing LAPS in Microsoft Entra and Intune
 
-
 {% youtube "https://youtu.be/lEVq0h2qNvQ" %}
-
 
 ## Essential Preparations
 
@@ -71,8 +69,6 @@ Here's a breakdown of the configuration settings available. Microsoft also provi
 4) Search for the Local Policies Security Options category > Select Accounts Enabled Administrator Account Status and then Enable it.
 
 5) Assign to the Included groups you want. In my case I will + Add all devices. > Click Next and create to deploy policy. 
-
-
 
 # Accessing a Device's Local Admin Password
 

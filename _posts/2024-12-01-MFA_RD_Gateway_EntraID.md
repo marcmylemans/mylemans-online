@@ -7,10 +7,6 @@ tags: [multi factor authentication, mfa, microsoft entra id, azure active direct
 image: {path: /assets/img/posts/b5WL7PgEmaY.jpg, alt: Simplifying MFA Setup for Remote Desktop Gateway with Microsoft Entra ID}
 ---
 
-{% include google-adsense.html %}
-
-
-
 Securing remote work access doesn't have to be complicated. Multi-factor authentication (MFA) is one of the most effective ways to protect your Remote Desktop Gateway (RD Gateway). This guide will walk you through how to integrate Microsoft Entra ID (formerly Azure Active Directory) with RD Gateway using the Network Policy Server (NPS) extension.
 
 ---
@@ -68,7 +64,6 @@ Please make sure your on-premises Active Directory users are synced with [Micros
 > - The SMS text method doesn't work with Remote Desktop Gateway because it doesn't provide the option to enter a verification code.
 {: .prompt-warning }
 
-
 ---
 
 ## Step 3: Installing the NPS Extension  
@@ -89,7 +84,6 @@ Please make sure your on-premises Active Directory users are synced with [Micros
    ```
 4. sign in with your Microsoft Entra ID admin credentials when prompted.
 5. Enter your Tenant ID when prompted (you can find this in the Microsoft Entra admin center under Identity > Overview).
-
 
 ---
 
@@ -320,8 +314,6 @@ If you run into issues:
 - **Event Logs:** Check **Event Viewer** > **Microsoft** > **AzureMfa** for errors.  
 - **Verify MFA Registration:** Ensure users are correctly set up in [https://aka.ms/mfasetup](https://aka.ms/mfasetup).  
 - **Network Connectivity:** Confirm RD Gateway can reach your NPS server over the required ports.
-
-
 
 ---
 

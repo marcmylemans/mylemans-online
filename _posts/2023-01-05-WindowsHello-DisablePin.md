@@ -7,9 +7,6 @@ tags: [windows 10, windows 11, powershell, windows hello, windows hello for busi
 image: {path: /assets/img/posts/covers/windowshello-disablepin.jpg, alt: Windows hello - Disable PIN}
 ---
 
-{% include google-adsense.html %}
-
-
 ### Introduction:
 
 Windows Hello enhances security by using biometric data or a PIN to access Windows 10 and Windows 11 devices. However, there might be scenarios where you need to disable the PIN requirement after it's been set up. This can be especially useful in environments where simpler or traditional login methods are preferred.
@@ -52,9 +49,9 @@ Remove-Item –path $passportFolder –recurse -force
 - **Registry Edit:** The script first checks if the registry path exists and sets a DWORD value which effectively disables the PIN requirement for Windows Hello.
 - **Folder Removal:** It then checks if the folder containing the PIN data exists, takes ownership of it, resets its permissions, and finally deletes it to remove any existing PIN data.
 
-
 ### Conclusion:
 
 After running this script, the PIN setup prompt should be disabled the next time you access or set up a user account on your Windows device. This action does not affect other Windows Hello authentication methods like facial recognition or fingerprint scanning, which can still be configured and used if supported by your hardware.
 
 This approach is useful for administrators managing multiple machines or users preferring not to use PIN-based authentication due to policy or personal preference.
+

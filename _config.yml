@@ -50,6 +50,7 @@ adsense:
   enabled: true
   client: ca-pub-2763620817485009
   in_article_slot: "6267293701"   # unit "mylemans-online_page_body_Blog1" (display, responsive)
+  in_article: true                # one slot after the second H2 of longer posts
   end_of_post: true               # one more slot after the article body
   list_slot: "9203598175"         # unit "mylemans-online_sidebar_bottom_AdSense3": between blog-index rows
   list_after: 4                   # insert the list slot after this many rows on /blog/

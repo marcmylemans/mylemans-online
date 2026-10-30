@@ -30,23 +30,17 @@ This script generates a QR code for Wi-Fi credentials, including SSID and passwo
    python generate_wifi_qrcode.py
    ```
 
-
 2. **Follow the Prompts:**
 The script will prompt you to enter the Wi-Fi SSID, password (optional), and the path to save the generated QR code. Press Enter if you want to skip providing a password.
-
 
 3. **QR Code Generation:**
 
 The script will generate a QR code based on the entered information and save it as a PNG file in the specified directory.
-
 
 ## Source Code
 The source code for this script can be found in the file named generate_wifi_qrcode.py. Feel free to explore and modify the script according to your needs.
 
 ## Compiled Executable
 An executable version of the script is available in the 'dist' folder. You can run it directly without requiring a Python interpreter.
-
-
-
 
 Feel free to contribute, report issues, or suggest improvements!

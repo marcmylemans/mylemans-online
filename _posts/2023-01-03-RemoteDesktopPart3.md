@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 3
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/rmZewkdN91U" %}
 
 ---
@@ -67,3 +65,4 @@ For a more detailed guide that covers these topics and more, be sure to check ou
 We’d love to hear how FSLogix has worked for you in your RDS setup. Share your insights, questions, or any challenges you’ve encountered in the comments below. Your feedback helps us continue improving our content for the broader RDS community.
 
 Stay tuned for more advanced tutorials and tips as we continue to explore the full potential of **Remote Desktop Services** in **Windows Server 2022**!
+

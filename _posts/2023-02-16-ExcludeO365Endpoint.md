@@ -7,8 +7,6 @@ tags: [exchange, office365, migration, azure, autodiscover, troubleshooting]
 image: {path: /assets/img/posts/covers/excludeo365endpoint.jpg, alt: Unexpected Autodiscover behavior when you have registry settings under the \Autodiscover key}
 ---
 
-{% include google-adsense.html %}
-
 During a migration from an Onpremise Exchange to O365 i encountered the issue that Outlook would ask for the credentials from O365.
 Because the mailbox was still on the Onpremise Exchange Outlook could not find a mailbox.
 

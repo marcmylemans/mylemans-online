@@ -7,8 +7,6 @@ tags: [windows 11, server 2022, hyper-v, virtualization, tpm, tutorial]
 image: {path: /assets/img/posts/Vzks9iqvNos.jpg, alt: Server 2022 - Hyper-V - Install Windows 11}
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/Vzks9iqvNos" %}
 
 Join us in this instructional video as we navigate through the process of installing Windows 11 within a Hyper-V environment on Windows Server 2022. This tutorial is especially crucial given the specific system requirements of Windows 11, including the need for TPM (Trusted Platform Module).

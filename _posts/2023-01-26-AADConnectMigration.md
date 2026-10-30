@@ -7,8 +7,6 @@ tags: [entra id, ad, sync, aad connect, cloud sync, powershell, tutorial]
 image: {path: /assets/img/posts/covers/aadconnectmigration.jpg, alt: AAD Connect / Cloud Sync with Existing Cloud Users}
 ---
 
-{% include google-adsense.html %}
-
 # Tackling Duplicate Users in AAD Connect / Cloud Sync
 
 Integrating your existing Active Directory with Azure AD using AD Connect or Cloud Sync can sometimes result in duplicate user entries. This video demonstrates how to link existing ImmutableIDs from Active Directory to Azure Directory users and ensure that all proxy addresses in Office 365 are present in Active Directory.
@@ -78,7 +76,6 @@ $reportoutput | Export-Csv -Path "$FolderName\Users_AAD.csv" -NoTypeInformation 
 
 Write-Host "Export completed. The report is saved at $FolderName\Users_AAD.csv"
 
-
 ```
 
 ### Step 2: Exporting Data from Active Directory
@@ -101,7 +98,6 @@ else
     #PowerShell Create directory if not exists
     New-Item $FolderName -ItemType Directory
 }
-
 
 $reportoutput=@()
 $users = Get-ADUser -Filter * -Properties *
@@ -141,7 +137,6 @@ This script will generate two files:
 
 - AD_Update_List.csv: Contains users that need to be updated in AD, with a Skip_Import column indicating if they should be skipped because they don't match between AD and AAD. Verify the Skip_Import "Yes" users and manually correct the UPN if needed in AD and run the script again.
 - Unmatched_AD_Users.csv: Contains users from AD that do not have a match in Azure AD, marked with Skip_Import as "Yes". These users will be newly created if synced to AAD, adjust the UPN if needed.
-
 
 ```powershell
 # Load CSV files
@@ -210,7 +205,6 @@ $UnmatchedADUsers | Export-Csv -Path C:\Temp\Unmatched_AD_Users.csv -NoTypeInfor
 Write-Host "Export completed. The AD update list is saved at C:\Temp\AD_Update_List.csv"
 Write-Host "The unmatched AD users are saved at C:\Temp\Unmatched_AD_Users.csv"
 ```
-
 
 #### Create the AAD Update List
 Now, create a script to filter out users with Skip_Import set to "No" and prepare the AAD_Update_List.csv including the SamAccountName:
@@ -346,7 +340,6 @@ $ComparisonResults | Export-Csv -Path C:\Temp\ImmutableID_Comparison.csv -NoType
 Write-Host "Comparison completed. The results are saved at C:\Temp\ImmutableID_Comparison.csv"
 ```
 
-
 # Closing Thoughts
 
 Successfully merging existing Azure/Office 365 tenant users with your Active Directory environment requires careful planning and execution. This tutorial is designed to guide you through this process, helping you avoid the common pitfall of duplicate user entries.
@@ -354,3 +347,4 @@ Successfully merging existing Azure/Office 365 tenant users with your Active Dir
 Your experiences, insights, or any questions about this process are invaluable. Please share them in the comments below. Your input helps us all learn and grow in our understanding of Azure AD and Active Directory integrations.
 
 Stay tuned for more informative guides and tutorials!
+

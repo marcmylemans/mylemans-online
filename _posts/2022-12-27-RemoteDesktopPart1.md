@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 1
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/rmZewkdN91U" %}
 
 ---

@@ -11,7 +11,6 @@ Hey friends!
 
 I recently embarked on a thrilling journey to build my very own home lab, diving into the world of virtual machines with Proxmox. It's been quite the ride, full of learning and, well, a few unexpected bumps along the way. One of the challenges that had me scratching my head was a series of pesky Blue Screens of Death (BSODs) during installations. Talk about a tech enthusiast's nightmare, right? [Read about my journey here.](/posts/NewHomeLab/)
 
-
 ## Finding My Way Through the Tech Maze
 
 The root of the problem? Driver compatibility issues. It turns out that the virtual machines I was setting up needed some specific drivers to play nice with Proxmox. This discovery led me down a path to find a solution that could seamlessly integrate these essential drivers into my current deployment server. And guess what? I found a way, and I'm super excited to share this game-changer with you all.
@@ -54,9 +53,7 @@ PowerShell.exe -ExecutionPolicy Bypass -File "%SCRIPTROOT%\DriverFallback.ps1"
 
 And for those of you diving into Proxmox like me, I've also included a link to the specific drivers that saved my skin: [Proxmox Windows VirtIO Drivers](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers). These were the key to turning those BSODs into successful installations.
 
-
 {% youtube "https://youtu.be/xhRHTdSN9kY" %}
-
 
 ## Why This Means So Much
 

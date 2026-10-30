@@ -111,7 +111,6 @@ With a properly scoped service account and delegated permissions, you can:
 
 By combining proper Active Directory delegation, a service account with only the permissions it needs, and a custom web app, you can give business teams and support staff a secure, auditable way to reset passwords—**without ever giving them admin rights or exposing unnecessary risk**.
 
-
 ---
 
 Happy (and secure) password resetting!

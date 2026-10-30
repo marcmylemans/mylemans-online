@@ -102,7 +102,6 @@ Here are some basic tasks you’ll need to know for managing your VM:
 - **Start and Stop VMs:** You can start, shut down, or pause VMs from **Hyper-V Manager** by right-clicking the VM.
 - **Monitoring VM Performance:** Use **Task Manager** or **Resource Monitor** inside the VM to monitor resource usage. You can also check performance in **Hyper-V Manager**.
 
-
 ---
 
 ### **Want the Full Written Guide? Get Early Access on Ko-fi**

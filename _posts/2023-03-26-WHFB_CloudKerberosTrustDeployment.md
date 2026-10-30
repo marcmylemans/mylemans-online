@@ -12,7 +12,6 @@ We can use Windows hello and Kerberos tokens to access our on-premise resources 
 
 {% youtube "https://youtu.be/FW3TF0zFWd0" %}
 
-
 [Source](https://learn.microsoft.com/en-us/azure/active-directory/authentication/howto-authentication-passwordless-security-key-on-premises?WT.mc_id=ES-MVP-5004117#install-the-azure-ad-kerberos-powershell-module)
 
 ```powershell
@@ -22,7 +21,6 @@ We can use Windows hello and Kerberos tokens to access our on-premise resources 
 # Install the Azure AD Kerberos PowerShell Module.
 Install-Module -Name AzureADHybridAuthenticationManagement -AllowClobber
 ```
-
 
 ```powershell
 # Specify the on-premises Active Directory domain. A new Azure AD
@@ -44,7 +42,6 @@ Set-AzureADKerberosServer -Domain $domain -UserPrincipalName $userPrincipalName 
 When Azure AD Kerberos is enabled in an Active Directory domain, an Azure AD Kerberos server object is created in the domain. This object:
 <img src="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/images/azuread-kerberos-object.png" alt="azuread-kerberos-object">
 
-
 # Configure Windows Hello for Business policy 
 [source](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust-provision?tabs=intune#configure-windows-hello-for-business-policy)
 
@@ -60,7 +57,6 @@ To check the Windows Hello for Business policy applied at enrollment time:
 4) Verify the status of Configure Windows Hello for Business and any settings that may be configured.
 
 <img src="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/images/whfb-intune-disable.png" alt="whfb-intune-disable">
-
 
 > If the tenant-wide policy is enabled and configured to your needs, you can skip to Configure cloud Kerberos trust policy. Otherwise, follow the instructions below to create a policy using an account protection policy.
 {: .prompt-tip }
@@ -126,8 +122,6 @@ To configure the cloud Kerberos trust policy:
 
 **Value:** True
 
-
-
 >  Important:
 > Tenant ID in the OMA-URI must be replaced with the tenant ID for your Azure AD tenant. See How to find your Azure AD tenant ID for instructions on looking up your tenant ID.
 {: .prompt-warning }
@@ -135,3 +129,4 @@ To configure the cloud Kerberos trust policy:
 <img src="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/images/hello-cloud-trust-intune-large.png" alt="hello-cloud-trust-intune-large">
 
 6) Assign the policy to a security group that contains as members the devices or users that you want to configure.
+

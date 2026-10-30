@@ -18,3 +18,4 @@ A well-written guide from CodeTwo can be found here:
 [Guide](https://www.codetwo.com/admins-blog/use-active-directory-user-photos-windows-10/)
 
 {% youtube "https://youtu.be/BVYyfv8v4xQ" %}
+

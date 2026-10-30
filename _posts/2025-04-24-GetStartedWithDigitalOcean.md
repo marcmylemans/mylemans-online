@@ -38,7 +38,6 @@ A droplet is DigitalOcean's name for a VPS. From the Droplets tab, click Create 
 
 Click create and the machine is up in under a minute.
 
-
 > Choosing password authentication here is the single most common regret. A public IP gets hit with automated SSH login attempts within minutes of coming online, and a password is the only thing standing between those bots and your box. An SSH key removes that problem entirely instead of managing it.
 {: .prompt-warning }
 
@@ -88,7 +87,6 @@ sudo whoami
 
 You want a login with no password prompt, and `sudo whoami` answering `root` after you enter the user password. If either fails, fix it now while you still have a working root session to fix it from.
 
-
 ### Close the door behind you
 
 With the new account proven, stop accepting root logins and passwords over SSH. Edit `/etc/ssh/sshd_config`:
@@ -122,7 +120,6 @@ On recent Ubuntu releases SSH is socket-activated, so restarting the service alo
 > Here's the part that catches people. Cloud images ship drop-in files in `/etc/ssh/sshd_config.d/`, typically a `50-cloud-init.conf` that sets `PasswordAuthentication yes`. Those drop-ins are included at the *top* of the main config, and in sshd the first occurrence of a setting wins. So you edit `sshd_config`, restart, and password logins are still happily accepted. Check with `sudo sshd -T | grep -Ei 'permitrootlogin|passwordauthentication'`, which prints the settings actually in effect, and if they disagree with your edits, fix the drop-in file instead.
 {: .prompt-warning }
 
-
 From here on, log in as your normal user and prefix admin commands with `sudo`. The rest of this guide assumes you are.
 
 ## Set up the firewall (in this exact order)
@@ -142,14 +139,11 @@ sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 ```
 
-
 ### The mistake that locks you out
 
 Run `ufw enable` before `ufw allow OpenSSH` and the default deny policy kills your own SSH session. You're not hacked and nothing is broken; you've just firewalled yourself off a machine you can only reach over the network.
 
-
 It's recoverable, because DigitalOcean gives you a browser-based console that bypasses SSH entirely. Open the droplet, click Console, log in there, and run `sudo ufw allow OpenSSH`. Worth knowing that console exists before you need it, which is generally the moment you'd rather not be reading documentation.
-
 
 ## Add Fail2Ban
 
@@ -191,7 +185,6 @@ port = ssh
 backend = systemd
 maxretry = 5
 ```
-
 
 ### The pro check
 

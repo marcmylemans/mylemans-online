@@ -54,4 +54,3 @@ The M720q with the riser and the dual 10GbE card is a really good fit for a 10-i
 
 All the parts are on the [Amazon list](https://www.amazon.com/shop/mylemansonline/list/BJY1P8GA3V64?tag=marcmylemans-20) (affiliate link, costs you nothing extra), and the hardware I run today is kept up to date on the [My lab](/hardware.html) page.
 
-{% include google-adsense.html %}

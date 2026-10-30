@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 4
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/4wO82is6y40" %}
 
 ---
@@ -59,3 +57,4 @@ For more detailed steps and the latest configurations, be sure to check out our 
 We look forward to hearing about your experiences, insights, or challenges after following this tutorial. Your feedback helps us improve our content and support the broader RDS community.
 
 Stay tuned for more in-depth tutorials and tips in this series on Remote Desktop Services!
+

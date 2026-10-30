@@ -84,4 +84,3 @@ This setup is perfect if you want to learn more about clustering, experiment wit
 
 Thanks for following along on this journey! I hope you had fun and learned a thing or two. Feel free to share this guide with others, and don’t forget to experiment with your new cluster. There’s so much more you can do!
 
-

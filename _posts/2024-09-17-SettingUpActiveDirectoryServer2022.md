@@ -7,9 +7,6 @@ tags: []
 image: {path: /assets/img/posts/bNvEHfJWZE0.jpg, alt: 'Setting Up Active Directory on Windows Server 2022: A Step-by-Step Guide'}
 ---
 
-{% include google-adsense.html %}
-
-
 Are you ready to set up Active Directory on your Windows Server 2022? Whether you're managing a small office or a larger enterprise, this guide will walk you through the essential steps to get everything up and running smoothly. Let’s dive in!
 
 {% youtube "https://youtu.be/bNvEHfJWZE0" %}
@@ -82,7 +79,6 @@ Mistakes happen—if you accidentally delete a user or computer, the Active Dire
    Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope ForestOrConfigurationSet -Target "domain.local"
    ```
 
-
 ### 3. Create Organizational Units (OUs)  
 Organize users, computers, and servers into **OUs** for easier management. For example, create OUs for Users, Groups, Servers, and Computers. You can later apply group policies (GPOs) to these OUs for better control over your network. 
 
@@ -118,12 +114,10 @@ Organize users, computers, and servers into **OUs** for easier management. For e
 ### 4. Change Default OUs for New Users and Computers  
 By default, new user and computer accounts go into generic containers. You can redirect them to specific OUs to keep things organized.
 
-
    ```powershell
    redirusr "OU=Users,OU=Company,DC=domain,DC=local"
    redircmp "OU=Computers,OU=Company,DC=domain,DC=local"
    ```
-
 
 ---
 

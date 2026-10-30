@@ -86,7 +86,6 @@ The expected output was in the following format:
 
 This is an example of how the data in the input.csv file was transformed into the desired output format.
 
-
 ## Running the Script
 
 Downloading Python is a straightforward process. You can obtain the latest version from the official [Python Downloads](https://www.python.org/downloads/) page.
@@ -100,3 +99,4 @@ After you've saved your Python script, you can run it using the following comman
 ```
 python c:\temp\subnetcalculate.py
 ```
+

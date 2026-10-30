@@ -12,5 +12,4 @@ Discover how to bypass the country detection issue by simply unplugging and repl
 Learn which disk to choose for the Proxmox installation
 I'll guide you through setting a password, entering an email for system notifications, and choosing a fully qualified domain name (FQDN) and static IP for your server.
 
-
 {% youtube "https://youtu.be/iF88CwweAko" %}

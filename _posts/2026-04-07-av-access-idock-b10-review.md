@@ -58,7 +58,6 @@ I wanted one box that could do this properly:
 
 That is where the **iDock B10** finally made sense.
 
-
 ## **What the AV Access iDock B10 does well**
 
 The **AV Access iDock B10** is not just a KVM switch. It feels more like a hybrid between a KVM and a proper docking station.
@@ -98,7 +97,6 @@ The whole point of a KVM is convenience, and this is where the iDock B10 deliver
 I can switch using the **button on the unit** or use the **remote puck**, which is even better for everyday use. AV Access also highlights button and wired remote switching as core B10 features.
 
 That sounds like a small thing until you live with it. Not having to reach behind a monitor, move cables, or juggle separate switches is exactly the kind of quality-of-life improvement that makes a desk setup feel finished.
-
 
 ## **The feature I did not expect to appreciate so much: shared wired networking**
 

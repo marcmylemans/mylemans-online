@@ -1,5 +1,5 @@
 ---
-title: Advanced Hyper-V Features - Live Migration, Hyper-V Replica, and More
+title: 'Hyper-V Live Migration and Replica (Ch. 5)'
 description: 'Chapter 5 of the Hyper-V guide: set up Live Migration between hosts, enable Hyper-V Replica for disaster recovery and turn on nested virtualization.'
 date: '2024-06-17'
 categories: [Windows Server, Hyper-V]

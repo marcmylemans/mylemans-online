@@ -74,7 +74,6 @@ session.post(logout_url)
 
 print(f"PPSK keys for VLANs 101, 102, and 103 have been generated and saved to {csv_filename}")
 
-
 ```
 
 You need to replace "unifi-controller-hostname", "api-username", "api-password", and "site-name" with the appropriate values for your UniFi controller. 

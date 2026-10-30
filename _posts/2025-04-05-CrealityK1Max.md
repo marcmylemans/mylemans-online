@@ -65,7 +65,6 @@ You can follow along right here:
 ![Step 4](/assets/img/posts/steps-orca_slicer___05_04_2025/step-19.webp)
 ![Step 5](/assets/img/posts/steps-orca_slicer___05_04_2025/step-35.webp)
 
-
 ## 🔍 Finding 3D Models
 
 You can find STL files on platforms like:

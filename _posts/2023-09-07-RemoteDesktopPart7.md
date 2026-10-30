@@ -72,3 +72,4 @@ Integrating Azure MFA into your RDS setup is a critical step in securing your re
 We’re looking forward to hearing about your experiences with Azure MFA in your RDS environment. Your insights, questions, or challenges are invaluable for our community, so please share them in the comments below.
 
 Stay tuned for the next part in this series, where we'll continue to explore advanced features and best practices in Remote Desktop Services!
+

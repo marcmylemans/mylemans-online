@@ -16,7 +16,6 @@ HPE StoreOnce is a disk-based backup solution that provides efficient, scalable,
 One of the projects I am currently working on involves the use of an HPE StoreOnce Virtual Storage Appliance (VSA) deployed in a Hyper-V environment. 
 Recently, I encountered a scenario where the existing storage capacity was insufficient to meet the growing data backup requirements. To address this issue, I needed to add extra storage volumes to the StoreOnce VSA. Specifically, I had to create an additional 29 volumes, each with a capacity of 1 TB, and attach them to the virtual appliance in Hyper-V.
 
-
 ## Creating and Attaching Volumes
 
 Adding new storage volumes to a virtual appliance in Hyper-V involves several steps. 

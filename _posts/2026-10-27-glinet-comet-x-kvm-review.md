@@ -46,4 +46,3 @@ Seeing a machine boot in a browser tab is exactly what I want from a KVM in a ho
 
 It's on the [My lab](/hardware.html) page and in the [cluster parts list](https://www.amazon.com/shop/mylemansonline/list/BJY1P8GA3V64?tag=marcmylemans-20) (affiliate).
 
-{% include google-adsense.html %}

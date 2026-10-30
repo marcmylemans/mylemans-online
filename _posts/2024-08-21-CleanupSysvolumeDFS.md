@@ -53,4 +53,3 @@ WMIC.EXE /namespace:\\root\microsoftdfs path dfsrreplicatedfolderinfo where "rep
 
 By following these methods, you can effectively reclaim the storage being consumed by outdated DFS cache and deleted files. If your file server is static, this can be a significant space saver.
 
-

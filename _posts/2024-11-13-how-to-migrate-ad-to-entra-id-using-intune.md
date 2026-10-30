@@ -7,12 +7,9 @@ tags: [entra id, microsoft intune, active directory migration, autopilot, group 
 image: {path: /assets/img/posts/e7a4ee8db2ad.png, alt: How to Migrating from On-Premise Active Directory to Entra ID with Intune}
 ---
 
-{% include google-adsense.html %}
-
 # Guide to Setting Up Autopilot and Migrating to Entra ID with Intune
 
 {% youtube "https://youtu.be/xrNkSVDas5E" %}
-
 
 ## 1. Creating an Autopilot Profile
 
@@ -155,7 +152,6 @@ Once the script is installed, you can use it to gather the hardware hash and dev
     ```powershell
     Set-ExecutionPolicy Unrestricted -Scope Process
     ```
-
 
    - This command uploads the device’s hardware hash directly to Intune using your authenticated session.
 

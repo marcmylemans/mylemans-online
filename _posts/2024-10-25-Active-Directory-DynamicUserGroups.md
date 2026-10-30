@@ -7,8 +7,6 @@ tags: [active directory, powershell, group policy, automation, language settings
 image: {path: /assets/img/posts/3ee97659683e.png, alt: Dynamic User Language Switching in Active Directory Using PowerShell}
 ---
 
-{% include google-adsense.html %}
-
 Managing language preferences in a diverse organization is more than just a nice-to-have; it’s about creating an efficient and user-friendly environment. In this post, we’ll dive into how to automatically apply language settings for users in Active Directory (AD) based on their preferences using PowerShell. This solution saves time, minimizes errors, and ensures each user interacts with Windows in their preferred language.
 
 This post was inspired by reading the topic [Implementing Dynamic Groups in Active Directory with PowerShell](https://woshub.com/active-directory-dynamic-user-groups-powershell/).
@@ -131,7 +129,6 @@ If you are also managing Microsoft Office language preferences, you can set the 
 
 1. In the Group Policy Management Editor for each language-specific GPO, navigate to: User Configuration > Policies > Administrative Templates > Microsoft Office 2016 > Language Preferences
 
-
 2. Configure the following settings:
 
 - **Display menus and dialog boxes in**:
@@ -167,7 +164,6 @@ Now that each GPO is configured, we can use **Security Filtering** to assign the
 This method ensures that only users within the designated security group will receive the GPO settings. If a user’s preferred language changes, you can simply move them to a different language group without adjusting the OU structure or GPO links.
 By following these steps, you can create dedicated GPOs that apply language and regional settings based on user preferences. This approach ensures consistency across your organization and allows users to work in the language that suits them best, while automating the process for IT administrators. 
 For more information on language codes and locale settings, refer to the [official Microsoft documentation on language locale settings](https://learn.microsoft.com/en-us/previous-versions/commerce-server/ee825488(v=cs.20)?redirectedfrom=MSDN).
-
 
 ## Implementation Strategy
 
@@ -308,7 +304,6 @@ Log-Message "Language group update completed at $(Get-Date)"
 
 > **Note:** It is not recommended to run scheduled scripts as a domain administrator. Instead, create a dedicated non-admin user account and delegate Active Directory group management privileges to it, or utilize a Group Managed Service Account (gMSA). For more information, refer to [Delegate Control in Active Directory](https://woshub.com/delegate-control-active-directory/) and [Group Managed Service Accounts in Windows Server 2012](https://woshub.com/group-managed-service-accounts-in-windows-server-2012/).
 
-
 ## Testing and Validation
 
 Before rolling this out, test it on a few user accounts to make sure everything is working as expected:
@@ -318,7 +313,6 @@ Before rolling this out, test it on a few user accounts to make sure everything 
 3. **Check the Group Membership** of test users in AD to confirm changes.
 
 Once you’re confident it’s working, schedule the task to automate the process!
-
 
 ## Conclusion
 

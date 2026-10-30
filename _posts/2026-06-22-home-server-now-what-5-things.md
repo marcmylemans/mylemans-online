@@ -28,8 +28,6 @@ By default, your home network hands out addresses like seats at a busy restauran
 
 The fix is to reserve its spot. The technical name is a *DHCP reservation* (or a static lease), but the idea is simple: you tell your router "this machine always gets this address." You do it once, in your router, by tying the server's network card to a fixed address.
 
-
-
 Pin it once and everything else you do gets easier, because the server never moves again.
 
 > Avoid setting a static IP \*inside\* Proxmox that overlaps your router's automatic range. If the router later hands that same address to another device, you get an address clash and one of them drops off the network. Reserve it in the router, or set it statically in Proxmox \*\*and\*\* exclude it from the router's range. Don't do half of each.
@@ -42,8 +40,6 @@ Right now you're almost certainly logging in as `root`, the top-level account th
 Think of it like the master key to a building. You don't carry the master key around for daily work; you carry the key to your own office and fetch the master key when you genuinely need it. Same idea on a server: make yourself a normal user that can perform admin tasks when needed, and leave the all-powerful account in the drawer.
 
 Create a dedicated admin user, then test it the honest way: log in as the new user and try an admin action *before* granting the rights. It should be refused. Good, that proves the account is limited. Then grant the proper permission and try again, and it works.
-
-
 
 That refused-then-allowed moment is the whole point: you now work as a limited user by default, which is exactly how it should be.
 
@@ -58,23 +54,17 @@ Here are two genuinely useful roles to build:
 * **VM operator:** can manage the virtual machines that already exist (start, stop, change settings, take snapshots) but **cannot create new ones** and **cannot touch the storage layer**. In Proxmox terms, the privilege that controls "can create a VM" is `VM.Allocate`. Leave it out and they can drive the cars but not build new ones. Give no `Datastore.\*` privileges and the storage layer stays invisible to them.
 * **Full admin:** can create VMs (`VM.Allocate` included) and manage storage (`Datastore.Allocate`, `Datastore.AllocateSpace`, `Datastore.Audit`). Proxmox ships a built-in `PVEAdmin` role that already covers this, so you may not even build it by hand.
 
-
-
 Then you wire it up: create a group per job, assign the role to the *group* at a *path* (a path is just where the permission applies, scope it to everything or to a single resource pool), and drop your user into the group. From then on, managing who-can-do-what is just managing group membership. That's how it's done in a real shop, and you just set it up at home.
 
 ## 4\. Take a snapshot before you tinker
 
 A snapshot is a save point, exactly like in a game: a moment you can jump back to if you break something. Proxmox makes one in a couple of clicks.
 
-
-
 The reason to do it *now* and not "someday" is that you're about to experiment. You'll install things, break things, and learn. A snapshot turns every one of those mistakes into a five-second undo instead of a full reinstall. Take one now, and take one before anything risky.
 
 ## 5\. Set up updates
 
 The boring one that matters most. Your server needs updates for the same reason your phone does: the holes attackers use are the ones nobody patched. The command matters less than the habit. Updating isn't a one-time thing you did once; it's a small, regular check you start on day one.
-
-
 
 > On a fresh Proxmox install without a subscription, the enterprise update repository will throw an error until you switch to the no-subscription repository. That's the most common "why won't it update" wall beginners hit.
 {: .prompt-warning }
@@ -86,8 +76,6 @@ It sounds too simple to matter. It's the most important thing on this list.
 Here's the failure mode I've watched happen a hundred times: you build something brilliant on a quiet Sunday. Three weeks later something breaks, and you cannot remember the address, the account you made, or what you changed. The thing you built becomes a black box you're afraid to touch, so you never touch it, and eventually you wipe it and start over.
 
 So keep a boring little note: the server's address, the admin account, where your snapshots are, what you've installed and why. A plain text file beats nothing. A small self-hosted documentation tool is even better, and it happens to be a great first thing to actually self-host, which is exactly where the next video goes.
-
-
 
 That note is what turns a one-off weekend project into a system you own and can maintain. Not a fancy tool. A note.
 

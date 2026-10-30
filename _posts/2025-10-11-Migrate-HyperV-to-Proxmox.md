@@ -19,7 +19,6 @@ Inside your Hyper-V VM, install the latest stable [VirtIO drivers](https://fedor
 
 Export the VM from Hyper-V, Open Hyper-V Manager. Right-click the VM and choose **Export**
 
-
 ---
 
 ## 2. Convert the Disk

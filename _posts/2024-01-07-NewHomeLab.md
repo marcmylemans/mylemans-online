@@ -62,7 +62,6 @@ The transition to 2.5 Gbit would involve:
 
 ![2.5 Gbit Network Hardware](https://m.media-amazon.com/images/I/41Dnc8dNuuL._AC_UF1000,1000_QL80_.jpg){:class="img-responsive"}
 
-
 This upgrade isn't just about speed; it's about future-proofing my lab and preparing it for more advanced projects.
 
 ## The Future of My Home Lab

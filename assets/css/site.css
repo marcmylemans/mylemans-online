@@ -421,4 +421,14 @@ html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px;
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
 .ad-slot { margin: 2rem 0; min-height: 90px; }
-.ad-slot-list { margin: 0.5rem 0 1rem; }
+/* Between the blog rows: a plain full-width strip, never the 168px thumbnail column,
+   and never taller than a leaderboard. Labelled so it is not mistaken for a post. */
+.post-row-ad { list-style: none; margin: 0.25rem 0; padding: 0; }
+.post-row-ad .ad-slot-list { margin: 0; padding: 0.75rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+.post-row-ad .ad-slot-list::before { content: "Advertisement"; display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem; }
+.post-row-ad ins.adsbygoogle { display: block; width: 100%; max-height: 280px; overflow: hidden; }
+/* Inside articles: keep the slot the width of the text column and cap tall formats */
+.post-content .ad-slot ins.adsbygoogle, .post-body .ad-slot ins.adsbygoogle { max-height: 320px; overflow: hidden; }
+/* No ad, no gap: AdSense marks each <ins> data-ad-status="filled" or "unfilled".
+   Until it is filled (ad blocker, no consent, no inventory) the slot takes no space. */
+.ad-slot:not(:has(ins.adsbygoogle[data-ad-status="filled"])) { display: none; }

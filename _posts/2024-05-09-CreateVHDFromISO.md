@@ -56,7 +56,3 @@ Check out the updated project on [GitHub](https://github.com/marcmylemans/HomeLa
 
 - [Convert-WindowsImage](https://github.com/x0nn/Convert-WindowsImage)
 
-
-
-
-

@@ -58,4 +58,3 @@ The five modes cover pretty much every situation I can think of, and the VPN wor
 
 If you want a small router with OpenWrt underneath and a VPN client built in, for travel or as a separate router for your lab, I think this is a good one for the price.
 
-{% include google-adsense.html %}

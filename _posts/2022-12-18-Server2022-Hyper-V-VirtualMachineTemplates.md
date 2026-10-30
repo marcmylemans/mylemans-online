@@ -7,8 +7,6 @@ tags: [server 2022, hyper-v, virtualization, vm templates, windows server, tutor
 image: {path: /assets/img/posts/14-tJsdW7LU.jpg, alt: Server 2022 - Hyper-V - Virtual Machine Templates}
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/14-tJsdW7LU" %}
 
 Welcome to a crucial part of managing and optimizing your virtual environment using Hyper-V on Windows Server 2022. In this video, we are going to delve into the process of creating a virtual machine template. This is a key step in maximizing efficiency and scalability in your virtualization strategy.
@@ -24,7 +22,6 @@ A virtual machine template is essentially a master copy of a virtual machine tha
 In the video, I will walk you through the step-by-step process of creating a VM template in Windows Server 2022's Hyper-V. We'll cover everything from selecting the right base image to configuring the VM settings for optimal use.
 
 ### The Script for Automation
-
 
 To further streamline this process, I've included a PowerShell script that automates the creation and configuration of VMs from the template. This script allows for the specification of various parameters like the number of CPUs, amount of RAM, and network settings, making it highly customizable to your needs.
 
@@ -56,7 +53,6 @@ Here's the script:
 # Sysprep VHD path (The VHD will be copied to the VM folder)
 $SysVHDPath = "C:\Path\To\Your\Template\vTemplateServer2022.vhdx"
 
-
 $_Customer = Read-host('Wich Customer?')
 $_VM_Role = Read-host('Give the VM a Role. Ex. DC = Domain Controller, TS = Terminal Server, DB/SQL = Database/SQL Server')
 $_TotalVMS = Read-Host('Total number of this vm Ex. 1, 2, srv-dc-01 - srv-dc-02')
@@ -68,7 +64,6 @@ $VMName          = "v" + $_VlanID +"-" + $_Customer +"-" + $_VM_Role + $_
 
 ECHO Creating New VM:
 
-
 1..$_TotalVMS | % {
 
 # VM Name
@@ -79,7 +74,6 @@ $AutoStartAction = 2
 $AutoStartDelay  = 30
 # Automatic Start Action (TurnOff = 0, Save =1, Shutdown = 2)
 $AutoStopAction  = 2
-
 
 ###### Hardware Configuration ######
 # VM Path
@@ -101,7 +95,6 @@ $StaticMemory   = $_RAM
 $StartupMemory  = $_RAM
 $MinMemory      = $_RAM
 $MaxMemory      = $_RAM
-
 
 # Rename the VHD copied in VM folder to:
 $OsDiskName     = $VMName + "-C"
@@ -167,7 +160,6 @@ $NICs  = @()
 #$NICs += $NIC
 # You can copy/delete the above block and set it for additional NIC
 
-
 ######################################################
 ###           VM Creation and Configuration        ###
 ######################################################
@@ -181,7 +173,6 @@ New-VM -Name $VMName `
        -Version 9.0 `
        -MemoryStartupBytes 1GB `
        -SwitchName $VMSwitchName
-
 
 if ($AutoStartAction -eq 0){$StartAction = "Nothing"}
 Elseif ($AutoStartAction -eq 1){$StartAction = "Start"}
@@ -202,7 +193,6 @@ if (!$Memory){
            -AutomaticStartAction $StartAction `
            -AutomaticStartDelay $AutoStartDelay `
            -AutomaticStopAction $StopAction
-
 
 }
 # If Dynamic Memory
@@ -244,8 +234,6 @@ Else {$PrimaryNetAdapter | Set-VMNetworkAdapter -RouterGuard off}
 
 if ($NicTeaming){$PrimaryNetAdapter | Set-VMNetworkAdapter -AllowTeaming on}
 Else {$PrimaryNetAdapter | Set-VMNetworkAdapter -AllowTeaming off}
-
-
 
 ## VHD(X) OS disk copy
 $OsDiskInfo = Get-Item $SysVHDPath

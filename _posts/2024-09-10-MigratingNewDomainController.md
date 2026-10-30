@@ -77,7 +77,6 @@ Dfsrmig /getmigrationstate
 
 If the result shows that **SYSVOL** is already using DFSR and in the **eliminated** state, you’re all set! This means your domain is already using DFSR, and you can skip the migration steps.
 
-
 ### Step 3: Migrate to the Redirected State
 
 Once you’re ready, migrate to the **Redirected** state:

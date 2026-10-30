@@ -7,8 +7,6 @@ tags: [ollama, ai, llm, windows, machine learning, deepseek r1, open source ai]
 image: {path: /assets/img/posts/0c47c709f624.webp, alt: How to Install Ollama on Windows and Run DeepSeek R1 Locally}
 ---
 
-{% include google-adsense.html %}
-
 ## How to Install Ollama on Windows and Run DeepSeek R1 Locally  
 
 Running **large language models (LLMs) locally** has never been easier. With **Ollama**, you can install and use **DeepSeek R1, Llama 2, Gemma, and more** right on your Windows machine—no cloud computing required.  
@@ -50,7 +48,6 @@ When you run this command:
 Ollama will automatically download the Llama 2 model if you don’t already have it.
 Once downloaded, it will start running the AI model, and you can chat with it right from the command line.
 
-
 ### Step 4: Running DeepSeek R1 Locally  
 
 #### What is DeepSeek R1?  
@@ -65,7 +62,6 @@ ollama run deepseek-r1
 ```
 
 If this is your first time using DeepSeek R1, Ollama will automatically download the 7B model before starting it.
-
 
 ### DeepSeek R1 vs. Llama 2  
 

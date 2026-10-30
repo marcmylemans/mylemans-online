@@ -27,5 +27,4 @@ If you have been affected by this issue, here are the steps to resolve it:
 
 4. Boot the host normally.
 
-
 [Source](https://itdaily.be/nieuws/security/crowdstrike-sloopt-windows/)

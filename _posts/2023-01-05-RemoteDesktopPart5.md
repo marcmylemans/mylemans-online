@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 5
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/i87spvTzR6w" %}
 
 In Part 5 of our Remote Desktop Services series for Windows Server 2022, we're introducing a game-changer: the Remote Desktop Web Client. This addition will enable your users to access the Remote Desktop Host from any HTML5-supported device or browser, including smartphones and tablets.
@@ -78,3 +76,4 @@ The addition of the Remote Desktop Web Client significantly enhances the versati
 We’re eager to hear about your experiences with the Remote Desktop Web Client. Share your insights, questions, or any challenges you've encountered in the comments below. Your feedback is invaluable in helping us shape future content and assisting the wider community.
 
 Stay tuned for more tutorials in this comprehensive series on Remote Desktop Services!
+

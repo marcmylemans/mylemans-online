@@ -68,7 +68,6 @@ Retention tags alone do not perform any actions. They serve as instructions that
 
 Following these steps will help you effectively manage your organization’s email retention and archiving needs.
 
-
 **PowerShell corner**
 
 To create a tag named Auto-archiving (3 years) automatically archiving emails which are at least 3 years old.

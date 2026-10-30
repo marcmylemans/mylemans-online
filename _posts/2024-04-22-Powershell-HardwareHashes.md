@@ -23,13 +23,11 @@ Before diving into the automation process with PowerShell scripts, it's essentia
 
 This guide outlines the steps to export hardware hashes from individual Windows devices using the Diagnostics page in Autopilot. Familiarizing yourself with this process will provide valuable context for leveraging PowerShell automation to streamline the import of hardware hashes into Microsoft Intune for Autopilot setup.
 
-
 ### Extracting Hardware Hashes from MDMDiagReport.zip Files
 
 Windows 11 devices generate MDMDiagReport.zip files, which contain valuable hardware information, including the hardware hash. However, manually extracting and managing these hashes from multiple devices can be time-consuming.
 
 Our first PowerShell script automates this process. By traversing through folders containing MDMDiagReport.zip files, the script extracts the hardware hash from each file, facilitating easy access to essential device information.
-
 
 ```powershell
 # Set the path to the root folder where you want to start searching
@@ -47,7 +45,6 @@ foreach ($zipFile in $zipFiles) {
     Expand-Archive -Path $zipFile.FullName -DestinationPath $extractPath -Force
 }
 
-
 ```
 
 ### Consolidating Hardware Hashes and Creating a Log
@@ -59,7 +56,6 @@ $rootFolder = "C:\Path\To\Root\Folder"
 
 # Set the output file paths
 $outputCSV = "C:\Path\To\Output\consolidated.csv"
-
 
 # Recursively search for CSV files in all subfolders of the root folder
 $csvFiles = Get-ChildItem -Path $rootFolder -Filter "*.csv" -Recurse
@@ -73,7 +69,6 @@ foreach ($csvFile in $csvFiles) {
     $csvContent = Get-Content -Path $csvFile.FullName -Raw
     
 }
-
 
 # Combine all CSV files into one file
 Get-ChildItem -Path $rootFolder -Filter "*.csv" -Recurse | 

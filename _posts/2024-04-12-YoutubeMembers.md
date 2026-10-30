@@ -23,8 +23,6 @@ We are excited to introduce three exclusive membership tiers tailored specifical
 [![:myonlinequestion](https://yt3.googleusercontent.com/OS4SQyZZbn2ohGcbjQss5OH_hW-W93QYDSjGvpjx5CLwSsbFFB083wclWuOTlaEzZKL_8YouqQ=w48-h48-c-k-nd)](https://www.youtube.com/channel/UC1y0Dtbzss2I3mm45xPMm1Q/join)
 [![:myonlinewhat](https://yt3.googleusercontent.com/VRtatKlvvHqxa2IlXuJkrRPgxOjBFhmrzqhrvdZ7hlEgWW5qEWp-ozJBgRdPYyNJjXpJOrxF=w48-h48-c-k-nd)](https://www.youtube.com/channel/UC1y0Dtbzss2I3mm45xPMm1Q/join)
 
-
-
 ### Systems Specialist - €4.99/month
 
 - **Includes all the perks of the Tech Enthusiast level.**
@@ -34,7 +32,6 @@ We are excited to introduce three exclusive membership tiers tailored specifical
 
 - **Includes all the perks of the previous levels.**
 - **Direct Contact via Social Media:** Engage with us directly through private social media interactions for a more personalized experience.
-
 
 Join our community today and elevate your tech knowledge while supporting the content you love. Each tier is designed to enhance your interaction with our channel and provide you with valuable insights into the world of technology and infrastructure. Your support helps us keep producing high-quality content and innovations.
 

@@ -7,8 +7,6 @@ tags: [windows 11, rdp, bugfix, register, remote desktop, tutorial, youtube]
 image: {path: /assets/img/posts/FDcCoxioSp8.jpg, alt: Windows 11 - Fix 22H2 Remote Desktop issues!}
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/FDcCoxioSp8" %}
 
 Welcome to a crucial troubleshooting guide for Windows 11 users. In this video, we tackle a specific issue faced by many using Windows 11 22H2: Remote Desktop Protocol (RDP) connectivity problems. We'll guide you through creating a targeted Group Policy to resolve these issues effectively.

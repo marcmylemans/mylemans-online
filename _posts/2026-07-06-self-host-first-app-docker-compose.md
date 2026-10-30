@@ -122,7 +122,6 @@ Open a browser on any device in your house and go to `http://your-server-ip:port
 
 ![SCREENSHOT: the app loaded in a browser at the local server address, the payoff shot](/assets/img/posts/self-host-first-app/02-app-loaded-local.png)
 
-
 That is a real application, running on a server you control, from a ten-line text file. No subscription. No account on someone else's cloud. Yours.
 
 ## The two failure states that stop beginners (and the fixes)
@@ -134,7 +133,6 @@ If you only follow happy-path guides, one of these two walls will get you. Here'
 You run `docker compose up -d` and get a wall of red about `/var/run/docker.sock`. This is the single most common first-day failure, and it's not broken: your user just isn't allowed to talk to Docker yet.
 
 ![SCREENSHOT: the permission denied error in the terminal, failure state](/assets/img/posts/self-host-first-app/03-permission-denied.png)
-
 
 [The fix](https://docs.docker.com/engine/install/linux-postinstall/) is one command and one logout:
 

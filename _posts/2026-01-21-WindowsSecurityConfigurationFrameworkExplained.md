@@ -17,7 +17,6 @@ Too often, environments rely on:
 Microsoft actually provides an official solution:  
 the **Windows Security Configuration Framework**, delivered through the [**Security Compliance Toolkit**](https://www.microsoft.com/download/details.aspx?id=55319).
 
-
 ## What Is It?
 
 The framework provides **Microsoft-tested security baselines** for Windows systems.
@@ -69,7 +68,6 @@ this toolkit should be part of your standard workflow.
 In a follow-up guide, we’ll apply a baseline and analyze the impact live.
 
 👉 [Official documentation](https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10)
-
 
 ---
 

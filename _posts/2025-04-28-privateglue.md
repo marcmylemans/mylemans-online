@@ -142,7 +142,6 @@ For a live demo, check out: [PrivateGlue Demo](https://privateglue.demo.mylemans
 
 ---
 
-
 ## Final Thoughts
 
 PrivateGlue is designed to make managing your home lab devices, notes, and credentials easy and secure.  

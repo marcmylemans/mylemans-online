@@ -44,8 +44,20 @@ layout: default
       {{ toc }}
     </details>
     {%- endif %}
+    {%- assign body = content | replace: "<h1 ", "<h2 " | replace: "<h1>", "<h2>" | replace: "</h1>", "</h2>" %}
+    {%- comment -%} In-article ad: after the second H2 section, so the reader is past the
+    intro and the first real step, and only in posts long enough to carry it
+    (3+ sections, 700+ words). Short posts get the end-of-post slot only. {%- endcomment -%}
+    {%- assign words = content | number_of_words %}
+    {%- assign parts = body | split: "<h2" %}
     <div class="post-content">
-      {{ content | replace: "<h1 ", "<h2 " | replace: "<h1>", "<h2>" | replace: "</h1>", "</h2>" }}
+      {%- if site.adsense.enabled and site.adsense.in_article and parts.size > 3 and words > 700 %}
+      {{ parts[0] }}<h2{{ parts[1] }}<h2{{ parts[2] }}
+      {% include google-adsense.html %}
+      {%- for part in parts offset:3 %}<h2{{ part }}{% endfor %}
+      {%- else %}
+      {{ body }}
+      {%- endif %}
     </div>
     {%- if site.adsense.enabled and site.adsense.end_of_post %}
     {% include google-adsense.html %}

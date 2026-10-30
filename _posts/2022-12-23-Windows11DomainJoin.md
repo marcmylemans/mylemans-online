@@ -7,8 +7,6 @@ tags: [windows 11, domain join, active directory, network management, tutorial, 
 image: {path: /assets/img/posts/yFegSYXlCXE.jpg, alt: Windows 11 Domain Join}
 ---
 
-{% include google-adsense.html %}
-
 {% youtube "https://youtu.be/yFegSYXlCXE" %}
 
 Join us in this practical guide as we demonstrate how to integrate Windows 11 into an Active Directory environment. This tutorial is particularly valuable for network administrators and IT professionals who are transitioning to or managing Windows 11 systems in a corporate or enterprise network.
@@ -19,7 +17,6 @@ In this instructional video, we cover the key steps involved in joining a Window
 
 1. **Preparation**: Ensuring your Windows 11 system and Active Directory are ready for integration.
 2. **The Domain Join Process**: A step-by-step walkthrough of adding your Windows 11 machine to the Active Directory domain.
-
 
 ### The Importance of Domain Joining
 

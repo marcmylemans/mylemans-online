@@ -7,12 +7,9 @@ tags: [azure, conditional access, powershell, export, import, tutorial, youtube]
 image: {path: /assets/img/posts/covers/export-import-conditionalaccesspolicy.jpg, alt: How to Export and Import Conditional Access Policy's}
 ---
 
-{% include google-adsense.html %}
-
 # Export and Import Azure Conditional Access Policies
 
 This guide provides PowerShell scripts to export and import Azure conditional access policies using Microsoft Graph. The scripts require the `Microsoft.Graph` and `Microsoft.Graph.Beta` modules.
-
 
 ## Explanation
 
@@ -29,7 +26,6 @@ Install-Module -Name Microsoft.Graph -Scope CurrentUser -Force -AllowClobber
 # Install the Microsoft.Graph.Beta module
 Install-Module -Name Microsoft.Graph.Beta -Scope CurrentUser -Force -AllowClobber
 ```
-
 
 2. **Export Conditional Access Policies Script**:
    - Connects to Microsoft Graph with the necessary scope.
@@ -101,7 +97,6 @@ catch {
     Write-Host "Error occurred: $($_.Exception.Message)" -ForegroundColor Red
 }
 ```
-
 
 3. **Import Conditional Access Policies Script**:
    - Connects to Microsoft Graph with the necessary scope.
@@ -186,11 +181,4 @@ This guide is based on the excellent articles by [Ali Tajran](https://www.alitaj
 
 - [Export Conditional Access Policies](https://www.alitajran.com/export-conditional-access-policies/)
 - [Import Conditional Access Policies](https://www.alitajran.com/import-conditional-access-policies/)
-
-
-
-
-
-
-
 

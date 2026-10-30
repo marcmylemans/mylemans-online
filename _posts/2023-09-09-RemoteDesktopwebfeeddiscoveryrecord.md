@@ -27,9 +27,6 @@ Text value:
 https://webserver.contoso.com/RDWeb/Feed/webfeed.aspx
 ```
 
-
-
-
 Be sure to check out the previous video where we configured Remote Desktop Services:
 
 [Server 2022 - Remote Desktop Services - Part 1]({% link _posts/2022-12-27-RemoteDesktopPart1.md %})

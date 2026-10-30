@@ -106,4 +106,3 @@ The parts I'm not proud of yet: there is no cable management in this rack at all
 
 I built this because the same shape shows up in a small business server room: a few machines sharing storage, backup and a network that somebody has to understand. The hardware here is cheaper, but the decisions are the same. If quorum, Ceph and Corosync are new words to you, the [virtualization path on Mylemans Labs](https://labs.mylemans.online/?path=virtualization) takes you through them in order, for free.
 
-{% include google-adsense.html %}
