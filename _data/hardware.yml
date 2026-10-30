@@ -9,6 +9,7 @@
       role: Cluster nodes
       note: i5-9400T, 32 GB RAM, 2 TB NVMe each. Quiet, cheap second-hand, and they take a PCIe riser.
       url: ""
+      post: /posts/m720q-10-inch-rack-cluster-build/
       video: a3ho8IB7p0U
     - name: YuanLey YS-X540-2T dual 10GbE NIC
       role: Per node, via the nandfarm M720q/M920q riser
@@ -19,12 +20,13 @@
       role: 10-inch rack
       note: The black one. Rack trays and mounts for the Tinies are 3D-printed in PETG after the PLA ones softened in the summer heat.
       url: ""
-      post: /posts/HomeLab_RackMateT0/
+      post: /posts/m720q-10-inch-rack-cluster-build/
       video: luNCoZl64aM
     - name: GL.iNet Comet X
       role: KVM over IP
       note: Fills the top U of the rack. The whole cluster was installed through it without ever plugging in a monitor.
       url: ""
+      post: /posts/glinet-comet-x-kvm-review/
       video: oTdKprLL6Xk
 
 - group: Storage and backup
@@ -57,6 +59,7 @@
       role: Travel router
       note: Reviewed in September 2026; the VPN-router-in-a-bag for hotel Wi-Fi.
       url: ""
+      post: /posts/cudy-tr3000-travel-router-review/
       video: 8SUszRoc4bw
 
 - group: Studio

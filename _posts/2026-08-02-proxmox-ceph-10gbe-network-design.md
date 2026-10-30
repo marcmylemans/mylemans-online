@@ -5,6 +5,8 @@ date: 2026-08-02 09:00:00 +0200
 categories: [Homelab, Proxmox]
 tags: [proxmox, ceph, homelab, networking, vlan, tutorial, youtube]
 image: {path: /assets/img/posts/covers/proxmox-ceph-10gbe-network-design.jpg, alt: Proxmox VE Ceph dashboard showing a healthy 3-node cluster with all placement groups active and clean}
+series: Proxmox Cluster Build
+series_order: 4
 ---
 
 I had three identical mini PCs, one dual-port 10GbE card in each, and an eight-port 10G switch. That is not enough ports to do everything the documentation assumes you can do, and working out what to give up took longer than the actual install.
