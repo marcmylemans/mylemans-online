@@ -1,0 +1,68 @@
+# "My lab" page (/hardware.html). Group = section heading. Each item: name, role, note,
+# url (optional: affiliate or product link; leave empty to render without a link),
+# post (optional: related write-up permalink).
+- group: Proxmox cluster
+  intro: Three identical nodes in a 10-inch rack, Ceph on the second 10GbE port with jumbo frames, management and VM traffic on the first. Built August 2026.
+  items:
+    - name: 3x Lenovo ThinkCentre M720q Tiny
+      role: Cluster nodes
+      note: i5-9400T, 32 GB RAM, 2 TB NVMe each. Quiet, cheap second-hand, and they take a PCIe riser.
+      url: ""
+    - name: YuanLey YS-X540-2T dual 10GbE NIC
+      role: Per node, via the nandfarm M720q/M920q riser
+      note: One port for Ceph, one for everything else. The reason the cluster does not need LACP.
+      url: ""
+      post: /posts/proxmox-ceph-10gbe-network-design/
+    - name: DeskPi RackMate DP-0082
+      role: 10-inch rack
+      note: The black one. Rack trays and mounts for the Tinies are 3D-printed in PETG after the PLA ones softened in the summer heat.
+      url: ""
+      post: /posts/HomeLab_RackMateT0/
+    - name: GL.iNet Comet X
+      role: KVM over IP
+      note: Fills the top U of the rack. Lets me reinstall a node without walking over.
+      url: ""
+
+- group: Storage and backup
+  intro: The daily-use NAS is deliberately separate from the lab, so breaking the cluster never touches the family's films.
+  items:
+    - name: CWWK M11 mini-ITX NAS board
+      role: Home NAS, Fygo OS bare metal
+      note: 8x SATA, dual 2.5GbE, dual NVMe, i5-8265U. 64 GB RAM, 4x 3 TB HDD, 2x 1 TB NVMe cache.
+      url: ""
+      post: /posts/first-home-nas-fygo-os/
+    - name: Proxmox Backup Server
+      role: Lab backups
+      note: Deduplicated, scheduled, verified. The one service I would never run the cluster without.
+      url: ""
+      post: /posts/proxmox-backup-server/
+
+- group: Network
+  intro: UniFi for the access layer, Sophos XG Home as the gateway and internal DNS, everything on VLANs.
+  items:
+    - name: Ubiquiti EdgeSwitch ES-48-Lite
+      role: Core switch
+      note: 48 ports, fanless-quiet, GVRP configured. Old, still fine.
+      url: ""
+    - name: Sophos XG Home
+      role: Firewall, gateway, internal DNS
+      note: Free for home use. Every subnet gets .254 as its gateway.
+      url: ""
+      post: /posts/Creating_Firewall_Rules_in_Sophos_XG/
+    - name: Cudy TR3000
+      role: Travel router
+      note: Reviewed in September 2026; the VPN-router-in-a-bag for hotel Wi-Fi.
+      url: ""
+
+- group: Studio
+  intro: Where the videos get made.
+  items:
+    - name: Ryzen 7 5800X, 64 GB, RTX 5060 Ti 16 GB
+      role: Edit workstation
+      note: DaVinci Resolve, Elgato capture card for the lab machines.
+      url: ""
+    - name: Creality K1 Max
+      role: 3D printer
+      note: Prints every bracket and tray in the rack.
+      url: ""
+      post: /posts/CrealityK1Max/

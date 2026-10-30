@@ -1,0 +1,106 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Lab: The Hardware Behind Mylemans Online</title>
+  <meta name="description" content="The hardware I actually run: a three-node Lenovo M720q Proxmox cluster with Ceph on 10GbE, a CWWK NAS on Fygo OS, UniFi and Sophos networking, and the edit workstation." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mylemans.online/hardware.html" />
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="My Lab – Mylemans Online" />
+  <meta property="og:description" content="The hardware I actually run: a three-node Lenovo M720q Proxmox cluster with Ceph on 10GbE, a CWWK NAS on Fygo OS, UniFi and Sophos networking, and the edit workstation." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://mylemans.online/hardware.html" />
+  <meta property="og:site_name" content="Mylemans Online" />
+  <meta property="og:image" content="https://mylemans.online/assets/img/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@mylemansonline" />
+  <meta name="twitter:title" content="My Lab – Mylemans Online" />
+  <meta name="twitter:description" content="The hardware I actually run: a three-node Lenovo M720q Proxmox cluster with Ceph on 10GbE, a CWWK NAS on Fygo OS, UniFi and Sophos networking, and the edit workstation." />
+  <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
+
+  <!-- Structured Data: Person -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script>try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light")t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  {% include header.html %}
+
+<main id="main">
+  <section class="section hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">My lab</p>
+        <h1>What I actually run.</h1>
+        <p class="hero-text">
+          The hardware behind the videos and the posts, with the reason each piece is there.
+          Nothing on this page was sent to me for free unless the note says so; where a link
+          is an affiliate link it is marked, and it costs you nothing extra.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {%- for g in site.data.hardware %}
+  <section class="section{% cycle '', ' section-alt' %}">
+    <div class="container">
+      <div class="section-header">
+        <h2>{{ g.group }}</h2>
+        <p>{{ g.intro }}</p>
+      </div>
+      <div class="grid grid-2">
+        {%- for h in g.items %}
+        <article class="card hw-card">
+          <p class="hw-role">{{ h.role }}</p>
+          <h3>{{ h.name }}</h3>
+          <p>{{ h.note }}</p>
+          <p class="project-links">
+            {%- if h.url and h.url != "" %}<a href="{{ h.url }}" target="_blank" rel="noreferrer sponsored">Where I bought it &rarr;</a>{% endif %}
+            {%- if h.post %} <a href="{{ h.post | relative_url }}">Write-up</a>{% endif %}
+          </p>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endfor %}
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Changes often</h2>
+        <p>This page tracks the lab as it is, not as it was in a video. The post behind each item explains the decision at the time; the <a href="{{ '/referral-links.html' | relative_url }}">referral links</a> page has the hosting and services I use next to the hardware.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="cookie-banner" id="cookie-banner">
+  <p>
+    This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
+    See our <a href="privacy.html">Privacy Policy</a> for details.
+  </p>
+  <div class="cookie-actions">
+    <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
+  </div>
+</div>
+
+<!-- Shared footer -->
+{% include footer.html %}
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

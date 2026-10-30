@@ -586,6 +586,11 @@
     } catch (e) { /* ignore */ }
   });
 
+  // AdSense: load on pages that declare slots (default-layout pages only). Google's
+  // GDPR consent message, published in AdSense > Privacy & messaging, is shown by
+  // adsbygoogle.js itself, so it must not wait for our analytics banner.
+  document.addEventListener("DOMContentLoaded", loadAds);
+
   document.addEventListener("DOMContentLoaded", async () => {
     // First inject header / footer partials
     await loadPartials();
@@ -619,7 +624,6 @@
   }
 
   function loadAnalytics() {
-    loadAds();
     // Prevent double-loading
     if (window.gtagLoaded) return;
     window.gtagLoaded = true;

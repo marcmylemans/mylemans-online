@@ -400,3 +400,25 @@ html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px;
 .prose-page p, .prose-page li { line-height: 1.65; color: var(--color-text); }
 .prose-page ul { padding-left: 1.2rem; }
 .prose-page a { color: var(--color-accent); }
+
+/* .video-frame already reserves a 16:9 box with padding-bottom; a facade inside it
+   must fill that box instead of adding its own 16:9 height underneath (the "black
+   space under the video" on the homepage). */
+.video-frame > .yt-facade { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; }
+
+/* ---- Projects, My lab, Community ------------------------------------- */
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+.pill-static { font-size: 0.72rem; padding: 0.2rem 0.6rem; cursor: default; }
+.project-card h2, .project-card h3, .hw-card h3 { margin: 0 0 0.5rem; }
+.project-card p, .hw-card p { line-height: 1.6; }
+.project-card-featured { padding: 2rem; }
+.project-links { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.75rem 0 0 !important; font-size: 0.92rem; }
+.project-links a { color: var(--color-accent); text-decoration: none; font-weight: 600; }
+.project-links a:hover { text-decoration: underline; }
+.hw-role { margin: 0 0 0.3rem !important; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); }
+.community-card h3 { margin: 0 0 0.5rem; }
+.community-card .btn { margin-top: 0.5rem; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+.ad-slot { margin: 2rem 0; min-height: 90px; }
+.ad-slot-list { margin: 0.5rem 0 1rem; }

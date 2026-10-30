@@ -1,0 +1,117 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects &amp; Tools – Mylemans Online</title>
+  <meta name="description" content="Free tools and projects by Marc Mylemans: Mylemans Labs learning paths, the Network Designer VLAN planner, PowerShell and Python scripts, and the Hyper-V guide." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mylemans.online/projects.html" />
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projects &amp; Tools – Mylemans Online" />
+  <meta property="og:description" content="Free tools and projects by Marc Mylemans: Mylemans Labs learning paths, the Network Designer VLAN planner, PowerShell and Python scripts, and the Hyper-V guide." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://mylemans.online/projects.html" />
+  <meta property="og:site_name" content="Mylemans Online" />
+  <meta property="og:image" content="https://mylemans.online/assets/img/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@mylemansonline" />
+  <meta name="twitter:title" content="Projects &amp; Tools – Mylemans Online" />
+  <meta name="twitter:description" content="Free tools and projects by Marc Mylemans: Mylemans Labs learning paths, the Network Designer VLAN planner, PowerShell and Python scripts, and the Hyper-V guide." />
+  <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
+
+  <!-- Structured Data: Person -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script>try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light")t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  {% include header.html %}
+
+<main id="main">
+  <section class="section hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Projects &amp; tools</p>
+        <h1>Things I built so I would not have to do it twice.</h1>
+        <p class="hero-text">
+          Learning paths, a network planner, scripts and small apps that came out of real
+          jobs and the homelab. Everything here is free to use; the source is on GitHub where
+          there is source.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2 project-featured">
+        {%- for p in site.data.projects %}{%- if p.featured %}
+        <article class="card project-card project-card-featured">
+          <div class="project-tags">{% for t in p.tags %}<span class="pill pill-static">{{ t }}</span>{% endfor %}</div>
+          <h2>{{ p.title }}</h2>
+          <p>{{ p.blurb }}</p>
+          <div class="hero-actions">
+            <a href="{{ p.url | relative_url }}" class="btn btn-primary"{% if p.url contains 'http' %} target="_blank" rel="noreferrer"{% endif %}>{{ p.label }}</a>
+            {%- if p.post %}<a href="{{ p.post | relative_url }}" class="arrow-link">Read the story <span aria-hidden="true">&rarr;</span></a>{% endif %}
+          </div>
+        </article>
+        {%- endif %}{%- endfor %}
+      </div>
+
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Scripts, guides and small tools</h2>
+      </div>
+      <div class="grid grid-3">
+        {%- for p in site.data.projects %}{%- unless p.featured %}
+        <article class="card project-card">
+          <div class="project-tags">{% for t in p.tags %}<span class="pill pill-static">{{ t }}</span>{% endfor %}</div>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.blurb }}</p>
+          <p class="project-links">
+            <a href="{{ p.url | relative_url }}"{% if p.url contains 'http' %} target="_blank" rel="noreferrer"{% endif %}>{{ p.label }} &rarr;</a>
+            {%- if p.post and p.post != p.url %} <a href="{{ p.post | relative_url }}">Write-up</a>{% endif %}
+          </p>
+        </article>
+        {%- endunless %}{%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Want something built?</h2>
+        <p>Most of these started as a problem at work or a question in the comments. If you have one of those, the <a href="{{ '/contact.html' | relative_url }}">contact page</a> is the place; the Discord is the faster one.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="cookie-banner" id="cookie-banner">
+  <p>
+    This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
+    See our <a href="privacy.html">Privacy Policy</a> for details.
+  </p>
+  <div class="cookie-actions">
+    <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
+  </div>
+</div>
+
+<!-- Shared footer -->
+{% include footer.html %}
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

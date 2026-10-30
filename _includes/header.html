@@ -17,6 +17,7 @@
       <ul class="nav-list">
         <li><a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' or page.layout == 'post' or page.layout == 'category' or page.layout == 'tag' %} aria-current="page"{% endif %}>Blog</a></li>
         <li><a href="https://labs.mylemans.online" target="_blank" rel="noreferrer">Labs</a></li>
+        <li><a href="{{ '/projects.html' | relative_url }}"{% if page.url == '/projects.html' or page.url == '/hardware.html' %} aria-current="page"{% endif %}>Projects</a></li>
         <li><a href="https://www.youtube.com/@mylemansonline" target="_blank" rel="noreferrer">YouTube</a></li>
         <li><a href="{{ '/about.html' | relative_url }}"{% if page.url == '/about.html' %} aria-current="page"{% endif %}>About</a></li>
         <li><a href="{{ '/#newsletter' | relative_url }}">Newsletter</a></li>

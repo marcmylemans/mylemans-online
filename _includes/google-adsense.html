@@ -1,17 +1,19 @@
 {%- comment -%}
-In-article ad slot. 56 posts call {% include google-adsense.html %} where the
-old blog placed an ad. Renders nothing unless adsense.enabled is true in
-_config.yml. The adsbygoogle script itself is only loaded by main.js after
-the visitor accepts the cookie banner (see loadAds in assets/js/main.js), so
-the slot stays empty until consent is given.
+Ad slot. Pass slot="..." to pick a unit; defaults to adsense.in_article_slot.
+56 posts call {% include google-adsense.html %} where the old blog placed an ad;
+the post layout adds one after the body when adsense.end_of_post is true, and
+blog/index.html adds one between rows. Renders nothing unless adsense.enabled.
+adsbygoogle.js is loaded by main.js on pages where window.MO_ADSENSE is set,
+i.e. only pages built with the default layout.
 {%- endcomment -%}
 {%- if site.adsense.enabled and site.adsense.client %}
-<div class="ad-slot" aria-label="Advertisement">
+{%- assign slot = include.slot | default: site.adsense.in_article_slot %}
+<div class="ad-slot{% if include.class %} {{ include.class }}{% endif %}" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
-       data-ad-layout="in-article"
-       data-ad-format="fluid"
+       style="display:block"
        data-ad-client="{{ site.adsense.client }}"
-       {%- if site.adsense.in_article_slot %} data-ad-slot="{{ site.adsense.in_article_slot }}"{% endif %}></ins>
+       data-ad-slot="{{ slot }}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
 </div>
 {%- endif %}

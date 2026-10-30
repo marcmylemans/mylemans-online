@@ -1,0 +1,66 @@
+# Projects and tools shown on /projects.html. Order = display order.
+# Fields: title, blurb, url, label (button text), tags (list), repo (optional GitHub URL),
+# post (optional: permalink of the related write-up), featured (true = big card at the top).
+- title: Mylemans Labs
+  blurb: Free, structured IT learning paths for sysadmins and homelabbers. Read a lesson, do it in your own lab, pass the check to unlock the next one. No account needed to browse.
+  url: https://labs.mylemans.online
+  label: Open Labs
+  tags: [Learning, Free]
+  post: /posts/ibuiltafreeitlearningplatform/
+  featured: true
+
+- title: Network Designer
+  blurb: Plan VLANs, subnets and addressing for a new site in the browser and export a plan you can hand to whoever builds it. The tool I use before touching a switch.
+  url: https://networkdesigner.app
+  label: Open the tool
+  tags: [Networking, Tool]
+  post: /posts/how-to-plan-vlans-with-networkdesigner/
+  featured: true
+
+- title: The Complete Hyper-V Guide
+  blurb: Six chapters from first install to backup and recovery, written as a book and published as a series. Virtual switches, storage, live migration, replica, backups.
+  url: /categories/hyper-v/
+  label: Start at chapter 1
+  tags: [Hyper-V, Guide]
+
+- title: Security Baseline Check
+  blurb: Answer a short baseline about your setup and get a score plus a list of concrete fixes. Anonymous, or sign in to Labs to track it over time.
+  url: https://labs.mylemans.online/baseline.html
+  label: Run the check
+  tags: [Security, Tool]
+
+- title: HomeLab automation (PowerShell)
+  blurb: Build a Windows lab from an ISO to a deployed RDS environment with one script set. Template builder, unattend injection, VM deployment on Hyper-V.
+  url: https://github.com/marcmylemans/HomeLab
+  label: View on GitHub
+  tags: [PowerShell, Hyper-V]
+  repo: https://github.com/marcmylemans/HomeLab
+  post: /posts/HomeLabAutomation/
+
+- title: UniFi API scripts
+  blurb: Python scripts against the UniFi controller API. Create sites, VLANs and PPSK networks without clicking through the UI.
+  url: /posts/UnifiAPI_CreatePPSK/
+  label: Read the write-up
+  tags: [Python, UniFi]
+
+- title: OpenVPN Connect via Intune
+  blurb: Detection and apply scripts to push an OpenVPN (CloudConnexa) profile to managed Windows devices with Intune. From the zero-trust remote access video.
+  url: /posts/cloudconnexa-intune-zero-trust-remote-access/
+  label: Read the write-up
+  tags: [Intune, PowerShell]
+
+- title: PrivateGlue
+  blurb: A small self-hosted IT documentation app for homelabs, in the spirit of IT Glue. Devices, credentials, notes, one place.
+  url: https://github.com/marcmylemans/privateglue-public
+  label: View on GitHub
+  tags: [Self-hosting, Docker]
+  repo: https://github.com/marcmylemans/privateglue-public
+  post: /posts/privateglue/
+
+- title: Wi-Fi and URL QR code generators
+  blurb: Two tiny Python tools, one makes a scannable Wi-Fi join code, the other a QR for any URL. Handy for guest networks and video overlays.
+  url: https://github.com/marcmylemans/Wifi-QR-Code-Generator
+  label: View on GitHub
+  tags: [Python]
+  repo: https://github.com/marcmylemans/Wifi-QR-Code-Generator
+  post: /posts/Python_WifiQRCodeGenerator/

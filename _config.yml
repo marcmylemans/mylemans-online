@@ -40,14 +40,19 @@ comments:
     mapping: pathname
     input_position: top
 
-# Google AdSense. Off by default: ads only load after the visitor accepts the
-# cookie banner (main.js loadAds), and the EEA needs a Google-certified consent
-# message (AdSense > Privacy & messaging) before you flip this on.
+# Google AdSense. Ads appear only on pages that use the default layout (posts,
+# blog index, category and tag pages); the homepage and the standalone pages
+# (about, services, sponsor, ...) have their own <head> and never load the script.
+# Consent for ads is handled by Google's own GDPR message (AdSense > Privacy &
+# messaging, published for mylemans.online), which adsbygoogle.js shows itself.
+# Auto ads are OFF in the AdSense console, so only the slots below render.
 adsense:
-  enabled: false
+  enabled: true
   client: ca-pub-2763620817485009
-  in_article_slot: ""      # optional: a manual in-article ad unit id
-  end_of_post: true        # also place a slot after the article body
+  in_article_slot: "6267293701"   # unit "mylemans-online_page_body_Blog1" (display, responsive)
+  end_of_post: true               # one more slot after the article body
+  list_slot: "9203598175"         # unit "mylemans-online_sidebar_bottom_AdSense3": between blog-index rows
+  list_after: 4                   # insert the list slot after this many rows on /blog/
 
 # Blog index at /blog/, 10 posts per page
 paginate: 10
