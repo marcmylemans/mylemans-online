@@ -104,14 +104,6 @@ Here are some basic tasks you’ll need to know for managing your VM:
 
 ---
 
-### **Want the Full Written Guide? Get Early Access on Ko-fi**
-
-If you’re enjoying this series and want to get more detailed instructions for working with Hyper-V, consider supporting our work by getting early access to the **full written guide** on Ko-fi! It covers everything from basic setups to advanced configurations, with clear step-by-step instructions.
-
-Get your copy today: [Download the Full Guide on Ko-fi](https://ko-fi.com/s/4dd04dba14)
-
----
-
 ### **Conclusion**
 
 Congratulations! You’ve just set up your very first virtual machine in Hyper-V. With this basic knowledge, you can now create multiple VMs for testing, development, or production purposes.

@@ -36,7 +36,7 @@ The SDN stack now supports native WireGuard and BGP as fabric protocols, along w
 
 Version 9.1, released in November 2025, added support for Open Container Initiative (OCI) images. You can pull images directly from container registries and use them as LXC templates without leaving the Proxmox web UI. That closes a gap between traditional VM management and modern container workflows that previously required workarounds.
 
-See the full feature list on the [Proxmox VE product page](https://www.proxmox.com/en/products/proxmox-virtual-environment).
+See the full feature list on the [Proxmox VE product page](https://www.proxmox.com/en/products/proxmox-virtual-environment/overview).
 
 ---
 

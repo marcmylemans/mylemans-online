@@ -143,14 +143,6 @@ To make sure your backup and recovery strategy is airtight, here are some **best
 
 ---
 
-### **Want the Full Written Guide? Get Early Access on Ko-fi**
-
-Are you enjoying this series? If so, consider getting the **full written guide** on Ko-fi, where you’ll find in-depth step-by-step instructions covering everything from Hyper-V basics to advanced features like **disaster recovery** and **replication**.
-
-Get your copy today: [Download the Full Guide on Ko-fi](https://ko-fi.com/s/4dd04dba14)
-
----
-
 ### **Conclusion**
 
 That’s it for **Chapter 6: Backup and Recovery in Hyper-V**! By now, you should have a solid understanding of the importance of backups, the different backup strategies, and how to recover your Hyper-V virtual machines when needed.

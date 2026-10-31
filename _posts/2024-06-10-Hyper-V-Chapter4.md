@@ -146,14 +146,6 @@ Backing up your VHDs is crucial for protecting your data. Here are some best pra
 
 ---
 
-### **Want the Full Written Guide? Get Early Access on Ko-fi**
-
-If you’re enjoying this series and want more detailed instructions for managing Hyper-V, you can get early access to the **full written guide** on Ko-fi. This guide provides step-by-step guidance for everything from setting up VHDs to managing complex Hyper-V environments.
-
-Support our work and download your copy here: [Get the Full Guide on Ko-fi](https://ko-fi.com/s/4dd04dba14)
-
----
-
 ### **Conclusion**
 
 That’s it for **Chapter 4: Storage in Hyper-V**! Now you know how to create, attach, and manage **Virtual Hard Disks (VHDs)** in Hyper-V. Storage is one of the most critical aspects of any virtualization environment, and mastering it will help you optimize your VMs.

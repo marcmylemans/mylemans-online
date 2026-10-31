@@ -82,4 +82,3 @@ To create a tag named Manual archiving (1-year) letting users manually archive i
 New-RetentionPolicyTag "Manual archiving (1-year)" -Type Personal -RetentionEnabled $true -AgeLimitForRetention 365 -RetentionAction MoveToArchive
 ```
 
-[Text](url)

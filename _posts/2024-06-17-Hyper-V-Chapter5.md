@@ -83,14 +83,6 @@ If you missed the earlier chapters, check them out here: [Chapter 1: Introductio
 
 ---
 
-### **Want the Full Written Guide? Get Early Access on Ko-fi**
-
-If you’re enjoying this series and want more detailed instructions for managing Hyper-V, you can get early access to the **full written guide** on Ko-fi. This guide provides step-by-step guidance for everything from setting up VHDs to managing complex Hyper-V environments.
-
-Support our work and download your copy here: [Get the Full Guide on Ko-fi](https://ko-fi.com/s/4dd04dba14)
-
----
-
 ### **Conclusion**
 
 That’s it for Chapter 5: Advanced Hyper-V Features! These features—Live Migration, Hyper-V Replica, Shielded VMs, and others—can take your virtual environment to the next level by providing enhanced security, disaster recovery, and performance improvements.

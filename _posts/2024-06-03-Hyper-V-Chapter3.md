@@ -123,14 +123,6 @@ Running into network problems? Here are a few common issues and how to fix them:
 
 ---
 
-### **Want the Full Written Guide? Get Early Access on Ko-fi**
-
-Are you enjoying the series so far? If you want to dive deeper into Hyper-V and learn all the tips and tricks, you can get the **full written guide** with detailed step-by-step instructions on Ko-fi. Your support helps us continue creating useful content for the community.
-
-Grab your copy here: [Download the Full Guide on Ko-fi](https://ko-fi.com/s/4dd04dba14)
-
----
-
 ### **Conclusion**
 
 That wraps up **Chapter 3: Networking in Hyper-V**! You now have a solid understanding of virtual switches and how to configure network settings for your VMs. In the next chapter, we’ll take a closer look at **storage in Hyper-V**, including creating and managing virtual hard disks (VHDs).

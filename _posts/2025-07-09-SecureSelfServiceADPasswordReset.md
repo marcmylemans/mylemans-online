@@ -62,7 +62,7 @@ With a properly scoped service account and delegated permissions, you can:
 - Ensure your Domain Controller has a valid SSL certificate (can be internal CA or self-signed).
 - The server running your password reset tool must trust this certificate.
 
-[See Microsoft's LDAPS setup guide.](https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/enable-ldap-over-ssl-third-party-certification-authority)
+[See Microsoft's LDAPS setup guide.](https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/enable-ldap-over-ssl-3rd-certification-authority)
 
 ---
 

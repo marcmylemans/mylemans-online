@@ -109,14 +109,6 @@ To open Hyper-V Manager:
 
 ---
 
-### **Want the Full Written Guide? Get Early Access on Ko-fi**
-
-If you’re finding this series useful and want to dive deeper into Hyper-V, consider supporting our work by getting early access to the **full written guide** on Ko-fi! You’ll get a comprehensive, step-by-step guide covering everything from beginner to advanced topics in Hyper-V. Plus, your support helps us continue creating and improving content.
-
-Head over to **Ko-fi** to download your copy today: [Get It Now on Ko-fi](https://ko-fi.com/s/4dd04dba14)
-
----
-
 ### **Conclusion**
 
 That’s it for **Chapter 1: Introduction to Hyper-V**! You should now have a good grasp of what Hyper-V is and how to enable it on your system. In the next chapter, we’ll dive deeper into **creating your first virtual machine** in Hyper-V.

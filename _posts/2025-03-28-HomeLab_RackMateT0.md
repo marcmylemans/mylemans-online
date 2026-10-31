@@ -102,7 +102,7 @@ Your support helps keep the homelab running and allows me to create more tutoria
 ---
 
 ### Tech Enthusiast
-*Loyalty badges • Custom emojis • Discord access • Early video access*
+*Loyalty badges • Custom emojis • Early video access*
 
 - **Antonio Oliveira**  
 - **Ringo Richter** 
