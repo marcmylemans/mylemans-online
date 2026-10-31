@@ -10,8 +10,6 @@ image: {path: /assets/img/posts/FW3TF0zFWd0.jpg, alt: Windows Hello for Business
 In this video, we are going to deploy Cloud Kerberos Trust.
 We can use Windows hello and Kerberos tokens to access our on-premise resources like file shares.
 
-{% youtube "https://youtu.be/FW3TF0zFWd0" %}
-
 [Source](https://learn.microsoft.com/en-us/azure/active-directory/authentication/howto-authentication-passwordless-security-key-on-premises?WT.mc_id=ES-MVP-5004117#install-the-azure-ad-kerberos-powershell-module)
 
 ```powershell
@@ -41,6 +39,8 @@ Set-AzureADKerberosServer -Domain $domain -UserPrincipalName $userPrincipalName 
 
 When Azure AD Kerberos is enabled in an Active Directory domain, an Azure AD Kerberos server object is created in the domain. This object:
 <img src="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/images/azuread-kerberos-object.png" alt="azuread-kerberos-object">
+
+{% youtube "https://youtu.be/FW3TF0zFWd0" %}
 
 # Configure Windows Hello for Business policy 
 [source](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust-provision?tabs=intune#configure-windows-hello-for-business-policy)

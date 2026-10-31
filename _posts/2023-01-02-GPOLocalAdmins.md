@@ -11,8 +11,6 @@ In this video we will be managing our Local Admins with Group Policy's.
 In the first part i will show you how to delete all die local administrators and only leave the Domain Admins.
 In the second part we will be using the Managed By field in Active directory to assign a 'Primary User' to the workstation. With this the 'Primary User' has local admin rights only on that assigned workstation.
 
-{% youtube "https://youtu.be/FrRasK5DQiY" %}
-
 Screenshots + Ldap Query's
 
 ![Assign users](/assets/primaryuserlocaladmin/primaryuserlocaladmin_assign.jpg)
@@ -45,3 +43,4 @@ sAMAccountName
 PrimaryUser
 ```
 
+{% youtube "https://youtu.be/FrRasK5DQiY" %}

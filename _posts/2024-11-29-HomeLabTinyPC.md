@@ -6,6 +6,7 @@ categories: [Homelab, Hardware]
 tags: [home lab, compact pc, nvme storage, ram upgrade, network card, pci riser, silent build, tech diy, mini pc, small form factor]
 image: {path: /assets/img/posts/LzH2j4UovFQ.jpg, alt: How to Build a Quiet and Powerful Home Lab in a Tiny PC}
 ---
+{% youtube "https://youtu.be/LzH2j4UovFQ" %}
 
 # How to Build a Quiet and Powerful Home Lab in a Tiny PC  
 
@@ -17,8 +18,6 @@ Have you always wanted to set up a home lab but can’t stand the thought of a n
 - **Dual 2.5 Gbit network cards**  
 
 Follow these step-by-step instructions, and you’ll have a home lab that’s both quiet and packed with performance.  
-
-{% youtube "https://youtu.be/LzH2j4UovFQ" %}
 
 ---
 

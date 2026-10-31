@@ -9,8 +9,6 @@ series: The Complete Hyper-V Guide
 series_order: 2
 ---
 
-{% youtube "https://youtu.be/a639ZGaLjwM" %}
-
 ---
 
 Welcome back to our **Hyper-V series**! In **Chapter 2**, we’re diving into one of the most exciting parts of Hyper-V: **Setting up your first virtual machine**. By the end of this post and video, you’ll have your very first **virtual machine (VM)** up and running in Hyper-V, complete with an operating system installed and configured.
@@ -18,6 +16,8 @@ Welcome back to our **Hyper-V series**! In **Chapter 2**, we’re diving into on
 If you're following along, make sure Hyper-V is enabled on your system. If you missed the first chapter, check it out here: [Introduction to Hyper-V](/posts/Hyper-V-Chapter1/).
 
 ---
+
+{% youtube "https://youtu.be/a639ZGaLjwM" %}
 
 ### **Planning Your Virtual Machine**
 

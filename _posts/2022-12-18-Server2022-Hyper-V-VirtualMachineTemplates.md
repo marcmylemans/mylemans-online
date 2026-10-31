@@ -7,11 +7,11 @@ tags: [server 2022, hyper-v, virtualization, vm templates, windows server, tutor
 image: {path: /assets/img/posts/14-tJsdW7LU.jpg, alt: Server 2022 - Hyper-V - Virtual Machine Templates}
 ---
 
-{% youtube "https://youtu.be/14-tJsdW7LU" %}
-
 Welcome to a crucial part of managing and optimizing your virtual environment using Hyper-V on Windows Server 2022. In this video, we are going to delve into the process of creating a virtual machine template. This is a key step in maximizing efficiency and scalability in your virtualization strategy.
 
 A virtual machine template is essentially a master copy of a virtual machine that can be used repeatedly to create new instances. This ensures that each VM is configured consistently, with the same set of files, settings, and software. This process not only saves time but also greatly reduces the possibility of human error during the VM creation process.
+
+{% youtube "https://youtu.be/14-tJsdW7LU" %}
 
 ### Why Use VM Templates?
 

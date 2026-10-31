@@ -14,7 +14,7 @@ These are the parts for my Proxmox cluster, and everything in this post I bought
 > **TL;DR**: The M720q is the right tiny PC for this because it has a riser slot that takes a real PCIe card, so each node gets two 10GbE ports. The rack is a DeskPi RackMate T1 Plus (6U), the nodes sit in 3D-printed cradles, and the one lesson from the build is to dry-fit every tray before you screw in the first device. The full parts list is on my [Amazon list](https://www.amazon.com/shop/mylemansonline/list/BJY1P8GA3V64?tag=marcmylemans-20) (affiliate).
 {: .prompt-tip }
 
-{% youtube a3ho8IB7p0U %}
+{% youtube "https://youtu.be/a3ho8IB7p0U" %}
 
 ## The nodes
 
@@ -28,7 +28,7 @@ For a cluster, the view that matters is the back: two 10GbE ports on every node.
 
 The rack is a DeskPi RackMate T1 Plus, a 6U 10-inch rack, and nobody sent me this one either.
 
-{% youtube luNCoZl64aM %}
+{% youtube "https://youtu.be/luNCoZl64aM" %}
 
 In the box: the acrylic top cover, a metal blank panel, a 12-port keystone patch panel, two aluminium handles, rubber feet, all the aluminium rods for the frame, and two screwdrivers (a cross-head and a hex), so you don't need tools of your own.
 

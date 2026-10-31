@@ -24,4 +24,3 @@ Reset the new device so autopilot can automatilcy Hybrid join our new device int
 [Source](https://learn.microsoft.com/en-us/mem/autopilot/windows-autopilot-hybrid)
 
 {% youtube "https://youtu.be/Jp_kmppB_Fk" %}
-

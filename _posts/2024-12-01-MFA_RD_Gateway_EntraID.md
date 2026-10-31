@@ -11,6 +11,8 @@ Securing remote work access doesn't have to be complicated. Multi-factor authent
 
 ---
 
+{% youtube "https://youtu.be/b5WL7PgEmaY" %}
+
 ## Why This Matters  
 
 In a world of remote work, safeguarding sensitive company data is crucial. By adding MFA to your RD Gateway, you add an essential extra layer of defense. This setup not only protects against unauthorized access but also enhances trust within your IT ecosystem.
@@ -326,8 +328,6 @@ Congrats! You've added a powerful layer of security to your RD Gateway with Micr
 ## Watch the Video Guide
 
 Need a visual walkthrough? Check out our detailed step-by-step video [here](https://youtu.be/b5WL7PgEmaY).
-
-{% youtube "https://youtu.be/b5WL7PgEmaY" %}
 
 *This video links to an older recording. A new version based on this guide is currently being recorded and will be available as soon as possible.*
 

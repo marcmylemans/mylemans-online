@@ -6,10 +6,9 @@ categories: [Entra ID & Intune]
 tags: [entra id, microsoft intune, active directory migration, autopilot, group policy migration, device enrollment, company portal, application deployment, remote work, cloud kerberos trust, windows hello, onedrive, microsoft edge, modern workplace, mdm]
 image: {path: /assets/img/posts/e7a4ee8db2ad.png, alt: How to Migrating from On-Premise Active Directory to Entra ID with Intune}
 ---
+{% youtube "https://youtu.be/xrNkSVDas5E" %}
 
 # Guide to Setting Up Autopilot and Migrating to Entra ID with Intune
-
-{% youtube "https://youtu.be/xrNkSVDas5E" %}
 
 ## 1. Creating an Autopilot Profile
 

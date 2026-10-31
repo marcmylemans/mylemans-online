@@ -11,9 +11,9 @@ If you've mastered the basics of computer networks—like how devices talk to ea
 
 That’s where **VLANs** come in! Don't worry—it's easier than it sounds. In this article, we’ll break down **Virtual Local Area Networks** (VLANs) in a way that makes sense, even if you’re new to the topic. Let’s jump in!
 
-{% youtube "https://youtu.be/LYvKGNvVqSU" %}
-
 ---
+
+{% youtube "https://youtu.be/LYvKGNvVqSU" %}
 
 ## What is a VLAN?
 

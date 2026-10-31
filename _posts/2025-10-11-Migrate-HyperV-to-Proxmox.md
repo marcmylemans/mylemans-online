@@ -9,9 +9,9 @@ image: {path: /assets/img/posts/Migrate-HyperV-to-Proxmox.webp, alt: How to Migr
 
 If you’re moving your home lab or production workloads from **Hyper-V** to **Proxmox**, this guide walks you through the entire migration process, including installing drivers, exporting, converting, and importing your virtual machine.
 
-{% youtube "https://youtu.be/nYLgYg2zPHc" %}
-
 ---
+
+{% youtube "https://youtu.be/nYLgYg2zPHc" %}
 
 ## 1. Prepare the VM
 

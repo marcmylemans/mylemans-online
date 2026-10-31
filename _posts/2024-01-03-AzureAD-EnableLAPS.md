@@ -6,10 +6,9 @@ categories: [Entra ID & Intune]
 tags: [entraid, entra id, intune, laps]
 image: {path: /assets/img/posts/lEVq0h2qNvQ.jpg, alt: Implementing LAPS in Microsoft Entra and Intune}
 ---
+{% youtube "https://youtu.be/lEVq0h2qNvQ" %}
 
 # Implementing LAPS in Microsoft Entra and Intune
-
-{% youtube "https://youtu.be/lEVq0h2qNvQ" %}
 
 ## Essential Preparations
 

@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 3
 ---
 
-{% youtube "https://youtu.be/rmZewkdN91U" %}
-
 ---
 
 **Update:** We’ve recently created a comprehensive guide that covers everything you need to know about setting up **FSLogix**, along with other essential **Remote Desktop Services (RDS)** configurations. You can check out the detailed guide here: [A Step-by-Step Guide - Setting Up Remote Desktop Services With FS Logix And Single Sign On!](/posts/Remote-Desktop-Services-Part1/).
@@ -20,6 +18,8 @@ series_order: 3
 Welcome back to our series on **Remote Desktop Services (RDS)** in **Windows Server 2022**! In Part 3, we’re diving into **FSLogix**—a powerful solution for managing user profiles and data in RDS environments.
 
 ---
+
+{% youtube "https://youtu.be/rmZewkdN91U" %}
 
 ### **Exploring FSLogix in RDS**
 

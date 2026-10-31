@@ -6,7 +6,6 @@ categories: [Homelab, Hardware]
 tags: [deskpi, proxmox, minipc, ceph, rackmount, homelab]
 image: {path: /assets/img/posts/rackmate-front.jpg, alt: DeskPi Rackmate T0 Review – My HP Mini PC Cluster in a 10" Rack}
 ---
-
 {% youtube "https://youtu.be/-lN0Wyh-Y6o" %}
 
 ## Intro

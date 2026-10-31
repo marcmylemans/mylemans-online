@@ -6,6 +6,7 @@ categories: [Windows Server]
 tags: [server 2022, printer, gpo, non admin, driver installation, group policy, tutorial, youtube]
 image: {path: /assets/img/posts/sTIjM9f8e1Q.jpg, alt: Allow (Print) Driver installation (Non Admins)}
 ---
+{% youtube "https://youtu.be/sTIjM9f8e1Q" %}
 
 ## Introduction:
 
@@ -14,7 +15,6 @@ Managing printer driver installations in a networked environment can often requi
 ### Video Tutorial:
 
 For a step-by-step visual guide, watch our video tutorial:
-{% youtube "https://youtu.be/sTIjM9f8e1Q" %}
 
 ### Step-by-Step Configuration Guide:
 

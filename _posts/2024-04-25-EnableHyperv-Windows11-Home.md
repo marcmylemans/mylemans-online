@@ -6,12 +6,11 @@ categories: [Windows 11]
 tags: [hyper-v, virtualization, windows 10 home, windows 11 home]
 image: {path: /assets/img/posts/a7OFMzM6HRY.jpg, alt: Enable Hyper-V on Windows 10/11 Home Edition!}
 ---
+{% youtube "https://youtu.be/a7OFMzM6HRY" %}
 
 # Exciting Update: Enable Hyper-V on Windows 10/11 Home Edition!
 
 Welcome back to our blog! As you know, we've been exploring various ways to enhance your home lab experience using Hyper-V, which typically requires a Windows Pro or Server environment. Today, I'm thrilled to share a workaround that enables Hyper-V on Windows 10/11 Home editions!
-
-{% youtube "https://youtu.be/a7OFMzM6HRY" %}
 
 ### Discovering the Workaround
 

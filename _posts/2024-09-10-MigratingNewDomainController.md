@@ -6,12 +6,11 @@ categories: [Active Directory]
 tags: []
 image: {path: /assets/img/posts/3e10439b-a030-4834-b64a-8c8f44db25ac.webp, alt: Migrating to a New Domain Controller}
 ---
+{% youtube "https://youtu.be/Y3kIJydyTzA" %}
 
 # Migrating to a New Domain Controller: A Smooth Transition Guide
 
 Migrating to a new domain controller might sound like a daunting task, but with the right steps and some preparation, you can make it a seamless process. Follow this guide to ensure everything runs smoothly!
-
-{% youtube "https://youtu.be/Y3kIJydyTzA" %}
 
 ## 1. Pre-Migration Checks: Get Ready Before You Start
 

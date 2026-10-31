@@ -126,16 +126,26 @@ layout: null
         <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noreferrer">How Google uses information from sites that use its services</a>.
         </p>
 
+        <h3>Analytics (Google Analytics 4, consent mode)</h3>
+        <p>
+        Google Analytics runs in "consent mode". Until you accept the cookie banner, it sets
+        no cookies and stores no identifiers: it only sends anonymous, cookieless pings
+        (page viewed, country, device type) that Google uses to estimate overall traffic.
+        If you click Accept, an anonymous analytics cookie is set so that visits can be
+        counted more accurately. If you click Decline, nothing is stored and only the
+        cookieless pings are sent. You can change your choice at any time by clearing this
+        site's data in your browser; on blog pages the "Privacy settings" link in the footer
+        reopens Google's advertising consent message.
+        </p>
+
         <ul>
         <li>Essential cookies ensure the website functions correctly.</li>
-        <li>Anonymous analytics cookies help us understand traffic patterns without
-            identifying individual visitors.</li>
-        <li>No third-party tracking services (Meta Pixel and the like) are used; the only third-party service is Google AdSense on blog pages, described above.</li>
+        <li>Anonymous analytics cookies (only after you accept) help us understand traffic patterns without identifying individual visitors.</li>
+        <li>No third-party tracking services (Meta Pixel and the like) are used; the only third-party services are Google Analytics in consent mode and Google AdSense on blog pages, described above.</li>
         </ul>
 
         <p>
-        By continuing to browse this site, you consent to the use of these
-        essential and anonymous analytics cookies. For any questions, you can contact
+        For any questions, you can contact
         <a href="mailto:info@mylemans.online">info@mylemans.online</a>.
         </p>
 
@@ -151,13 +161,12 @@ layout: null
   <!-- Cookie banner -->
   <div class="cookie-banner" id="cookie-banner">
     <p>
-      This website uses essential and anonymous analytics cookies. Blog pages also show Google AdSense ads, for which Google asks your consent separately.
+      We count visits without cookies by default. Accept to allow anonymous analytics cookies; decline and nothing is stored. Blog pages show Google AdSense ads, for which Google asks your consent separately.
       See our <a href="privacy.html">Privacy Policy</a> for details.
     </p>
     <div class="cookie-actions">
-      <button type="button" id="cookie-accept" class="btn btn-primary">
-        Accept
-      </button>
+      <button type="button" id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
+      <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
     </div>
   </div>
   {% include footer.html %}

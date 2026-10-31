@@ -16,6 +16,8 @@ In this blog post, I’ll walk you through the complete process, combining two c
 
 ---
 
+{% youtube "https://youtu.be/WaNzzhy1Qoc" %}
+
 ## Step 1: Creating the VHDX Template from ISO
 
 ### Windows Server Evaluation Download Links
@@ -181,8 +183,6 @@ This project is ideal for:
 I cover the full process in my video, from ISO to fully automated lab setup.
 
 👉 **[Watch here](https://youtu.be/WaNzzhy1Qoc)**
-
-{% youtube "https://youtu.be/WaNzzhy1Qoc" %}
 
 ---
 

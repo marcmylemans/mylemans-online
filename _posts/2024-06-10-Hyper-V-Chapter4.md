@@ -9,8 +9,6 @@ series: The Complete Hyper-V Guide
 series_order: 4
 ---
 
-{% youtube "https://youtu.be/P6eEdg1CrCI" %}
-
 ---
 
 Welcome back to our **Hyper-V series**! In **Chapter 4**, we’ll dive into **storage in Hyper-V** and everything you need to know about **Virtual Hard Disks (VHDs)**. We’ll cover the different types of VHDs, how to create and manage them, and some best practices for configuring and optimizing storage in your Hyper-V environment.
@@ -18,6 +16,8 @@ Welcome back to our **Hyper-V series**! In **Chapter 4**, we’ll dive into **st
 If you missed the earlier chapters, check them out here: [Chapter 1: Introduction to Hyper-V](/posts/Hyper-V-Chapter1/), [Chapter 2: Setting Up Your First VM](/posts/Hyper-V-Chapter2/), and [Chapter 3: Networking in Hyper-V](/posts/Hyper-V-Chapter3/).
 
 ---
+
+{% youtube "https://youtu.be/P6eEdg1CrCI" %}
 
 ### **Understanding Virtual Hard Disks (VHDs)**
 

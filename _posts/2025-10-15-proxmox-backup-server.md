@@ -6,7 +6,6 @@ categories: [Homelab, Backup]
 tags: [proxmox, backup, pbs, virtualization, homelab]
 image: {path: /assets/img/posts/2025-10-15-proxmox-backup-server-installation.webp, alt: Proxmox Backup Server – Installation and Configuration}
 ---
-
 {% youtube "https://youtu.be/cKpjZizyLTo/" %}
 
 # Introduction

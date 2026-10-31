@@ -17,6 +17,8 @@ If your media library and your family's photo backups live on the same box you b
 > **Disclosure:** Fygo gave me a licence and five one-year keys for a giveaway, and they are tagged as a brand partner on the video. All the hardware in this build is my own. They didn't review this post or the video before release.
 {: .prompt-warning }
 
+{% youtube "https://youtu.be/NsZ3zYUDY9Y" %}
+
 ## Keep play and reliability on separate boxes
 
 I run a Proxmox cluster for experiments, and it breaks. That's the point of it. What I don't want is my photo archive depending on whether I finished a cluster migration cleanly at 23:00.
@@ -168,4 +170,3 @@ Most often the media app's service account has no permission on the folder. Give
 
 Prefer to watch? The full build is in [the video](https://youtu.be/NsZ3zYUDY9Y), and there's more homelab and IT content over on Mylemans Online on YouTube.
 
-{% youtube "https://youtu.be/NsZ3zYUDY9Y" %}

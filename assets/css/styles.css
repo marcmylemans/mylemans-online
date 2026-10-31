@@ -1166,6 +1166,9 @@ html[data-theme="dark"] .filter-btn.active {
 
 .cookie-actions {
   flex-shrink: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 

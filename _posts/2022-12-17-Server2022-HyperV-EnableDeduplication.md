@@ -7,9 +7,9 @@ tags: [server 2022, hyper-v, virtualization, deduplication, windows server, stor
 image: {path: /assets/img/posts/yttWe5g0kmQ.jpg, alt: Server 2022 - Hyper-V - Enable Deduplication}
 ---
 
-{% youtube "https://youtu.be/yttWe5g0kmQ" %}
-
 Welcome to another insightful tutorial in our Windows Server 2022 series. In this session, we're exploring a powerful feature - Deduplication in Server 2022. This functionality is essential for optimizing storage efficiency, particularly when working with Hyper-V and virtual machine templates.
+
+{% youtube "https://youtu.be/yttWe5g0kmQ" %}
 
 ### Understanding Deduplication in Server 2022
 

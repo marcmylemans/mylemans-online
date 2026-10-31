@@ -13,14 +13,14 @@ The install finished, the dashboard loaded, and now you're staring at a powerful
 
 The video version of these five steps:
 
-{% youtube n08LhVszAZA %}
-
 This post is the five things to do *first*, before you install a single app. They take maybe twenty minutes, and they're the difference between a server you own and a black box you're scared to touch in three weeks. Number five is the one almost everyone skips.
 
 > The five first steps on a fresh home server: (1) give it a fixed IP so it stops moving, (2) stop logging in as root and make a normal admin user, (3) take a snapshot before you tinker, (4) set up updates, and (5) write down what you did. Do these before installing anything else.
 {: .prompt-tip }
 
 This is the companion to the video below, and it assumes you've already got a server running. If you haven't built one yet, start with [Build Your First Home Server in 30 Minutes](https://blog.mylemans.online/posts/build-your-first-home-server-proxmox/), then come back here.
+
+{% youtube "https://youtu.be/n08LhVszAZA" %}
 
 ## 1\. Give it a fixed address so it stops moving
 

@@ -7,9 +7,9 @@ tags: [server 2022, entra id, azure ad connect, active directory, sync, tutorial
 image: {path: /assets/img/posts/2XeRcNKzuUM.jpg, alt: Server 2022 - Azure AD Connect Sync}
 ---
 
-{% youtube "https://youtu.be/2XeRcNKzuUM" %}
-
 Embark on a journey to integrate your Windows Server 2022 Active Directory with Azure AD in this detailed tutorial. We’re covering the crucial steps to synchronize your on-premises AD with Azure, paving the way for a more connected and efficient network infrastructure.
+
+{% youtube "https://youtu.be/2XeRcNKzuUM" %}
 
 ### What This Video Covers
 

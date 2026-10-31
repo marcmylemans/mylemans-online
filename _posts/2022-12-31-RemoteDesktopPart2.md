@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 2
 ---
 
-{% youtube "https://youtu.be/rmZewkdN91U" %}
-
 ---
 
 **Update:** We’ve created a more detailed guide that consolidates everything you need to know about configuring **Remote Desktop Services (RDS)**, including the use of **Group Policy** and advanced configurations. Be sure to check out the latest step-by-step guide here: [A Step-by-Step Guide - Setting Up Remote Desktop Services With FS Logix And Single Sign On!](/posts/Remote-Desktop-Services-Part1/).
@@ -20,6 +18,8 @@ series_order: 2
 Welcome back to Part 2 of our series on **Remote Desktop Services (RDS)** in **Windows Server 2022**. In this post, we’re diving into the powerful tool of **Group Policy** to enhance the user experience in your RDS environment.
 
 ---
+
+{% youtube "https://youtu.be/rmZewkdN91U" %}
 
 ### **What This Video Covers**
 

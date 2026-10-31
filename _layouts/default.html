@@ -44,13 +44,14 @@
   <div class="cookie-banner" id="cookie-banner">
     <p>
       {%- if site.adsense.enabled and ad_page %}
-      This page shows Google AdSense ads; Google asks for your advertising consent separately. Accepting here enables anonymous analytics cookies.
+      This page shows Google AdSense ads; Google asks for your advertising consent separately. We count visits without cookies by default; accept to allow anonymous analytics cookies.
       {%- else %}
-      This website uses essential and anonymous analytics cookies. No advertising or tracking cookies are used.
+      We count visits without cookies by default. Accept to allow anonymous analytics cookies for more detail; decline and nothing is stored.
       {%- endif %}
       See our <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a> for details.
     </p>
     <div class="cookie-actions">
+      <button type="button" id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
       <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
     </div>
   </div>

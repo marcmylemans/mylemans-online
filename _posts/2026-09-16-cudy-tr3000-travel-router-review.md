@@ -12,7 +12,7 @@ By the end of this post the Cudy TR3000 is connected to my VPN all by itself, an
 > **TL;DR**: About 80 euros, 160 grams, OpenWrt underneath Cudy's own interface, five operation modes including hotel Wi-Fi (WISP), a 2.5GbE WAN port, one gigabit LAN port, and a VPN page with eleven options. The OpenVPN client worked on the first try once I had the config file; the page just doesn't tell you where that file comes from. The physical VPN switch is the best feature for travel.
 {: .prompt-tip }
 
-{% youtube 8SUszRoc4bw %}
+{% youtube "https://youtu.be/8SUszRoc4bw" %}
 
 ## In the box
 

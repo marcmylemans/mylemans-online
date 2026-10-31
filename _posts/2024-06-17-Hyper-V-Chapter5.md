@@ -9,8 +9,6 @@ series: The Complete Hyper-V Guide
 series_order: 5
 ---
 
-{% youtube "https://youtu.be/GhF8bUVAN9Q" %}
-
 ---
 
 Welcome back to our **Hyper-V series**! In **Chapter 5**, we’re diving into some of the **advanced features** that make Hyper-V a powerful virtualization platform. We’ll explore features like **Live Migration**, **Hyper-V Replica**, **Nested Virtualization**, **Shielded VMs**, and more. These tools can take your virtualization game to the next level by improving performance, increasing security, and enabling disaster recovery.
@@ -18,6 +16,8 @@ Welcome back to our **Hyper-V series**! In **Chapter 5**, we’re diving into so
 If you missed the earlier chapters, check them out here: [Chapter 1: Introduction to Hyper-V](/posts/Hyper-V-Chapter1/), [Chapter 2: Setting Up Your First VM](/posts/Hyper-V-Chapter2/), [Chapter 3: Networking in Hyper-V](/posts/Hyper-V-Chapter3/), and [Chapter 4: Storage in Hyper-V](/posts/Hyper-V-Chapter4/).
 
 ---
+
+{% youtube "https://youtu.be/GhF8bUVAN9Q" %}
 
 ### **What is Live Migration in Hyper-V?**
 

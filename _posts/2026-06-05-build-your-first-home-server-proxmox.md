@@ -14,11 +14,11 @@ series_order: 1
 
 Prefer to watch? The full build, start to finish:
 
-{% youtube JQhM67kr5Cw %}
-
 If you have ever wanted your own home server but assumed it meant a noisy rack, a big electricity bill, and years of experience, this is for you. None of that is true. One small machine you already own, plus free software, gets you a real server you control, and you can have it running today.
 
 This post is the written companion to my video. The video shows you the whole build; this guide is the reference you keep open while you do it, with the exact steps, the menu paths, and the one mistake that trips up almost every beginner.
+
+{% youtube "https://youtu.be/JQhM67kr5Cw" %}
 
 ## What you'll build
 

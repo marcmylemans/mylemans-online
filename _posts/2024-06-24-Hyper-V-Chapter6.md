@@ -9,8 +9,6 @@ series: The Complete Hyper-V Guide
 series_order: 6
 ---
 
-{% youtube "https://youtu.be/xffnhPlzagM" %}
-
 ---
 
 Welcome back to our **Hyper-V series**! In **Chapter 6**, we’ll be diving into a critical topic for any virtualization environment: **Backup and Recovery** in Hyper-V. Ensuring your virtual machines (VMs) are properly backed up and that you have a reliable recovery plan in place is essential for **business continuity** and **data protection**.
@@ -18,6 +16,8 @@ Welcome back to our **Hyper-V series**! In **Chapter 6**, we’ll be diving into
 If you missed the previous chapters, be sure to check them out: [Chapter 1: Introduction to Hyper-V](/posts/Hyper-V-Chapter1/), [Chapter 2: Setting Up Your First VM](/posts/Hyper-V-Chapter2/), [Chapter 3: Networking in Hyper-V](/posts/Hyper-V-Chapter3/), [Chapter 4: Storage in Hyper-V](/posts/Hyper-V-Chapter4/), and [Chapter 5: Advanced Hyper-V Features](/posts/Hyper-V-Chapter5/).
 
 ---
+
+{% youtube "https://youtu.be/xffnhPlzagM" %}
 
 ### **Why Backup and Recovery Matter**
 

@@ -7,9 +7,9 @@ tags: [server 2022, active directory, dns, windows server, tutorial, network man
 image: {path: /assets/img/posts/k2J78SidPpg.jpg, alt: Server 2022 - Installing Active Directory and Setting up DNS}
 ---
 
-{% youtube "https://youtu.be/k2J78SidPpg" %}
-
 Welcome to an essential tutorial in the Windows Server 2022 series, where we delve into the fundamentals of setting up a server environment. In this video, we focus on installing Active Directory (AD) and configuring the Domain Name System (DNS) server, two critical components for any network infrastructure.
+
+{% youtube "https://youtu.be/k2J78SidPpg" %}
 
 ### What This Tutorial Covers
 

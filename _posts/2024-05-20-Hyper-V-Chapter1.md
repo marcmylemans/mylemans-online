@@ -9,8 +9,6 @@ series: The Complete Hyper-V Guide
 series_order: 1
 ---
 
-{% youtube "https://youtu.be/fKlEj_w-kHY" %}
-
 ---
 
 **Welcome to Chapter 1** of our comprehensive series on **Hyper-V**! In this video and blog post, we’re covering the basics of what **Hyper-V** is, why it’s a great tool for virtualization, different editions, system requirements, and how to enable it.
@@ -18,6 +16,8 @@ series_order: 1
 By the end of this post, you'll have a solid understanding of the fundamentals and be ready to dive deeper into Hyper-V in the next chapters.
 
 ---
+
+{% youtube "https://youtu.be/fKlEj_w-kHY" %}
 
 ### **What is Hyper-V?**
 

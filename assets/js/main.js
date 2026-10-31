@@ -591,6 +591,17 @@
   // adsbygoogle.js itself, so it must not wait for our analytics banner.
   document.addEventListener("DOMContentLoaded", loadAds);
 
+  // "Privacy settings" in the footer: on pages with ads, reopen Google's consent
+  // dialog so visitors can change or withdraw their choice; elsewhere go to the
+  // cookie section of the privacy page.
+  document.addEventListener("click", (evt) => {
+    const a = evt.target.closest("[data-privacy-settings]");
+    if (!a || !window.googlefc || !window.MO_ADSENSE) return;
+    evt.preventDefault();
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push({ CONSENT_DATA_READY: () => window.googlefc.showRevocationMessage() });
+  });
+
   document.addEventListener("DOMContentLoaded", async () => {
     // First inject header / footer partials
     await loadPartials();
@@ -623,50 +634,74 @@
     document.head.appendChild(s);
   }
 
+  // Google Consent Mode v2.
+  // gtag loads on every page with all storage DENIED. In that state GA sets
+  // no cookies and sends cookieless pings only (no client id, no user id),
+  // which GA4 uses to model totals in reports. Accepting the banner flips
+  // analytics_storage to "granted"; declining keeps the cookieless pings.
+  // Ad consent is not handled here: Google's own consent message, delivered
+  // by adsbygoogle.js on ad pages, owns ad_storage / ad_user_data.
+  const COOKIE_CONSENT_DECLINED = "declined";
+
+  function consentState() {
+    try { return localStorage.getItem(COOKIE_CONSENT_KEY); } catch (e) { return null; }
+  }
+
+  function gtag() { (window.dataLayer = window.dataLayer || []).push(arguments); }
+
   function loadAnalytics() {
-    // Prevent double-loading
     if (window.gtagLoaded) return;
     window.gtagLoaded = true;
 
-    // Load GA script
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = gtag;
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+      functionality_storage: "denied",
+      personalization_storage: "denied",
+      security_storage: "granted",
+      wait_for_update: 500,
+    });
+    if (consentState() === COOKIE_CONSENT_ACCEPTED) grantAnalytics();
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+
     const gaScript = document.createElement("script");
     gaScript.async = true;
     gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    gaScript.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      window.gtag = gtag;
-
-      gtag("js", new Date());
-      gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
-    };
     document.head.appendChild(gaScript);
+  }
+
+  function grantAnalytics() {
+    gtag("consent", "update", { analytics_storage: "granted" });
   }
 
   function initCookieConsent() {
     const banner = document.getElementById("cookie-banner");
     const acceptBtn = document.getElementById("cookie-accept");
-    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    const hasConsent = consent === COOKIE_CONSENT_ACCEPTED;
+    const declineBtn = document.getElementById("cookie-decline");
+    const state = consentState();
+    const decided = state === COOKIE_CONSENT_ACCEPTED || state === COOKIE_CONSENT_DECLINED;
 
-    // Read consent and load analytics once if already accepted.
-    if (hasConsent) {
-      loadAnalytics();
-    }
+    // Always load: denied by default, granted if previously accepted.
+    loadAnalytics();
 
-    // Show / hide banner based on consent state.
-    if (banner) {
-      banner.style.display = hasConsent ? "none" : "flex";
-    }
+    if (banner) banner.style.display = decided ? "none" : "flex";
 
-    // Set consent on accept and conditionally load analytics once.
     if (acceptBtn) {
       acceptBtn.addEventListener("click", () => {
-        localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED);
-        loadAnalytics();
-        if (banner) {
-          banner.style.display = "none";
-        }
+        try { localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_ACCEPTED); } catch (e) {}
+        grantAnalytics();
+        if (banner) banner.style.display = "none";
+      }, { once: true });
+    }
+    if (declineBtn) {
+      declineBtn.addEventListener("click", () => {
+        try { localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_CONSENT_DECLINED); } catch (e) {}
+        if (banner) banner.style.display = "none";
       }, { once: true });
     }
   }

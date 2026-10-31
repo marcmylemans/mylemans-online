@@ -9,8 +9,6 @@ image: {path: /assets/img/posts/ig6by0vgpyQ.jpg, alt: UrBackup - Installing the 
 
 In this video we will be installing a UrBackup backup server for our Lab!
 
-{% youtube "https://youtu.be/ig6by0vgpyQ" %}
-
 [Sources](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding)
 
 Be sure to check out the previous video where we configured Intune.
@@ -19,3 +17,4 @@ Be sure to check out the previous video where we configured Intune.
 
 [Server 2022 - Active Directory - Importing ADMX and Installing applications with Group Policy]({% link _posts/2022-12-26-ActiveDirectoryADMX.md %})
 
+{% youtube "https://youtu.be/ig6by0vgpyQ" %}

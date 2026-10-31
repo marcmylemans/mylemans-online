@@ -14,11 +14,11 @@ I installed three mini PCs, built a cluster with shared storage, restored a VM o
 > **TL;DR**: Install Proxmox on each node through the KVM with the ISO mounted as virtual USB. Give the network ports fixed names and split the two 10GbE ports by job (one for Ceph with jumbo frames, one bridge with VLANs for management, Corosync and VMs). Create the cluster with two links, install Ceph from the wizard, wipe the NVMe disks before you let Ceph touch them, add your backup server, then get Let's Encrypt certificates through the Cloudflare DNS challenge. Get the hostname right at install time; everything after it inherits that name.
 {: .prompt-tip }
 
-{% youtube qUpjmH_u_bY %}
+{% youtube "https://youtu.be/qUpjmH_u_bY" %}
 
 The short version above is the main-channel video. The full click-by-click guide, about ten minutes, is on the second channel:
 
-{% youtube rHQe3w7m8V4 %}
+{% youtube "https://youtu.be/rHQe3w7m8V4" %}
 
 ## What I'm building
 

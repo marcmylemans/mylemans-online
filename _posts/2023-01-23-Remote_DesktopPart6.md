@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 6
 ---
 
-{% youtube "https://youtu.be/hdwa0Wq1XTI" %}
-
 ---
 
 **Update:** We’ve created a comprehensive guide that covers everything you need to know about setting up Remote Desktop Services, including the deployment of **RemoteApp**. You can find the latest step-by-step guide here: [A Step-by-Step Guide - Installing and Configuring Office on RemoteAPP/Desktop Services](/posts/Remote-Desktop-Services-Part2/).
@@ -20,6 +18,8 @@ series_order: 6
 Continuing our series on **Remote Desktop Services** in **Windows Server 2022**, Part 6 focuses on setting up an additional Remote Desktop Host configured as a **Remote App Server**. This setup allows you to deploy applications to users without the need for local installation.
 
 ---
+
+{% youtube "https://youtu.be/hdwa0Wq1XTI" %}
 
 ### **Deploying Remote App in RDS**
 

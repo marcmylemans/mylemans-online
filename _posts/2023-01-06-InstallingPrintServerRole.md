@@ -6,6 +6,7 @@ categories: [Windows Server]
 tags: [server 2022, printserver, group policy, printer deployment, tutorial, youtube]
 image: {path: /assets/img/posts/XQL3ma7Otg8.jpg, alt: Server 2022 - Installing PrintServer Role}
 ---
+{% youtube "https://youtu.be/XQL3ma7Otg8" %}
 
 ## Introduction:
 
@@ -14,8 +15,6 @@ In this guide, we'll walk through the process of installing the PrintServer role
 ### Video Tutorial:
 
 For a visual step-by-step guide, watch our comprehensive video tutorial:
-
-{% youtube "https://youtu.be/XQL3ma7Otg8" %}
 
 ### Step-by-Step Installation Guide:
 

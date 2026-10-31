@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 4
 ---
 
-{% youtube "https://youtu.be/4wO82is6y40" %}
-
 ---
 
 **Update:** We've created a more comprehensive guide that not only covers **Office 365 installation** on Remote Desktop Services but also includes detailed configurations for **Group Policy** and the **Office Deployment Tool (ODT)**. You can find the latest guide here: [A Step-by-Step Guide - Installing and Configuring Office on RemoteAPP/Desktop Services](/posts/Remote-Desktop-Services-Part2/).
@@ -20,6 +18,8 @@ series_order: 4
 Welcome to the fourth installment of our series on Remote Desktop Services for Windows Server 2022. In this tutorial, we’re focusing on installing the **Office 365 Suite** on a **Remote Desktop Host**, configured for **shared licensing**.
 
 ---
+
+{% youtube "https://youtu.be/4wO82is6y40" %}
 
 ### **Office 365 on RDS: Shared Licensing Configuration**
 

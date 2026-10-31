@@ -9,8 +9,6 @@ series: Remote Desktop Services on Server 2022
 series_order: 1
 ---
 
-{% youtube "https://youtu.be/rmZewkdN91U" %}
-
 ---
 
 **Update:** We've recently created a comprehensive guide that consolidates all the steps needed to set up Remote Desktop Services (RDS) in **Windows Server 2022**. This new post provides a detailed, step-by-step walkthrough. Check it out here: [A Step-by-Step Guide - Setting Up Remote Desktop Services With FS Logix And Single Sign On!](/posts/Remote-Desktop-Services-Part1/).
@@ -20,6 +18,8 @@ series_order: 1
 Welcome to Part 1 of our series on setting up **Remote Desktop Services (RDS)** in Windows Server 2022! Whether you're just getting started or want to brush up on the fundamentals, this guide will walk you through the key components needed to build a solid RDS environment.
 
 ---
+
+{% youtube "https://youtu.be/rmZewkdN91U" %}
 
 ### **Deploying Key RDS Components**
 

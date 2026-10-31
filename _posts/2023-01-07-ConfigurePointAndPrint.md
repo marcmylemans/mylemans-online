@@ -6,6 +6,7 @@ categories: [Windows Server]
 tags: [server 2022, printserver, point and print, trusted printserver, group policy, printer management, tutorial, youtube]
 image: {path: /assets/img/posts/TcTFFKfjLTQ.jpg, alt: Server 2022 - Configure Point and Print - Trusted Printserver}
 ---
+{% youtube "https://youtu.be/TcTFFKfjLTQ" %}
 
 ## Introduction:
 
@@ -14,8 +15,6 @@ Configuring a trusted PrintServer and managing Point and Print settings are crit
 ### Video Tutorial:
 
 For a visual walkthrough of the configuration process, please watch our detailed video tutorial:
-
-{% youtube "https://youtu.be/TcTFFKfjLTQ" %}
 
 ### Step-by-Step Configuration Guide:
 

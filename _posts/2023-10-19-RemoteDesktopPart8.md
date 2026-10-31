@@ -9,9 +9,9 @@ series: Remote Desktop Services on Server 2022
 series_order: 8
 ---
 
-{% youtube "https://youtu.be/RB4Z7Zrhsx4" %}
-
 In the final installment of our Remote Desktop Services series for Windows Server 2022, we explore the setup of a Virtual Desktop Infrastructure (VDI) solution. This approach utilizes Hyper-V to host VDI templates and pools, providing a robust and flexible virtual desktop environment.
+
+{% youtube "https://youtu.be/RB4Z7Zrhsx4" %}
 
 ### Setting Up VDI in Windows Server 2022
 

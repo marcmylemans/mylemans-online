@@ -9,8 +9,6 @@ series: The Complete Hyper-V Guide
 series_order: 3
 ---
 
-{% youtube "https://youtu.be/5ykKvlbBMR0" %}
-
 ---
 
 Welcome back to our **Hyper-V series**! In **Chapter 3**, we’re diving into an essential part of virtualization: **Networking in Hyper-V**. We’ll cover the basics of virtual networking, the different types of virtual switches, how to create them, and how to connect your virtual machines (VMs) to a network.
@@ -18,6 +16,8 @@ Welcome back to our **Hyper-V series**! In **Chapter 3**, we’re diving into an
 If you’ve been following along, you should already have a VM created from **Chapter 2**. If you missed it, check out the guide here: [Setting Up Your First Virtual Machine](/posts/Hyper-V-Chapter2/).
 
 ---
+
+{% youtube "https://youtu.be/5ykKvlbBMR0" %}
 
 ### **Understanding Virtual Networking in Hyper-V**
 

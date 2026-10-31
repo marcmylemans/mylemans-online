@@ -6,6 +6,7 @@ categories: [Entra ID & Intune]
 tags: [azure, universal print, printer, print management, tutorial, youtube]
 image: {path: /assets/img/posts/ltcvhYTvhl4.jpg, alt: Azure - Universal Print}
 ---
+{% youtube "https://youtu.be/ltcvhYTvhl4" %}
 
 ## Introduction:
 
@@ -14,8 +15,6 @@ Universal Print is a modern print solution that organizations can use to manage 
 ### Video Tutorial:
 
 For a visual guide through the process, watch our detailed video tutorial:
-
-{% youtube "https://youtu.be/ltcvhYTvhl4" %}
 
 ### Step-by-Step Guide:
 

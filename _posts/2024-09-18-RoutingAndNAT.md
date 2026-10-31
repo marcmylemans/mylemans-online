@@ -9,9 +9,9 @@ image: {path: /assets/img/posts/df1ec33de41c.webp, alt: Understanding Routing an
 
 Ever wondered how your data travels from your home to a website hosted halfway across the world? Or how your home network, with a bunch of devices, uses just one IP address to connect to the internet? The magic behind all this is **routing** and **Network Address Translation (NAT)**. Don’t worry if those terms sound complicated—we're here to break them down in a simple, fun way!
 
-{% youtube "https://youtu.be/gNKXdklmvO4" %}
-
 ---
+
+{% youtube "https://youtu.be/gNKXdklmvO4" %}
 
 ## What is Routing?
 

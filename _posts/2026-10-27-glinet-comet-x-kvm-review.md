@@ -14,7 +14,7 @@ One of my Proxmox nodes is booting and I'm watching it from a browser tab. The b
 > **TL;DR**: Four HDMI+USB ports, PoE or USB-C power, rack ears that fit 10-inch rails, and all the cables in the box. It gave me the screen and keyboard of all three nodes in one browser tab, down to the BIOS, which is what I used to [install the whole cluster without a monitor](/posts/proxmox-cluster-without-a-monitor/). Two annoyances: when the first setup fails it only says "connection lost", and it adds eight cables to the back of a small rack.
 {: .prompt-tip }
 
-{% youtube oTdKprLL6Xk %}
+{% youtube "https://youtu.be/oTdKprLL6Xk" %}
 
 ## In the box
 

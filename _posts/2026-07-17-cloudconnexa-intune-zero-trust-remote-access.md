@@ -7,6 +7,7 @@ tags: [cloudconnexa, openvpn, zero-trust, intune, entra id, saml, nis2, tutorial
 image: {path: /assets/img/posts/cloudconnexa-intune/og-card.webp, alt: CloudConnexa zero-trust remote access with SAML to Entra ID and Intune deployment}
 last_modified_at: 2026-07-17 12:00:00 +0200
 ---
+{% youtube "https://youtu.be/trMrp8AwGEg" %}
 
 ## Your remote access is fine, until someone leaves
 
@@ -263,8 +264,6 @@ It covers access control, multi-factor, secured transport, and the logging that 
 You started from nothing: an account, a small Linux VM, and a one-line script. That got you a connector reaching out with nothing exposed inbound, plus split tunnel, intrusion detection, logging, a location rule and device-posture checks, all free and genuinely enough for one person. Then, for a team, you tied sign-in to Entra over SAML, mapped the group claim so access follows group membership, pushed the client to a fleet through Intune with the Cloud ID pre-filled, and made offboarding a single move at the identity layer with a logged denial to prove it.
 
 Prefer to watch? The full build is on Mylemans Online on YouTube.
-
-{% youtube "https://youtu.be/trMrp8AwGEg" %}
 
 > **Make it a skill, not a one-off.** I built a free, no-signup learning path on Mylemans Labs that walks you through securing remote access for a small environment in the right order. Start here: [Mylemans Labs remote-access path](https://labs.mylemans.online)
 {: .prompt-info }

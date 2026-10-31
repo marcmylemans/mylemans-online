@@ -9,9 +9,9 @@ series: Remote Desktop Services on Server 2022
 series_order: 7
 ---
 
-{% youtube "https://youtu.be/b5WL7PgEmaY" %}
-
 Part 7 of our Remote Desktop Services series for Windows Server 2022 dives into enhancing security with Azure Multi-Factor Authentication (MFA). In this tutorial, we'll install the Azure MFA NPS Extension to secure the Remote Desktop Gateway connections.
+
+{% youtube "https://youtu.be/b5WL7PgEmaY" %}
 
 ### Implementing Azure MFA in RDS
 
