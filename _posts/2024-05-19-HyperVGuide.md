@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: 'Support Our Hyper-V Guide: Get Early Access'
 description: 'The Master Hyper-V guide is in Early Access on Ko-fi: walkthroughs, best practices and troubleshooting tips, free or pay what you want during Early Access.'
 date: '2024-05-19 08:00:00'

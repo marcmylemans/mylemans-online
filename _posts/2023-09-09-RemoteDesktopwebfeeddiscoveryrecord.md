@@ -29,13 +29,9 @@ https://webserver.contoso.com/RDWeb/Feed/webfeed.aspx
 
 Be sure to check out the previous video where we configured Remote Desktop Services:
 
-[Server 2022 - Remote Desktop Services - Part 1]({% link _posts/2022-12-27-RemoteDesktopPart1.md %})
+[RDS on Server 2022 with FSLogix and SSO: Step-by-Step Guide (Part 1)]({% link _posts/2024-10-20-Remote-Desktop-Services-Part1.md %})
 
-[Server 2022 - Remote Desktop Services - Part 2]({% link _posts/2022-12-31-RemoteDesktopPart2.md %})
-
-[Server 2022 - Remote Desktop Services - Part 3]({% link _posts/2023-01-03-RemoteDesktopPart3.md %})
-
-[Installing Office 365 on a Remote Desktop Host!]({% link _posts/2023-01-04-RemoteDesktopPart4.md %})
+[Install and Configure Office on RDS / RemoteApp (Part 2)]({% link _posts/2024-10-24-Remote-Desktop-Services-Part2.md %})
 
 [Server 2022 - Remote Desktop Services - Part 5]({% link _posts/2023-01-05-RemoteDesktopPart5.md %})
 

@@ -1,5 +1,5 @@
 ---
-title: Upgrading A Server 2012 R2 Domain Controller To Server 2019!
+title: Upgrading A Server 2012 R2 Domain Controller To Server 2019
 description: 'In-place upgrade of a Server 2012 R2 domain controller to Server 2019: run adprep /forestprep and /domainprep first and check the supported upgrade paths.'
 date: '2023-02-17 08:00:00'
 categories: [Windows Server]

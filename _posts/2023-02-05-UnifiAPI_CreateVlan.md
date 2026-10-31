@@ -1,5 +1,5 @@
 ---
-title: Create a vlan using the Unifi API!
+title: "Create a VLAN with the UniFi API"
 description: Python script that creates multiple VLANs on a UniFi site through the controller API from a list of VLAN IDs and names.
 date: '2023-02-05 08:00:00'
 categories: [Scripts]

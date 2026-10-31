@@ -1,5 +1,5 @@
 ---
-title: UrBackup - Deploying Clients with GPO!
+title: UrBackup - Deploying Clients with GPO
 description: Deploy the UrBackup client to all servers and workstations with Group Policy software installation, following the UrBackup server install video.
 date: '2023-01-12 08:00:00'
 categories: [Self-hosting, Backup]

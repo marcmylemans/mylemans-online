@@ -1,12 +1,12 @@
 ---
-title: Remote Desktop Services, Securing it with Azure MFA!
+title: Remote Desktop Services, Securing it with Azure MFA
 description: 'Part 7 of the Server 2022 RDS series: install the Azure MFA NPS Extension on the RD Gateway, plus the REQUIRE_USER_MATCH and number-matching registry keys.'
 date: '2023-09-07 08:00:00'
 categories: [Windows Server]
 tags: [server 2022, rdp, remote desktop services, rds, mfa, azure mfa, tutorial, youtube, part7]
 image: {path: /assets/img/posts/b5WL7PgEmaY.jpg, alt: 'Remote Desktop Services, Securing it with Azure MFA!'}
-series: Remote Desktop Services on Server 2022
-series_order: 7
+series: The Complete Remote Desktop Services Guide
+series_order: 5
 ---
 
 Part 7 of our Remote Desktop Services series for Windows Server 2022 dives into enhancing security with Azure Multi-Factor Authentication (MFA). In this tutorial, we'll install the Azure MFA NPS Extension to secure the Remote Desktop Gateway connections.
@@ -58,10 +58,8 @@ Here are the essential PowerShell commands and registry settings for setting up 
 
 If you've missed any of the previous parts in this series, here are the links to catch up:
 
-- [Server 2022 - Remote Desktop Services - Part 1]({% link _posts/2022-12-27-RemoteDesktopPart1.md %})
-- [Server 2022 - Remote Desktop Services - Part 2]({% link _posts/2022-12-31-RemoteDesktopPart2.md %})
-- [Server 2022 - Remote Desktop Services - Part 3]({% link _posts/2023-01-03-RemoteDesktopPart3.md %})
-- [Installing Office 365 on a Remote Desktop Host!]({% link _posts/2023-01-04-RemoteDesktopPart4.md %})
+- [RDS on Server 2022 with FSLogix and SSO: Step-by-Step Guide (Part 1)]({% link _posts/2024-10-20-Remote-Desktop-Services-Part1.md %})
+- [Install and Configure Office on RDS / RemoteApp (Part 2)]({% link _posts/2024-10-24-Remote-Desktop-Services-Part2.md %})
 - [Server 2022 - Remote Desktop Services - Part 5]({% link _posts/2023-01-05-RemoteDesktopPart5.md %})
 - [Server 2022 - Remote Desktop Services - Part 6]({% link _posts/2023-01-23-Remote_DesktopPart6.md %})
 

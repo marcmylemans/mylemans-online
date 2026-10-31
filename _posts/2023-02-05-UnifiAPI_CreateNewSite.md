@@ -1,5 +1,5 @@
 ---
-title: Create a new Unifi Site Unifi using the API!
+title: "Create a New UniFi Site with the UniFi API"
 description: Python script that calls the UniFi controller API to create a new site with two SSIDs and a VLAN per SSID. Fill in your controller URL and credentials.
 date: '2023-02-05 08:00:00'
 categories: [Scripts]

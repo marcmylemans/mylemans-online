@@ -1,12 +1,12 @@
 ---
-title: Installing the Remote Desktop Web Client!
+title: Installing the Remote Desktop Web Client
 description: 'Part 5 of the Server 2022 RDS series: install the HTML5 Remote Desktop Web Client with the RDWebClientManagement module so users connect from a browser.'
 date: '2023-01-05 08:00:00'
 categories: [Windows Server]
 tags: [server 2022, rdp, remote desktop services, rds, web client, html5, browser, tutorial, youtube, part5]
 image: {path: /assets/img/posts/i87spvTzR6w.jpg, alt: Installing the Remote Desktop Web Client!}
-series: Remote Desktop Services on Server 2022
-series_order: 5
+series: The Complete Remote Desktop Services Guide
+series_order: 3
 ---
 
 In Part 5 of our Remote Desktop Services series for Windows Server 2022, we're introducing a game-changer: the Remote Desktop Web Client. This addition will enable your users to access the Remote Desktop Host from any HTML5-supported device or browser, including smartphones and tablets.
@@ -64,10 +64,8 @@ For more information on the Remote Desktop Web Client, check out the official Mi
 
 If you've missed the earlier parts of this series, here are the links to get you up to speed:
 
-- [Server 2022 - Remote Desktop Services - Part 1]({% link _posts/2022-12-27-RemoteDesktopPart1.md %})
-- [Server 2022 - Remote Desktop Services - Part 2]({% link _posts/2022-12-31-RemoteDesktopPart2.md %})
-- [Server 2022 - Remote Desktop Services - Part 3]({% link _posts/2023-01-03-RemoteDesktopPart3.md %})
-- [Installing Office 365 on a Remote Desktop Host!]({% link _posts/2023-01-04-RemoteDesktopPart4.md %})
+- [RDS on Server 2022 with FSLogix and SSO: Step-by-Step Guide (Part 1)]({% link _posts/2024-10-20-Remote-Desktop-Services-Part1.md %})
+- [Install and Configure Office on RDS / RemoteApp (Part 2)]({% link _posts/2024-10-24-Remote-Desktop-Services-Part2.md %})
 
 ### Concluding Thoughts
 

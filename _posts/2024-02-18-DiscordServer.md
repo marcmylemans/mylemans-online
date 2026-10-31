@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Join Our Tech Community on Discord!
 description: 'The Mylemans Online Discord server is open: how to get an invite through a Ko-fi donation or a YouTube comment, and a call for volunteer moderators.'
 date: '2024-02-18 08:00:00'

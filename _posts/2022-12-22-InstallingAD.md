@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Server 2022 - Installing Active Directory and Setting up DNS
 description: Install Active Directory Domain Services on Windows Server 2022, promote the server to a domain controller and set up the DNS role alongside it.
 date: '2022-12-22 09:00:00'

@@ -5,8 +5,8 @@ date: '2023-10-19 08:00:00'
 categories: [Windows Server]
 tags: [server 2022, rdp, part8, vdi, remote desktop services, hyper-v]
 image: {path: /assets/img/posts/RB4Z7Zrhsx4.jpg, alt: 'Remote Desktop Services, Virtual Desktop Infrastructure!'}
-series: Remote Desktop Services on Server 2022
-series_order: 8
+series: The Complete Remote Desktop Services Guide
+series_order: 6
 ---
 
 In the final installment of our Remote Desktop Services series for Windows Server 2022, we explore the setup of a Virtual Desktop Infrastructure (VDI) solution. This approach utilizes Hyper-V to host VDI templates and pools, providing a robust and flexible virtual desktop environment.
@@ -22,7 +22,7 @@ This video covers:
 
 ### Essential Links and Resources
 
-- **Recap of Previous Steps**: For those who might find the first part of the video quick, it revisits the wizard used in the first part of this series. [Remote Desktop Services - Part 1]({% link _posts/2022-12-27-RemoteDesktopPart1.md %})
+- **Recap of Previous Steps**: For those who might find the first part of the video quick, it revisits the wizard used in the first part of this series. [Remote Desktop Services - Part 1]({% link _posts/2024-10-20-Remote-Desktop-Services-Part1.md %})
 - **Creating a VM Template**
 - **Microsoft's VDI Recommendations**: For optimal configuration of your VDI VMs. [Microsoft Learn, RDS/VDI recommendations](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-vdi-recommendations)
 - **Setting Up Hyper-V**: In case you need to set up a Hyper-V server for hosting VMs. [Installing the Hyper-V Role]({% link _posts/2022-12-17-Server2022-Installing-Hyper-V-Role.md %})
@@ -37,10 +37,8 @@ This video covers:
 
 Here are the previous parts of the series for a comprehensive understanding of Remote Desktop Services:
 
-- [Server 2022 - Remote Desktop Services - Part 1]({% link _posts/2022-12-27-RemoteDesktopPart1.md %})
-- [Server 2022 - Remote Desktop Services - Part 2]({% link _posts/2022-12-31-RemoteDesktopPart2.md %})
-- [Server 2022 - Remote Desktop Services - Part 3]({% link _posts/2023-01-03-RemoteDesktopPart3.md %})
-- [Installing Office 365 on a Remote Desktop Host!]({% link _posts/2023-01-04-RemoteDesktopPart4.md %})
+- [RDS on Server 2022 with FSLogix and SSO: Step-by-Step Guide (Part 1)]({% link _posts/2024-10-20-Remote-Desktop-Services-Part1.md %})
+- [Install and Configure Office on RDS / RemoteApp (Part 2)]({% link _posts/2024-10-24-Remote-Desktop-Services-Part2.md %})
 - [Server 2022 - Remote Desktop Services - Part 5]({% link _posts/2023-01-05-RemoteDesktopPart5.md %})
 - [Server 2022 - Remote Desktop Services - Part 6]({% link _posts/2023-01-23-Remote_DesktopPart6.md %})
 - [Server 2022 - Remote Desktop Services - Part 7]({% link _posts/2023-09-07-RemoteDesktopPart7.md %})

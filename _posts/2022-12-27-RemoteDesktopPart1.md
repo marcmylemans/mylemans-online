@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Server 2022 - Remote Desktop Services - Part 1
 description: 'Part 1 of the Server 2022 RDS series: deploy Connection Broker, Session Host, Web Access and Gateway on two VMs with a Let''s Encrypt certificate.'
 date: '2022-12-27 09:00:00'

@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Server 2022 - Remote Desktop Services - Part 2
 description: 'Part 2 of the Server 2022 RDS series: create Group Policies for Remote Desktop Services that tune session performance and the user experience on the hosts.'
 date: '2022-12-31 09:00:00'

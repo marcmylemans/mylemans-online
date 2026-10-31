@@ -1,5 +1,5 @@
 ---
-title: Calculate a Network Subnet using Python!
+title: "Calculate a Network Subnet with Python"
 description: Python script using the ipaddress module that reads subnets from a CSV and writes the first and last usable IP of each. Written for 100 subnets at once.
 date: '2023-11-09 08:00:00'
 categories: [Scripts]

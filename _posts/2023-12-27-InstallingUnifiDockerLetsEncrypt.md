@@ -1,5 +1,5 @@
 ---
-title: installing a Unifi Controller with Docker and Lets Encrypt!
+title: "Install a UniFi Controller with Docker and Let's Encrypt"
 description: Install Docker and Docker Compose on Ubuntu and run a UniFi controller behind jwilder/nginx-proxy with a Let's Encrypt certificate from one compose file.
 date: '2023-12-27 09:00:00'
 categories: [Self-hosting, Networking]

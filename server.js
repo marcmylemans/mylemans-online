@@ -52,6 +52,18 @@ app.use((req, res, next) => {
 // and Ahrefs still hold links to them (Search Console, Oct 2026), so send them
 // somewhere useful instead of 404. Applies on every host.
 const LEGACY_PATHS = [
+  // Retired posts (Oct 2026): promo posts moved to pages, 2022 guides
+  // superseded by their 2024 rewrites. Old URLs 301 to the replacement.
+  [/^\/posts\/Support\/?$/i, '/#community'],
+  [/^\/posts\/YoutubeMembers\/?$/i, '/youtube.html'],
+  [/^\/posts\/DiscordServer\/?$/i, '/#community'],
+  [/^\/posts\/T\-Shirt\-Collection\/?$/i, 'https://shop.mylemans.online/'],
+  [/^\/posts\/HyperVGuide\/?$/i, '/posts/Hyper-V-Chapter1/'],
+  [/^\/posts\/InstallingAD\/?$/i, '/posts/SettingUpActiveDirectoryServer2022/'],
+  [/^\/posts\/RemoteDesktopPart1\/?$/i, '/posts/Remote-Desktop-Services-Part1/'],
+  [/^\/posts\/RemoteDesktopPart2\/?$/i, '/posts/Remote-Desktop-Services-Part1/'],
+  [/^\/posts\/RemoteDesktopPart3\/?$/i, '/posts/Remote-Desktop-Services-Part1/'],
+  [/^\/posts\/RemoteDesktopPart4\/?$/i, '/posts/Remote-Desktop-Services-Part2/'],
   [/^\/archives\/?$/i, '/blog/'],
   [/^\/tags\/?$/i, '/blog/#tags'],
   [/^\/categories\/?$/i, '/blog/#categories'],

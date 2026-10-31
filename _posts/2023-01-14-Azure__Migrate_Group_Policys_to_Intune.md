@@ -1,5 +1,5 @@
 ---
-title: Azure - Migrate Group Policy's to Intune!
+title: "Migrate Group Policies to Intune"
 description: Video on migrating Group Policies from Active Directory to Microsoft Intune, covering the approach and best practices for cloud policy management.
 date: '2023-01-14 08:00:00'
 categories: [Entra ID & Intune]

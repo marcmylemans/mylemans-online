@@ -1,5 +1,5 @@
 ---
-title: Create PPSK in bulk with the Unifi API!
+title: "Create PPSKs in Bulk with the UniFi API"
 description: Python script that bulk-creates Private Pre-Shared Keys (PPSK) on a UniFi controller through its API, generating random keys from a CSV list.
 date: '2024-02-12 08:00:00'
 categories: [Scripts]

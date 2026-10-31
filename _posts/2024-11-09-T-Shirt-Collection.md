@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Mylemans Online T-Shirt Collection
 description: The Mylemans Online T-shirt collection for IT people, from 'No Place Like 127.0.0.1' to 'System Admin, Handle with Care', with the current shop promotions.
 date: '2024-11-09'

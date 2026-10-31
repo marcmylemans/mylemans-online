@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Join Our Youtube Members Community on Youtube!
 description: The three YouTube membership tiers for the channel (Tech Enthusiast, Systems Specialist, Network Architect) and what each gets, badges to early access.
 date: '2024-04-12 08:00:00'

@@ -1,5 +1,5 @@
 ---
-title: UrBackup - Installing the Backup Server!
+title: UrBackup - Installing the Backup Server
 description: Install a UrBackup backup server for the lab environment. Video walkthrough of the server installation, followed by client deployment in the next part.
 date: '2023-01-11 08:00:00'
 categories: [Self-hosting, Backup]

@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Remote Desktop Services - FSLogix
 description: 'Part 3 of the Server 2022 RDS series: install and configure FSLogix so user profiles live on a file share instead of the Remote Desktop Session Host.'
 date: '2023-01-03 09:00:00'

@@ -1,5 +1,5 @@
 ---
-title: Windows 11 - Fix 22H2 Remote Desktop issues!
+title: Windows 11 - Fix 22H2 Remote Desktop issues
 description: 'Fix the Windows 11 22H2 Remote Desktop bug by forcing RDP over TCP: a GPO with a WMI filter for 22H2 devices or the fClientDisableUDP registry value.'
 date: '2022-12-24 09:00:00'
 categories: [Windows 11]

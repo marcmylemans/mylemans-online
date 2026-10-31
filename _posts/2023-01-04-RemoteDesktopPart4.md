@@ -1,4 +1,6 @@
 ---
+# Retired Oct 2026: superseded or moved to a page. server.js 301s the old URL.
+published: false
 title: Installing Office 365 on a Remote Desktop Host!
 description: 'Part 4 of the Server 2022 RDS series: install Office 365 on a Session Host with shared computer activation so users sign in with their own licenses.'
 date: '2023-01-04 08:00:00'
