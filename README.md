@@ -22,6 +22,9 @@ blog/index.html      blog index at /blog/, paginated 10 per page
 *.html               the existing site pages, unchanged apart from front matter
 server.js            Express: static files, /api/subscribe, legacy host redirect
 dockerfile           two stages: Ruby builds Jekyll, Node serves the result
+deploy/vps/          the production VPS stack (Caddy, both sites, Labs API, Postgres,
+                     Watchtower), bootstrap script and backup job; see its README.
+                     Excluded from the Jekyll build and the Docker image.
 ```
 
 ## Testing on GitHub Pages (temporary)

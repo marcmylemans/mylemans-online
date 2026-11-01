@@ -6,3 +6,5 @@ _site
 vendor
 .sass-cache
 .env
+deploy/vps/.env
+deploy/vps/backups/

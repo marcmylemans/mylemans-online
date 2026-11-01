@@ -123,6 +123,7 @@ exclude:
   - README.md
   - LICENSE
   - .dockerignore
+  - deploy
 
 toc:
   min_level: 2

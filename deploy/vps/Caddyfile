@@ -1,0 +1,31 @@
+# Caddy issues and renews Let's Encrypt certificates by itself (HTTP-01, which
+# works behind the Cloudflare proxy). Cloudflare SSL mode must be "Full (strict)".
+
+{
+    email info@mylemans.online
+}
+
+(common) {
+    encode zstd gzip
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+        -Server
+    }
+}
+
+# Main site + blog. www and the legacy blog host go to the same container:
+# server.js already 301s blog.mylemans.online/* to https://mylemans.online/*.
+mylemans.online, www.mylemans.online, blog.mylemans.online {
+    import common
+    @www host www.mylemans.online
+    redir @www https://mylemans.online{uri} permanent
+    reverse_proxy site:80
+}
+
+# Labs. The container's own nginx forwards /api to labs-api.
+labs.mylemans.online {
+    import common
+    reverse_proxy labs-web:80
+}
