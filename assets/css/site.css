@@ -458,3 +458,11 @@ html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px;
 .guide-cta { margin: 2.5rem 0 1.5rem; padding: 1.5rem 1.6rem; border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: 14px; background: var(--color-surface); }
 .guide-cta-title { margin: 0.2rem 0 0.6rem; font-size: 1.3rem; }
 .guide-cta p { margin: 0 0 1rem; }
+
+/* ---- Referral links page ---- */
+.referral-section { padding-top: 0; }
+.referral-card { display: flex; flex-direction: column; }
+.referral-card .eyebrow { margin-bottom: 0.35rem; }
+.referral-card h3 { margin-top: 0; }
+.referral-guide { margin: 0.25rem 0 0; }
+.referral-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; margin-top: auto; padding-top: 1rem; }
