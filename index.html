@@ -7,16 +7,16 @@ layout: null
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mylemans Online: 14 years of IT, documented in public.</title>
+  <title>Mylemans Online: Learn Real IT by Doing It, Free</title>
   <meta name="description"
-        content="I'm Marc. 14 years of systems engineering, documented in public. Free hands-on learning at Mylemans Labs, plus the blog, YouTube, and war stories from the field." />
+        content="Free hands-on IT learning paths where you advance by proving you can do it, plus 130 guides from 15+ years of systems engineering. By Marc Mylemans." />
 
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mylemans.online/" />
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Mylemans Online: 14 years of IT, documented in public." />
+  <meta property="og:title" content="Mylemans Online: Learn Real IT by Doing It, Free" />
   <meta property="og:description"
         content="Free hands-on learning at Mylemans Labs, plus the blog, YouTube, and war stories from the field. By Marc Mylemans." />
   <meta property="og:type" content="website" />
@@ -29,7 +29,7 @@ layout: null
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mylemansonline" />
-  <meta name="twitter:title" content="Mylemans Online: 14 years of IT, documented in public." />
+  <meta name="twitter:title" content="Mylemans Online: Learn Real IT by Doing It, Free" />
   <meta name="twitter:description" content="Free hands-on learning at Mylemans Labs, plus the blog, YouTube, and war stories from the field. By Marc Mylemans." />
   <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
 
@@ -41,7 +41,7 @@ layout: null
     "name": "Mylemans Online",
     "url": "https://mylemans.online",
     "logo": "https://mylemans.online/assets/img/logo-light.png",
-    "description": "14 years of systems engineering, documented in public. Free hands-on learning at Mylemans Labs, plus blog, YouTube, and tools for homelabs and IT infrastructure.",
+    "description": "15+ years of systems engineering, documented in public. Free hands-on learning at Mylemans Labs, plus blog, YouTube, and tools for homelabs and IT infrastructure.",
     "sameAs": [
       "https://www.youtube.com/@mylemansonline",
       "https://github.com/marcmylemans",
@@ -90,20 +90,20 @@ layout: null
       <div class="container hero-v2-inner">
         <div class="hero-v2-copy">
           <p class="eyebrow">For sysadmins, MSP engineers and homelabbers.</p>
-          <h1 id="hero-heading" class="hero-v2-title">14 years of IT, documented <span class="hero-gradient-text">in public.</span></h1>
+          <h1 id="hero-heading" class="hero-v2-title">Learn real IT by <span class="hero-gradient-text">doing it.</span></h1>
           <p class="hero-v2-body">
-            I'm Marc. I've been a systems engineer for over a decade, and I write down
-            the things I learned the hard way: the homelab builds, the Windows and
-            Microsoft 365 work, the security and the war stories. If you want to get
-            genuinely good at real IT, not just collect tabs, you're in the right place.
+            Free learning paths on Mylemans Labs where you only move on once you can actually do
+            the thing: networking, Proxmox, Active Directory, PowerShell and more. Behind them are
+            the guides and war stories from my 15+ years as a systems engineer, documented in public.
           </p>
           <div class="hero-actions">
-            <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">Read the latest posts</a>
+            <a href="https://labs.mylemans.online/?view=paths" class="btn btn-primary" target="_blank" rel="noreferrer">Start learning, free &rarr;</a>
+            <a href="{{ '/blog/' | relative_url }}" class="arrow-link">Or read the latest posts <span aria-hidden="true">&rarr;</span></a>
           </div>
           <div class="hero-stats">
             <div class="hero-stat"><span class="hero-stat-value">40K+</span><span class="hero-stat-label">YouTube subscribers</span></div>
             <div class="hero-stat"><span class="hero-stat-value">{{ site.posts.size | default: 125 }}{% if site.posts.size == 0 %}+{% endif %}</span><span class="hero-stat-label">Posts on the blog</span></div>
-            <div class="hero-stat"><span class="hero-stat-value">14 yrs</span><span class="hero-stat-label">In the trenches</span></div>
+            <div class="hero-stat"><span class="hero-stat-value">15+ yrs</span><span class="hero-stat-label">In the trenches</span></div>
           </div>
         </div>
 
@@ -259,7 +259,7 @@ layout: null
               and whatever else I'm building or breaking. New uploads when I have something
               real to show, not on a fixed schedule.
             </p>
-            <a href="https://www.youtube.com/@mylemansonline" class="btn btn-primary" target="_blank" rel="noreferrer">
+            <a href="https://www.youtube.com/@mylemansonline" class="btn btn-secondary" target="_blank" rel="noreferrer">
               Subscribe on YouTube &rarr;
             </a>
           </div>
@@ -278,12 +278,12 @@ layout: null
           <article class="card community-card">
             <h3>Questions and comments</h3>
             <p>Questions about a post, your own lab, or something that broke at work. The comments under each video are the fastest place; for anything longer, use the contact page. I read everything.</p>
-            <a href="{{ '/contact.html' | relative_url }}" class="btn btn-primary">Get in touch</a>
+            <a href="{{ '/contact.html' | relative_url }}" class="btn btn-secondary">Get in touch</a>
           </article>
           <article class="card community-card">
-            <h3>YouTube members</h3>
-            <p>Early access, the occasional members-only stream, and a say in what gets built next. It also keeps the channel running.</p>
-            <a href="https://www.youtube.com/@mylemansonline/join" class="btn btn-secondary" target="_blank" rel="noreferrer">See membership</a>
+            <h3>Support the channel</h3>
+            <p>Want to support what I make? Become a YouTube member for early access and a say in what gets built next, or pick up a shirt or a printable rack bracket in the shop.</p>
+            <p class="project-links"><a href="https://www.youtube.com/@mylemansonline/join" target="_blank" rel="noreferrer">YouTube membership &rarr;</a> <a href="https://shop.mylemans.online/" target="_blank" rel="noreferrer">Visit the shop &rarr;</a></p>
           </article>
           <article class="card community-card">
             <h3>Projects &amp; my lab</h3>
@@ -298,18 +298,18 @@ layout: null
     <section class="section" id="newsletter">
       <div class="container">
         <div class="newsletter-card newsletter-v2">
-          <p class="eyebrow">Newsletter</p>
-          <h2 class="section-header-h2">Get the good stuff in your inbox.</h2>
+          <p class="eyebrow">Free build kit</p>
+          <h2 class="section-header-h2">Get my Proxmox cluster build kit.</h2>
           <p class="newsletter-pitch">
-            One email when there's something worth sending: a new tutorial, a new path,
-            a tool, a launch, or a war story from the field.
-            <strong>No spam, no upsells, no weekly filler.</strong>
-            Unsubscribe in one click.
+            The full parts list for my three-node M720q cluster, plus the build and install
+            checklist I wish I'd had: rack order, network plan, Ceph and backups. It's yours when
+            you join the newsletter, which sends one email when there's a new guide, a new Labs
+            path or a story from the field. Unsubscribe in one click.
           </p>
           <form class="newsletter-form-inline" id="newsletter-form">
             <label for="newsletter-email" class="sr-only">Email address</label>
             <input id="newsletter-email" type="email" placeholder="you@yourdomain.com" required />
-            <button type="submit" class="btn btn-primary">Subscribe</button>
+            <button type="submit" class="btn btn-primary">Send me the kit</button>
           </form>
           <p class="newsletter-consent">
             By subscribing you'll receive the Mylemans Online newsletter. One-click

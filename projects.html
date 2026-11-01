@@ -83,6 +83,7 @@ layout: null
           <p class="project-links">
             <a href="{{ p.url | relative_url }}"{% if p.url contains 'http' %} target="_blank" rel="noreferrer"{% endif %}>{{ p.label }} &rarr;</a>
             {%- if p.post and p.post != p.url %} <a href="{{ p.post | relative_url }}">Write-up</a>{% endif %}
+            {%- if p.title == "The Complete Hyper-V Guide" and site.hyperv_guide.url != "" %} <a href="{{ site.hyperv_guide.url }}" target="_blank" rel="noreferrer">Get the book{% if site.hyperv_guide.price != "" %} ({{ site.hyperv_guide.price }}){% endif %} &rarr;</a>{% endif %}
           </p>
         </article>
         {%- endunless %}{%- endfor %}

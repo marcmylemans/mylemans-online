@@ -3,9 +3,9 @@
 # backlinks and giscus comment threads (mapped by pathname) survive the move.
 
 title: Mylemans Online
-tagline: 14 years of IT, documented in public.
+tagline: 15+ years of IT, documented in public.
 description: >-
-  IT tutorials and war stories from 14 years of systems engineering: Proxmox,
+  IT tutorials and war stories from 15+ years of systems engineering: Proxmox,
   Hyper-V, Windows Server, Microsoft 365. Free hands-on learning at Mylemans Labs.
 url: "https://mylemans.online"
 baseurl: ""
@@ -46,6 +46,14 @@ comments:
 # Consent for ads is handled by Google's own GDPR message (AdSense > Privacy &
 # messaging, published for mylemans.online), which adsbygoogle.js shows itself.
 # Auto ads are OFF in the AdSense console, so only the slots below render.
+# Paid Hyper-V Guide download (the paid step after the free content).
+# Leave url empty until the product is live in the shop; nothing renders while it is empty.
+# Paste the Fourthwall product URL here to switch on the box at the end of every
+# Hyper-V chapter and the link on the Projects page.
+hyperv_guide:
+  url: ""
+  price: ""          # optional, e.g. "€19"
+
 adsense:
   enabled: true
   client: ca-pub-2763620817485009

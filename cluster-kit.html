@@ -1,0 +1,100 @@
+---
+layout: default
+title: Proxmox cluster build kit
+description: The parts list and the build and install checklist for my three-node Proxmox Ceph cluster in a 10-inch rack.
+permalink: /cluster-kit/
+robots: noindex
+sitemap: false
+---
+{%- assign kit = site.data.hardware | where: "group", "Proxmox cluster" | first -%}
+<section class="section">
+  <div class="container prose-page kit-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Cluster build kit</span></nav>
+    <p class="eyebrow">Newsletter extra</p>
+    <h1>Proxmox cluster build kit</h1>
+    <p>
+      Everything I used and everything I'd check, for the three-node Proxmox and Ceph cluster in my
+      10-inch rack. The parts list is first, then the order I'd build it in, then the install
+      checklist. The checklists are the ones I wish I'd had before I started, including the steps I
+      got wrong the first time.
+    </p>
+    <p class="kit-actions">
+      <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">Print or save as PDF</button>
+      <a href="{{ '/posts/m720q-10-inch-rack-cluster-build/' | relative_url }}" class="link">The hardware build post &rarr;</a>
+      <a href="{{ '/posts/proxmox-cluster-without-a-monitor/' | relative_url }}" class="link">The install post &rarr;</a>
+    </p>
+
+    <h2>1. Parts list</h2>
+    <div class="kit-table-wrap">
+      <table class="kit-table">
+        <thead><tr><th>Part</th><th>Role</th><th>Notes</th></tr></thead>
+        <tbody>
+          {%- for item in kit.items %}
+          <tr><td><strong>{{ item.name }}</strong></td><td>{{ item.role }}</td><td>{{ item.note }}</td></tr>
+          {%- endfor %}
+          <tr><td><strong>XikeStor SKS8300-8T</strong></td><td>10GbE switch</td><td>Eight 10GbE ports, two per node. Sits on a sloped tray above the nodes.</td></tr>
+          <tr><td><strong>1U PDU, four sockets</strong></td><td>Power</td><td>The three node power bricks live inside the rack behind the nodes, so the whole rack needs one power cable.</td></tr>
+          <tr><td><strong>3D-printed node cradles</strong></td><td>Mounting</td><td>Print them in PETG. My PLA ones softened in the summer heat.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    {%- if kit.amazon %}
+    <p>The full list with current prices is on my <a href="{{ kit.amazon }}" target="_blank" rel="noreferrer sponsored">Amazon list</a> (affiliate link, costs you nothing extra).</p>
+    {%- endif %}
+
+    <h2>2. Rack build order</h2>
+    <ul class="kit-checklist">
+      <li>Sort the screws by length before you start. They look alike and the manual calls for a specific one at every step.</li>
+      <li>Check every corner of the side frames is square while tightening. A frame that's slightly off makes the panels hard to slide in later.</li>
+      <li>Don't overtighten the handles, they screw straight into the acrylic.</li>
+      <li>Dry-fit every tray and cradle before you screw in the first device.</li>
+      <li>Fit the switch tray first. In my build it had to go in before the nodes, so everything came out again.</li>
+      <li>Put the power bricks behind the nodes and plug them into the PDU.</li>
+      <li>Leave the top slot free if you plan a KVM over IP.</li>
+      <li>Two cables per node: one port for storage, one for everything else. Don't bond them (the reasoning is in the <a href="{{ '/posts/proxmox-ceph-10gbe-network-design/' | relative_url }}">network design post</a>).</li>
+    </ul>
+
+    <h2>3. Network plan, decided before you install</h2>
+    <ul class="kit-checklist">
+      <li><strong>nic1</strong>: storage only (Ceph), MTU 9000.</li>
+      <li><strong>nic2</strong>: a bridge (<code>vmbr0</code>) with no address of its own, carrying the VMs.</li>
+      <li>On that bridge: a management VLAN with the gateway, and a separate VLAN for Corosync, the cluster heartbeat.</li>
+      <li>Write down every node's hostname (full name, for example <code>pve1.lab.example.com</code>) and its address on each network.</li>
+    </ul>
+
+    <h2>4. Install checklist, per node</h2>
+    <ul class="kit-checklist">
+      <li>Wipe the NVMe disks before you start (<code>wipefs -a /dev/nvme0n1</code>). An old partition table is what gave me a 1 KB OSD.</li>
+      <li>Mount the Proxmox ISO through the KVM as virtual USB, or boot from a stick.</li>
+      <li>In the installer, tick <strong>pin network interface names</strong> so a kernel update can't rename your ports.</li>
+      <li>Hostname is the <strong>full</strong> name, and the IP is a static address, not the DHCP one.</li>
+      <li>Read the installer's summary page like a checklist before pressing install. A wrong hostname is four minutes to fix now and an afternoon later.</li>
+      <li>After the first boot, switch to the free repositories (the community post-install script does this).</li>
+      <li>Apply the network plan: storage address and MTU 9000 on nic1, <code>vmbr0</code> on nic2, management and Corosync VLANs on the bridge.</li>
+    </ul>
+
+    <h2>5. Cluster, Ceph and backups</h2>
+    <ul class="kit-checklist">
+      <li>Create the cluster with two links: the Corosync VLAN as link 0 and the storage network as link 1.</li>
+      <li>When a node joins, check link 1 is filled in. "Authentication failed" right after a join is normal, just log in again.</li>
+      <li>Install Ceph from the wizard on all three nodes, then add monitors and managers on the other two.</li>
+      <li>Create one OSD per node from the GUI and set the device class to NVMe by hand if it's detected wrong.</li>
+      <li>Create a pool for VM disks and CephFS for ISOs and templates, then disable local storage so nothing lands on one node by accident.</li>
+      <li>Attach Proxmox Backup Server, restore a real VM onto Ceph as a test, and schedule a nightly backup job.</li>
+    </ul>
+
+    <h2>6. Real certificates on internal nodes</h2>
+    <ul class="kit-checklist">
+      <li>Datacenter, ACME: register a Let's Encrypt account.</li>
+      <li>Add the Cloudflare DNS plugin with an API token that can only edit DNS on that one zone.</li>
+      <li>Per node, System, Certificates, ACME: add the node's full name and order the certificate.</li>
+      <li>Open the node by name afterwards, not by IP, or the browser will refuse the certificate.</li>
+    </ul>
+
+    <p class="kit-footer">
+      Questions about your own build? Reply to any newsletter email, it comes straight to me.
+      Want to learn the concepts behind this (quorum, Ceph, Corosync) step by step? The
+      <a href="https://labs.mylemans.online/?path=virtualization" target="_blank" rel="noreferrer">virtualization path on Mylemans Labs</a> is free.
+    </p>
+  </div>
+</section>

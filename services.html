@@ -6,15 +6,15 @@ layout: null
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proxmox & Homelab Consulting – Mylemans Online</title>
-  <meta name="description" content="Expert guidance on Proxmox, Windows Server, Active Directory, and homelab networking. Remote sessions for prosumers and IT learners worldwide." />
+  <title>Homelab Design Review – Mylemans Online</title>
+  <meta name="description" content="A 60-minute call plus a written build plan for your Proxmox or Hyper-V homelab: hardware, network, storage, backups and build order. Fixed price, quoted up front." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mylemans.online/services.html" />
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Proxmox & Homelab Consulting – Mylemans Online" />
-  <meta property="og:description" content="Expert guidance on Proxmox, Windows Server, Active Directory, and homelab networking. Remote sessions for prosumers and IT learners." />
+  <meta property="og:title" content="Homelab Design Review – Mylemans Online" />
+  <meta property="og:description" content="A 60-minute call plus a written build plan for your Proxmox or Hyper-V homelab. Fixed price, quoted up front." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mylemans.online/services.html" />
   <meta property="og:site_name" content="Mylemans Online" />
@@ -25,80 +25,12 @@ layout: null
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mylemansonline" />
-  <meta name="twitter:title" content="Proxmox & Homelab Consulting – Mylemans Online" />
-  <meta name="twitter:description" content="Expert guidance on Proxmox, Windows Server, Active Directory, and homelab networking for prosumers and IT learners." />
+  <meta name="twitter:title" content="Homelab Design Review – Mylemans Online" />
+  <meta name="twitter:description" content="A 60-minute call plus a written build plan for your Proxmox or Hyper-V homelab. Fixed price, quoted up front." />
   <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
 
-  <!-- Structured Data: ProfessionalService -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Mylemans Online – Homelab & IT Guidance",
-    "url": "https://mylemans.online/services.html",
-    "description": "Independent guidance on Proxmox, Windows Server, Active Directory, and homelab networking for prosumers and IT learners.",
-    "areaServed": "Worldwide",
-    "provider": {
-      "@type": "Person",
-      "name": "Marc Mylemans",
-      "url": "https://mylemans.online/about.html"
-    },
-    "serviceType": [
-      "Proxmox Consulting",
-      "Homelab Guidance",
-      "Windows Server Consulting",
-      "Active Directory Setup",
-      "Networking Coaching"
-    ],
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://calendly.com/marc-mylemans/30min",
-      "serviceType": "Remote video session"
-    }
-  }
-  </script>
-
-  <!-- Structured Data: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What kind of homelabs do you support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "I primarily support prosumer and learning environments: Proxmox-based virtualization clusters, Windows Server and Active Directory labs, homelab networking with VLANs and firewalls, and hybrid setups combining on-prem and cloud (Entra ID / Azure). I do not take on managed service engagements for SMB or enterprise organizations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do remote sessions work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sessions are held remotely via video call (Teams, Zoom, or similar). You book a 30-minute fit check via Calendly, we discuss your setup and goals, and then agree on the best format: a one-off session, a scoped mini project, or recurring check-ins."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer managed IT services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Mylemans Online provides independent, education-focused guidance for personal labs and prosumer setups. It is not a managed service provider (MSP) and does not take on ongoing support contracts for small businesses or enterprise organizations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between a one-off session and a scoped mini project?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A one-off session is a focused call (or short series) to unblock a specific problem: migration planning, connectivity issues, or design validation. A scoped mini project has a clear deliverable outcome: setting up a Proxmox lab, improving Active Directory structure, or creating a backup strategy with documentation."
-        }
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Homelab Design Review", "serviceType": "Homelab design review", "url": "https://mylemans.online/services.html", "description": "A 60-minute call plus a written build plan for your Proxmox or Hyper-V homelab: hardware, network, storage, backups and build order. For personal labs and prosumer setups.", "areaServed": "Worldwide", "provider": {"@type": "Person", "name": "Marc Mylemans", "url": "https://mylemans.online/about.html"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is in the written build plan?", "acceptedAnswer": {"@type": "Answer", "text": "A hardware recommendation or a check of the shortlist you already have, a network and VLAN plan, the storage and backup approach, the order I would build it in, and the pitfalls I would watch for in your specific setup. It is written so you can follow it on your own."}}, {"@type": "Question", "name": "Do you work on business environments?", "acceptedAnswer": {"@type": "Answer", "text": "No. The design review is for personal labs, home offices and prosumer setups. For a production business environment you need an IT partner who can support it day to day, and Mylemans Online does not provide managed services."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "The price depends on the size of the setup, so it is quoted on request. You get one fixed price before anything is booked, with no hourly billing and no surprises afterwards."}}, {"@type": "Question", "name": "Can you build it for me?", "acceptedAnswer": {"@type": "Answer", "text": "No. You get the plan and the reasoning behind it, and you build it yourself. The blog and the free paths on Mylemans Labs cover most of the individual steps."}}]}</script>
 
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/site.css" />
@@ -115,95 +47,80 @@ layout: null
     <section class="section hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Independent guidance (limited)</p>
-          <h1>Proxmox & Homelab Guidance for Prosumers and IT Learners</h1>
+          <p class="eyebrow">Homelab design review</p>
+          <h1>Get your homelab plan checked before you buy the hardware</h1>
           <p class="hero-text">
-            This page offers limited independent guidance linked to my content. My primary focus is education and
-            content creation, with selective 1:1 support for personal labs and prosumer setups.
+            A 60-minute call about what you want to build, followed by a written build plan for your
+            Proxmox or Hyper-V lab: hardware, network, storage, backups and the order to build it in.
+            It's the review I wish I'd had before my own cluster, when I had to take the rack apart again.
           </p>
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Check fit & contact</a>
-            <a href="#offerings" class="btn btn-secondary">View guidance options</a>
+            <a href="contact.html" class="btn btn-primary">Request a design review</a>
+            <a href="#whats-included" class="arrow-link">What's included <span aria-hidden="true">&rarr;</span></a>
           </div>
           <p class="hero-meta">
-            Remote-first • Based in Belgium • Not affiliated with my employer.
+            For personal labs and prosumer setups · Remote · Based in Belgium · Not affiliated with my employer
           </p>
         </div>
 
         <div class="hero-panel">
           <div class="hero-card">
-            <h2>How this works</h2>
+            <h2>At a glance</h2>
             <ul class="hero-list">
-              <li>Short fit check to avoid conflicts with my employment obligations.</li>
-              <li>We map your current setup and learning goals.</li>
-              <li>You receive practical next steps and documentation-focused guidance.</li>
-              <li>Optional follow-up sessions for personal lab execution.</li>
+              <li>60-minute video call</li>
+              <li>Written build plan within 5 business days</li>
+              <li>One round of follow-up questions by email</li>
+              <li>Fixed price, quoted up front</li>
             </ul>
-          </div>
-          <div class="hero-card hero-card-metrics">
-            <div class="metric">
-              <span class="metric-value">1:1</span>
-              <span class="metric-label">Selective guidance</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">Project</span>
-              <span class="metric-label">education-first support</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">Remote</span>
-              <span class="metric-label">remote sessions</span>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="offerings">
+    <section class="section section-alt" id="whats-included">
       <div class="container">
         <div class="section-header">
-          <h2>Guidance offerings</h2>
-          <p>Focused, non-managed guidance around the technologies I use daily.</p>
+          <h2>What you get</h2>
+          <p>One clear outcome: a plan you can build from, written for your setup and budget.</p>
         </div>
-
         <div class="grid grid-3">
-          <article class="card" id="proxmox">
-            <h3>Proxmox & small-scale infrastructure guidance</h3>
-            <p>
-              We review your existing (or planned) environment and design a practical Proxmox setup:
-              single-node or cluster, storage layout, backup strategy, and clean network design.
-            </p>
-            <ul class="bullet-list">
-              <li>Hardware sizing and practical planning</li>
-              <li>VM / container layout and backup design</li>
-              <li>Simple, maintainable network architecture</li>
-            </ul>
-            <p><strong>Good fit for:</strong> prosumers, creators, and tech enthusiasts.</p>
+          <article class="card">
+            <h3>The call</h3>
+            <p>We go through what you want the lab to do, what you already own, your budget and what has to keep working while you build. Bring your shortlist and your questions.</p>
           </article>
-
-          <article class="card" id="windows-ad">
-            <h3>Windows Server & Active Directory guidance</h3>
-            <p>
-              Learning-focused assistance with AD deployments, migrations, and integrations with services like Entra ID, RDS, or file services.
-            </p>
-            <ul class="bullet-list">
-              <li>Greenfield Active Directory setups</li>
-              <li>Domain controller upgrades & migrations</li>
-              <li>Group Policy, RDS, file & print basics</li>
-            </ul>
-            <p><strong>Good fit for:</strong> prosumer and learning environments needing practical AD structure.</p>
+          <article class="card">
+            <h3>The written plan</h3>
+            <p>Hardware (or a check of your shortlist), the network and VLAN layout, storage and backups, the build order, and the specific pitfalls I'd watch for in your setup.</p>
           </article>
+          <article class="card">
+            <h3>The follow-up</h3>
+            <p>One round of follow-up questions by email once you've read the plan, so nothing stays unclear before you start buying.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="card" id="networking">
-            <h3>Networking & security coaching</h3>
-            <p>
-              Build a clear and understandable network layout: VLANs, firewall rules, VPN, and secure remote access without unnecessary complexity.
-            </p>
-            <ul class="bullet-list">
-              <li>VLAN design for home, prosumer, and creator networks</li>
-              <li>Firewall policies & best practices</li>
-              <li>Remote access / VPN setup and troubleshooting</li>
-            </ul>
-            <p><strong>Good fit for:</strong> home networks and prosumer setups.</p>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How it works</h2>
+        </div>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>1. Tell me about your plans</h3>
+            <p>Use the <a href="contact.html" class="link">contact page</a>: what you want to build, what you have, and your rough budget.</p>
+          </article>
+          <article class="card">
+            <h3>2. Get a fixed quote</h3>
+            <p>Within two business days you get one fixed price and a few time slots. Nothing is booked until you agree.</p>
+          </article>
+          <article class="card">
+            <h3>3. The call</h3>
+            <p>60 minutes on Teams, Zoom or similar.</p>
+          </article>
+          <article class="card">
+            <h3>4. Your build plan</h3>
+            <p>Delivered within five business days of the call, followed by one round of questions by email.</p>
           </article>
         </div>
       </div>
@@ -211,102 +128,61 @@ layout: null
 
     <section class="section section-alt">
       <div class="container">
-        <div class="section-header">
-          <h2>Engagement models</h2>
-          <p>Choose the approach that fits your learning goals and scope.</p>
-        </div>
-
-        <div class="grid grid-3">
+        <div class="grid grid-2">
           <article class="card">
-            <h3>One-off guidance session</h3>
-            <p>
-              A focused call (or short series) to unblock a specific technical problem:
-              migration planning, connectivity issues, design validation, or troubleshooting.
-            </p>
+            <h3>A good fit if you</h3>
+            <ul class="bullet-list">
+              <li>are planning a Proxmox or Hyper-V lab, from one mini PC to a small cluster</li>
+              <li>want to learn by building it yourself, with the design checked first</li>
+              <li>are about to spend money on hardware and want to buy it once</li>
+            </ul>
           </article>
-
           <article class="card">
-            <h3>Scoped mini project</h3>
-            <p>
-              A scoped engagement with a clear outcome, such as setting up a Proxmox lab,
-              improving Active Directory structure, creating a backup routine, or documenting your environment.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Limited recurring check-ins</h3>
-            <p>
-              For creators and prosumers who want recurring sessions to iterate on their environment.
-            </p>
+            <h3>Not the right fit if you</h3>
+            <ul class="bullet-list">
+              <li>need support for a production business environment</li>
+              <li>are looking for managed services or someone on call</li>
+              <li>want the lab built for you rather than a plan to build it</li>
+            </ul>
           </article>
         </div>
-        <article class="card" style="margin-top: 1.25rem;">
-          <h3>Scope & conflict policy</h3>
-          <p>
-            This is an independent personal brand activity and is not affiliated with my employer.
-            I do not offer managed services for SMB/enterprise organizations and decline engagements
-            that may conflict with employer obligations.
-          </p>
-        </article>
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="section section-alt" id="faq">
+    <section class="section" id="faq">
       <div class="container">
         <div class="section-header">
-          <h2>Frequently asked questions</h2>
-          <p>Common questions about how guidance sessions work.</p>
+          <h2>Questions</h2>
         </div>
-
-        <div class="grid">
-          <article class="card">
-            <h3>What kind of homelabs do you support?</h3>
-            <p>
-              I primarily support prosumer and learning environments: Proxmox-based virtualization clusters,
-              Windows Server and Active Directory labs, homelab networking with VLANs and firewalls, and hybrid
-              setups combining on-prem and cloud (Entra ID / Azure). I do not take on managed service engagements
-              for SMB or enterprise organizations.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>How do remote sessions work?</h3>
-            <p>
-              Sessions are held remotely via video call (Teams, Zoom, or similar). You book a 30-minute fit check
-              via Calendly, we discuss your setup and goals, and then agree on the best format: a one-off session,
-              a scoped mini project, or recurring check-ins.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Do you offer managed IT services?</h3>
-            <p>
-              No. This is independent, education-focused guidance for personal labs and prosumer setups. I am not
-              an MSP and do not take on ongoing support contracts for small businesses or enterprise organizations.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>What is the difference between a one-off session and a scoped mini project?</h3>
-            <p>
-              A one-off session is a focused call to unblock a specific problem: migration planning, connectivity
-              issues, or design validation. A scoped mini project has a clear deliverable outcome: setting up a
-              Proxmox lab, improving Active Directory structure, or creating a documented backup strategy.
-            </p>
-          </article>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">What is in the written build plan?</summary>
+            <div class="faq-answer"><p>A hardware recommendation or a check of the shortlist you already have, a network and VLAN plan, the storage and backup approach, the order I would build it in, and the pitfalls I would watch for in your specific setup. It is written so you can follow it on your own.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you work on business environments?</summary>
+            <div class="faq-answer"><p>No. The design review is for personal labs, home offices and prosumer setups. For a production business environment you need an IT partner who can support it day to day, and Mylemans Online does not provide managed services.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How much does it cost?</summary>
+            <div class="faq-answer"><p>The price depends on the size of the setup, so it is quoted on request. You get one fixed price before anything is booked, with no hourly billing and no surprises afterwards.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you build it for me?</summary>
+            <div class="faq-answer"><p>No. You get the plan and the reasoning behind it, and you build it yourself. The blog and the free paths on Mylemans Labs cover most of the individual steps.</p></div>
+          </details>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt">
       <div class="container newsletter">
         <div>
-          <h2>Ready to discuss your environment?</h2>
-          <p>Tell me a bit about your setup and what you want to achieve.</p>
+          <h2>Planning a build?</h2>
+          <p>Tell me what you want it to do and you'll have a fixed quote within two business days.</p>
         </div>
         <div>
-          <a href="contact.html" class="btn btn-primary">Go to contact page</a>
+          <a href="contact.html" class="btn btn-primary">Request a design review</a>
         </div>
       </div>
     </section>

@@ -18,6 +18,9 @@ In this post I build the fix, starting from nothing. You will sign up, deploy a 
 > **The short version:** Sign up, spin up a small Linux VM, and paste CloudConnexa's one-line script to install a connector. That alone gets you split tunnel, intrusion detection, DNS and audit logs, location rules, and device-posture checks, on the free tier. When you add staff, switch authentication to SAML, register CloudConnexa as an Entra enterprise app, and map the **Group** claim so access follows group membership. Deploy the client with `winget` for one machine, or two Intune Win32 apps for a fleet. Offboarding then becomes one move at the identity layer.
 {: .prompt-tip }
 
+> **Disclosure:** This video and post are a paid sponsorship by OpenVPN. The setup, the testing and the opinions are my own.
+{: .prompt-info }
+
 ## Why this instead of a classic VPN
 
 A classic VPN drops you onto the office network and trusts you with everything on it. The model here is a doorman: it checks who you are at the entrance, walks you to exactly the resource you are allowed to reach, and writes down that you went there. Identity at the front, access scoped to one thing instead of the whole network, and a log of it. That is what people mean by zero-trust access.

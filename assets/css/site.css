@@ -432,3 +432,29 @@ html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px;
 /* No ad, no gap: AdSense marks each <ins> data-ad-status="filled" or "unfilled".
    Until it is filled (ad blocker, no consent, no inventory) the slot takes no space. */
 .ad-slot:not(:has(ins.adsbygoogle[data-ad-status="filled"])) { display: none; }
+
+/* ---- Cluster build kit (newsletter lead magnet) ---- */
+.kit-page h2 { margin: 2.4rem 0 0.8rem; font-size: 1.4rem; }
+.kit-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin: 1.25rem 0 0.5rem; }
+.kit-table-wrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: 12px; }
+.kit-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.kit-table th, .kit-table td { text-align: left; vertical-align: top; padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--color-border); }
+.kit-table th { background: var(--color-surface-200); font-weight: 600; }
+.kit-table tr:last-child td { border-bottom: 0; }
+.kit-checklist { list-style: none; padding-left: 0 !important; }
+.kit-checklist li { position: relative; padding-left: 1.9rem; margin: 0.55rem 0; }
+.kit-checklist li::before {
+  content: ""; position: absolute; left: 0; top: 0.28em;
+  width: 1.05rem; height: 1.05rem; border: 2px solid var(--color-accent); border-radius: 4px;
+}
+.kit-footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border); color: var(--color-text-muted); }
+@media print {
+  .site-header, .site-footer, footer, .cookie-banner, .kit-actions, .breadcrumb { display: none !important; }
+  .kit-page { max-width: none; }
+  .kit-table th { background: #eee !important; }
+}
+
+/* ---- Paid Hyper-V Guide box (only renders when site.hyperv_guide.url is set) ---- */
+.guide-cta { margin: 2.5rem 0 1.5rem; padding: 1.5rem 1.6rem; border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: 14px; background: var(--color-surface); }
+.guide-cta-title { margin: 0.2rem 0 0.6rem; font-size: 1.3rem; }
+.guide-cta p { margin: 0 0 1rem; }

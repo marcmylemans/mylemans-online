@@ -1,0 +1,12 @@
+{%- comment -%}
+Shown at the end of each chapter of The Complete Hyper-V Guide, but only once
+site.hyperv_guide.url is set in _config.yml.
+{%- endcomment -%}
+{%- if site.hyperv_guide.url != "" and page.series == "The Complete Hyper-V Guide" %}
+<aside class="guide-cta" aria-label="The Hyper-V Guide">
+  <p class="eyebrow">The complete guide</p>
+  <h2 class="guide-cta-title">Want all six chapters in one place?</h2>
+  <p>The Hyper-V Guide is the whole series as one downloadable book: every chapter, cleaned up and in order, to keep next to you while you build.{% if site.hyperv_guide.price != "" %} {{ site.hyperv_guide.price }}, one-time.{% endif %} Buying it supports the free content on this site.</p>
+  <a href="{{ site.hyperv_guide.url }}" class="btn btn-primary" target="_blank" rel="noreferrer">Get the Hyper-V Guide &rarr;</a>
+</aside>
+{%- endif %}
