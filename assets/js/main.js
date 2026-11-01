@@ -181,7 +181,7 @@
 
           const slug = product.slug || "";
           const productUrl =
-            product.url || `${FW_SHOP_URL}/product/${slug}`;
+            product.url || `${FW_SHOP_URL}/products/${slug}`;
 
           const category = determineCategory(product);
 
