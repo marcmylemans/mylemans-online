@@ -8,6 +8,7 @@
   <meta property="og:image" content="{{ '/assets/img/og-default.jpg' | absolute_url }}" />
   <meta name="twitter:image" content="{{ '/assets/img/og-default.jpg' | absolute_url }}" />
   {%- endunless %}
+  {% include breadcrumbs-schema.html %}
   {%- if page.robots or layout.robots %}<meta name="robots" content="{{ page.robots | default: layout.robots }}, follow" />{% endif %}
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
   <link rel="alternate" type="application/rss+xml" title="Mylemans Online" href="{{ '/feed.xml' | absolute_url }}" />
