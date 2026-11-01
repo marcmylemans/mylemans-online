@@ -5,6 +5,8 @@ date: '2022-12-26 09:00:00'
 categories: [Windows Server]
 tags: [server 2022, admx, group policy, gpo, active directory, software installation, tutorial, youtube]
 image: {path: /assets/img/posts/xbX_n8ysGrI.jpg, alt: Server 2022 - Active Directory - Importing ADMX and Installing Applications with Group Policy}
+series: Active Directory from Scratch
+series_order: 5
 ---
 
 Welcome to our in-depth tutorial on enhancing your Active Directory capabilities in Windows Server 2022. In this video, we're diving into two critical areas: importing Administrative templates from various vendors and deploying third-party software through Group Policy.

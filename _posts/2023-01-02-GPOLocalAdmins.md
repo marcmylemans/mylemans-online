@@ -5,6 +5,8 @@ date: '2023-01-02 10:00:00'
 categories: [Windows Server]
 tags: [server 2022, ad, gpo, local admins, group policy, admin, tutorial, youtube]
 image: {path: /assets/img/posts/FrRasK5DQiY.jpg, alt: Manage Local Admins with Group Policy on Workstations}
+series: Active Directory from Scratch
+series_order: 6
 ---
 
 In this video we will be managing our Local Admins with Group Policy's.

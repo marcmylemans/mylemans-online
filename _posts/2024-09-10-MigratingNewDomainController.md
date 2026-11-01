@@ -5,6 +5,8 @@ date: '2024-09-10 08:00:00'
 categories: [Active Directory]
 tags: []
 image: {path: /assets/img/posts/3e10439b-a030-4834-b64a-8c8f44db25ac.webp, alt: Migrating to a New Domain Controller}
+series: Active Directory from Scratch
+series_order: 7
 ---
 {% youtube "https://youtu.be/Y3kIJydyTzA" %}
 

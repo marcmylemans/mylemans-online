@@ -5,6 +5,8 @@ date: '2022-12-23 09:00:00'
 categories: [Windows 11]
 tags: [windows 11, domain join, active directory, network management, tutorial, youtube]
 image: {path: /assets/img/posts/yFegSYXlCXE.jpg, alt: Windows 11 Domain Join}
+series: Active Directory from Scratch
+series_order: 3
 ---
 
 Join us in this practical guide as we demonstrate how to integrate Windows 11 into an Active Directory environment. This tutorial is particularly valuable for network administrators and IT professionals who are transitioning to or managing Windows 11 systems in a corporate or enterprise network.

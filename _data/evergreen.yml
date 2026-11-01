@@ -2,6 +2,8 @@
 # Edit freely; url is relative to the site root.
 - title: The Complete Hyper-V Guide for Homelab & Prosumer Environments
   url: /categories/hyper-v/
+- title: Active Directory from Scratch (setup, Group Policy, migration)
+  url: /posts/SettingUpActiveDirectoryServer2022/
 - title: The Complete Remote Desktop Services Guide
   url: /categories/remote-desktop-services/
 - title: Build Your First Home Server in 30 Minutes (Proxmox)

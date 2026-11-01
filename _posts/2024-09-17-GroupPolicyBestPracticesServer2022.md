@@ -5,6 +5,8 @@ date: '2024-09-17 19:00:00'
 categories: [Active Directory]
 tags: []
 image: {path: /assets/img/posts/OFoh5dmeVRM.jpg, alt: 'Group Policy, Templates, Preferences, Loopback Policy, and Best Practices'}
+series: Active Directory from Scratch
+series_order: 4
 ---
 
 Now that you've got the basics of creating and managing Group Policies and importing ADMX files down, it’s time to dig a bit deeper. Let’s talk about the different types of policies you can apply, how to structure them efficiently, and some best practices to keep your environment scalable and easy to manage.
@@ -12,6 +14,9 @@ Now that you've got the basics of creating and managing Group Policies and impor
 For a step-by-step guide on creating OUs, refer to [this post](/posts/SettingUpActiveDirectoryServer2022/). Additionally, for more information on working with ADMX files in Active Directory, check out [this guide](/posts/ActiveDirectoryADMX/).
 
 If you're setting up Active Directory on Windows Server 2022, you can follow [this comprehensive guide](/posts/SettingUpActiveDirectoryServer2022/) for a step-by-step walkthrough.
+
+> **Windows Server 2025:** everything in this post applies to Server 2025 as well. Group Policy works the same way on both.
+{: .prompt-info }
 
 {% youtube "https://youtu.be/OFoh5dmeVRM" %}
 
