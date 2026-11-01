@@ -62,6 +62,7 @@ adsense:
   end_of_post: true               # one more slot after the article body
   list_slot: "9203598175"         # unit "mylemans-online_sidebar_bottom_AdSense3": between blog-index rows
   list_after: 4                   # insert the list slot after this many rows on /blog/
+  sidebar_slot: "6484213873"      # unit "sidebar_sticky" (fixed 300x600): sticky /blog/ sidebar ad, desktop only; "" = off
 
 # Blog index at /blog/, 10 posts per page
 paginate: 10

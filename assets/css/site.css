@@ -605,3 +605,18 @@ details.cp-notes .kit-table-wrap { margin-bottom: 1rem; }
 
 .newsletter-cta-row { margin: 1.25rem 0 0.4rem; }
 .newsletter-alt { margin: 1.5rem auto 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); max-width: 30rem; }
+
+/* Sticky sidebar ad on /blog/ (adsense.sidebar_slot). Desktop only: where the sidebar
+   drops below the post list it would just be one more ad at the very bottom, so it is
+   not shown and, being hidden, AdSense never requests an ad for it. The sidebar
+   stretches to the height of the post list so the ad can stay in view while scrolling. */
+.sidebar-ad { display: none; }
+@media (min-width: 1024px) {
+  .blog-sidebar { align-self: stretch; }
+  /* The unit is a fixed 300x600; the sidebar is normally 17rem (272px). */
+  .blog-sidebar:has(.sidebar-ad) { flex: 0 0 300px; }
+  .sidebar-ad { display: block; position: sticky; top: 6rem; }
+}
+.ad-slot-sidebar { margin: 0; }
+.ad-slot-sidebar::before { content: "Advertisement"; display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem; }
+.ad-slot-sidebar ins.adsbygoogle { vertical-align: top; }

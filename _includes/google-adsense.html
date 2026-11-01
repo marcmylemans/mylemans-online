@@ -1,7 +1,10 @@
 {%- comment -%}
 Ad slot. Pass slot="..." to pick a unit; defaults to adsense.in_article_slot.
+Pass width= and height= for a fixed-size unit (the sidebar's 300x600); without them
+the unit is responsive.
 The post layout places one after the second H2 of longer posts (adsense.in_article)
-and one after the body (adsense.end_of_post); blog/index.html adds one between rows.
+and one after the body (adsense.end_of_post); blog/index.html adds one between rows
+and, when adsense.sidebar_slot is set, a sticky one at the bottom of the sidebar.
 Posts do not call this include directly any more. Renders nothing unless adsense.enabled.
 adsbygoogle.js is loaded by main.js on pages where window.MO_ADSENSE is set,
 i.e. only pages built with the default layout.
@@ -9,11 +12,18 @@ i.e. only pages built with the default layout.
 {%- if site.adsense.enabled and site.adsense.client %}
 {%- assign slot = include.slot | default: site.adsense.in_article_slot %}
 <div class="ad-slot{% if include.class %} {{ include.class }}{% endif %}" aria-label="Advertisement">
+  {%- if include.width %}
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:{{ include.width }}px;height:{{ include.height }}px"
+       data-ad-client="{{ site.adsense.client }}"
+       data-ad-slot="{{ slot }}"></ins>
+  {%- else %}
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="{{ site.adsense.client }}"
        data-ad-slot="{{ slot }}"
        data-ad-format="{{ include.format | default: "auto" }}"
        data-full-width-responsive="{% if include.format == "horizontal" %}false{% else %}true{% endif %}"></ins>
+  {%- endif %}
 </div>
 {%- endif %}

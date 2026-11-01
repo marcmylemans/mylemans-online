@@ -107,6 +107,9 @@ description: 125+ tutorials and war stories on homelabs, Proxmox, Hyper-V, Windo
         <a href="{{ '/feed.xml' | relative_url }}">RSS feed &rarr;</a>
         <a href="https://www.youtube.com/@mylemansonline" target="_blank" rel="noreferrer">YouTube channel &rarr;</a>
       </div>
+      {%- if site.adsense.enabled and site.adsense.sidebar_slot != "" %}
+      <div class="sidebar-ad">{% include google-adsense.html slot=site.adsense.sidebar_slot class="ad-slot-sidebar" width=300 height=600 %}</div>
+      {%- endif %}
     </aside>
 
   </div>
