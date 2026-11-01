@@ -1,116 +1,140 @@
+/* ============================================================
+   Code blocks: Rouge token colours + the block chrome (header bar
+   with language label and copy button, added by main.js).
+   Follows the site theme: light palette by default, dark palette
+   under html[data-theme="dark"].
+   ============================================================ */
+
+:root {
+  --code-bg: #f6f8fa;
+  --code-head: #eef1f5;
+  --code-border: rgba(15, 23, 42, 0.10);
+  --code-text: #1f2328;
+  --code-muted: #57606a;
+  --code-comment: #6e7781;
+  --code-keyword: #cf222e;
+  --code-string: #0a3069;
+  --code-number: #0550ae;
+  --code-function: #8250df;
+  --code-variable: #953800;
+  --code-type: #0550ae;
+  --code-tag: #116329;
+  --code-attr: #0550ae;
+  --code-ins-bg: #dafbe1;
+  --code-del-bg: #ffebe9;
+}
+
+html[data-theme="dark"] {
+  --code-bg: #0d1424;
+  --code-head: #111a2e;
+  --code-border: rgba(148, 163, 184, 0.18);
+  --code-text: #e6edf3;
+  --code-muted: #8b949e;
+  --code-comment: #8b949e;
+  --code-keyword: #ff7b72;
+  --code-string: #a5d6ff;
+  --code-number: #79c0ff;
+  --code-function: #d2a8ff;
+  --code-variable: #ffa657;
+  --code-type: #79c0ff;
+  --code-tag: #7ee787;
+  --code-attr: #79c0ff;
+  --code-ins-bg: rgba(46, 160, 67, 0.18);
+  --code-del-bg: rgba(248, 81, 73, 0.18);
+}
+
+/* ---- Block chrome ------------------------------------------ */
+.post-content div.highlighter-rouge,
+.post-content figure.highlight {
+  margin: 1.5rem 0;
+  border: 1px solid var(--code-border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  overflow: hidden;
+}
+
+.code-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.35rem 0.5rem 0.35rem 1rem;
+  background: var(--code-head);
+  border-bottom: 1px solid var(--code-border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  color: var(--code-muted);
+}
+.code-lang { letter-spacing: 0.02em; }
+
+.code-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--code-muted);
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+}
+.code-copy:hover { color: var(--code-text); background: var(--code-bg); border-color: var(--code-border); }
+.code-copy:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+.code-copy.is-copied { color: var(--code-tag); }
+.code-copy svg { width: 14px; height: 14px; flex: none; }
+
+/* The <pre> sits inside the chrome, so it loses its own box. */
+.post-content div.highlighter-rouge pre.highlight,
+.post-content figure.highlight pre {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--code-text);
+  overflow-x: auto;
+  line-height: 1.6;
+  font-size: 0.85rem;
+  tab-size: 4;
+}
+.post-content div.highlighter-rouge .highlight { background: transparent; }
+
+/* ---- Tokens ------------------------------------------------- */
+.highlight { color: var(--code-text); }
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight, .highlight .w {
-  color: #24292f;
-  background-color: #f6f8fa;
-}
-.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
-  color: #cf222e;
-}
-.highlight .gr {
-  color: #f6f8fa;
-}
-.highlight .gd {
-  color: #82071e;
-  background-color: #ffebe9;
-}
-.highlight .nb {
-  color: #953800;
-}
-.highlight .nc {
-  color: #953800;
-}
-.highlight .no {
-  color: #953800;
-}
-.highlight .nn {
-  color: #953800;
-}
-.highlight .sr {
-  color: #116329;
-}
-.highlight .na {
-  color: #116329;
-}
-.highlight .nt {
-  color: #116329;
-}
-.highlight .gi {
-  color: #116329;
-  background-color: #dafbe1;
-}
-.highlight .ges {
-  font-weight: bold;
-  font-style: italic;
-}
-.highlight .kc {
-  color: #0550ae;
-}
-.highlight .l, .highlight .ld, .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
-  color: #0550ae;
-}
-.highlight .sb {
-  color: #0550ae;
-}
-.highlight .bp {
-  color: #0550ae;
-}
-.highlight .ne {
-  color: #0550ae;
-}
-.highlight .nl {
-  color: #0550ae;
-}
-.highlight .py {
-  color: #0550ae;
-}
-.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm {
-  color: #0550ae;
-}
-.highlight .o, .highlight .ow {
-  color: #0550ae;
-}
-.highlight .gh {
-  color: #0550ae;
-  font-weight: bold;
-}
-.highlight .gu {
-  color: #0550ae;
-  font-weight: bold;
-}
-.highlight .s, .highlight .sa, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .sx, .highlight .s1, .highlight .ss {
-  color: #0a3069;
-}
-.highlight .nd {
-  color: #8250df;
-}
-.highlight .nf, .highlight .fm {
-  color: #8250df;
-}
-.highlight .err {
-  color: #f6f8fa;
-  background-color: #82071e;
-}
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs {
-  color: #6e7781;
-}
-.highlight .gl {
-  color: #6e7781;
-}
-.highlight .gt {
-  color: #6e7781;
-}
-.highlight .ni {
-  color: #24292f;
-}
-.highlight .si {
-  color: #24292f;
-}
-.highlight .ge {
-  color: #24292f;
-  font-style: italic;
-}
-.highlight .gs {
-  color: #24292f;
-  font-weight: bold;
-}
+
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf,
+.highlight .c1, .highlight .cs { color: var(--code-comment); font-style: italic; }
+.highlight .cp { color: var(--code-keyword); }
+
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp,
+.highlight .kr, .highlight .kv, .highlight .ow { color: var(--code-keyword); }
+.highlight .kt { color: var(--code-type); }
+
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sa, .highlight .sb,
+.highlight .sc, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si,
+.highlight .sx, .highlight .dl, .highlight .ss { color: var(--code-string); }
+.highlight .sr { color: var(--code-tag); }
+
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi,
+.highlight .il, .highlight .mo, .highlight .mx { color: var(--code-number); }
+
+.highlight .nf, .highlight .fm, .highlight .nd { color: var(--code-function); }
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { color: var(--code-variable); }
+.highlight .nb, .highlight .bp, .highlight .nc, .highlight .nn, .highlight .no,
+.highlight .ne { color: var(--code-type); }
+.highlight .na { color: var(--code-attr); }
+.highlight .nt { color: var(--code-tag); }
+.highlight .nl, .highlight .ni { color: var(--code-variable); }
+
+.highlight .o, .highlight .p, .highlight .w, .highlight .n, .highlight .nx { color: inherit; }
+
+.highlight .gd { background: var(--code-del-bg); }
+.highlight .gi { background: var(--code-ins-bg); }
+.highlight .gh, .highlight .gu { color: var(--code-function); font-weight: 600; }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: 600; }
+.highlight .err { color: inherit; background: none; }

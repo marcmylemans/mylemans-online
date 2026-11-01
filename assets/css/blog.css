@@ -143,11 +143,12 @@
 }
 .post-content pre {
   padding: 1rem 1.25rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  border: 1px solid var(--code-border, var(--color-border));
+  background: var(--code-bg, var(--color-surface-200));
   overflow-x: auto;
-  line-height: 1.55;
-  font-size: 0.9rem;
+  line-height: 1.6;
+  font-size: 0.85rem;
 }
 .post-content pre code { padding: 0; background: none; font-size: inherit; }
 .post-content hr { border: 0; border-top: 1px solid var(--color-border); margin: 2.5rem 0; }

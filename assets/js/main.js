@@ -333,6 +333,53 @@
   // -----------------------------
   // 4) Main site init
   // -----------------------------
+  // Code blocks: header bar with the language and a copy button, Chirpy style.
+  const LANG_NAMES = { powershell: "PowerShell", ps1: "PowerShell", bash: "Bash", sh: "Shell",
+    shell: "Shell", python: "Python", yaml: "YAML", yml: "YAML", json: "JSON", xml: "XML",
+    ini: "INI", csv: "CSV", plaintext: "Text", text: "Text", html: "HTML", css: "CSS",
+    javascript: "JavaScript", js: "JavaScript", dockerfile: "Dockerfile", sql: "SQL", console: "Console" };
+  const ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  const ICON_DONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy") ? resolve() : reject(); } catch (e) { reject(e); }
+      ta.remove();
+    });
+  }
+
+  function initCodeBlocks() {
+    document.querySelectorAll(".post-content div.highlighter-rouge, .post-content figure.highlight").forEach((block) => {
+      const pre = block.querySelector("pre");
+      if (!pre || block.querySelector(".code-head")) return;
+      const m = (block.className || "").match(/language-([\w+-]+)/) ||
+                ((pre.querySelector("code") || {}).className || "").match(/language-([\w+-]+)/);
+      const key = m ? m[1].toLowerCase() : "plaintext";
+      const label = LANG_NAMES[key] || key;
+
+      const head = document.createElement("div");
+      head.className = "code-head";
+      head.innerHTML = '<span class="code-lang"></span><button type="button" class="code-copy" aria-label="Copy code">' + ICON_COPY + '<span>Copy</span></button>';
+      head.querySelector(".code-lang").textContent = label;
+      block.insertBefore(head, block.firstChild);
+
+      const btn = head.querySelector(".code-copy");
+      btn.addEventListener("click", () => {
+        const code = pre.querySelector("code") || pre;
+        copyText(code.innerText.replace(/\n$/, "")).then(() => {
+          btn.classList.add("is-copied");
+          btn.innerHTML = ICON_DONE + "<span>Copied</span>";
+          clearTimeout(btn._t);
+          btn._t = setTimeout(() => { btn.classList.remove("is-copied"); btn.innerHTML = ICON_COPY + "<span>Copy</span>"; }, 1800);
+        }).catch(() => {});
+      });
+    });
+  }
+
   function initSite() {
     const root = document.documentElement;
 
@@ -607,6 +654,7 @@
     await loadPartials();
     // Then wire everything up
     initSite();
+    initCodeBlocks();
     initCookieConsent();
   });
 
