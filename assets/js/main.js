@@ -677,6 +677,9 @@
     s.crossOrigin = "anonymous";
     s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + encodeURIComponent(cfg.client);
     s.onload = function () {
+      // Show the slots (they're hidden until now, so an ad blocker leaves no
+      // gap) before asking for ads: AdSense skips zero-width slots.
+      document.documentElement.classList.add("ads-ready");
       var slots = document.querySelectorAll("ins.adsbygoogle");
       for (var i = 0; i < slots.length; i++) {
         try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
