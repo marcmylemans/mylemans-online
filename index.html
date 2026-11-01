@@ -298,18 +298,20 @@ layout: null
     <section class="section" id="newsletter">
       <div class="container">
         <div class="newsletter-card newsletter-v2">
-          <p class="eyebrow">Free build kit</p>
-          <h2 class="section-header-h2">Get my Proxmox cluster build kit.</h2>
+          <p class="eyebrow">Free tool</p>
+          <h2 class="section-header-h2">Plan your Proxmox cluster network before you install.</h2>
           <p class="newsletter-pitch">
-            The full parts list for my three-node M720q cluster, plus the build and install
-            checklist I wish I'd had: rack order, network plan, Ceph and backups. It's yours when
-            you join the newsletter, which sends one email when there's a new guide, a new Labs
-            path or a story from the field. Unsubscribe in one click.
+            Hostnames and node IPs can't change once a Proxmox cluster exists. Fill in your nodes,
+            ports and networks and get the address plan plus a risk check against the Proxmox
+            recommendations, free. Join the newsletter and download it all as a pre-filled planner
+            with installer cards and paste-ready config.
           </p>
+          <p class="newsletter-cta-row"><a href="{{ '/cluster-kit/' | relative_url }}" class="btn btn-primary">Open the cluster planner &rarr;</a></p>
+          <p class="newsletter-alt">Just want the newsletter? One email when there's a new guide, a new Labs path or a story from the field.</p>
           <form class="newsletter-form-inline" id="newsletter-form">
             <label for="newsletter-email" class="sr-only">Email address</label>
             <input id="newsletter-email" type="email" placeholder="you@yourdomain.com" required />
-            <button type="submit" class="btn btn-primary">Send me the kit</button>
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
           </form>
           <p class="newsletter-consent">
             By subscribing you'll receive the Mylemans Online newsletter. One-click

@@ -7,6 +7,7 @@ tags: [m720q, 10 inch rack, deskpi rackmate, 10gbe, homelab, 3d printing, youtub
 image: {path: /assets/img/posts/a3ho8IB7p0U.jpg, alt: 3x Lenovo M720q in a 10-Inch Rack}
 series: Proxmox Cluster Build
 series_order: 1
+cluster_planner_cta: true
 ---
 
 These are the parts for my Proxmox cluster, and everything in this post I bought myself. Three Lenovo M720q Tiny PCs, each with a dual-port 10GbE card, going into a 10-inch rack with a 10GbE switch and a PDU. This post covers the hardware and the rack build; [part 3](/posts/proxmox-cluster-without-a-monitor/) is the Proxmox install.

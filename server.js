@@ -29,6 +29,12 @@ let AUDIENCE_SAFETUNNEL = process.env.RESEND_AUDIENCE_ID_SAFETUNNEL || '';
 let AUDIENCE_NEWSLETTER =
   process.env.RESEND_AUDIENCE_ID_NEWSLETTER ||
   'f0bda345-9b4a-4400-b559-cc524c069e21';
+// Signup-source "tag": Resend contacts have no tag field, so a signup from
+// the cluster planner is also added to this audience. Broadcasts go to the
+// Newsletter audience only; this one is just for counting where people
+// came from. Found or created by name at startup.
+let AUDIENCE_SOURCE_CLUSTER_KIT = process.env.RESEND_AUDIENCE_ID_SOURCE_CLUSTER_KIT || '';
+const SOURCE_CLUSTER_KIT_NAME = 'Source: cluster-kit';
 
 app.set('trust proxy', true);
 app.use(express.json());
@@ -156,7 +162,19 @@ async function ensureAudiences() {
       }
     }
 
-    console.log(`[startup] Audiences ready. SafeTunnel: ${AUDIENCE_SAFETUNNEL}, Newsletter: ${AUDIENCE_NEWSLETTER}`);
+    // Find or create the cluster-kit source audience
+    if (!AUDIENCE_SOURCE_CLUSTER_KIT) {
+      const found = existing.find(a => a.name === SOURCE_CLUSTER_KIT_NAME);
+      if (found) {
+        AUDIENCE_SOURCE_CLUSTER_KIT = found.id;
+      } else {
+        const { data: created } = await resend.audiences.create({ name: SOURCE_CLUSTER_KIT_NAME });
+        AUDIENCE_SOURCE_CLUSTER_KIT = created ? created.id : '';
+        console.log(`[startup] Created audience "${SOURCE_CLUSTER_KIT_NAME}": ${AUDIENCE_SOURCE_CLUSTER_KIT}`);
+      }
+    }
+
+    console.log(`[startup] Audiences ready. SafeTunnel: ${AUDIENCE_SAFETUNNEL}, Newsletter: ${AUDIENCE_NEWSLETTER}, cluster-kit source: ${AUDIENCE_SOURCE_CLUSTER_KIT}`);
   } catch (err) {
     console.error('[startup] Could not set up audiences:', err.message || err);
   }
@@ -274,12 +292,38 @@ app.post('/api/notify', rateLimit, async (req, res) => {
 // promise ("every email has a one-click unsubscribe at the bottom")
 // holds true. The magic-link sign-in path is separate and must never
 // be suppressed by the newsletter Audience or any unsubscribe state.
+//
+// The cluster planner (/cluster-kit/) posts here too, with source
+// "cluster-kit", an explicit consent tick and its design (the base64url
+// string from the page link). The design is only used to build the link
+// in the welcome email; it isn't logged or stored.
+const SITE_URL = process.env.CANONICAL_ORIGIN || 'https://mylemans.online';
+
 app.post('/api/subscribe', rateLimit, async (req, res) => {
-  const { email } = req.body || {};
+  const { email, website } = req.body || {};
+  const source = req.body && req.body.source === 'cluster-kit' ? 'cluster-kit' : 'newsletter-form';
+  const design = req.body && typeof req.body.design === 'string' && /^[A-Za-z0-9_-]{1,4000}$/.test(req.body.design)
+    ? req.body.design : '';
+
+  // Honeypot: a hidden field people never see. Bots fill it; pretend it
+  // worked and do nothing.
+  if (website) {
+    console.log('[subscribe] Honeypot hit, ignored');
+    return res.json({ ok: true });
+  }
 
   if (!email || !isValidEmail(email)) {
     return res.status(400).json({ error: 'A valid email address is required.' });
   }
+
+  if (source === 'cluster-kit' && req.body.consent !== true) {
+    return res.status(400).json({ error: 'Tick the box to get the planner and the newsletter.' });
+  }
+
+  // Where the welcome email sends them. u=1 unlocks the planner download
+  // without signing up again; d=... restores their own design.
+  const kitUrl = `${SITE_URL}/cluster-kit/#${design ? 'd=' + design + '&' : ''}u=1`;
+  const isKit = source === 'cluster-kit';
 
   if (!RESEND_API_KEY) {
     console.error('[subscribe] RESEND_API_KEY is not set');
@@ -298,13 +342,16 @@ app.post('/api/subscribe', rateLimit, async (req, res) => {
       });
       console.log(`[subscribe] Added ${email} to Newsletter audience`);
     }
+    if (isKit && AUDIENCE_SOURCE_CLUSTER_KIT) {
+      await resend.contacts.create({ audienceId: AUDIENCE_SOURCE_CLUSTER_KIT, email: email });
+    }
 
     // Notify Marc with consent metadata (timestamp + source) so there is
     // an auditable record of the single opt-in.
     await resend.emails.send({
       from: NOTIFY_FROM,
       to: NOTIFY_TO,
-      subject: `New newsletter subscriber: ${email}`,
+      subject: `New newsletter subscriber (${source}): ${email}`,
       html: [
         '<h2>New newsletter subscriber</h2>',
         `<p><strong>Email:</strong> ${escapeHtml(email)}</p>`,
@@ -315,8 +362,10 @@ app.post('/api/subscribe', rateLimit, async (req, res) => {
         `  <li><strong>User agent:</strong> ${escapeHtml(consent.userAgent)}</li>`,
         `  <li><strong>Referer:</strong> ${escapeHtml(consent.referer)}</li>`,
         `  <li><strong>Host:</strong> ${escapeHtml(consent.host)}</li>`,
+        `  <li><strong>Source:</strong> ${escapeHtml(source)}</li>`,
+        `  <li><strong>Consent box ticked:</strong> ${isKit ? 'yes ("Send me the planner and the Mylemans Online newsletter")' : 'n/a (form text states the newsletter)'}</li>`,
         '</ul>',
-        '<p>Single opt-in via the on-page newsletter form. A confirmation email was sent to the subscriber.</p>',
+        `<p>Single opt-in via the ${isKit ? 'cluster planner signup' : 'on-page newsletter form'}. A confirmation email was sent to the subscriber.</p>`,
       ].join('\n'),
     });
 
@@ -325,14 +374,16 @@ app.post('/api/subscribe', rateLimit, async (req, res) => {
       from: NEWSLETTER_FROM,
       to: email,
       replyTo: NEWSLETTER_REPLY_TO,
-      subject: "Your Proxmox cluster build kit, Mylemans Online",
+      subject: isKit ? 'Your Proxmox cluster planner, Mylemans Online' : 'Your Proxmox cluster planner and build kit, Mylemans Online',
       text: [
         'Hey,',
         '',
         "Quick confirmation that you're on the list for the Mylemans Online newsletter.",
         '',
-        'Here is the build kit: the full parts list for my three-node Proxmox cluster, plus the build and install checklist.',
-        'https://mylemans.online/cluster-kit/',
+        isKit
+          ? 'Your planner should already be in your downloads. This link reopens your own design on the page, so you can change it and download the planner again any time:'
+          : 'Here is the cluster planner: design your Proxmox cluster network, check it against the Proxmox recommendations and download it as a pre-filled spreadsheet. The parts list and build notes for my own cluster are on the same page.',
+        kitUrl,
         '',
         "You'll get one email when there's something genuinely worth sending: a new tutorial, a new path on Labs, a tool, or a war story from the field. No spam, no upsells, no weekly filler.",
         '',
@@ -348,8 +399,10 @@ app.post('/api/subscribe', rateLimit, async (req, res) => {
         '<div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; max-width: 560px; line-height: 1.6; color: #1f2937;">',
         '  <p>Hey,</p>',
         "  <p>Quick confirmation that you're on the list for the Mylemans Online newsletter.</p>",
-        '  <p>Here is the build kit: the full parts list for my three-node Proxmox cluster, plus the build and install checklist.</p>',
-        '  <p><a href="https://mylemans.online/cluster-kit/" style="display:inline-block;padding:0.6rem 1rem;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none;">Open the build kit</a></p>',
+        isKit
+          ? '  <p>Your planner should already be in your downloads. This link reopens <strong>your own design</strong> on the page, so you can change it and download the planner again any time.</p>'
+          : '  <p>Here is the cluster planner: design your Proxmox cluster network, check it against the Proxmox recommendations and download it as a pre-filled spreadsheet. The parts list and build notes for my own cluster are on the same page.</p>',
+        `  <p><a href="${escapeHtml(kitUrl)}" style="display:inline-block;padding:0.6rem 1rem;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none;">${isKit ? 'Open my design' : 'Open the planner'}</a></p>`,
         "  <p>You'll get one email when there's something genuinely worth sending: a new tutorial, a new path on Labs, a tool, or a war story from the field. <strong>No spam, no upsells, no weekly filler.</strong></p>",
         "  <p>If anything ever lands that you didn't want, every email has a one-click unsubscribe at the bottom.</p>",
         '  <p>Talk soon,<br>Marc</p>',
@@ -359,7 +412,7 @@ app.post('/api/subscribe', rateLimit, async (req, res) => {
       ].join('\n'),
     });
 
-    console.log(`[subscribe] Sent notification + welcome for ${email} (consent: ${consent.timestamp}, ${consent.ip})`);
+    console.log(`[subscribe] Sent notification + welcome for ${email} (source: ${source}, consent: ${consent.timestamp}, ${consent.ip})`);
     res.json({ ok: true });
   } catch (err) {
     console.error('[subscribe] Resend error:', err.message || err);

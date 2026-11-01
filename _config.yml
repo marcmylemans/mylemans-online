@@ -132,6 +132,7 @@ exclude:
   - LICENSE
   - .dockerignore
   - deploy
+  - tools
 
 toc:
   min_level: 2

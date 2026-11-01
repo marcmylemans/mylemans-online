@@ -7,6 +7,7 @@ tags: [proxmox, ceph, cluster, corosync, kvm over ip, lets encrypt, homelab, you
 image: {path: /assets/img/posts/qUpjmH_u_bY.jpg, alt: Build a 3-Node Proxmox Ceph Cluster Without a Monitor}
 series: Proxmox Cluster Build
 series_order: 3
+cluster_planner_cta: true
 ---
 
 I installed three mini PCs, built a cluster with shared storage, restored a VM onto it and put real certificates on every node, and there was no monitor or keyboard anywhere near the rack. Every keystroke went through the KVM in the top slot. Halfway through I also wiped a node that was working fine and installed it again because of one word I typed into the wrong field. This post is the written version of that build, in the order I did it, including the parts that went wrong.

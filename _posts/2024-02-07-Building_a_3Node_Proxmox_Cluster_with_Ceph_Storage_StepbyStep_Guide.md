@@ -5,6 +5,7 @@ date: '2024-02-07 08:00:00'
 categories: [Homelab, Hardware]
 tags: [proxmox, homeserversetup, techguide, virtualization, ceph, cluster setup, high availability, infrastructure]
 image: {path: /assets/img/posts/oQHi8IYxY-0.jpg, alt: 'How to Build a Three-Node Cluster with Proxmox and Ceph, A Fun and Easy Guide'}
+cluster_planner_cta: true
 ---
 
 Hey there, tech enthusiasts! Whether you’re a curious beginner or a seasoned IT pro, today’s post is going to show you how to set up a *three-node cluster* using **Proxmox** and **Ceph**. But don’t worry, we’re going to keep things simple, fun, and totally beginner-friendly.

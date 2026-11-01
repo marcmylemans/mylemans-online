@@ -1,100 +1,204 @@
 ---
 layout: default
-title: Proxmox cluster build kit
-description: The parts list and the build and install checklist for my three-node Proxmox Ceph cluster in a 10-inch rack.
+title: Proxmox cluster network planner
+description: Plan the network for your Proxmox cluster before you install. Free address plan and risk check against the Proxmox recommendations, plus a pre-filled Excel planner with installer cards and paste-ready config.
 permalink: /cluster-kit/
+# Go-live: delete the next two lines once a downloaded file checks out in Excel and Google Sheets.
 robots: noindex
 sitemap: false
 ---
 {%- assign kit = site.data.hardware | where: "group", "Proxmox cluster" | first -%}
-<section class="section">
+<section class="section cp-section">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Cluster network planner</span></nav>
+
+    <header class="cp-hero">
+      <p class="eyebrow">Free tool</p>
+      <h1>Plan your Proxmox cluster network before you install.</h1>
+      <p class="cp-lead">
+        Proxmox wants every node installed with its final hostname and IP, because you can't change
+        them once the cluster exists. Fill in your nodes, ports and networks below. You get the
+        address plan and a risk check against the Proxmox recommendations straight away, and you can
+        download the whole thing as a pre-filled Excel planner.
+      </p>
+      <div class="cp-presets" role="group" aria-label="Start from">
+        <span class="cp-presets-label">Start from:</span>
+        <button type="button" class="btn btn-secondary btn-sm" data-preset="clean">A clean example</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-preset="marc">My own cluster</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="cp-copy-link">Copy link to this design</button>
+        <span class="cp-copy-status" id="cp-copy-status" role="status" aria-live="polite"></span>
+      </div>
+    </header>
+
+    <noscript><p class="cp-noscript">The planner needs JavaScript. The build notes further down work without it.</p></noscript>
+
+    <div class="cp-layout" id="cp-app" hidden>
+      <div class="cp-form-col">
+        <ol class="cp-steps" role="tablist" aria-label="Planner steps">
+          <li><button type="button" role="tab" id="cp-tab-0" aria-controls="cp-step-0" aria-selected="true" data-step="0"><span>1</span> Cluster</button></li>
+          <li><button type="button" role="tab" id="cp-tab-1" aria-controls="cp-step-1" aria-selected="false" data-step="1"><span>2</span> Ports</button></li>
+          <li><button type="button" role="tab" id="cp-tab-2" aria-controls="cp-step-2" aria-selected="false" data-step="2"><span>3</span> Networks</button></li>
+          <li><button type="button" role="tab" id="cp-tab-3" aria-controls="cp-step-3" aria-selected="false" data-step="3"><span>4</span> Nodes</button></li>
+        </ol>
+        <form id="cp-form" class="cp-form" novalidate autocomplete="off">
+          <div class="cp-step" role="tabpanel" id="cp-step-0" aria-labelledby="cp-tab-0"></div>
+          <div class="cp-step" role="tabpanel" id="cp-step-1" aria-labelledby="cp-tab-1" hidden></div>
+          <div class="cp-step" role="tabpanel" id="cp-step-2" aria-labelledby="cp-tab-2" hidden></div>
+          <div class="cp-step" role="tabpanel" id="cp-step-3" aria-labelledby="cp-tab-3" hidden></div>
+        </form>
+        <div class="cp-step-nav">
+          <button type="button" class="btn btn-ghost btn-sm" id="cp-prev">&larr; Back</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="cp-next">Next &rarr;</button>
+        </div>
+      </div>
+
+      <aside class="cp-result-col" aria-label="Your plan">
+        <div class="cp-grade" id="cp-grade" aria-live="polite"></div>
+        <h2 class="cp-h2">Addresses per node</h2>
+        <p class="cp-note">Every node gets the same last number on every network, so .11 is always node 1.</p>
+        <div class="cp-table-wrap" id="cp-addresses"></div>
+      </aside>
+    </div>
+
+    <section class="cp-findings" id="cp-findings-wrap" hidden aria-labelledby="cp-findings-h">
+      <h2 id="cp-findings-h">Risk check</h2>
+      <p class="cp-note">Fix every Problem before you install. Decide on every Warning: fix it, or accept it on purpose. Based on the Proxmox VE docs (Cluster Manager, Deploy Hyper-Converged Ceph Cluster), checked November 2026.</p>
+      <ol class="cp-findings-list" id="cp-findings"></ol>
+      <details class="cp-ok-list">
+        <summary>Checks that passed</summary>
+        <ol id="cp-findings-ok"></ol>
+      </details>
+    </section>
+
+    <section class="cp-gate" id="cp-gate" hidden aria-labelledby="cp-gate-h">
+      <div class="cp-gate-copy">
+        <p class="eyebrow">Your planner, filled in</p>
+        <h2 id="cp-gate-h">Get my planner</h2>
+        <p>Download this design as an Excel workbook that also opens in LibreOffice and Google Sheets. It adds everything you need on install day:</p>
+        <ul class="kit-checklist">
+          <li>An installer card per node: exactly what to type on the network screen</li>
+          <li>A paste-ready <code>/etc/network/interfaces</code> for every node</li>
+          <li>The <code>/etc/hosts</code> block, cluster create and join commands, and Ceph init</li>
+          <li>Jumbo frame and Corosync latency tests</li>
+          <li>The build checklist, including the failure tests most people skip</li>
+        </ul>
+      </div>
+
+      <div class="cp-gate-box">
+        <form id="cp-signup" class="cp-signup" novalidate>
+          <label for="cp-email">Email address</label>
+          <input id="cp-email" name="email" type="email" autocomplete="email" placeholder="you@yourdomain.com" required />
+          <div class="cp-hp" aria-hidden="true">
+            <label for="cp-website">Leave this empty</label>
+            <input id="cp-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <label class="cp-consent">
+            <input type="checkbox" id="cp-consent" name="consent" />
+            <span>Send me the planner and the Mylemans Online newsletter. One email when there's a new guide or tool, one-click unsubscribe in every email. <a href="{{ '/privacy.html#cluster-planner' | relative_url }}">Privacy policy</a></span>
+          </label>
+          <button type="submit" class="btn btn-primary" id="cp-signup-btn">Get my planner</button>
+          <p class="cp-form-msg" id="cp-signup-msg" role="alert"></p>
+        </form>
+
+        <div class="cp-unlocked" id="cp-unlocked" hidden>
+          <p class="cp-unlocked-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Your planner is ready</p>
+          <button type="button" class="btn btn-primary" id="cp-download">Download the planner</button>
+          <p class="cp-form-msg" id="cp-download-msg" role="alert"></p>
+          <p class="cp-note">Change something above and download again any time. The welcome email has a link back to this exact design.</p>
+        </div>
+        <p class="cp-warn">Check the generated network config before you apply it, and keep console access (a monitor or KVM) ready when you do. A typo there can cut you off from the node.</p>
+      </div>
+    </section>
+
+    <p class="cp-privacy-note">Your design stays in your browser. It's saved in this page's link, never on my server. <a href="{{ '/privacy.html#cluster-planner' | relative_url }}">How the planner handles data</a>.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
   <div class="container prose-page kit-page">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span>Cluster build kit</span></nav>
-    <p class="eyebrow">Newsletter extra</p>
-    <h1>Proxmox cluster build kit</h1>
+    <p class="eyebrow">Build notes</p>
+    <h2 class="cp-notes-h">The cluster this is based on</h2>
     <p>
-      Everything I used and everything I'd check, for the three-node Proxmox and Ceph cluster in my
-      10-inch rack. The parts list is first, then the order I'd build it in, then the install
-      checklist. The checklists are the ones I wish I'd had before I started, including the steps I
-      got wrong the first time.
+      The example values come from my own three-node Proxmox and Ceph cluster in a 10-inch rack. Here's the
+      hardware and the notes I wish I'd had before I built it.
     </p>
     <p class="kit-actions">
-      <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">Print or save as PDF</button>
       <a href="{{ '/posts/m720q-10-inch-rack-cluster-build/' | relative_url }}" class="link">The hardware build post &rarr;</a>
       <a href="{{ '/posts/proxmox-cluster-without-a-monitor/' | relative_url }}" class="link">The install post &rarr;</a>
+      <a href="{{ '/posts/proxmox-ceph-10gbe-network-design/' | relative_url }}" class="link">The network design post &rarr;</a>
     </p>
 
-    <h2>1. Parts list</h2>
-    <div class="kit-table-wrap">
-      <table class="kit-table">
-        <thead><tr><th>Part</th><th>Role</th><th>Notes</th></tr></thead>
-        <tbody>
-          {%- for item in kit.items %}
-          <tr><td><strong>{{ item.name }}</strong></td><td>{{ item.role }}</td><td>{{ item.note }}</td></tr>
-          {%- endfor %}
-          <tr><td><strong>XikeStor SKS8300-8T</strong></td><td>10GbE switch</td><td>Eight 10GbE ports, two per node. Sits on a sloped tray above the nodes.</td></tr>
-          <tr><td><strong>1U PDU, four sockets</strong></td><td>Power</td><td>The three node power bricks live inside the rack behind the nodes, so the whole rack needs one power cable.</td></tr>
-          <tr><td><strong>3D-printed node cradles</strong></td><td>Mounting</td><td>Print them in PETG. My PLA ones softened in the summer heat.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    {%- if kit.amazon %}
-    <p>The full list with current prices is on my <a href="{{ kit.amazon }}" target="_blank" rel="noreferrer sponsored">Amazon list</a> (affiliate link, costs you nothing extra).</p>
-    {%- endif %}
+    <details class="cp-notes" open>
+      <summary>Parts list</summary>
+      <div class="kit-table-wrap">
+        <table class="kit-table">
+          <thead><tr><th>Part</th><th>Role</th><th>Notes</th></tr></thead>
+          <tbody>
+            {%- for item in kit.items %}
+            <tr><td><strong>{{ item.name }}</strong></td><td>{{ item.role }}</td><td>{{ item.note }}</td></tr>
+            {%- endfor %}
+            <tr><td><strong>XikeStor SKS8300-8T</strong></td><td>10GbE switch</td><td>Eight 10GbE ports, two per node. Sits on a sloped tray above the nodes.</td></tr>
+            <tr><td><strong>1U PDU, four sockets</strong></td><td>Power</td><td>The three node power bricks live inside the rack behind the nodes, so the whole rack needs one power cable.</td></tr>
+            <tr><td><strong>3D-printed node cradles</strong></td><td>Mounting</td><td>Print them in PETG. My PLA ones softened in the summer heat.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      {%- if kit.amazon %}
+      <p>The full list with current prices is on my <a href="{{ kit.amazon }}" target="_blank" rel="noreferrer sponsored">Amazon list</a> (affiliate link, costs you nothing extra).</p>
+      {%- endif %}
+    </details>
 
-    <h2>2. Rack build order</h2>
-    <ul class="kit-checklist">
-      <li>Sort the screws by length before you start. They look alike and the manual calls for a specific one at every step.</li>
-      <li>Check every corner of the side frames is square while tightening. A frame that's slightly off makes the panels hard to slide in later.</li>
-      <li>Don't overtighten the handles, they screw straight into the acrylic.</li>
-      <li>Dry-fit every tray and cradle before you screw in the first device.</li>
-      <li>Fit the switch tray first. In my build it had to go in before the nodes, so everything came out again.</li>
-      <li>Put the power bricks behind the nodes and plug them into the PDU.</li>
-      <li>Leave the top slot free if you plan a KVM over IP.</li>
-      <li>Two cables per node: one port for storage, one for everything else. Don't bond them (the reasoning is in the <a href="{{ '/posts/proxmox-ceph-10gbe-network-design/' | relative_url }}">network design post</a>).</li>
-    </ul>
+    <details class="cp-notes">
+      <summary>Rack build order</summary>
+      <ul class="kit-checklist">
+        <li>Sort the screws by length before you start. They look alike and the manual calls for a specific one at every step.</li>
+        <li>Check every corner of the side frames is square while tightening. A frame that's slightly off makes the panels hard to slide in later.</li>
+        <li>Don't overtighten the handles, they screw straight into the acrylic.</li>
+        <li>Dry-fit every tray and cradle before you screw in the first device.</li>
+        <li>Fit the switch tray first. In my build it had to go in before the nodes, so everything came out again.</li>
+        <li>Put the power bricks behind the nodes and plug them into the PDU.</li>
+        <li>Leave the top slot free if you plan a KVM over IP.</li>
+      </ul>
+    </details>
 
-    <h2>3. Network plan, decided before you install</h2>
-    <ul class="kit-checklist">
-      <li><strong>nic1</strong>: storage only (Ceph), MTU 9000.</li>
-      <li><strong>nic2</strong>: a bridge (<code>vmbr0</code>) with no address of its own, carrying the VMs.</li>
-      <li>On that bridge: a management VLAN with the gateway, and a separate VLAN for Corosync, the cluster heartbeat.</li>
-      <li>Write down every node's hostname (full name, for example <code>pve1.lab.example.com</code>) and its address on each network.</li>
-    </ul>
+    <details class="cp-notes">
+      <summary>Install tips the planner doesn't cover</summary>
+      <ul class="kit-checklist">
+        <li>Wipe the NVMe disks before you start (<code>wipefs -a /dev/nvme0n1</code>). An old partition table is what gave me a 1 KB OSD.</li>
+        <li>Mount the Proxmox ISO through the KVM as virtual USB, or boot from a stick.</li>
+        <li>After the first boot, switch to the free repositories (the community post-install script does this).</li>
+        <li>When a node joins, "Authentication failed" right after the join is normal, just log in again.</li>
+        <li>Set the OSD device class to NVMe by hand if it's detected wrong.</li>
+        <li>Create a pool for VM disks and CephFS for ISOs and templates, then disable local storage so nothing lands on one node by accident.</li>
+        <li>Attach Proxmox Backup Server, restore a real VM onto Ceph as a test, and schedule a nightly backup job.</li>
+      </ul>
+    </details>
 
-    <h2>4. Install checklist, per node</h2>
-    <ul class="kit-checklist">
-      <li>Wipe the NVMe disks before you start (<code>wipefs -a /dev/nvme0n1</code>). An old partition table is what gave me a 1 KB OSD.</li>
-      <li>Mount the Proxmox ISO through the KVM as virtual USB, or boot from a stick.</li>
-      <li>In the installer, tick <strong>pin network interface names</strong> so a kernel update can't rename your ports.</li>
-      <li>Hostname is the <strong>full</strong> name, and the IP is a static address, not the DHCP one.</li>
-      <li>Read the installer's summary page like a checklist before pressing install. A wrong hostname is four minutes to fix now and an afternoon later.</li>
-      <li>After the first boot, switch to the free repositories (the community post-install script does this).</li>
-      <li>Apply the network plan: storage address and MTU 9000 on nic1, <code>vmbr0</code> on nic2, management and Corosync VLANs on the bridge.</li>
-    </ul>
-
-    <h2>5. Cluster, Ceph and backups</h2>
-    <ul class="kit-checklist">
-      <li>Create the cluster with two links: the Corosync VLAN as link 0 and the storage network as link 1.</li>
-      <li>When a node joins, check link 1 is filled in. "Authentication failed" right after a join is normal, just log in again.</li>
-      <li>Install Ceph from the wizard on all three nodes, then add monitors and managers on the other two.</li>
-      <li>Create one OSD per node from the GUI and set the device class to NVMe by hand if it's detected wrong.</li>
-      <li>Create a pool for VM disks and CephFS for ISOs and templates, then disable local storage so nothing lands on one node by accident.</li>
-      <li>Attach Proxmox Backup Server, restore a real VM onto Ceph as a test, and schedule a nightly backup job.</li>
-    </ul>
-
-    <h2>6. Real certificates on internal nodes</h2>
-    <ul class="kit-checklist">
-      <li>Datacenter, ACME: register a Let's Encrypt account.</li>
-      <li>Add the Cloudflare DNS plugin with an API token that can only edit DNS on that one zone.</li>
-      <li>Per node, System, Certificates, ACME: add the node's full name and order the certificate.</li>
-      <li>Open the node by name afterwards, not by IP, or the browser will refuse the certificate.</li>
-    </ul>
+    <details class="cp-notes">
+      <summary>Real certificates on internal nodes</summary>
+      <ul class="kit-checklist">
+        <li>Datacenter, ACME: register a Let's Encrypt account.</li>
+        <li>Add the Cloudflare DNS plugin with an API token that can only edit DNS on that one zone.</li>
+        <li>Per node, System, Certificates, ACME: add the node's full name and order the certificate.</li>
+        <li>Open the node by name afterwards, not by IP, or the browser will refuse the certificate.</li>
+      </ul>
+    </details>
 
     <p class="kit-footer">
       Questions about your own build? Reply to any newsletter email, it comes straight to me.
       Want to learn the concepts behind this (quorum, Ceph, Corosync) step by step? The
       <a href="https://labs.mylemans.online/?path=virtualization" target="_blank" rel="noreferrer">virtualization path on Mylemans Labs</a> is free.
+      Want a second pair of eyes before you buy hardware? Book a <a href="{{ '/services.html' | relative_url }}">homelab design review</a>.
     </p>
   </div>
 </section>
+
+<script>
+  window.CP_CONFIG = {
+    template: "{{ '/assets/cluster-kit/proxmox-cluster-network-planner-v1.1.xlsx' | relative_url }}",
+    jszip: "{{ '/assets/js/lib/jszip-3.10.1.min.js' | relative_url }}"
+  };
+</script>
+<script src="{{ '/assets/js/cluster-planner-rules.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/cluster-planner-xlsx.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/cluster-planner.js' | relative_url }}"></script>

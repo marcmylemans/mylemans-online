@@ -1,0 +1,12 @@
+{%- comment -%}
+End-of-post link to the cluster network planner. Shown on posts with
+cluster_planner_cta: true in their front matter.
+{%- endcomment -%}
+{%- if page.cluster_planner_cta %}
+<aside class="guide-cta" aria-label="Cluster network planner">
+  <p class="eyebrow">Free tool</p>
+  <h2 class="guide-cta-title">Planning your own cluster?</h2>
+  <p>Fill in your nodes, ports and networks in the cluster planner. You get the address plan and a risk check against the Proxmox recommendations straight away, and can download it as a pre-filled spreadsheet with installer cards and paste-ready config.</p>
+  <a href="{{ '/cluster-kit/' | relative_url }}" class="btn btn-primary">Open the cluster planner &rarr;</a>
+</aside>
+{%- endif %}

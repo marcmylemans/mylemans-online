@@ -480,6 +480,9 @@
             throw new Error(data.error || "Something went wrong.");
           }
 
+          // Subscribers can download the cluster planner without a second signup.
+          try { window.localStorage.setItem("cp-unlocked", "1"); } catch (e2) {}
+
           var card = form.closest(".newsletter-card");
           if (card) {
             var formEl = card.querySelector(".newsletter-form-inline");
@@ -487,7 +490,7 @@
               formEl.outerHTML =
                 '<div class="newsletter-success">' +
                   '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
-                  ' Subscribed. <a href="/cluster-kit/">Open your build kit</a> (the link is in your inbox too).' +
+                  ' Subscribed. <a href="/cluster-kit/#u=1">Open the cluster planner</a> (the link is in your inbox too).' +
                 '</div>';
             }
           }
