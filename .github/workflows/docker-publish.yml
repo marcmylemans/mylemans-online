@@ -65,3 +65,5 @@ jobs:
           cache-to: type=gha,mode=max
           provenance: false
           sbom: false
+          build-args: |
+            SITE_BUILD=${{ github.run_id }}-${{ github.run_attempt }}
