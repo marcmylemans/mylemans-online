@@ -1,0 +1,39 @@
+# Post Marc's reply to a reader comment, after he approved it.
+#
+# The comment-triage workflow in marcmylemans/marcmylemans.github.io opens an
+# issue here for every reader question or correction, with a draft reply between
+# <!-- reply:start --> and <!-- reply:end -->. Edit the draft in the issue if you
+# like, then comment /post-reply: this posts it under the reader's comment on the
+# post (as you, through BLOG_BOT_TOKEN) and reports the link back.
+#
+# Secret: BLOG_BOT_TOKEN, fine-grained PAT with Discussions read/write on
+# marcmylemans.github.io (the same token the triage workflow uses).
+name: Post reply to reader
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  post:
+    if: >
+      github.event.issue.pull_request == null &&
+      github.event.comment.author_association == 'OWNER' &&
+      startsWith(github.event.comment.body, '/post-reply') &&
+      (contains(github.event.issue.labels.*.name, 'reader-question') ||
+       contains(github.event.issue.labels.*.name, 'reader-correction'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/comment-reply
+      - name: Post the reply
+        env:
+          GH_TOKEN: ${{ secrets.BLOG_BOT_TOKEN }}
+          ISSUE_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          LABELS: ${{ toJSON(github.event.issue.labels.*.name) }}
+        run: python3 .github/comment-reply/post_reply.py
