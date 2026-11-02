@@ -1,0 +1,56 @@
+name: Publish scheduled posts
+
+# Jekyll leaves out posts dated in the future, and the site is only rebuilt on
+# a push. This checks every hour whether a post's date has passed since the
+# last successful build, and if so starts "Build and publish Docker image".
+# No due post, no build: most runs take a few seconds and change nothing.
+#
+# GitHub runs schedules in UTC and can start them a few minutes late, so a post
+# goes live within roughly an hour of its date (plus the build and Watchtower's
+# five-minute check). Schedules pause after 60 days without repository activity.
+
+on:
+  schedule:
+    - cron: '7 * * * *'   # every hour at :07 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write          # to read past runs and start the build workflow
+
+concurrency:
+  group: publish-scheduled
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find the last successful build
+        id: last
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          busy=$(gh run list --workflow docker-publish.yml --branch main --limit 5 \
+                 --json status -q '[.[] | select(.status != "completed")] | length')
+          echo "busy=$busy" >> "$GITHUB_OUTPUT"
+          since=$(gh run list --workflow docker-publish.yml --branch main --status success \
+                  --limit 1 --json createdAt -q '.[0].createdAt')
+          echo "since=$since" >> "$GITHUB_OUTPUT"
+          echo "Last successful build started at: ${since:-never}; builds running or queued: $busy"
+
+      - name: Check for posts that became due
+        id: due
+        if: steps.last.outputs.busy == '0'
+        env:
+          SINCE: ${{ steps.last.outputs.since }}
+        run: python3 tools/scheduled-posts/due_posts.py
+
+      - name: Start the site build
+        if: steps.due.outputs.due == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run docker-publish.yml --ref main
