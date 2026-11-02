@@ -36,6 +36,9 @@ Install-Module -Name Microsoft.Graph.Beta -Scope CurrentUser -Force -AllowClobbe
 
 Use the following script to export your conditional access policies to a JSON file:
 
+> The script writes the JSON files to `C:\temp\` (the `$ExportPath` variable). Create that folder first, or change `$ExportPath` to a path of your own.
+{: .prompt-info }
+
 ```powershell
 <#
     .SYNOPSIS
@@ -106,6 +109,9 @@ catch {
 ## Import Conditional Access Policies
 
 Use the following script to import conditional access policies from a JSON file:
+
+> The script reads the JSON files from `C:\temp\` (the `$jsonFilesDirectory` variable). Put your exported files there, or change `$jsonFilesDirectory` to the folder you used.
+{: .prompt-info }
 
 ```powershell
 <#
