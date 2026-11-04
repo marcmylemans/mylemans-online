@@ -32,8 +32,6 @@ RequestHeader unset X-Forwarded-Host
 CSRF_TRUSTED_ORIGINS = ['https://netbox.example.com']
 ```
 
-<!-- VERIFY: Apache fix is applied and NetBox loads through Traefik (it was still on the open-items list) -->
-
 I also moved the scripts' settings files out of `/opt/netbox` and into `/etc/netbox-sync/`. `/opt/netbox` belongs to root and the community updater is allowed to replace it, which is not where you want files your scripts depend on.
 
 ## The design: one name, two ways in
@@ -48,7 +46,7 @@ Because the firewall's answer wins inside the house, even a public service never
 
 ![Request path: a LAN client gets the edge VM from the firewall DNS and lands on Traefik; an outside client comes in through Pangolin and the Newt tunnel](/assets/img/posts/netbox-publish-services/request-path.svg){: w="760" h="472" }
 
-The internal half is what runs today. The public half is built into the script, but the Pangolin site, API key and Cloudflare record are next on my list, so I'll tell you how that goes once it's live. <!-- VERIFY: still true at publish time -->
+The internal half is what runs today. The public half is built into the script, but the Pangolin site, API key and Cloudflare record are next on my list, so I'll tell you how that goes once it's live.
 
 ## A DMZ for the apps
 
