@@ -35,7 +35,7 @@ I started out assuming I had four 10G ports per node. I did not. That single cor
 
 ## Why not a full mesh
 
-For exactly three nodes there is a tempting option: skip the switch for Ceph entirely and direct-attach every node to the other two. Proxmox VE 9 made this much easier with SDN Fabrics, which configures OpenFabric routing from the GUI instead of hand-editing FRR configs. `[VERIFY: SDN Fabrics availability and OpenFabric option in the current PVE release]`
+For exactly three nodes there is a tempting option: skip the switch for Ceph entirely and direct-attach every node to the other two. Newer Proxmox VE releases have SDN features that can set up this kind of routed mesh without hand-editing FRR configs, so check the Proxmox documentation for what your version supports.
 
 It needs two ports per node for the mesh though, which would leave nothing for VM traffic. And the Proxmox documentation itself recommends switches over a mesh if you plan to grow past three nodes, which I do. A mesh would have been a dead end I would have to tear down later.
 
