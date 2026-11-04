@@ -7,8 +7,7 @@ tags: [netbox, unifi, source of truth, automation, homelab, proxmox, sophos, pyt
 image: {path: /assets/img/posts/netbox-source-of-truth/cover.png, alt: Rebuilding a lost UniFi controller with NetBox as source of truth}
 ---
 
-<!-- ADD: one or two sentences on how the controller actually got lost -->
-My UniFi controller was gone, site and all. The strange part was that nothing broke. The switches and the access point kept forwarding traffic on the last config they'd been given, the Wi-Fi worked, and everyone in the house carried on as normal. I just couldn't change anything anymore, and the backup I did have refused to restore into anything useful.
+My UniFi controller was gone, site and all. I had been consolidating and cleaning up a few VPS instances, and during a clean install to repurpose the VPS the controller ran on, it got wiped along with everything else. The strange part was that nothing broke. The switches and the access point kept forwarding traffic on the last config they'd been given, the Wi-Fi worked, and everyone in the house carried on as normal. I just couldn't change anything anymore, and the backup I did have refused to restore into anything useful.
 
 So on a Saturday afternoon I set out to get my network back. By the end of it I had a rebuilt controller, NetBox as the one place that describes the whole network, and a healthy respect for API calls that say "200 OK" and then quietly throw your data away. That last one is the best part of the story, so hang on.
 
