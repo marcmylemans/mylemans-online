@@ -115,7 +115,7 @@ Silence means it's valid. Then apply it:
 sudo systemctl restart ssh
 ```
 
-On recent Ubuntu releases SSH is socket-activated, so restarting the service alone may not pick up a changed port or listen address; restart `ssh.socket` as well if you touched either `[VERIFY: socket activation behaviour on the current LTS]`.
+I used Ubuntu 24.04 LTS for this guide and kept the default SSH port. On recent Ubuntu releases SSH is socket-activated, so restarting the service alone may not pick up a changed port or listen address (I haven't tested that case myself). If you change either and `ss -tlnp | grep sshd` still shows the old port, restart `ssh.socket` as well; if that doesn't help either, a reboot will apply it.
 
 > Here's the part that catches people. Cloud images ship drop-in files in `/etc/ssh/sshd_config.d/`, typically a `50-cloud-init.conf` that sets `PasswordAuthentication yes`. Those drop-ins are included at the *top* of the main config, and in sshd the first occurrence of a setting wins. So you edit `sshd_config`, restart, and password logins are still happily accepted. Check with `sudo sshd -T | grep -Ei 'permitrootlogin|passwordauthentication'`, which prints the settings actually in effect, and if they disagree with your edits, fix the drop-in file instead.
 {: .prompt-warning }
