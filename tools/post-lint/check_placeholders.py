@@ -32,7 +32,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scheduled-posts"))
-from due_posts import post_time  # noqa: E402  (same date rules as the scheduler)
+from due_posts import SITE_TZ, post_time  # noqa: E402  (same date rules as the scheduler)
 
 SITE_URL = os.environ.get("SITE_URL", "https://mylemans.online").rstrip("/")
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
@@ -116,7 +116,7 @@ def sync_issues(reports):
             status = ("**Already live.** It stays online, so these placeholders are visible "
                       "in the page or its source right now. Fix them and push.")
         elif when and when > datetime.now(timezone.utc):
-            status = (f"**Scheduled for {when:%Y-%m-%d %H:%M} UTC.** It will be held back at "
+            status = (f"**Scheduled for {when.astimezone(SITE_TZ):%Y-%m-%d %H:%M} Brussels time.** It will be held back at "
                       "that time unless these are fixed first.")
         else:
             status = ("**Held back.** This build left the post out. Fix the lines below and "
