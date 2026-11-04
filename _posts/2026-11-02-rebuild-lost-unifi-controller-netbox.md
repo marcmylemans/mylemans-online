@@ -150,7 +150,7 @@ For three switches and a firewall, documentation alone would be overkill. It ear
 
 ### Does NetBox talk to UniFi out of the box?
 
-Not in my setup: the UniFi integration here is my own pair of NetBox custom scripts using the controller's API. There are community plugins and projects for UniFi and NetBox, but I didn't use one. <!-- VERIFY: current state of community UniFi/NetBox integrations -->
+Not in my setup: the UniFi integration here is my own pair of NetBox custom scripts using the controller's API.
 
 ### Why are my UniFi port profile VLANs not saving?
 
