@@ -1,0 +1,47 @@
+# Steer Claude after the fact: comment "@claude ..." on an issue or PR, or leave
+# a PR review (comment) that mentions @claude. Only Marc's comments count.
+name: Claude - follow-up on @claude
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  claude:
+    if: >
+      (
+        (github.event_name == 'issue_comment' && github.event.comment.author_association == 'OWNER' &&
+          contains(github.event.comment.body, '@claude') && !startsWith(github.event.comment.body, '/post-reply')) ||
+        (github.event_name == 'pull_request_review_comment' && github.event.comment.author_association == 'OWNER' &&
+          contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review' && github.event.review.author_association == 'OWNER' &&
+          contains(github.event.review.body, '@claude'))
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          track_progress: "true"
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Edit,Write,Read,Glob,Grep,Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr view:*),Bash(gh pr comment:*),Bash(bundle exec jekyll build:*),Bash(ls:*),Bash(cat:*)"
