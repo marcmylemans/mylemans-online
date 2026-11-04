@@ -32,7 +32,6 @@ RequestHeader unset X-Forwarded-Host
 CSRF_TRUSTED_ORIGINS = ['https://netbox.example.com']
 ```
 
-<!-- VERIFY: Apache fix is applied and NetBox loads through Traefik (it was still on the open-items list) -->
 
 I also moved the scripts' settings files out of `/opt/netbox` and into `/etc/netbox-sync/`. `/opt/netbox` belongs to root and the community updater is allowed to replace it, which is not where you want files your scripts depend on.
 
@@ -48,8 +47,7 @@ Because the firewall's answer wins inside the house, even a public service never
 
 ![Request path: a LAN client gets the edge VM from the firewall DNS and lands on Traefik; an outside client comes in through Pangolin and the Newt tunnel](/assets/img/posts/netbox-publish-services/request-path.svg){: w="760" h="472" }
 
-The internal half is what runs today. The public half is built into the script, but the Pangolin site, API key and Cloudflare record are next on my list, so I'll tell you how that goes once it's live. <!-- VERIFY: still true at publish time -->
-
+The internal half is what runs today. The public half is built into the script, but the Pangolin site, API key and Cloudflare record are next on my list, so I'll tell you how that goes once it's live.
 ## A DMZ for the apps
 
 The services and the edge VM live in a new VLAN, "Services", with its own zone on the firewall. My client VLAN can reach it on HTTP, HTTPS, SSH and ping. Nothing inside it can start a connection to the rest of the lab unless a rule says so. If one of those community-script containers ever turns out to be a bad idea, it's stuck in a room with only other apps for company.
@@ -79,7 +77,7 @@ The run order matters more than I expected:
 1. Write the Traefik routes and check that worked.
 2. Only then write the firewall DNS entries and the Pangolin resources.
 
-That way a DNS name never points at Traefik before Traefik knows what to do with it. The script also keeps a state file of everything it created, so a Service I delete or set back to Internal gets cleaned up on the next run: DNS entry and route removed, Pangolin resource disabled. Disabled rather than deleted, because Pangolin's blueprint API doesn't document a delete. <!-- VERIFY: Pangolin blueprint API still has no documented delete -->
+That way a DNS name never points at Traefik before Traefik knows what to do with it. The script also keeps a state file of everything it created, so a Service I delete or set back to Internal gets cleaned up on the next run: DNS entry and route removed, Pangolin resource disabled. Disabled rather than deleted, because I haven't found a documented delete in Pangolin's blueprint API. I'll dig into that properly in the follow-up post.
 
 The plan is to run this from a NetBox event rule whenever a Service changes, plus every 15 minutes as a safety net. For now I still click Run.
 
@@ -174,7 +172,7 @@ The first real run died with:
 property 'protocol' of 'Service' object has no setter
 ```
 
-NetBox 4.7 changed how a Service stores its ports. Instead of a `protocol` and a `ports` list, there's now one `port_mappings` list with entries like `tcp/8080`. The old fields still read fine, which is why my other scripts never noticed, but you can't set them anymore. The sync writes `port_mappings` now. <!-- VERIFY: field name and version against the NetBox 4.7 release notes -->
+NetBox 4.7 changed how a Service stores its ports. Instead of a `protocol` and a `ports` list, there's now one `port_mappings` list with entries like `tcp/8080`. The old fields are deprecated but still available in the REST and GraphQL APIs, which is why my other scripts never noticed. The REST API even still accepts them on write and translates them into `port_mappings`; it's at the ORM level that they became read-only. The sync writes `port_mappings` directly.
 
 The first committed run catalogued 11 apps and skipped 4: a database, a tunnel client and the two that report no ports.
 
