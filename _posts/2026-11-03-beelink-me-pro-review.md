@@ -105,8 +105,6 @@ The real limit was my own upload speed at home, not the box.
 
 ## Kickstarter or Beelink store: the numbers
 
-<!-- VERIFY: prices against the live Kickstarter page and Beelink store; they move during a campaign. -->
-
 | | Kickstarter | Beelink store |
 |---|---|---|
 | N95 2-bay | $419 (Super Early Bird) | $379 |
