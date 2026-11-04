@@ -136,7 +136,7 @@ Links from the video:
 
 - [Beelink ME Pro on Kickstarter](https://www.bee-link.com/pages/me-pro-nas)
 - [Beelink official store](https://www.bee-link.com/)
-- [Fygo OS pricing](https://fygonas.com/pricing?ref=MYLEMANSONLINE){:rel="sponsored noopener" target="_blank"} (affiliate link), discount code **571U6M** for 10% off <!-- VERIFY: what the code applies to -->
+- [Fygo OS pricing](https://fygonas.com/pricing?ref=MYLEMANSONLINE){:rel="sponsored noopener" target="_blank"} (affiliate link), discount code **571U6M** for an extra 10% off
 
 ## FAQ
 
