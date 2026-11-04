@@ -114,13 +114,13 @@ docker compose up -d
 
 Docker pulls the image, creates the container, and starts it in the background (`-d` for detached). One file, one command. That is the entire deployment.
 
-![SCREENSHOT: terminal output of docker compose up -d, "Pulled" and "Started" lines annotated](/assets/img/posts/self-host-first-app/01-docker-compose-up.png)
+![Terminal output of docker compose up -d showing the image pulled, the network created and the container started](/assets/img/posts/self-host-first-app/01-docker-compose-up.png)
 
 ## Access it (this is the moment)
 
 Open a browser on any device in your house and go to `http://your-server-ip:port`, using the *left* port number from your Compose file. Find the server's IP with `ip a` on the machine itself.
 
-![SCREENSHOT: the app loaded in a browser at the local server address, the payoff shot](/assets/img/posts/self-host-first-app/02-app-loaded-local.png)
+![The nginx demo app loaded in a browser at the local server address on port 8080](/assets/img/posts/self-host-first-app/02-app-loaded-local.png)
 
 That is a real application, running on a server you control, from a ten-line text file. No subscription. No account on someone else's cloud. Yours.
 
@@ -132,7 +132,7 @@ If you only follow happy-path guides, one of these two walls will get you. Here'
 
 You run `docker compose up -d` and get a wall of red about `/var/run/docker.sock`. This is the single most common first-day failure, and it's not broken: your user just isn't allowed to talk to Docker yet.
 
-![SCREENSHOT: the permission denied error in the terminal, failure state](/assets/img/posts/self-host-first-app/03-permission-denied.png)
+![Terminal showing the permission denied error when connecting to the Docker socket](/assets/img/posts/self-host-first-app/03-permission-denied.png)
 
 [The fix](https://docs.docker.com/engine/install/linux-postinstall/) is one command and one logout:
 
