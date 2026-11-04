@@ -12,6 +12,7 @@ on:
 permissions:
   contents: read
   packages: write
+  issues: write           # placeholder check opens and closes its issues
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -27,6 +28,14 @@ jobs:
         with:
           # Full history so posts-lastmod-hook.rb can read per-file git dates
           fetch-depth: 0
+
+      # A post that still has <!-- VERIFY -->, <!-- SCREENSHOT -->, [CONFIRM ...]
+      # or TODO in it is left out of this build (published: false, workspace only)
+      # unless it is already live, and gets an issue listing the lines.
+      - name: Hold back posts with placeholders
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/post-lint/check_placeholders.py
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3

@@ -17,6 +17,9 @@ image (`dockerfile`) and served by `server.js`. Deployed by a push to `main`; a 
 - Callouts: `> text` followed by `{: .prompt-tip }`, `{: .prompt-info }` or `{: .prompt-warning }`.
 - Videos: `{% youtube "https://youtu.be/<id>" %}` (keep the quoted URL form).
 - Images: `/assets/img/posts/...`. Don't add images you can't see; describe what's needed in the PR.
+- Placeholders (`<!-- VERIFY: ... -->`, `<!-- SCREENSHOT: ... -->`, `[CONFIRM ...]`, TODO) keep a
+  post from going live: the build holds it back and opens a `post-placeholders` issue. Don't
+  remove one to get a post published unless the issue gives you the missing fact.
 
 ## Writing rules (Marc's voice)
 
