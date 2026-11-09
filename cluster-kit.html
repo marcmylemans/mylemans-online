@@ -35,10 +35,10 @@ sitemap: false
     <div class="cp-layout" id="cp-app" hidden>
       <div class="cp-form-col">
         <ol class="cp-steps" role="tablist" aria-label="Planner steps">
-          <li><button type="button" role="tab" id="cp-tab-0" aria-controls="cp-step-0" aria-selected="true" data-step="0"><span>1</span> Cluster</button></li>
-          <li><button type="button" role="tab" id="cp-tab-1" aria-controls="cp-step-1" aria-selected="false" data-step="1"><span>2</span> Ports</button></li>
-          <li><button type="button" role="tab" id="cp-tab-2" aria-controls="cp-step-2" aria-selected="false" data-step="2"><span>3</span> Networks</button></li>
-          <li><button type="button" role="tab" id="cp-tab-3" aria-controls="cp-step-3" aria-selected="false" data-step="3"><span>4</span> Nodes</button></li>
+          <li role="presentation"><button type="button" role="tab" id="cp-tab-0" aria-controls="cp-step-0" aria-selected="true" data-step="0"><span>1</span> Cluster</button></li>
+          <li role="presentation"><button type="button" role="tab" id="cp-tab-1" aria-controls="cp-step-1" aria-selected="false" data-step="1"><span>2</span> Ports</button></li>
+          <li role="presentation"><button type="button" role="tab" id="cp-tab-2" aria-controls="cp-step-2" aria-selected="false" data-step="2"><span>3</span> Networks</button></li>
+          <li role="presentation"><button type="button" role="tab" id="cp-tab-3" aria-controls="cp-step-3" aria-selected="false" data-step="3"><span>4</span> Nodes</button></li>
         </ol>
         <form id="cp-form" class="cp-form" novalidate autocomplete="off">
           <div class="cp-step" role="tabpanel" id="cp-step-0" aria-labelledby="cp-tab-0"></div>
@@ -56,7 +56,7 @@ sitemap: false
         <div class="cp-grade" id="cp-grade" aria-live="polite"></div>
         <h2 class="cp-h2">Addresses per node</h2>
         <p class="cp-note">Every node gets the same last number on every network, so .11 is always node 1.</p>
-        <div class="cp-table-wrap" id="cp-addresses"></div>
+        <div class="cp-table-wrap" id="cp-addresses" tabindex="0" role="region" aria-label="Address plan"></div>
       </aside>
     </div>
 

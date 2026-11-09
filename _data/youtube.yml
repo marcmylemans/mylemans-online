@@ -2,3 +2,7 @@
 # publish; the thumbnail comes from YouTube, the player loads on click.
 featured_video: qUpjmH_u_bY
 featured_title: "I Built a Proxmox Cluster Without Plugging In a Monitor"
+
+# Subscriber count shown on the homepage, About and YouTube pages.
+subscribers_short: "40K+"
+subscribers_long: "40,000+"

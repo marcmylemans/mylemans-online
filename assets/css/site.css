@@ -274,7 +274,6 @@ a.post-row:hover { border-color: var(--color-border-strong); transform: translat
   .post-row { grid-template-columns: 1fr; }
   .post-row-thumb { aspect-ratio: 16 / 9; }
   .footer-v2-grid { grid-template-columns: 1fr; }
-  .nav-search { display: none; }
 }
 
 /* ---- Series navigation, related posts, ad slots ------------------- */
@@ -425,7 +424,7 @@ html[data-theme="dark"] .brand-logo-dark { background: #fff; border-radius: 8px;
    and never taller than a leaderboard. Labelled so it is not mistaken for a post. */
 .post-row-ad { list-style: none; margin: 0.25rem 0; padding: 0; }
 .post-row-ad .ad-slot-list { margin: 0; padding: 0.75rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
-.post-row-ad .ad-slot-list::before { content: "Advertisement"; display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem; }
+.post-row-ad .ad-slot-list::before { content: "Advertisement"; display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem; }
 .post-row-ad ins.adsbygoogle { display: block; width: 100%; max-height: 280px; overflow: hidden; }
 /* Inside articles: keep the slot the width of the text column and cap tall formats */
 .post-content .ad-slot ins.adsbygoogle, .post-body .ad-slot ins.adsbygoogle { max-height: 320px; overflow: hidden; }
@@ -521,7 +520,7 @@ html[data-theme="dark"] .cp-section { --cp-problem: #fca5a5; --cp-problem-bg: rg
 .cp-hint { font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.4; }
 .cp-err { font-size: 0.75rem; color: var(--cp-problem); min-height: 0; }
 .cp-err:empty { display: none; }
-.cp-perm { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cp-perm); margin-left: 0.3rem; }
+.cp-perm { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cp-perm); margin-left: 0.3rem; }
 
 .cp-cards { display: grid; gap: 0.9rem; }
 .cp-card { margin: 0; padding: 0.9rem 1rem 1rem; border: 1px solid var(--color-border); border-radius: 14px; background: var(--color-surface); min-width: 0; }
@@ -618,5 +617,78 @@ details.cp-notes .kit-table-wrap { margin-bottom: 1rem; }
   .sidebar-ad { display: block; position: sticky; top: 6rem; }
 }
 .ad-slot-sidebar { margin: 0; }
-.ad-slot-sidebar::before { content: "Advertisement"; display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem; }
+.ad-slot-sidebar::before { content: "Advertisement"; display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem; }
 .ad-slot-sidebar ins.adsbygoogle { vertical-align: top; }
+
+/* ---- UX audit fixes (Nov 2026) --------------------------------------
+   Link colour, focus, motion, external links, the overlay nav search,
+   and the newsletter feedback states. */
+
+/* Links had no base colour, so card "Read" links and plain links fell back
+   to the browser's #0000ee, unreadable on the dark theme. */
+a { color: var(--color-accent); }
+
+/* One visible focus ring for everything keyboard-reachable. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.skip-link { background: #1d4ed8; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Links that open a new tab say so: a small arrow in nav and footer,
+   and screen-reader text added by main.js on every target=_blank link. */
+.nav-list a[target="_blank"]::after,
+.footer-v2-col a[target="_blank"]::after {
+  content: "\2197";
+  content: "\2197" / "";
+  display: inline-block;
+  margin-left: 0.25em;
+  font-size: 0.75em;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* Search lives in the overlay menu on phones and tablets instead of
+   disappearing below 600px. */
+.nav-search-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 900px) {
+  .nav-search {
+    width: auto; height: auto; border: 0; background: none; color: inherit;
+    gap: 0.6rem; font-size: 1.1rem; font-weight: 500; padding: 0;
+  }
+  .nav-search-label { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+}
+
+/* Newsletter: the signup is the headline, the planner is the bonus. */
+.newsletter-v2 .newsletter-form-inline { margin-top: 1.25rem; }
+.newsletter-bonus {
+  margin: 1.75rem auto 0; padding-top: 1.5rem; max-width: 34rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;
+}
+.newsletter-bonus .arrow-link { display: inline-flex; margin-top: 0.5rem; }
+.newsletter-error {
+  margin: 0.6rem 0 0; font-size: 0.85rem; text-align: center;
+  color: #b91c1c;
+}
+html[data-theme="dark"] .newsletter-error { color: #fca5a5; }
+.newsletter-success svg, .safetunnel-success svg { flex: none; }
+
+/* Theme toggle icons (inline SVG instead of emoji). */
+.theme-toggle svg { width: 18px; height: 18px; }
+
+/* Hamburger: centred in the header bar (it sat 12px low) and a 44px touch target. */
+@media (max-width: 900px) {
+  .site-header .nav-toggle { top: 50%; margin-top: -22px; width: 44px; height: 44px; }
+  .nav-search { text-decoration: none; }
+  .nav-search:hover .nav-search-label { text-decoration: underline; }
+}

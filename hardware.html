@@ -13,7 +13,7 @@ layout: null
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="My Lab – Mylemans Online" />
+  <meta property="og:title" content="My Lab | Mylemans Online" />
   <meta property="og:description" content="The hardware I actually run: a three-node Lenovo M720q Proxmox cluster with Ceph on 10GbE, a CWWK NAS on Fygo OS, UniFi and Sophos networking." />
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://mylemans.online/hardware.html" />
@@ -25,7 +25,7 @@ layout: null
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mylemansonline" />
-  <meta name="twitter:title" content="My Lab – Mylemans Online" />
+  <meta name="twitter:title" content="My Lab | Mylemans Online" />
   <meta name="twitter:description" content="The hardware I actually run: a three-node Lenovo M720q Proxmox cluster with Ceph on 10GbE, a CWWK NAS on Fygo OS, UniFi and Sophos networking." />
   <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
 
@@ -94,16 +94,7 @@ layout: null
   </section>
 </main>
 
-<div class="cookie-banner" id="cookie-banner">
-  <p>
-    We count visits without cookies by default. Accept to allow anonymous analytics cookies for more detail; decline and nothing is stored.
-    See our <a href="privacy.html">Privacy Policy</a> for details.
-  </p>
-  <div class="cookie-actions">
-    <button type="button" id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
-      <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
-  </div>
-</div>
+  {% include cookie-banner.html %}
 
 <!-- Shared footer -->
 {% include footer.html %}

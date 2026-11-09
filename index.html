@@ -9,7 +9,7 @@ layout: null
 
   <title>Mylemans Online: Learn Real IT by Doing It, Free</title>
   <meta name="description"
-        content="Free hands-on IT learning paths where you advance by proving you can do it, plus 130 guides from 15+ years of systems engineering. By Marc Mylemans." />
+        content="Free hands-on IT learning paths where you advance by proving you can do it, plus {{ site.posts.size }} guides from 15+ years of systems engineering. By Marc Mylemans." />
 
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mylemans.online/" />
@@ -45,7 +45,8 @@ layout: null
     "sameAs": [
       "https://www.youtube.com/@mylemansonline",
       "https://github.com/marcmylemans",
-      "https://bsky.app/profile/mylemans.online"
+      "https://bsky.app/profile/mylemansonline.bsky.social",
+      "https://www.linkedin.com/in/marcmylemans"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -101,7 +102,7 @@ layout: null
             <a href="{{ '/blog/' | relative_url }}" class="arrow-link">Or read the latest posts <span aria-hidden="true">&rarr;</span></a>
           </div>
           <div class="hero-stats">
-            <div class="hero-stat"><span class="hero-stat-value">40K+</span><span class="hero-stat-label">YouTube subscribers</span></div>
+            <div class="hero-stat"><span class="hero-stat-value">{{ site.data.youtube.subscribers_short }}</span><span class="hero-stat-label">YouTube subscribers</span></div>
             <div class="hero-stat"><span class="hero-stat-value">{{ site.posts.size | default: 125 }}{% if site.posts.size == 0 %}+{% endif %}</span><span class="hero-stat-label">Posts on the blog</span></div>
             <div class="hero-stat"><span class="hero-stat-value">15+ yrs</span><span class="hero-stat-label">In the trenches</span></div>
           </div>
@@ -253,7 +254,7 @@ layout: null
           </div>
           <div class="yt-copy">
             <p class="eyebrow">YouTube</p>
-            <h2 class="section-header-h2">40,000+ of us on&nbsp;YouTube.</h2>
+            <h2 class="section-header-h2">{{ site.data.youtube.subscribers_long }} of us on&nbsp;YouTube.</h2>
             <p class="yt-body">
               I publish deep-dive videos on Proxmox, Windows Server, networking, security,
               and whatever else I'm building or breaking. New uploads when I have something
@@ -278,7 +279,7 @@ layout: null
           <article class="card community-card">
             <h3>Questions and comments</h3>
             <p>Questions about a post, your own lab, or something that broke at work. The comments under each video are the fastest place; for anything longer, use the contact page. I read everything.</p>
-            <a href="{{ '/contact.html' | relative_url }}" class="btn btn-secondary">Get in touch</a>
+            <p class="project-links"><a href="{{ '/contact.html' | relative_url }}">Get in touch &rarr;</a></p>
           </article>
           <article class="card community-card">
             <h3>Support the channel</h3>
@@ -298,41 +299,35 @@ layout: null
     <section class="section" id="newsletter">
       <div class="container">
         <div class="newsletter-card newsletter-v2">
-          <p class="eyebrow">Free tool</p>
-          <h2 class="section-header-h2">Plan your Proxmox cluster network before you install.</h2>
+          <p class="eyebrow">Newsletter</p>
+          <h2 class="section-header-h2">One email when there's something worth reading.</h2>
           <p class="newsletter-pitch">
-            Hostnames and node IPs can't change once a Proxmox cluster exists. Fill in your nodes,
-            ports and networks and get the address plan plus a risk check against the Proxmox
-            recommendations, free. Join the newsletter and download it all as a pre-filled planner
-            with installer cards and paste-ready config.
+            A new guide, a new Labs path or a story from the field. No schedule, no filler,
+            one-click unsubscribe in every email.
           </p>
-          <p class="newsletter-cta-row"><a href="{{ '/cluster-kit/' | relative_url }}" class="btn btn-primary">Open the cluster planner &rarr;</a></p>
-          <p class="newsletter-alt">Just want the newsletter? One email when there's a new guide, a new Labs path or a story from the field.</p>
           <form class="newsletter-form-inline" id="newsletter-form">
             <label for="newsletter-email" class="sr-only">Email address</label>
-            <input id="newsletter-email" type="email" placeholder="you@yourdomain.com" required />
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
+            <input id="newsletter-email" type="email" name="email" autocomplete="email" placeholder="you@yourdomain.com" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
           </form>
           <p class="newsletter-consent">
-            By subscribing you'll receive the Mylemans Online newsletter. One-click
-            unsubscribe in every email.
+            By subscribing you'll receive the Mylemans Online newsletter.
+            See the <a href="{{ '/privacy.html' | relative_url }}">privacy policy</a>.
           </p>
+          <div class="newsletter-bonus">
+            <p><strong>Planning a Proxmox cluster?</strong> Hostnames and node IPs can't change once
+            the cluster exists. The free planner gives you the address plan and a risk check against
+            the Proxmox recommendations; subscribers can download it as a pre-filled spreadsheet with
+            installer cards and paste-ready config.</p>
+            <a href="{{ '/cluster-kit/' | relative_url }}" class="arrow-link">Open the cluster planner <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <div class="cookie-banner" id="cookie-banner">
-    <p>
-      We count visits without cookies by default. Accept to allow anonymous analytics cookies for more detail; decline and nothing is stored.
-      See our <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a> for details.
-    </p>
-    <div class="cookie-actions">
-      <button type="button" id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
-      <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
-    </div>
-  </div>
+  {% include cookie-banner.html %}
 
   {% include footer.html %}
 

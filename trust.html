@@ -6,14 +6,14 @@ layout: null
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trust Center – Mylemans Online</title>
+  <title>Trust Center | Mylemans Online</title>
   <meta name="description" content="Security, privacy, and reliability practices for Mylemans Online. GDPR data handling, incident response, and responsible disclosure policy." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mylemans.online/trust.html" />
   <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Trust Center – Mylemans Online" />
+  <meta property="og:title" content="Trust Center | Mylemans Online" />
   <meta property="og:description" content="Security, privacy, and reliability practices for Mylemans Online. GDPR data handling, incident response, and responsible disclosure policy." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mylemans.online/trust.html" />
@@ -25,7 +25,7 @@ layout: null
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mylemansonline" />
-  <meta name="twitter:title" content="Trust Center – Mylemans Online" />
+  <meta name="twitter:title" content="Trust Center | Mylemans Online" />
   <meta name="twitter:description" content="Security, privacy, and reliability practices for Mylemans Online." />
   <meta name="twitter:image" content="https://mylemans.online/assets/img/og-default.jpg" />
 
@@ -167,16 +167,7 @@ layout: null
   </main>
 
   <!-- Cookie banner -->
-  <div class="cookie-banner" id="cookie-banner">
-    <p>
-      We count visits without cookies by default. Accept to allow anonymous analytics cookies for more detail; decline and nothing is stored.
-      See our <a href="privacy.html">Privacy Policy</a> for details.
-    </p>
-    <div class="cookie-actions">
-      <button type="button" id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
-      <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
-    </div>
-  </div>
+  {% include cookie-banner.html %}
 
   {% include footer.html %}
   <script src="assets/js/main.js"></script>
