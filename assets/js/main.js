@@ -1,33 +1,5 @@
 // assets/js/main.js
 (async function () {
-  // -----------------------------
-  // 1) Load header/footer partials
-  // -----------------------------
-  async function loadPartials() {
-    const includeEls = document.querySelectorAll("[data-include]");
-    if (!includeEls.length) return;
-
-    const jobs = Array.from(includeEls).map(async (el) => {
-      const name = el.getAttribute("data-include");
-      if (!name) return;
-
-      try {
-        // Adjust path if your partials live elsewhere
-        const res = await fetch(`/partials/${name}.html`);
-        if (!res.ok) {
-          throw new Error(`Failed to load partial "${name}": ${res.status}`);
-        }
-        const html = await res.text();
-        // Replace the placeholder with real markup
-        el.outerHTML = html;
-      } catch (err) {
-        console.error("Include error:", err);
-      }
-    });
-
-    await Promise.all(jobs);
-  }
-
     /****************************************************
    * FOURTHWALL CONFIG
    ****************************************************/
@@ -402,7 +374,8 @@
     // Only an explicit toggle click is remembered; otherwise the site follows the OS.
     function setTheme(theme, persist) {
       root.setAttribute("data-theme", theme);
-      if (persist) window.localStorage.setItem("theme", theme);
+      if (themeToggle) themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+      if (persist) { try { window.localStorage.setItem("theme", theme); } catch (e) {} }
     }
 
     function toggleTheme() {
@@ -432,19 +405,65 @@
     const navClose = document.querySelector(".nav-close");
     const body = document.body;
 
+    const navEl = document.getElementById("site-nav");
+
+    function openNav() {
+      body.classList.add("nav-open");
+      if (navToggle) { navToggle.setAttribute("aria-expanded", "true"); navToggle.setAttribute("aria-label", "Close menu"); }
+      const first = navEl && navEl.querySelector(".nav-list a");
+      if (first) setTimeout(() => first.focus(), 50);
+    }
+
+    function closeNav(returnFocus) {
+      if (!body.classList.contains("nav-open")) return;
+      body.classList.remove("nav-open");
+      if (navToggle) {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+        if (returnFocus) navToggle.focus();
+      }
+    }
+
     if (navToggle) {
       navToggle.addEventListener("click", () => {
-        const isOpen = body.classList.toggle("nav-open");
-        navToggle.setAttribute("aria-expanded", String(isOpen));
+        body.classList.contains("nav-open") ? closeNav(true) : openNav();
+      });
+    }
+    if (navClose) navClose.addEventListener("click", () => closeNav(true));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav(true);
+    });
+
+    // A link inside the menu (including same-page anchors like /#newsletter)
+    // closes it, otherwise the overlay stays over the section you jumped to.
+    if (navEl) {
+      navEl.addEventListener("click", (e) => {
+        if (e.target.closest("a")) closeNav(false);
+      });
+      // Keep Tab inside the open overlay.
+      navEl.addEventListener("keydown", (e) => {
+        if (e.key !== "Tab" || !body.classList.contains("nav-open")) return;
+        const items = [...navEl.querySelectorAll("a[href], button:not([disabled])")].filter((el) => el.offsetParent !== null);
+        if (!items.length) return;
+        const first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       });
     }
 
-    if (navClose) {
-      navClose.addEventListener("click", () => {
-        body.classList.remove("nav-open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
-    }
+    // Going back to desktop width with the menu open: drop the open state.
+    const wide = window.matchMedia("(min-width: 901px)");
+    if (wide.addEventListener) wide.addEventListener("change", (e) => { if (e.matches) closeNav(false); });
+
+    // === Links that open a new tab: tell screen-reader users ===
+    document.querySelectorAll('a[target="_blank"]').forEach((a) => {
+      if (a.querySelector(".sr-new-tab")) return;
+      const s = document.createElement("span");
+      s.className = "sr-only sr-new-tab";
+      s.textContent = " (opens in a new tab)";
+      a.appendChild(s);
+    });
 
     // === Dynamic year ===
     const yearSpan = document.getElementById("year");
@@ -465,6 +484,8 @@
 
         const button = form.querySelector("button[type='submit']");
         const originalText = button.textContent;
+        const prevErr = form.parentNode.querySelector(".newsletter-error");
+        if (prevErr) prevErr.remove();
         button.textContent = "Subscribing…";
         button.disabled = true;
 
@@ -488,8 +509,8 @@
             var formEl = card.querySelector(".newsletter-form-inline");
             if (formEl) {
               formEl.outerHTML =
-                '<div class="newsletter-success">' +
-                  '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
+                '<div class="newsletter-success" role="status">' +
+                  '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>' +
                   ' Subscribed. <a href="/cluster-kit/#u=1">Open the cluster planner</a> (the link is in your inbox too).' +
                 '</div>';
             }
@@ -497,14 +518,20 @@
         } catch (err) {
           button.textContent = originalText;
           button.disabled = false;
-          var old = form.querySelector(".newsletter-error");
+          var old = form.parentNode.querySelector(".newsletter-error");
           if (old) old.remove();
           var msg = document.createElement("p");
           msg.className = "newsletter-error";
-          msg.style.cssText = "color:#ef4444;font-size:0.82rem;margin-top:0.5rem;text-align:center;";
-          msg.textContent = err.message || "Something went wrong. Try again.";
-          form.appendChild(msg);
-          setTimeout(function () { msg.remove(); }, 4000);
+          msg.setAttribute("role", "alert");
+          var invalidEmail = /valid email/i.test(err.message || "");
+          msg.textContent = invalidEmail
+            ? err.message
+            : (err.message || "Something went wrong.") + " Please try again in a moment, or email info@mylemans.online.";
+          form.insertAdjacentElement("afterend", msg);
+          if (emailInput) {
+            emailInput.setAttribute("aria-invalid", invalidEmail ? "true" : "false");
+            if (invalidEmail) emailInput.focus();
+          }
         }
       });
     }
@@ -544,7 +571,7 @@
                 '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' +
                 '<div>' +
                   '<p class="safetunnel-success-title">You’re on the list.</p>' +
-                  '<p class="safetunnel-success-detail">I’ll send one email to <strong>' + email + '</strong> when SafeTunnel opens.</p>' +
+                  '<p class="safetunnel-success-detail">I’ll send one email to <strong>' + escapeHtml(email) + '</strong> when SafeTunnel opens.</p>' +
                 '</div>' +
               '</div>';
           }
@@ -653,9 +680,6 @@
   });
 
   document.addEventListener("DOMContentLoaded", async () => {
-    // First inject header / footer partials
-    await loadPartials();
-    // Then wire everything up
     initSite();
     initCodeBlocks();
     initCookieConsent();

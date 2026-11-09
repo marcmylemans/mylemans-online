@@ -6,7 +6,7 @@ layout: null
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Mylemans Online</title>
+  <title>Privacy Policy | Mylemans Online</title>
   <link rel="canonical" href="https://mylemans.online/privacy.html" />
   <meta name="description" content="Privacy Policy for Mylemans Online covering data usage, GDPR rights, and third-party services.">
   <link rel="stylesheet" href="assets/css/styles.css" />
@@ -179,16 +179,7 @@ layout: null
     </section>
   </main>
   <!-- Cookie banner -->
-  <div class="cookie-banner" id="cookie-banner">
-    <p>
-      We count visits without cookies by default. Accept to allow anonymous analytics cookies; decline and nothing is stored. Blog pages show Google AdSense ads, for which Google asks your consent separately.
-      See our <a href="privacy.html">Privacy Policy</a> for details.
-    </p>
-    <div class="cookie-actions">
-      <button type="button" id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
-      <button type="button" id="cookie-accept" class="btn btn-primary">Accept</button>
-    </div>
-  </div>
+  {% include cookie-banner.html text="We count visits without cookies by default. Accept to allow anonymous analytics cookies; decline and nothing is stored. Blog pages show Google AdSense ads, for which Google asks your consent separately." %}
   {% include footer.html %}
   <script src="assets/js/main.js"></script>
 </body>
