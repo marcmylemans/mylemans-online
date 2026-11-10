@@ -501,6 +501,11 @@
             throw new Error(data.error || "Something went wrong.");
           }
 
+          // Key event: counted only after the API accepted the address.
+          trackEvent("newsletter_signup", {
+            signup_source: location.pathname === "/" ? "home" : "post",
+          });
+
           // Subscribers can download the cluster planner without a second signup.
           try { window.localStorage.setItem("cp-unlocked", "1"); } catch (e2) {}
 
@@ -683,6 +688,7 @@
     initSite();
     initCodeBlocks();
     initCookieConsent();
+    initConversionTracking();
   });
 
   // ---- Google Analytics with cookie consent ---- //
@@ -751,6 +757,63 @@
     gaScript.async = true;
     gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
     document.head.appendChild(gaScript);
+  }
+
+  // ---- Conversion events ---- //
+  // Sent through the consent-mode tag above: cookieless (modelled) unless the
+  // visitor accepted the banner. Never put email addresses or form contents
+  // in event parameters.
+  function trackEvent(name, params) {
+    try {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, Object.assign({ transport_type: "beacon" }, params || {}));
+      }
+    } catch (e) {}
+  }
+
+  const SHOP_HOSTS = ["shop.mylemans.online", "buy.stripe.com"];
+  const AFFILIATE_HOSTS = ["amazon.com", "digitalocean.com", "m.do.co", "hetzner.cloud",
+    "hetzner.com", "hostinger.com", "fygonas.com", "fygo.io", "vidiq.com"];
+
+  function hostMatches(host, list) {
+    return list.some(function (h) { return host === h || host.endsWith("." + h); });
+  }
+
+  function initConversionTracking() {
+    document.addEventListener("click", function (e) {
+      const a = e.target.closest && e.target.closest("a[href]");
+      if (!a) return;
+      const href = a.getAttribute("href") || "";
+
+      if (/^mailto:/i.test(href)) {
+        trackEvent("contact_email_click", { page_path: location.pathname });
+        return;
+      }
+
+      let url;
+      try { url = new URL(href, location.href); } catch (err) { return; }
+      if (url.hostname === location.hostname) return;
+      const host = url.hostname.replace(/^www\./, "");
+      const linkParams = { link_domain: host, page_path: location.pathname };
+
+      if (hostMatches(host, SHOP_HOSTS)) {
+        trackEvent("shop_click", linkParams);
+      } else if (hostMatches(host, AFFILIATE_HOSTS)) {
+        trackEvent("affiliate_click", linkParams);
+      } else if (host === "labs.mylemans.online") {
+        trackEvent("labs_click", linkParams);
+      }
+    }, true);
+
+    // Sponsor enquiry: a plain Formspree POST that leaves the page, so the
+    // event goes out as a beacon on submit (the browser has already checked
+    // the required fields by then).
+    const sponsorForm = document.querySelector('form[action*="formspree.io"]');
+    if (sponsorForm) {
+      sponsorForm.addEventListener("submit", function () {
+        trackEvent("sponsor_enquiry_submit", { page_path: location.pathname });
+      });
+    }
   }
 
   function grantAnalytics() {

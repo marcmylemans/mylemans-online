@@ -399,6 +399,7 @@
         if (!res.ok) throw new Error(data.error || "Signup failed. Try again.");
       });
     }).then(function () {
+      try { if (typeof window.gtag === "function") window.gtag("event", "newsletter_signup", { signup_source: "cluster_kit" }); } catch (e) {}
       store(false);
       setUnlocked(true);
       $("cp-download").focus();
