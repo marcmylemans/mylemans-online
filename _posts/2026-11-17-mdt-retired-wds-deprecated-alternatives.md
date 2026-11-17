@@ -41,12 +41,8 @@ One habit I'd pass on: keep a copy of the MDT installer and the ADK version that
 
 Plenty of small shops never bothered with MDT. You might know one or you might be one. They took the boot image from the Windows ISO, added it to WDS and installed from there. I rebuilt that in my lab with a Windows 11 image and network booted a test VM.
 
-<!-- SCREENSHOT: the WDS console with the Windows 11 boot.wim from the ISO under Boot Images, server name and breadcrumb blurred -->
-
 <!-- VERIFY: replace the next paragraph with what your VM actually showed, with the exact text. If it doesn't fail on your WDS version, run the hands-free answer file test instead and rewrite this section around that. -->
 It never got to a desktop. On a WDS server running Windows Server 2025, Setup stops with `A media driver your computer needs is missing`, which sends you looking for a storage driver that has nothing to do with it. On older WDS versions you get a notice that the WDS client is partly deprecated, with a link to Microsoft's support page.
-
-<!-- SCREENSHOT: the failure on the test VM, the message readable -->
 
 Two separate changes are behind it:
 
@@ -57,8 +53,6 @@ Two separate changes are behind it:
 {: .prompt-warning }
 
 What still works is exactly that: a custom boot image, a small Windows that a deployment tool builds for you. It's what MDT hands to WDS. I pointed the same VM at my MDT boot image and it booted, showed the wizard and deployed.
-
-<!-- SCREENSHOT: the same VM in the MDT wizard, then at the Windows 11 desktop -->
 
 So the first thing to go was WDS doing the install by itself. The retired tool is what keeps my setup alive. It's also why every replacement further down brings its own boot image.
 
